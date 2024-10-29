@@ -13,6 +13,27 @@
   <form id="query-form">
     <input type="text" id="user-query" placeholder="Ask a question..." required>
     <input type="text" id="manual-location" placeholder="Enter your location (optional)">
+    <!-- Activity dropdown -->
+    <select id="activity-select">
+      <option value="">Select an activity</option>
+      <option value="scuba_diving">Scuba Diving</option>
+      <option value="golf">Golfing</option>
+      <option value="surfing">Surfing</option>
+      <option value="hiking">Hiking</option>
+    </select>
+    <!-- Distance dropdown -->
+    <select id="distance-select">
+      <option value="1">1 mile</option>
+      <option value="10">10 miles</option>
+      <option value="25" selected>25 miles</option>
+      <option value="50">50 miles</option>
+      <option value="100">100 miles</option>
+    </select>
+    <!-- Units dropdown -->
+    <select id="units-select">
+      <option value="imperial" selected>Imperial</option>
+      <option value="metric">Metric</option>
+    </select>
     <button type="submit">Submit</button>
   </form>
   <div id="response-container"></div>

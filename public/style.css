@@ -1,36 +1,52 @@
 /* public/style.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  #query-form {
-    margin-bottom: 20px;
-  }
-  
-  #user-query,
-  #manual-location {
-    width: 300px;
-    padding: 8px;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 8px 16px;
-  }
-  
-  #response-container {
-    margin-top: 20px;
-    white-space: pre-wrap;
-  }
-  
-  #map {
-    height: 500px;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+#query-form {
+  margin-bottom: 20px;
+}
+
+#query-form input,
+#query-form select {
+  width: 180px;
+  padding: 8px;
+  margin-right: 10px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555;
+}
+
+#response-container {
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.leaflet-container {
+  background-color: #1e1e1e;
+}

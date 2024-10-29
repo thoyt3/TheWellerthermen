@@ -1,0 +1,131 @@
+[
+  {
+    "name": "Nubble Light",
+    "geometry": {
+      "location": {
+        "lat": 43.1656,
+        "lng": -70.5917
+      }
+    },
+    "city": "York",
+    "state": "Maine",
+    "activities": [
+      "scuba_diving"
+    ],
+    "beachOrientation": 90
+  },
+  {
+    "name": "Cathedral Rocks",
+    "geometry": {
+      "location": {
+        "lat": 42.6615,
+        "lng": -70.622
+      }
+    },
+    "city": "Rockport",
+    "state": "Massachusetts",
+    "activities": [
+      "scuba_diving"
+    ],
+    "beachOrientation": 180
+  },
+  {
+    "name": "Forty Steps",
+    "geometry": {
+      "location": {
+        "lat": 42.4238,
+        "lng": -70.9132
+      }
+    },
+    "city": "Nahant",
+    "state": "Massachusetts",
+    "activities": [
+      "scuba_diving"
+    ],
+    "beachOrientation": 270
+  },
+  {
+    "name": "Leicester Village Golf Course, New London Street, Leicester Community, New England, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.456801,
+        "lng": -13.222879203997369
+      }
+    },
+    "city": "",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Sesay Drive Golf Course, Sesay Drive, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.4614212,
+        "lng": -13.214436892687377
+      }
+    },
+    "city": "",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Loko Town Golf Course, Shalom Road, Bato, Regent, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.444536,
+        "lng": -13.214789450842602
+      }
+    },
+    "city": "",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Freetown Golf Club, Nas Carew Drive, NDMC Compound, Lumley, Freetown, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.463371599999999,
+        "lng": -13.277241579036355
+      }
+    },
+    "city": "Freetown",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Thorpe Wood Golf Course, Bluebell Trail, Orton Wistow, Longthorpe, Peterborough, City of Peterborough, Cambridgeshire and Peterborough, England, PE3 6SE, United Kingdom",
+    "geometry": {
+      "location": {
+        "lat": 52.5639881,
+        "lng": -0.29294075974980194
+      }
+    },
+    "city": "Peterborough",
+    "state": "England",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Orton Meadows Golf Course, Ham Lane, Orton Wistow, Orton Waterville, Peterborough, City of Peterborough, Cambridgeshire and Peterborough, England, PE2 5UU, United Kingdom",
+    "geometry": {
+      "location": {
+        "lat": 52.5566283,
+        "lng": -0.2883449028419483
+      }
+    },
+    "city": "Peterborough",
+    "state": "England",
+    "activities": [
+      "golf"
+    ]
+  }
+]
