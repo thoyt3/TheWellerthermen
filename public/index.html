@@ -1,0 +1,29 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Recommender</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Find the Best Spot for Your Activity</h1>
+  <form id="query-form">
+    <input type="text" id="user-query" placeholder="Ask a question..." required>
+    <input type="text" id="manual-location" placeholder="Enter your location (optional)">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="response-container"></div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Your script -->
+  <script src="script.js"></script>
+</body>
+</html>
