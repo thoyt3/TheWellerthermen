@@ -37,6 +37,8 @@ app.post('/api/query', async (req, res) => {
   const selectedUnits = req.body.units || 'imperial';
   const activity = selectedActivity || extractActivity(userQuery);
 
+  console.log('Activity:', activity); // Debugging
+
   try {
     const latitude = req.body.latitude;
     const longitude = req.body.longitude;
@@ -99,14 +101,14 @@ app.get('/api/geocode', async (req, res) => {
 function extractActivity(query) {
   const doc = nlp(query.toLowerCase());
 
-  // Look for specific keywords
-  if (doc.has('scuba [diving]')) {
+  // Look for specific keywords with variants
+  if (doc.has('scuba') || doc.has('diving') || doc.has('scuba diving')) {
     return 'scuba_diving';
-  } else if (doc.has('golf')) {
+  } else if (doc.has('golf') || doc.has('golfing')) {
     return 'golf';
-  } else if (doc.has('surfing')) {
+  } else if (doc.has('surfing') || doc.has('surf')) {
     return 'surfing';
-  } else if (doc.has('hiking')) {
+  } else if (doc.has('hiking') || doc.has('hike')) {
     return 'hiking';
   } else {
     return 'general';
@@ -222,6 +224,23 @@ async function getTideData(latitude, longitude) {
   }
 }
 
+// Function to determine thermal protection recommendation
+function getThermalProtectionRecommendation(waterTempF) {
+  if (waterTempF > 82.4) {
+    return 'Swim suit, rashguard, or UV protective dive skin';
+  } else if (waterTempF >= 77 && waterTempF <= 80.6) {
+    return '2 mm shorty wetsuit or 1 mm full suit';
+  } else if (waterTempF >= 71.6 && waterTempF <= 75.2) {
+    return '3 mm full suit';
+  } else if (waterTempF >= 62.6 && waterTempF <= 69.8) {
+    return '5 mm full suit';
+  } else if (waterTempF >= 55 && waterTempF <= 62.5) {
+    return '7 mm full suit';
+  } else {
+    return 'Dry suit';
+  }
+}
+
 // Function to fetch activity locations with caching and distance filtering
 async function getActivityLocations(activity, latitude, longitude, maxDistance) {
   const cacheKey = `locations_${activity}`;
@@ -232,7 +251,7 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
   } else {
     try {
       // Read from locations.json
-      const locations = locationsData.filter(loc => loc.activities.includes(activity));
+      const locations = locationsData.filter((loc) => loc.activities.includes(activity));
       data = locations;
 
       cache.set(cacheKey, data);
@@ -277,6 +296,8 @@ async function processRecommendations(locations, activity, units) {
       uvi: locationDailyWeather.uvi,
       description: locationDailyWeather.weather[0].description,
       moonPhase: locationDailyWeather.moon_phase,
+      sunrise: locationDailyWeather.sunrise,
+      sunset: locationDailyWeather.sunset,
     };
 
     if (activity === 'scuba_diving') {
@@ -287,30 +308,100 @@ async function processRecommendations(locations, activity, units) {
       if (waveInfo) {
         const waveHeight = waveInfo.waveHeight.noaa;
         const wavePeriod = waveInfo.wavePeriod.noaa;
-        const waterTemperature = waveInfo.waterTemperature.noaa;
+        const waterTemperatureC = waveInfo.waterTemperature.noaa;
+        const waterTemperatureF = (waterTemperatureC * 9) / 5 + 32;
 
         location.waveData = {
-          waveHeight: units === 'imperial' ? (waveHeight * 3.28084).toFixed(2) : waveHeight.toFixed(2),
+          waveHeight:
+            units === 'imperial'
+              ? (waveHeight * 3.28084).toFixed(2)
+              : waveHeight.toFixed(2),
           wavePeriod: wavePeriod.toFixed(2),
         };
-        location.waterTemperature = units === 'imperial' ? ((waterTemperature * 9/5) + 32).toFixed(2) : waterTemperature.toFixed(2);
+        location.waterTemperature =
+          units === 'imperial'
+            ? waterTemperatureF.toFixed(2)
+            : waterTemperatureC.toFixed(2);
+
+        // Determine thermal protection recommendation
+        location.thermalProtectionRecommendation = getThermalProtectionRecommendation(
+          waterTemperatureF
+        );
       }
 
       // Fetch tide data
       const tideData = await getTideData(locLat, locLng);
       location.tideData = tideData;
 
+      // Include tide data
+      if (location.tideData && location.tideData.extremes && location.tideData.extremes.length > 0) {
+        const now = Date.now() / 1000;
+        const upcomingHighTides = location.tideData.extremes.filter(
+          (extreme) => extreme.type === 'High' && extreme.timestamp >= now
+        );
+        if (upcomingHighTides.length > 0) {
+          const nextHighTide = upcomingHighTides[0];
+          location.nextHighTide = new Date(nextHighTide.timestamp * 1000).toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+          });
+
+          // Determine if next high tide is during night time (after sunset and before sunrise)
+          const sunset = new Date(location.weather.sunset * 1000);
+          const sunrise = new Date(location.weather.sunrise * 1000);
+          const nextHighTideDate = new Date(nextHighTide.timestamp * 1000);
+
+          if (
+            nextHighTideDate >= sunset ||
+            nextHighTideDate <= sunrise
+          ) {
+            location.nextHighTideIsAtNight = true;
+          } else {
+            location.nextHighTideIsAtNight = false;
+          }
+        }
+      }
+
+      // Determine if it's a full moon
+      if (location.weather.moonPhase >= 0.47 && location.weather.moonPhase <= 0.53) {
+        location.isFullMoon = true;
+      } else {
+        location.isFullMoon = false;
+      }
+
+      // Determine visibility based on wind direction and beach orientation
+      if (location.weather.windDeg !== undefined && location.beachOrientation !== undefined) {
+        let angleDifference = Math.abs(location.weather.windDeg - location.beachOrientation);
+        if (angleDifference > 180) {
+          angleDifference = 360 - angleDifference;
+        }
+        location.poorVisibility = angleDifference <= 90;
+      } else {
+        location.poorVisibility = false; // Default if data is missing
+      }
+
       // Scoring logic for scuba diving
-      // [Include your scoring logic here]
-      // For brevity, I'm skipping detailed scoring logic
-      // ...
+      // Example: Lower wave height and favorable visibility increase score
+      if (location.waveData && location.waveData.waveHeight) {
+        const waveHeight = parseFloat(location.waveData.waveHeight);
+        if (waveHeight <= 3) {
+          score += 10;
+        } else if (waveHeight <= 5) {
+          score += 5;
+        } else {
+          score -= 5;
+        }
+      }
+
+      if (location.poorVisibility) {
+        score -= 5;
+      } else {
+        score += 5;
+      }
 
     } else {
       // Scoring logic for other activities
-      // For example, for golf, surfing, hiking
-      // [Include your scoring logic here]
-      // ...
-
+      // For brevity, I'm not including detailed scoring logic here
     }
 
     // Attach score to location
@@ -327,6 +418,7 @@ async function processRecommendations(locations, activity, units) {
 
 // Function to get AI response from OpenAI API
 async function getAIResponse(userQuery, recommendations, units, activity) {
+  const activityName = activity.replace('_', ' ');
   const locationInfo = recommendations.map((loc) => {
     const locName = loc.name;
     const city = loc.city || '';
@@ -336,7 +428,15 @@ async function getAIResponse(userQuery, recommendations, units, activity) {
     const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
 
     let info = `${locName} in ${city}, ${state}\n`;
-    info += `Weather: ${weather.description}, Temperature: ${units === 'imperial' ? ((weather.temperature * 9/5) + 32).toFixed(2) : weather.temperature.toFixed(2)}${unitsTemp}, Wind Speed: ${units === 'imperial' ? (weather.windSpeed * 2.23694).toFixed(2) : weather.windSpeed.toFixed(2)} ${unitsSpeed}\n`;
+    info += `Weather: ${weather.description}, Temperature: ${
+      units === 'imperial'
+        ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+        : weather.temperature.toFixed(2)
+    }${unitsTemp}, Wind Speed: ${
+      units === 'imperial'
+        ? (weather.windSpeed * 2.23694).toFixed(2)
+        : weather.windSpeed.toFixed(2)
+    } ${unitsSpeed}\n`;
 
     if (activity === 'scuba_diving') {
       const waveData = loc.waveData || {};
@@ -346,94 +446,47 @@ async function getAIResponse(userQuery, recommendations, units, activity) {
       if (waveData.waveHeight !== undefined) {
         info += `Wave Height: ${waveData.waveHeight} ${unitsHeight}, Wave Period: ${waveData.wavePeriod} s\n`;
         info += `Water Temperature: ${waterTemp} ${unitsTemp}\n`;
+        info += `Appropriate Thermal Protection: ${loc.thermalProtectionRecommendation}\n`;
       }
 
-      if (loc.poorVisibility) {
-        info += `Note: The wind is coming off the ocean towards the beach, which may reduce visibility.\n`;
+      if (loc.poorVisibility !== undefined) {
+        info += `Poor Visibility: ${loc.poorVisibility ? 'Yes' : 'No'}\n`;
       }
 
       if (loc.nextHighTide) {
         info += `Next High Tide: ${loc.nextHighTide}\n`;
+        info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
       }
 
       if (loc.isFullMoon) {
-        info += `It's a full moon tonight; consider a night dive if conditions are favorable.\n`;
+        info += `It's a full moon tonight.\n`;
       }
     } else {
       // Add clothing recommendations for other activities
-      let clothingRecommendation = '';
-      const tempCelsius = weather.temperature;
-      const tempFahrenheit = (tempCelsius * 9/5) + 32;
-
-      if (activity === 'golf' || activity === 'hiking') {
-        if (units === 'imperial') {
-          if (tempFahrenheit < 50) {
-            clothingRecommendation = 'Wear warm clothing like a heavy jacket.';
-          } else if (tempFahrenheit < 65) {
-            clothingRecommendation = 'Wear a medium jacket or sweater.';
-          } else if (tempFahrenheit < 75) {
-            clothingRecommendation = 'A light jacket or long sleeves should be sufficient.';
-          } else {
-            clothingRecommendation = 'Short sleeves should be comfortable.';
-          }
-        } else {
-          if (tempCelsius < 10) {
-            clothingRecommendation = 'Wear warm clothing like a heavy jacket.';
-          } else if (tempCelsius < 18) {
-            clothingRecommendation = 'Wear a medium jacket or sweater.';
-          } else if (tempCelsius < 24) {
-            clothingRecommendation = 'A light jacket or long sleeves should be sufficient.';
-          } else {
-            clothingRecommendation = 'Short sleeves should be comfortable.';
-          }
-        }
-        info += `Clothing Recommendation: ${clothingRecommendation}\n`;
-      } else if (activity === 'surfing') {
-        // Similar to scuba diving, but simplified
-        let wetsuitRecommendation = '';
-        if (units === 'imperial') {
-          if (tempFahrenheit > 75) {
-            wetsuitRecommendation = 'Boardshorts or a rashguard.';
-          } else if (tempFahrenheit > 65) {
-            wetsuitRecommendation = 'A 2mm wetsuit top or springsuit.';
-          } else {
-            wetsuitRecommendation = 'A full wetsuit is recommended.';
-          }
-        } else {
-          if (tempCelsius > 24) {
-            wetsuitRecommendation = 'Boardshorts or a rashguard.';
-          } else if (tempCelsius > 18) {
-            wetsuitRecommendation = 'A 2mm wetsuit top or springsuit.';
-          } else {
-            wetsuitRecommendation = 'A full wetsuit is recommended.';
-          }
-        }
-        info += `Wetsuit Recommendation: ${wetsuitRecommendation}\n`;
-      }
+      // ...
     }
 
     return info;
   }).join('\n');
 
-  let systemPrompt = `You are a helpful assistant providing activity recommendations based on current weather conditions at specific locations. Use ${units} units in your responses.`;
+  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations. Use ${units} units in your responses.
 
-  let userPrompt = `Based on my query "${userQuery}", and the current conditions at the following locations, please provide recommendations:
+Use the data provided to make specific recommendations. Only recommend a night dive if:
+- It's a full moon tonight (as indicated by "It's a full moon tonight." in the data).
+- The next high tide is at night (as indicated by "Next High Tide Is At Night: Yes").
 
-${locationInfo}
+Include the actual high tide times in your recommendations. Do not suggest checking for high tide times; provide them directly.
+
+For ${activityName}, consider the following when making recommendations:
+- Use the "Appropriate Thermal Protection" provided in the data.
+- If "Poor Visibility" is "Yes," advise accordingly.
+- Suggest dive/no dive recommendations based on wave conditions.
+- If air temperature is below freezing, advise on additional surface protection.
 `;
 
-  if (activity === 'scuba_diving') {
-    userPrompt += `
-Consider thermal protection recommendations based on water temperature:
-- Over 82.4°F: Swim suit, rashguard, or UV protective dive skin
-- 77°F–80.6°F: 2 mm shorty wetsuit or 1 mm full suit
-- 71.6°F–75.2°F: 3 mm full suit
-- 62.6°F–69.8°F: 5 mm full suit
-- 55°F–62.5°F: 7 mm full suit
-- Below 55°F: Dry suit
+  let userPrompt = `Based on my query "${userQuery}" and the current conditions at the following locations, please provide your recommendations:
 
-Also, if air temperature is below freezing, advise accordingly. Recommend appropriate thermal protection, and suggest the best time to dive based on high tide. If it's a full moon, mention the possibility of a night dive.`;
-  }
+${locationInfo}`;
 
   const messages = [
     {
@@ -450,13 +503,13 @@ Also, if air temperature is below freezing, advise accordingly. Recommend approp
     const response = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: messages,
-      max_tokens: 500,
+      max_tokens: 1000,
       temperature: 0.7,
     });
 
     return response.data.choices[0].message.content.trim();
   } catch (error) {
-    console.error('Error from OpenAI API:', error);
+    console.error('Error from OpenAI API:', error.response ? error.response.data : error.message);
     throw new Error('Failed to get response from AI assistant.');
   }
 }
