@@ -52,7 +52,7 @@
         "lng": -13.222879203997369
       }
     },
-    "city": "",
+    "city": "Leicester Village",
     "state": "Western Area Urban",
     "activities": [
       "golf"
@@ -66,7 +66,7 @@
         "lng": -13.214436892687377
       }
     },
-    "city": "",
+    "city": "Leicester Village",
     "state": "Western Area Urban",
     "activities": [
       "golf"
@@ -80,7 +80,7 @@
         "lng": -13.214789450842602
       }
     },
-    "city": "",
+    "city": "Regent",
     "state": "Western Area Urban",
     "activities": [
       "golf"
@@ -136,8 +136,8 @@
         "lng": -70.7759819
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Denmark",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -164,8 +164,8 @@
         "lng": 145.2043946
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Melbourne",
+    "state": "Victoria",
     "activities": [
       "golf"
     ]
@@ -179,7 +179,7 @@
       }
     },
     "city": "Cambridge",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -193,7 +193,7 @@
       }
     },
     "city": "Lexington",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -220,8 +220,8 @@
         "lng": -73.2450429
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Williamstown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -234,8 +234,8 @@
         "lng": -73.2058794
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Williamstown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -248,8 +248,8 @@
         "lng": -72.1279111
       }
     },
-    "city": "Fiskdale",
-    "state": "",
+    "city": "Sturbridge",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -263,7 +263,7 @@
       }
     },
     "city": "Oakham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -277,7 +277,7 @@
       }
     },
     "city": "Gilbertville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -291,7 +291,7 @@
       }
     },
     "city": "Athol",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -305,7 +305,7 @@
       }
     },
     "city": "Auburn",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -319,7 +319,7 @@
       }
     },
     "city": "Lunenburg",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -333,7 +333,7 @@
       }
     },
     "city": "Pittsfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -346,8 +346,8 @@
         "lng": -73.2312905
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Pittsfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -361,7 +361,7 @@
       }
     },
     "city": "Pittsfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -374,8 +374,8 @@
         "lng": -70.8988281
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hingham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -389,7 +389,7 @@
       }
     },
     "city": "Lakeville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -403,7 +403,7 @@
       }
     },
     "city": "Scituate",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -416,8 +416,8 @@
         "lng": -70.761789
       }
     },
-    "city": "Manchester by the Sea",
-    "state": "",
+    "city": "Manchester-by-the-Sea",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -431,7 +431,7 @@
       }
     },
     "city": "Falmouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -445,7 +445,7 @@
       }
     },
     "city": "Beverly",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -459,7 +459,7 @@
       }
     },
     "city": "Nahant",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -487,7 +487,7 @@
       }
     },
     "city": "Rochester",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -501,7 +501,7 @@
       }
     },
     "city": "Essex",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -515,7 +515,7 @@
       }
     },
     "city": "Abington",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -543,7 +543,7 @@
       }
     },
     "city": "Winthrop",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -557,7 +557,7 @@
       }
     },
     "city": "Pembroke",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -571,7 +571,7 @@
       }
     },
     "city": "Acushnet",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -585,7 +585,7 @@
       }
     },
     "city": "Scituate",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -598,8 +598,8 @@
         "lng": -70.6822968
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Duxbury",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -613,7 +613,7 @@
       }
     },
     "city": "New Bedford",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -627,7 +627,7 @@
       }
     },
     "city": "Marshfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -641,7 +641,7 @@
       }
     },
     "city": "Halifax",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -655,7 +655,7 @@
       }
     },
     "city": "Wenham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -669,7 +669,7 @@
       }
     },
     "city": "Wareham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -683,7 +683,7 @@
       }
     },
     "city": "Marshfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -696,8 +696,8 @@
         "lng": -70.9746003
       }
     },
-    "city": "North Dartmouth",
-    "state": "",
+    "city": "Dartmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -711,7 +711,7 @@
       }
     },
     "city": "East Bridgewater",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -725,7 +725,7 @@
       }
     },
     "city": "Marblehead",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -738,8 +738,8 @@
         "lng": -70.9735482
       }
     },
-    "city": "North Dartmouth",
-    "state": "",
+    "city": "Dartmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -753,7 +753,7 @@
       }
     },
     "city": "Salem",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -767,7 +767,7 @@
       }
     },
     "city": "Lakeville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -781,7 +781,7 @@
       }
     },
     "city": "Mattapoisett",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -795,7 +795,7 @@
       }
     },
     "city": "Marion",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -809,7 +809,7 @@
       }
     },
     "city": "Rockland",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -823,7 +823,7 @@
       }
     },
     "city": "Marion",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -851,7 +851,7 @@
       }
     },
     "city": "Fitchburg",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -892,8 +892,8 @@
         "lng": -70.5450684
       }
     },
-    "city": "East Falmouth",
-    "state": "",
+    "city": "Falmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -907,7 +907,7 @@
       }
     },
     "city": "Lynnfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -921,7 +921,7 @@
       }
     },
     "city": "Attleboro",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -935,7 +935,7 @@
       }
     },
     "city": "Bedford",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -949,7 +949,7 @@
       }
     },
     "city": "Swansea",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -963,7 +963,7 @@
       }
     },
     "city": "Methuen",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -976,8 +976,8 @@
         "lng": -72.9426708
       }
     },
-    "city": "Worthington",
-    "state": "",
+    "city": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -991,7 +991,7 @@
       }
     },
     "city": "Adams",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1005,7 +1005,7 @@
       }
     },
     "city": "",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1019,7 +1019,7 @@
       }
     },
     "city": "Leominster",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1033,7 +1033,7 @@
       }
     },
     "city": "Dudley",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1061,7 +1061,7 @@
       }
     },
     "city": "West Boylston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1075,7 +1075,7 @@
       }
     },
     "city": "Leominster",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1089,7 +1089,7 @@
       }
     },
     "city": "Westminster",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1103,7 +1103,7 @@
       }
     },
     "city": "Holden",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1117,7 +1117,7 @@
       }
     },
     "city": "Charlton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1131,7 +1131,7 @@
       }
     },
     "city": "Leicester",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1145,7 +1145,7 @@
       }
     },
     "city": "Southbridge",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1159,7 +1159,7 @@
       }
     },
     "city": "Uxbridge",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1173,7 +1173,7 @@
       }
     },
     "city": "Westford",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1187,7 +1187,7 @@
       }
     },
     "city": "Harvard",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1201,7 +1201,7 @@
       }
     },
     "city": "Holliston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1214,8 +1214,8 @@
         "lng": -71.427692
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Acton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1228,8 +1228,8 @@
         "lng": -71.3701946
       }
     },
-    "city": "North Attleboro",
-    "state": "",
+    "city": "North Attleborough",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1242,8 +1242,8 @@
         "lng": -71.6587202
       }
     },
-    "city": "Whitinsville",
-    "state": "",
+    "city": "Northbridge",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1257,7 +1257,7 @@
       }
     },
     "city": "Stow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1271,7 +1271,7 @@
       }
     },
     "city": "Bolton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1285,7 +1285,7 @@
       }
     },
     "city": "Bellingham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1299,7 +1299,7 @@
       }
     },
     "city": "Hopkinton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1313,7 +1313,7 @@
       }
     },
     "city": "Southborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1327,7 +1327,7 @@
       }
     },
     "city": "Boylston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1341,7 +1341,7 @@
       }
     },
     "city": "Bellingham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1355,7 +1355,7 @@
       }
     },
     "city": "Stow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1369,7 +1369,7 @@
       }
     },
     "city": "Marlborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1383,7 +1383,7 @@
       }
     },
     "city": "Berlin",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1397,7 +1397,7 @@
       }
     },
     "city": "Maynard",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1411,7 +1411,7 @@
       }
     },
     "city": "Uxbridge",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1425,7 +1425,7 @@
       }
     },
     "city": "Hopedale",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1439,7 +1439,7 @@
       }
     },
     "city": "Franklin",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1453,7 +1453,7 @@
       }
     },
     "city": "Lee",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1467,7 +1467,7 @@
       }
     },
     "city": "Stockbridge",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1481,7 +1481,7 @@
       }
     },
     "city": "Great Barrington",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1494,8 +1494,8 @@
         "lng": -70.1767105
       }
     },
-    "city": "South Yarmouth",
-    "state": "",
+    "city": "Yarmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1508,8 +1508,8 @@
         "lng": -70.0795466
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Harwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1523,7 +1523,7 @@
       }
     },
     "city": "Dennis",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1536,8 +1536,8 @@
         "lng": -70.1743434
       }
     },
-    "city": "South Yarmouth",
-    "state": "",
+    "city": "Yarmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1551,7 +1551,7 @@
       }
     },
     "city": "Nantucket",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1578,8 +1578,8 @@
         "lng": -70.0536852
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brewster",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1593,7 +1593,7 @@
       }
     },
     "city": "Westborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1606,8 +1606,8 @@
         "lng": -71.628204
       }
     },
-    "city": "Westboro",
-    "state": "",
+    "city": "Westborough",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1620,8 +1620,8 @@
         "lng": -71.5556041
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Groton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1635,7 +1635,7 @@
       }
     },
     "city": "Concord",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1649,7 +1649,7 @@
       }
     },
     "city": "Stoughton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1663,7 +1663,7 @@
       }
     },
     "city": "Boxford",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1677,7 +1677,7 @@
       }
     },
     "city": "Winchester",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1691,7 +1691,7 @@
       }
     },
     "city": "Sharon",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1719,7 +1719,7 @@
       }
     },
     "city": "Lynnfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1747,7 +1747,7 @@
       }
     },
     "city": "North Reading",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1761,7 +1761,7 @@
       }
     },
     "city": "Canton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1775,7 +1775,7 @@
       }
     },
     "city": "Lexington",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1789,7 +1789,7 @@
       }
     },
     "city": "Georgetown",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1803,7 +1803,7 @@
       }
     },
     "city": "Lowell",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1816,8 +1816,8 @@
         "lng": -71.1332577
       }
     },
-    "city": "Hyde Park",
-    "state": "",
+    "city": "Boston",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1831,7 +1831,7 @@
       }
     },
     "city": "Saugus",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1844,8 +1844,8 @@
         "lng": -71.090116
       }
     },
-    "city": "South Easton",
-    "state": "",
+    "city": "Easton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1859,7 +1859,7 @@
       }
     },
     "city": "Norton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1873,7 +1873,7 @@
       }
     },
     "city": "Taunton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1886,8 +1886,8 @@
         "lng": -71.0841816
       }
     },
-    "city": "South Easton",
-    "state": "",
+    "city": "Easton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1901,7 +1901,7 @@
       }
     },
     "city": "Plainville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1915,7 +1915,7 @@
       }
     },
     "city": "Westwood",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1929,7 +1929,7 @@
       }
     },
     "city": "Milton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1943,7 +1943,7 @@
       }
     },
     "city": "Brookline",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1957,7 +1957,7 @@
       }
     },
     "city": "Canton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1971,7 +1971,7 @@
       }
     },
     "city": "Norwood",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1984,8 +1984,8 @@
         "lng": -70.5522108
       }
     },
-    "city": "East Falmouth",
-    "state": "",
+    "city": "Falmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -1999,7 +1999,7 @@
       }
     },
     "city": "Brewster",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2013,7 +2013,7 @@
       }
     },
     "city": "Dennis",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2027,7 +2027,7 @@
       }
     },
     "city": "Chatham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2040,8 +2040,8 @@
         "lng": -72.685716
       }
     },
-    "city": "Feeding Hills",
-    "state": "",
+    "city": "Agawam",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2069,7 +2069,7 @@
       }
     },
     "city": "Longmeadow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2083,7 +2083,7 @@
       }
     },
     "city": "Springfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2096,8 +2096,8 @@
         "lng": -72.5625174
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Turners Falls",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2111,7 +2111,7 @@
       }
     },
     "city": "Brockton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2125,7 +2125,7 @@
       }
     },
     "city": "Brockton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2153,7 +2153,7 @@
       }
     },
     "city": "Brockton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2167,7 +2167,7 @@
       }
     },
     "city": "Tewksbury",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2181,7 +2181,7 @@
       }
     },
     "city": "Canton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2195,7 +2195,7 @@
       }
     },
     "city": "Seekonk",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2209,7 +2209,7 @@
       }
     },
     "city": "Quincy",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2223,7 +2223,7 @@
       }
     },
     "city": "Billerica",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2237,7 +2237,7 @@
       }
     },
     "city": "Lowell",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2250,8 +2250,8 @@
         "lng": -71.2652032
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rehoboth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2265,7 +2265,7 @@
       }
     },
     "city": "Melrose",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2278,8 +2278,8 @@
         "lng": -71.2524891
       }
     },
-    "city": "Foxboro",
-    "state": "",
+    "city": "Foxborough",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2292,8 +2292,8 @@
         "lng": -71.150656
       }
     },
-    "city": "Chestnut Hill",
-    "state": "",
+    "city": "Brookline",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2306,8 +2306,8 @@
         "lng": -71.2926104
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rehoboth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2321,7 +2321,7 @@
       }
     },
     "city": "Lexington",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2335,7 +2335,7 @@
       }
     },
     "city": "Newton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2348,8 +2348,8 @@
         "lng": -71.2501701
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rehoboth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2363,7 +2363,7 @@
       }
     },
     "city": "Westport",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2377,7 +2377,7 @@
       }
     },
     "city": "Pawtucket",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -2390,8 +2390,8 @@
         "lng": -71.2332643
       }
     },
-    "city": "West Newton",
-    "state": "",
+    "city": "Newton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2405,7 +2405,7 @@
       }
     },
     "city": "Rehoboth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2419,7 +2419,7 @@
       }
     },
     "city": "Sharon",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2433,7 +2433,7 @@
       }
     },
     "city": "Rehoboth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2447,7 +2447,7 @@
       }
     },
     "city": "Norton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2460,8 +2460,8 @@
         "lng": -70.6085077
       }
     },
-    "city": "Pocasset",
-    "state": "",
+    "city": "Bourne",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2474,8 +2474,8 @@
         "lng": -70.3233967
       }
     },
-    "city": "Hyannis",
-    "state": "",
+    "city": "Barnstable",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2488,8 +2488,8 @@
         "lng": -70.3117746
       }
     },
-    "city": "Hyannis Port",
-    "state": "",
+    "city": "Hyannis",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2503,7 +2503,7 @@
       }
     },
     "city": "Hyannis",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2517,7 +2517,7 @@
       }
     },
     "city": "Marstons Mills",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2531,7 +2531,7 @@
       }
     },
     "city": "Cotuit",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2544,8 +2544,8 @@
         "lng": -72.6939492
       }
     },
-    "city": "Haydenville",
-    "state": "",
+    "city": "Williamsburg",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2559,7 +2559,7 @@
       }
     },
     "city": "Granby",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2573,7 +2573,7 @@
       }
     },
     "city": "Westfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2587,7 +2587,7 @@
       }
     },
     "city": "Southampton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2600,8 +2600,8 @@
         "lng": -72.4821251
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Longmeadow",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2615,7 +2615,7 @@
       }
     },
     "city": "Amherst",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2629,7 +2629,7 @@
       }
     },
     "city": "Springfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2657,7 +2657,7 @@
       }
     },
     "city": "Longmeadow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2671,7 +2671,7 @@
       }
     },
     "city": "Amherst",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2684,8 +2684,8 @@
         "lng": -72.6783689
       }
     },
-    "city": "Feeding Hills",
-    "state": "",
+    "city": "Agawam",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2699,7 +2699,7 @@
       }
     },
     "city": "Ludlow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2712,8 +2712,8 @@
         "lng": -72.6653356
       }
     },
-    "city": "Feeding Hills",
-    "state": "",
+    "city": "Agawam",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2727,7 +2727,7 @@
       }
     },
     "city": "Holyoke",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2741,7 +2741,7 @@
       }
     },
     "city": "Holyoke",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2755,7 +2755,7 @@
       }
     },
     "city": "Wilbraham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2769,7 +2769,7 @@
       }
     },
     "city": "South Hadley",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2783,7 +2783,7 @@
       }
     },
     "city": "Monson",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2797,7 +2797,7 @@
       }
     },
     "city": "Belchertown",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2824,8 +2824,8 @@
         "lng": -71.3144477
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Derry",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -2838,8 +2838,8 @@
         "lng": -71.4797882
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Litchfield",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -2866,8 +2866,8 @@
         "lng": -73.2714832
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Fairfield",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -2908,8 +2908,8 @@
         "lng": -68.7955645
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bangor",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -3524,7 +3524,7 @@
         "lng": -72.7814187
       }
     },
-    "city": "",
+    "city": "North Branford",
     "state": "",
     "activities": [
       "golf"
@@ -3706,8 +3706,8 @@
         "lng": -72.7256983
       }
     },
-    "city": "",
-    "state": "",
+    "city": "West Hartford",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -3846,8 +3846,8 @@
         "lng": -72.9825949
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bristol",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -3875,7 +3875,7 @@
       }
     },
     "city": "Sharon",
-    "state": "",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -3931,7 +3931,7 @@
       }
     },
     "city": "Waterbury",
-    "state": "",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -4084,8 +4084,8 @@
         "lng": -72.0907698
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ledyard",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -4098,8 +4098,8 @@
         "lng": -72.4184481
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Walpole",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4112,8 +4112,8 @@
         "lng": -70.9402669
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Exeter",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4126,8 +4126,8 @@
         "lng": -72.5843303
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brattleboro",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -4141,7 +4141,7 @@
       }
     },
     "city": "Portsmouth",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4154,8 +4154,8 @@
         "lng": -71.4298027
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hudson",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4168,8 +4168,8 @@
         "lng": 0.1989294
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Le Mans",
+    "state": "Pays de la Loire",
     "activities": [
       "golf"
     ]
@@ -4182,8 +4182,8 @@
         "lng": -73.1975396
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Shelburne",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -4196,8 +4196,8 @@
         "lng": -71.1638832
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Woburn",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4210,8 +4210,8 @@
         "lng": 4.0669753
       }
     },
-    "city": "",
-    "state": "",
+    "city": "La Grande-Motte",
+    "state": "Occitanie",
     "activities": [
       "golf"
     ]
@@ -4224,8 +4224,8 @@
         "lng": 4.0675739
       }
     },
-    "city": "",
-    "state": "",
+    "city": "La Grande-Motte",
+    "state": "Occitanie",
     "activities": [
       "golf"
     ]
@@ -4238,8 +4238,8 @@
         "lng": -71.4845444
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bedford",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4252,8 +4252,8 @@
         "lng": -1.6728729
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ciboure",
+    "state": "Nouvelle-Aquitaine",
     "activities": [
       "golf"
     ]
@@ -4266,8 +4266,8 @@
         "lng": -71.6315998
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Coventry",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4280,8 +4280,8 @@
         "lng": 2.195175
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Garches",
+    "state": "\u00cele-de-France",
     "activities": [
       "golf"
     ]
@@ -4294,8 +4294,8 @@
         "lng": 0.5466042
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ch\u00e2tellerault",
+    "state": "Nouvelle-Aquitaine",
     "activities": [
       "golf"
     ]
@@ -4308,8 +4308,8 @@
         "lng": -71.0367215
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lynnfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4322,8 +4322,8 @@
         "lng": -71.4241562
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Londonderry",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4337,7 +4337,7 @@
       }
     },
     "city": "Worcester",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4350,8 +4350,8 @@
         "lng": -71.2454413
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Derry",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4364,8 +4364,8 @@
         "lng": 2.400209
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Clermont",
+    "state": "Hauts-de-France",
     "activities": [
       "golf"
     ]
@@ -4392,8 +4392,8 @@
         "lng": -67.8324434
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mars Hill",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -4406,8 +4406,8 @@
         "lng": -71.4310098
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hudson",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4434,8 +4434,8 @@
         "lng": -68.6844123
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Orono",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -4448,8 +4448,8 @@
         "lng": -71.3119056
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Windham",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4463,7 +4463,7 @@
       }
     },
     "city": "South Hadley",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4491,7 +4491,7 @@
       }
     },
     "city": "Peabody",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4505,7 +4505,7 @@
       }
     },
     "city": "Canton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4519,7 +4519,7 @@
       }
     },
     "city": "Walpole",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4532,8 +4532,8 @@
         "lng": -1.6419677
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Saint-Herblain",
+    "state": "Pays de la Loire",
     "activities": [
       "golf"
     ]
@@ -4546,8 +4546,8 @@
         "lng": 0.36914
       }
     },
-    "city": "",
-    "state": "",
+    "city": "F\u00e9camp",
+    "state": "Normandie",
     "activities": [
       "golf"
     ]
@@ -4574,8 +4574,8 @@
         "lng": -73.6875064
       }
     },
-    "city": "Rye Brook",
-    "state": "",
+    "city": "Village of Port Chester",
+    "state": "New York",
     "activities": [
       "golf"
     ]
@@ -4588,8 +4588,8 @@
         "lng": -71.4486309
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Litchfield",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4602,8 +4602,8 @@
         "lng": -71.5540894
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Cranston",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4630,8 +4630,8 @@
         "lng": -71.4992453
       }
     },
-    "city": "",
-    "state": "",
+    "city": "West Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4644,8 +4644,8 @@
         "lng": -71.5097119
       }
     },
-    "city": "",
-    "state": "",
+    "city": "West Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4658,8 +4658,8 @@
         "lng": -73.3017077
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Alburgh",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -4673,7 +4673,7 @@
       }
     },
     "city": "North Kingstown",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4687,7 +4687,7 @@
       }
     },
     "city": "Portsmouth",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4701,7 +4701,7 @@
       }
     },
     "city": "Westfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4715,7 +4715,7 @@
       }
     },
     "city": "Barrington",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4728,8 +4728,8 @@
         "lng": -73.2111103
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bennington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -4742,8 +4742,8 @@
         "lng": -71.4706366
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Cranston",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4756,8 +4756,8 @@
         "lng": -71.4462868
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Nashua",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4770,8 +4770,8 @@
         "lng": 1.0756025
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Dieppe",
+    "state": "Normandie",
     "activities": [
       "golf"
     ]
@@ -4799,7 +4799,7 @@
       }
     },
     "city": "Westfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4813,7 +4813,7 @@
       }
     },
     "city": "Sanford",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -4826,8 +4826,8 @@
         "lng": -71.1372705
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Conway",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4841,7 +4841,7 @@
       }
     },
     "city": "East Greenwich",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4868,8 +4868,8 @@
         "lng": -71.5461001
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hollis",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4883,7 +4883,7 @@
       }
     },
     "city": "Belmont",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4910,8 +4910,8 @@
         "lng": -71.4568663
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westford",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -4938,8 +4938,8 @@
         "lng": -70.9039167
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rochester",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -4953,7 +4953,7 @@
       }
     },
     "city": "Richmond",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4967,7 +4967,7 @@
       }
     },
     "city": "Providence",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -4994,8 +4994,8 @@
         "lng": -72.5013553
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rockingham",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -5008,8 +5008,8 @@
         "lng": -68.2962511
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mount Desert",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5022,8 +5022,8 @@
         "lng": -68.6588621
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Fort Kent",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5050,8 +5050,8 @@
         "lng": -71.8383477
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Putnam",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -5064,8 +5064,8 @@
         "lng": -71.4079569
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westford",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5092,8 +5092,8 @@
         "lng": -70.9044042
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rockland",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5106,8 +5106,8 @@
         "lng": -72.2771512
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lebanon",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5120,8 +5120,8 @@
         "lng": -72.0107476
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westmore",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -5135,7 +5135,7 @@
       }
     },
     "city": "Sutton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5191,7 +5191,7 @@
       }
     },
     "city": "Manchester",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -5204,8 +5204,8 @@
         "lng": -71.51361
       }
     },
-    "city": "",
-    "state": "",
+    "city": "West Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -5218,8 +5218,8 @@
         "lng": -72.4104337
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Belchertown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5232,8 +5232,8 @@
         "lng": -70.9041075
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rochester",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5246,8 +5246,8 @@
         "lng": -71.0368558
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Haverhill",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5274,8 +5274,8 @@
         "lng": -73.1385825
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Dalton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5289,7 +5289,7 @@
       }
     },
     "city": "Jackson",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5316,8 +5316,8 @@
         "lng": -71.3905646
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Tyngsborough",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5330,8 +5330,8 @@
         "lng": -71.3946754
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Tyngsborough",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5344,8 +5344,8 @@
         "lng": -73.3643833
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ferrisburgh",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -5358,8 +5358,8 @@
         "lng": -71.1705032
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Andover",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5372,8 +5372,8 @@
         "lng": -71.1673794
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Andover",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5386,8 +5386,8 @@
         "lng": -73.9939283
       }
     },
-    "city": "",
-    "state": "",
+    "city": "City of New York",
+    "state": "New York",
     "activities": [
       "golf"
     ]
@@ -5401,7 +5401,7 @@
       }
     },
     "city": "Bretton Woods",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5414,8 +5414,8 @@
         "lng": -71.9480952
       }
     },
-    "city": "",
-    "state": "",
+    "city": "New London",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5429,7 +5429,7 @@
       }
     },
     "city": "Brunswick",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5456,8 +5456,8 @@
         "lng": -70.2432961
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Cape Elizabeth",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5470,8 +5470,8 @@
         "lng": -69.9384643
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Anson",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5498,8 +5498,8 @@
         "lng": -70.231128
       }
     },
-    "city": "West Yarmouth",
-    "state": "",
+    "city": "Yarmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5512,8 +5512,8 @@
         "lng": -70.5606801
       }
     },
-    "city": "Buzzards Bay",
-    "state": "",
+    "city": "Sandwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5555,7 +5555,7 @@
       }
     },
     "city": "Jamestown",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -5569,7 +5569,7 @@
       }
     },
     "city": "Kennebunk",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5583,7 +5583,7 @@
       }
     },
     "city": "Kennebunkport",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5624,8 +5624,8 @@
         "lng": -71.370741
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Moultonborough",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5638,8 +5638,8 @@
         "lng": -70.940892
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Newmarket",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -5666,8 +5666,8 @@
         "lng": -73.4350841
       }
     },
-    "city": "",
-    "state": "",
+    "city": "New Milford",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -5722,8 +5722,8 @@
         "lng": -73.0590197
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Naugatuck",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -5736,8 +5736,8 @@
         "lng": -73.3862544
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brookfield",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -5751,7 +5751,7 @@
       }
     },
     "city": "Plymouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5765,7 +5765,7 @@
       }
     },
     "city": "Truro",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5779,7 +5779,7 @@
       }
     },
     "city": "Nantucket",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5793,7 +5793,7 @@
       }
     },
     "city": "Plymouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5807,7 +5807,7 @@
       }
     },
     "city": "Rockport",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5820,8 +5820,8 @@
         "lng": -69.9690097
       }
     },
-    "city": "Siasconset",
-    "state": "",
+    "city": "Nantucket",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5835,7 +5835,7 @@
       }
     },
     "city": "Nantucket",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5848,8 +5848,8 @@
         "lng": -70.5942864
       }
     },
-    "city": "East Falmouth",
-    "state": "",
+    "city": "Falmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5863,7 +5863,7 @@
       }
     },
     "city": "Plymouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -5933,7 +5933,7 @@
       }
     },
     "city": "Winter Harbor",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5961,7 +5961,7 @@
       }
     },
     "city": "Houlton",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5975,7 +5975,7 @@
       }
     },
     "city": "Bar Harbor",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5988,8 +5988,8 @@
         "lng": -68.2257064
       }
     },
-    "city": "Saint David",
-    "state": "",
+    "city": "Madawaska",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6003,7 +6003,7 @@
       }
     },
     "city": "Dedham",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6031,7 +6031,7 @@
       }
     },
     "city": "Palmyra",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6044,8 +6044,8 @@
         "lng": -68.7692975
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brewer",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6059,7 +6059,7 @@
       }
     },
     "city": "Calais",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6115,7 +6115,7 @@
       }
     },
     "city": "Manchester",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6185,7 +6185,7 @@
       }
     },
     "city": "Rockport",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6198,8 +6198,8 @@
         "lng": -70.4054226
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Poland",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6212,8 +6212,8 @@
         "lng": -70.3439212
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Biddeford",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6226,8 +6226,8 @@
         "lng": -70.5216507
       }
     },
-    "city": "Frye Island",
-    "state": "",
+    "city": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6241,7 +6241,7 @@
       }
     },
     "city": "Sanford",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6254,8 +6254,8 @@
         "lng": -70.3198733
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Scarborough",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6282,8 +6282,8 @@
         "lng": -70.5575372
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hollis",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6310,8 +6310,8 @@
         "lng": -70.3696829
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westbrook",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6325,7 +6325,7 @@
       }
     },
     "city": "Cumberland",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6339,7 +6339,7 @@
       }
     },
     "city": "Scarborough",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6352,8 +6352,8 @@
         "lng": -71.1876077
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bartlett",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6367,7 +6367,7 @@
       }
     },
     "city": "Loudon",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6381,7 +6381,7 @@
       }
     },
     "city": "Bretton Woods",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6395,7 +6395,7 @@
       }
     },
     "city": "Rochester",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6408,8 +6408,8 @@
         "lng": -71.1822241
       }
     },
-    "city": "Jackson Village",
-    "state": "",
+    "city": "Jackson",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6422,8 +6422,8 @@
         "lng": -71.5225444
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Center Harbor",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -6451,7 +6451,7 @@
       }
     },
     "city": "Fall River",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6464,8 +6464,8 @@
         "lng": -70.9121
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Amesbury",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6478,8 +6478,8 @@
         "lng": -69.6635117
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Waterville",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6534,8 +6534,8 @@
         "lng": -70.7330846
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Kingston",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6548,7 +6548,7 @@
         "lng": -73.1516377
       }
     },
-    "city": "",
+    "city": "Middlebury",
     "state": "",
     "activities": [
       "golf"
@@ -6618,8 +6618,8 @@
         "lng": -70.2538227
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Auburn",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6646,8 +6646,8 @@
         "lng": -73.2458965
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Trumbull",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -6660,8 +6660,8 @@
         "lng": -73.2520452
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Trumbull",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -6688,8 +6688,8 @@
         "lng": -70.8010156
       }
     },
-    "city": "",
-    "state": "",
+    "city": "South Berwick",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6758,8 +6758,8 @@
         "lng": -72.6002584
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Greenfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6773,7 +6773,7 @@
       }
     },
     "city": "",
-    "state": "",
+    "state": "New York",
     "activities": [
       "golf"
     ]
@@ -6800,8 +6800,8 @@
         "lng": -71.6377647
       }
     },
-    "city": "West Kingston",
-    "state": "",
+    "city": "Richmond",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -6814,8 +6814,8 @@
         "lng": -71.6024789
       }
     },
-    "city": "West Kingston",
-    "state": "",
+    "city": "South Kingstown",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -6829,7 +6829,7 @@
       }
     },
     "city": "Templeton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6843,7 +6843,7 @@
       }
     },
     "city": "Bellingham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6857,7 +6857,7 @@
       }
     },
     "city": "Boylston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6870,8 +6870,8 @@
         "lng": -71.2024442
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Tewksbury",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6885,7 +6885,7 @@
       }
     },
     "city": "Northborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6898,8 +6898,8 @@
         "lng": -71.1278835
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Haverhill",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6912,8 +6912,8 @@
         "lng": -71.3676476
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Natick",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6927,7 +6927,7 @@
       }
     },
     "city": "Quincy",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6941,7 +6941,7 @@
       }
     },
     "city": "West Bridgewater",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6955,7 +6955,7 @@
       }
     },
     "city": "Plymouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6968,8 +6968,8 @@
         "lng": -70.0002038
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brewster",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6982,8 +6982,8 @@
         "lng": -70.4479271
       }
     },
-    "city": "East Sandwich",
-    "state": "",
+    "city": "Sandwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6997,7 +6997,7 @@
       }
     },
     "city": "Norton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7011,7 +7011,7 @@
       }
     },
     "city": "Saint Johnsbury",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7024,8 +7024,8 @@
         "lng": -72.9892689
       }
     },
-    "city": "Rutland",
-    "state": "",
+    "city": "Rutland City",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7039,7 +7039,7 @@
       }
     },
     "city": "Gray",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -7080,8 +7080,8 @@
         "lng": -70.7761733
       }
     },
-    "city": "Rye Beach",
-    "state": "",
+    "city": "Rye",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7095,7 +7095,7 @@
       }
     },
     "city": "East Kingston",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7109,7 +7109,7 @@
       }
     },
     "city": "Greenland",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7123,7 +7123,7 @@
       }
     },
     "city": "Portsmouth",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7136,8 +7136,8 @@
         "lng": -70.835716
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Greenland",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7151,7 +7151,7 @@
       }
     },
     "city": "Stratham",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7178,8 +7178,8 @@
         "lng": -71.5444899
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Milford",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7192,8 +7192,8 @@
         "lng": -71.2663203
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Portsmouth",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7206,8 +7206,8 @@
         "lng": -71.4576
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lincoln",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7220,8 +7220,8 @@
         "lng": -70.0127931
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brewster",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7235,7 +7235,7 @@
       }
     },
     "city": "Bethlehem",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7263,7 +7263,7 @@
       }
     },
     "city": "Franconia",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7290,8 +7290,8 @@
         "lng": -68.8672521
       }
     },
-    "city": "",
-    "state": "",
+    "city": "North Haven",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -7304,8 +7304,8 @@
         "lng": -70.5573473
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Edgartown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7318,8 +7318,8 @@
         "lng": -69.5258006
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Clinton",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -7332,8 +7332,8 @@
         "lng": -72.1815463
       }
     },
-    "city": "Orleans",
-    "state": "",
+    "city": "Barton",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7346,8 +7346,8 @@
         "lng": -71.5055892
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Waterville Valley",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7361,7 +7361,7 @@
       }
     },
     "city": "Hopkinton",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7402,8 +7402,8 @@
         "lng": -70.3654085
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Poland",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -7416,8 +7416,8 @@
         "lng": -70.9300947
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Newfields",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7430,8 +7430,8 @@
         "lng": -71.0457054
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Epping",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7458,8 +7458,8 @@
         "lng": -53.8012801
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Santa Maria",
+    "state": "Rio Grande do Sul",
     "activities": [
       "golf"
     ]
@@ -7487,7 +7487,7 @@
       }
     },
     "city": "Foster",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7501,7 +7501,7 @@
       }
     },
     "city": "Middletown",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7514,8 +7514,8 @@
         "lng": -71.6095363
       }
     },
-    "city": "Harmony",
-    "state": "",
+    "city": "Glocester",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7528,8 +7528,8 @@
         "lng": -71.6062237
       }
     },
-    "city": "Harrisville",
-    "state": "",
+    "city": "Burrillville",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7542,8 +7542,8 @@
         "lng": -73.4948622
       }
     },
-    "city": "",
-    "state": "",
+    "city": "New Milford",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -7556,7 +7556,7 @@
         "lng": -61.2313572
       }
     },
-    "city": "",
+    "city": "Vermont",
     "state": "",
     "activities": [
       "golf"
@@ -7570,7 +7570,7 @@
         "lng": 18.5482802
       }
     },
-    "city": "Cape Town",
+    "city": "",
     "state": "",
     "activities": [
       "golf"
@@ -7584,7 +7584,7 @@
         "lng": -72.7720975
       }
     },
-    "city": "",
+    "city": "Branford",
     "state": "",
     "activities": [
       "golf"
@@ -7598,8 +7598,8 @@
         "lng": -71.9291376
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Paxton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7612,8 +7612,8 @@
         "lng": -73.0650299
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Manchester",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7641,7 +7641,7 @@
       }
     },
     "city": "",
-    "state": "",
+    "state": "Pichincha",
     "activities": [
       "golf"
     ]
@@ -7654,8 +7654,8 @@
         "lng": -73.3697077
       }
     },
-    "city": "",
-    "state": "",
+    "city": "West Stockbridge",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7668,8 +7668,8 @@
         "lng": 2.3447776
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Morsang-sur-Orge",
+    "state": "\u00cele-de-France",
     "activities": [
       "golf"
     ]
@@ -7682,8 +7682,8 @@
         "lng": -71.2423401
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Barnstead",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7697,7 +7697,7 @@
       }
     },
     "city": "Wolfeboro",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7710,8 +7710,8 @@
         "lng": -70.9120367
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hingham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7724,8 +7724,8 @@
         "lng": -71.7227487
       }
     },
-    "city": "Hope Valley",
-    "state": "",
+    "city": "Hopkinton",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -7738,8 +7738,8 @@
         "lng": -72.1921706
       }
     },
-    "city": "Newport",
-    "state": "",
+    "city": "Newport City",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7753,7 +7753,7 @@
       }
     },
     "city": "Barton",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7767,7 +7767,7 @@
       }
     },
     "city": "Swanton",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7780,8 +7780,8 @@
         "lng": -72.6253077
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Morristown",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7795,7 +7795,7 @@
       }
     },
     "city": "Morrisville",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7809,7 +7809,7 @@
       }
     },
     "city": "Randolph",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7823,7 +7823,7 @@
       }
     },
     "city": "Woodstock",
-    "state": "",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7837,7 +7837,7 @@
       }
     },
     "city": "Gilford",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7851,7 +7851,7 @@
       }
     },
     "city": "Atkinson",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -7878,8 +7878,8 @@
         "lng": -71.8614918
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Worcester",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -7892,8 +7892,8 @@
         "lng": -70.3047732
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Scarborough",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -7906,8 +7906,8 @@
         "lng": -73.077648
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Brandon",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7934,8 +7934,8 @@
         "lng": -72.7038167
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Stowe",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7948,7 +7948,7 @@
         "lng": -72.3487654
       }
     },
-    "city": "",
+    "city": "Coventry",
     "state": "",
     "activities": [
       "golf"
@@ -7976,8 +7976,8 @@
         "lng": -70.409879
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Saco",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -8004,8 +8004,8 @@
         "lng": -72.5628855
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Greenfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8032,8 +8032,8 @@
         "lng": -71.2990801
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Norfolk",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8061,7 +8061,7 @@
       }
     },
     "city": "Watertown",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8074,8 +8074,8 @@
         "lng": -72.0783091
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Sunapee",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8088,8 +8088,8 @@
         "lng": -71.2445271
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Salem",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8116,8 +8116,8 @@
         "lng": -72.8008483
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Enosburgh",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8130,8 +8130,8 @@
         "lng": -72.7276821
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Waterbury",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8144,8 +8144,8 @@
         "lng": -72.7724718
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Stowe",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8158,7 +8158,7 @@
         "lng": -72.3993627
       }
     },
-    "city": "",
+    "city": "Coventry",
     "state": "",
     "activities": [
       "golf"
@@ -8172,8 +8172,8 @@
         "lng": -71.0550183
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Quincy",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8215,7 +8215,7 @@
       }
     },
     "city": "Braintree",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8228,8 +8228,8 @@
         "lng": -73.2781856
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Fairfield",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -8242,7 +8242,7 @@
         "lng": -72.2064821
       }
     },
-    "city": "",
+    "city": "East Lyme",
     "state": "",
     "activities": [
       "golf"
@@ -8270,8 +8270,8 @@
         "lng": -73.0879378
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Taft Corners",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8285,7 +8285,7 @@
       }
     },
     "city": "Marlborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8298,8 +8298,8 @@
         "lng": -70.9754766
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Parsonsfield",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -8313,7 +8313,7 @@
       }
     },
     "city": "Ararangu\u00e1",
-    "state": "",
+    "state": "Santa Catarina",
     "activities": [
       "golf"
     ]
@@ -8326,8 +8326,8 @@
         "lng": -73.0564552
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Williston",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8340,8 +8340,8 @@
         "lng": -72.8249388
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Killington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8354,8 +8354,8 @@
         "lng": -72.7935893
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rochester",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8368,8 +8368,8 @@
         "lng": -73.1222897
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hinsdale",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8382,8 +8382,8 @@
         "lng": -73.0679971
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Essex",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8411,7 +8411,7 @@
       }
     },
     "city": "Curitiba",
-    "state": "",
+    "state": "Paran\u00e1",
     "activities": [
       "golf"
     ]
@@ -8466,8 +8466,8 @@
         "lng": -72.9534789
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Clarendon",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8480,8 +8480,8 @@
         "lng": -71.9559412
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Spencer",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8508,8 +8508,8 @@
         "lng": -61.4632664
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Petit-Canal",
+    "state": "Guadeloupe",
     "activities": [
       "golf"
     ]
@@ -8522,7 +8522,7 @@
         "lng": -72.9242443
       }
     },
-    "city": "",
+    "city": "Cheshire",
     "state": "",
     "activities": [
       "golf"
@@ -8564,8 +8564,8 @@
         "lng": -72.7127043
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Middletown",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -8606,8 +8606,8 @@
         "lng": -70.9699236
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Peabody",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8620,8 +8620,8 @@
         "lng": -72.0706196
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Barre",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8634,8 +8634,8 @@
         "lng": -72.3020823
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Greensboro",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8676,8 +8676,8 @@
         "lng": -68.477012
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lincoln",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -8690,8 +8690,8 @@
         "lng": -68.7800612
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Orrington",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -8704,8 +8704,8 @@
         "lng": -68.9153907
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Islesboro",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -8718,8 +8718,8 @@
         "lng": -72.3934798
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Windsor",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8732,7 +8732,7 @@
         "lng": -6.1714788
       }
     },
-    "city": "",
+    "city": "Cornelscourt",
     "state": "",
     "activities": [
       "golf"
@@ -8760,8 +8760,8 @@
         "lng": -72.6988354
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ludlow",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8774,8 +8774,8 @@
         "lng": -70.8413242
       }
     },
-    "city": "",
-    "state": "",
+    "city": "North Hampton",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8788,8 +8788,8 @@
         "lng": -71.8687125
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bennington",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8802,8 +8802,8 @@
         "lng": -71.0776672
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Barrington",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8816,8 +8816,8 @@
         "lng": -73.6277404
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Greenwich",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -8872,8 +8872,8 @@
         "lng": -71.5126268
       }
     },
-    "city": "",
-    "state": "",
+    "city": "North Kingstown",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -8886,8 +8886,8 @@
         "lng": -71.3851413
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -8900,8 +8900,8 @@
         "lng": -73.1988591
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Poultney",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8914,8 +8914,8 @@
         "lng": -71.4807352
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Manchester",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8956,8 +8956,8 @@
         "lng": -71.3329861
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Colebrook",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8970,8 +8970,8 @@
         "lng": -71.3197817
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Candia",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -8984,8 +8984,8 @@
         "lng": -70.9581218
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bridgewater",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8998,8 +8998,8 @@
         "lng": -71.3661326
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Providence",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9012,8 +9012,8 @@
         "lng": -77.0408623
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Washington",
+    "state": "District of Columbia",
     "activities": [
       "golf"
     ]
@@ -9026,8 +9026,8 @@
         "lng": -77.0408276
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Washington",
+    "state": "District of Columbia",
     "activities": [
       "golf"
     ]
@@ -9040,8 +9040,8 @@
         "lng": -77.0406392
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Washington",
+    "state": "District of Columbia",
     "activities": [
       "golf"
     ]
@@ -9054,8 +9054,8 @@
         "lng": -77.0408035
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Washington",
+    "state": "District of Columbia",
     "activities": [
       "golf"
     ]
@@ -9082,8 +9082,8 @@
         "lng": -72.5566987
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Windsor",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -9096,8 +9096,8 @@
         "lng": -71.2705207
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Bristol",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9110,8 +9110,8 @@
         "lng": -73.0266362
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Woodbridge",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -9152,8 +9152,8 @@
         "lng": -86.1614309
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Indianapolis",
+    "state": "Indiana",
     "activities": [
       "golf"
     ]
@@ -9166,8 +9166,8 @@
         "lng": -70.5250561
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Edgartown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9194,7 +9194,7 @@
         "lng": -72.4942018
       }
     },
-    "city": "",
+    "city": "Ellington",
     "state": "",
     "activities": [
       "golf"
@@ -9250,8 +9250,8 @@
         "lng": -70.4878071
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Arundel",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -9264,8 +9264,8 @@
         "lng": -70.5810334
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Wells",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -9292,8 +9292,8 @@
         "lng": -72.1009419
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Norwich",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -9306,8 +9306,8 @@
         "lng": -70.4781191
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Saco",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -9320,8 +9320,8 @@
         "lng": -72.4306097
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Chesterfield",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9334,8 +9334,8 @@
         "lng": -72.6436475
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Richford",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9348,8 +9348,8 @@
         "lng": -72.5651195
       }
     },
-    "city": "",
-    "state": "",
+    "city": "South Windsor",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -9376,8 +9376,8 @@
         "lng": -73.1126843
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Middletown Springs",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9390,8 +9390,8 @@
         "lng": -71.8796825
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westminster",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9404,8 +9404,8 @@
         "lng": -71.051399
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Farmington",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9418,8 +9418,8 @@
         "lng": -71.5467526
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Exeter",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9432,7 +9432,7 @@
         "lng": -73.4834304
       }
     },
-    "city": "",
+    "city": "Kent",
     "state": "",
     "activities": [
       "golf"
@@ -9446,8 +9446,8 @@
         "lng": -73.2721894
       }
     },
-    "city": "",
-    "state": "",
+    "city": "South Hero",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9488,8 +9488,8 @@
         "lng": -71.157188
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Gorham",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9544,7 +9544,7 @@
         "lng": -72.3495776
       }
     },
-    "city": "",
+    "city": "Colchester",
     "state": "",
     "activities": [
       "golf"
@@ -9572,8 +9572,8 @@
         "lng": -71.6834095
       }
     },
-    "city": "Wyoming",
-    "state": "",
+    "city": "Richmond",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9586,8 +9586,8 @@
         "lng": -72.8758147
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Warren",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9600,8 +9600,8 @@
         "lng": -73.1963657
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Shelburne",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9628,8 +9628,8 @@
         "lng": -72.4818575
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Longmeadow",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9642,8 +9642,8 @@
         "lng": -72.4832512
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Longmeadow",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9670,8 +9670,8 @@
         "lng": -71.3585223
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Attleboro",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9684,8 +9684,8 @@
         "lng": -71.3561931
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Attleboro",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9698,8 +9698,8 @@
         "lng": -71.9964891
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Charlton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9712,8 +9712,8 @@
         "lng": -70.9714772
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lakeville",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9726,8 +9726,8 @@
         "lng": -71.6710369
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ashland",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9740,8 +9740,8 @@
         "lng": -71.0442044
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Dartmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9782,8 +9782,8 @@
         "lng": -71.4274896
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lincoln",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9796,8 +9796,8 @@
         "lng": -71.1121625
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Haverhill",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9810,8 +9810,8 @@
         "lng": -71.1739089
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ossipee",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9824,8 +9824,8 @@
         "lng": -70.6420307
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Wareham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9838,8 +9838,8 @@
         "lng": -71.4224844
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hudson",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -9852,8 +9852,8 @@
         "lng": -71.4565983
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Westford",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9866,8 +9866,8 @@
         "lng": -71.2374095
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Walpole",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9880,8 +9880,8 @@
         "lng": 106.9545395
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ciangsana",
+    "state": "Jawa Barat",
     "activities": [
       "golf"
     ]
@@ -9894,8 +9894,8 @@
         "lng": -71.0932105
       }
     },
-    "city": "Dorchester",
-    "state": "",
+    "city": "Boston",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9908,8 +9908,8 @@
         "lng": -71.0895277
       }
     },
-    "city": "",
-    "state": "",
+    "city": "North Andover",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9922,8 +9922,8 @@
         "lng": -71.1197517
       }
     },
-    "city": "",
-    "state": "",
+    "city": "North Reading",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9950,8 +9950,8 @@
         "lng": -68.0447445
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Caribou",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -9964,8 +9964,8 @@
         "lng": -67.9424022
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Presque Isle",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -9978,8 +9978,8 @@
         "lng": -69.7305157
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Kineo Township",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10020,8 +10020,8 @@
         "lng": -68.3791376
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hancock",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10034,8 +10034,8 @@
         "lng": -68.7150769
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Holden",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10077,7 +10077,7 @@
       }
     },
     "city": "Madison",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10090,8 +10090,8 @@
         "lng": -69.650621
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Skowhegan",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10160,8 +10160,8 @@
         "lng": -71.636142
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Sanbornton",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10188,8 +10188,8 @@
         "lng": -70.0684217
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Freeport",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10202,8 +10202,8 @@
         "lng": -70.2597134
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Falmouth",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10216,8 +10216,8 @@
         "lng": -70.4578865
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Sandwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10230,8 +10230,8 @@
         "lng": -70.4490136
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Sandwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10258,8 +10258,8 @@
         "lng": -70.7662567
       }
     },
-    "city": "North Scituate",
-    "state": "",
+    "city": "Scituate",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10272,8 +10272,8 @@
         "lng": -70.6144245
       }
     },
-    "city": "Vineyard Haven",
-    "state": "",
+    "city": "Tisbury",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10287,7 +10287,7 @@
       }
     },
     "city": "Stow",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10315,7 +10315,7 @@
       }
     },
     "city": "Weston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10329,7 +10329,7 @@
       }
     },
     "city": "Oak Bluffs",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10342,8 +10342,8 @@
         "lng": -73.195602
       }
     },
-    "city": "",
-    "state": "",
+    "city": "South Burlington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -10426,8 +10426,8 @@
         "lng": -73.1743673
       }
     },
-    "city": "",
-    "state": "",
+    "city": "South Burlington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -10441,7 +10441,7 @@
       }
     },
     "city": "Hingham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10455,7 +10455,7 @@
       }
     },
     "city": "Duxbury",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10469,7 +10469,7 @@
       }
     },
     "city": "Grafton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10482,8 +10482,8 @@
         "lng": -70.9317686
       }
     },
-    "city": "South Weymouth",
-    "state": "",
+    "city": "Weymouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10497,7 +10497,7 @@
       }
     },
     "city": "",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10511,7 +10511,7 @@
       }
     },
     "city": "Amherst",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10538,8 +10538,8 @@
         "lng": -71.4724073
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Nashua",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10566,8 +10566,8 @@
         "lng": -73.2620956
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Lenox",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10581,7 +10581,7 @@
       }
     },
     "city": "Rye",
-    "state": "",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10595,7 +10595,7 @@
       }
     },
     "city": "Wayland",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10790,8 +10790,8 @@
         "lng": -72.3560052
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Old Saybrook",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -10833,7 +10833,7 @@
       }
     },
     "city": "Westerly",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -10847,7 +10847,7 @@
       }
     },
     "city": "North Kingstown",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -10860,8 +10860,8 @@
         "lng": -71.3560619
       }
     },
-    "city": "",
-    "state": "",
+    "city": "East Providence",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -10874,8 +10874,8 @@
         "lng": -72.8863018
       }
     },
-    "city": "West Dover",
-    "state": "",
+    "city": "Wilmington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -10889,7 +10889,7 @@
       }
     },
     "city": "Southwick",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10903,7 +10903,7 @@
       }
     },
     "city": "West Springfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10917,7 +10917,7 @@
       }
     },
     "city": "Haverhill",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10931,7 +10931,7 @@
       }
     },
     "city": "Lakeville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10945,7 +10945,7 @@
       }
     },
     "city": "Ipswich",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10959,7 +10959,7 @@
       }
     },
     "city": "Mattapoisett",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10972,8 +10972,8 @@
         "lng": -71.2477938
       }
     },
-    "city": "Auburndale",
-    "state": "",
+    "city": "Newton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10987,7 +10987,7 @@
       }
     },
     "city": "Bourne",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11000,8 +11000,8 @@
         "lng": -70.4839272
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mashpee",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11015,7 +11015,7 @@
       }
     },
     "city": "Osterville",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11028,8 +11028,8 @@
         "lng": -70.2677466
       }
     },
-    "city": "Yarmouth Port",
-    "state": "",
+    "city": "Barnstable",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11042,8 +11042,8 @@
         "lng": -70.2121359
       }
     },
-    "city": "Yarmouthport",
-    "state": "",
+    "city": "Yarmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11071,7 +11071,7 @@
       }
     },
     "city": "North Kingstown",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11112,8 +11112,8 @@
         "lng": -73.081013
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hinesburg",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -11126,8 +11126,8 @@
         "lng": -70.8818467
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ipswich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11141,7 +11141,7 @@
       }
     },
     "city": "Reading",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11155,7 +11155,7 @@
       }
     },
     "city": "Devens",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11183,7 +11183,7 @@
       }
     },
     "city": "Cohasset",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11238,8 +11238,8 @@
         "lng": -73.4397753
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Salisbury",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -11253,7 +11253,7 @@
       }
     },
     "city": "Bernardston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11280,8 +11280,8 @@
         "lng": -71.4345924
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11294,8 +11294,8 @@
         "lng": -71.7232295
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hopkinton",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11308,8 +11308,8 @@
         "lng": -71.384429
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Warwick",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11323,7 +11323,7 @@
       }
     },
     "city": "Westerly",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11351,7 +11351,7 @@
       }
     },
     "city": "Weston",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11364,8 +11364,8 @@
         "lng": -71.3597496
       }
     },
-    "city": "Rumford",
-    "state": "",
+    "city": "East Providence",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11378,8 +11378,8 @@
         "lng": -71.2784791
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Swansea",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11393,7 +11393,7 @@
       }
     },
     "city": "Swansea",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11406,8 +11406,8 @@
         "lng": -72.7691226
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Meriden",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -11421,7 +11421,7 @@
       }
     },
     "city": "Chicopee",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11435,7 +11435,7 @@
       }
     },
     "city": "Lynn",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11448,8 +11448,8 @@
         "lng": -70.2701481
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Falmouth",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -11490,7 +11490,7 @@
         "lng": -71.9472676
       }
     },
-    "city": "",
+    "city": "Ledyard",
     "state": "",
     "activities": [
       "golf"
@@ -11518,8 +11518,8 @@
         "lng": -71.1999186
       }
     },
-    "city": "Newton Centre",
-    "state": "",
+    "city": "Newton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11532,8 +11532,8 @@
         "lng": -71.4696923
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Narragansett",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11547,7 +11547,7 @@
       }
     },
     "city": "Needham",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11561,7 +11561,7 @@
       }
     },
     "city": "Concord",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11575,7 +11575,7 @@
       }
     },
     "city": "Wayland",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11602,8 +11602,8 @@
         "lng": -70.9004362
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hingham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11644,8 +11644,8 @@
         "lng": -70.3662161
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Scarborough",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -11658,8 +11658,8 @@
         "lng": -70.3965598
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Old Orchard Beach",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -11672,8 +11672,8 @@
         "lng": -71.3475667
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Newport",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11700,8 +11700,8 @@
         "lng": -70.8571891
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Hamilton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11714,8 +11714,8 @@
         "lng": -70.4086438
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Gorham",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -11770,8 +11770,8 @@
         "lng": -71.4762586
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Framingham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11799,7 +11799,7 @@
       }
     },
     "city": "Topsfield",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11826,8 +11826,8 @@
         "lng": -71.5907441
       }
     },
-    "city": "Chepachet",
-    "state": "",
+    "city": "Glocester",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11841,7 +11841,7 @@
       }
     },
     "city": "Northborough",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11854,8 +11854,8 @@
         "lng": -70.4596719
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mashpee",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11868,8 +11868,8 @@
         "lng": -69.9551355
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Chatham",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11882,8 +11882,8 @@
         "lng": -70.5111498
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mashpee",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11896,8 +11896,8 @@
         "lng": -70.4975279
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Mashpee",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11910,8 +11910,8 @@
         "lng": -70.3857331
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Osterville",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11953,7 +11953,7 @@
       }
     },
     "city": "Hampden",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11967,7 +11967,7 @@
       }
     },
     "city": "Taunton",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11994,8 +11994,8 @@
         "lng": -70.5475799
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Plymouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12009,7 +12009,7 @@
       }
     },
     "city": "Plymouth",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12023,7 +12023,7 @@
       }
     },
     "city": "Lincoln",
-    "state": "",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -12050,8 +12050,8 @@
         "lng": -71.5874629
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Whitefield",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -12064,8 +12064,8 @@
         "lng": -71.6527368
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Campton",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -12078,8 +12078,8 @@
         "lng": -71.1609351
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Ossipee",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -12092,8 +12092,8 @@
         "lng": -71.3279906
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Moultonborough",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -12106,8 +12106,8 @@
         "lng": -71.5383293
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Concord",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -12120,8 +12120,8 @@
         "lng": -71.6397727
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Northbridge",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12135,7 +12135,7 @@
       }
     },
     "city": "Haverhill",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12148,8 +12148,8 @@
         "lng": -71.0387481
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Middleton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12163,7 +12163,7 @@
       }
     },
     "city": "Southwick",
-    "state": "",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -12191,7 +12191,7 @@
       }
     },
     "city": "Newry",
-    "state": "",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -12218,8 +12218,8 @@
         "lng": -69.9518824
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Topsham",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -12260,8 +12260,8 @@
         "lng": -71.1523218
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Canton",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]

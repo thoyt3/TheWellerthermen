@@ -1,114 +1,92 @@
-// public/script.js
-document.getElementById('query-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+// script.js
 
-  const queryInput = document.getElementById('user-query');
-  const manualLocationInput = document.getElementById('manual-location');
-  const activitySelect = document.getElementById('activity-select');
-  const distanceSelect = document.getElementById('distance-select');
-  const unitsSelect = document.getElementById('units-select');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('query-form');
+  const resultDiv = document.getElementById('result');
+  const activitySelect = document.getElementById('activity');
+  const distanceInput = document.getElementById('distance');
+  const unitsSelect = document.getElementById('units');
 
-  const userQuery = queryInput.value;
-  const manualLocation = manualLocationInput.value;
-  const selectedActivity = activitySelect.value;
-  const selectedDistance = parseInt(distanceSelect.value);
-  const selectedUnits = unitsSelect.value;
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-  if (manualLocation) {
-    // Geocode the manual location
-    const coords = await geocodeLocation(manualLocation);
-    if (coords) {
-      await sendQuery(userQuery, selectedActivity, selectedDistance, selectedUnits, coords.latitude, coords.longitude);
-    } else {
-      alert('Could not find the location you entered.');
-    }
-  } else {
-    // Use geolocation
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+    // Clear previous results or errors
+    resultDiv.innerHTML = '';
 
-        await sendQuery(userQuery, selectedActivity, selectedDistance, selectedUnits, latitude, longitude);
-      }, (error) => {
-        console.error('Error getting location:', error);
-        alert('Unable to access your location. Please enter your location manually.');
-      });
-    } else {
-      alert('Geolocation is not supported by your browser.');
-    }
-  }
-});
+    const query = document.getElementById('query').value;
+    const selectedActivity = activitySelect.value;
+    const selectedDistance = distanceInput.value;
+    const selectedUnits = unitsSelect.value;
 
-async function geocodeLocation(location) {
-  try {
-    const response = await fetch(`/api/geocode?address=${encodeURIComponent(location)}`);
-    const data = await response.json();
-    if (data.error) {
-      return null;
-    } else {
-      return { latitude: data.latitude, longitude: data.longitude };
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    return null;
-  }
-}
+    // Disable the submit button to prevent multiple submissions
+    const submitButton = document.getElementById('submit-button');
+    submitButton.disabled = true;
 
-async function sendQuery(userQuery, selectedActivity, selectedDistance, selectedUnits, latitude, longitude) {
-  try {
-    const response = await fetch('/api/query', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: userQuery,
-        activity: selectedActivity,
-        distance: selectedDistance,
-        units: selectedUnits,
-        latitude,
-        longitude,
-      }),
-    });
+    // Get user's location (latitude and longitude)
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
 
-    const data = await response.json();
+          try {
+            const response = await fetch('/api/query', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                query: query,
+                activity: selectedActivity,
+                distance: selectedDistance,
+                units: selectedUnits,
+                latitude: latitude,
+                longitude: longitude,
+              }),
+            });
 
-    if (data.error) {
-      document.getElementById('response-container').innerText = data.error;
-    } else {
-      document.getElementById('response-container').innerText = data.response;
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
 
-      // Initialize the map
-      const map = L.map('map').setView([latitude, longitude], 10);
+            const data = await response.json();
 
-      // Add OpenStreetMap tiles
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors',
-      }).addTo(map);
-
-      // Add a marker for user's location
-      L.marker([latitude, longitude]).addTo(map).bindPopup('Your Location').openPopup();
-
-      // Add markers for recommendations
-      data.recommendations.forEach((location) => {
-        const locLat = location.geometry.location.lat;
-        const locLng = location.geometry.location.lng;
-        let popupContent = `${location.name}<br>Score: ${location.score}`;
-
-        // If scuba diving, show wave and water temperature data
-        if (selectedActivity === 'scuba_diving' && location.waveData) {
-          popupContent += `<br>Wave Height: ${location.waveData.waveHeight} ${selectedUnits === 'imperial' ? 'ft' : 'm'}`;
-          popupContent += `<br>Water Temperature: ${location.waterTemperature} ${selectedUnits === 'imperial' ? '°F' : '°C'}`;
+            if (data.error) {
+              resultDiv.innerHTML = `<p>${data.error}</p>`;
+            } else {
+              resultDiv.innerHTML = `<p>${data.response}</p>`;
+              // Optionally display recommendations
+              if (data.recommendations) {
+                const recommendationsList = document.createElement('ul');
+                data.recommendations.forEach((location) => {
+                  const listItem = document.createElement('li');
+                  listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
+                  recommendationsList.appendChild(listItem);
+                });
+                resultDiv.appendChild(recommendationsList);
+              }
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            resultDiv.innerHTML = '<p>An error occurred while processing your request.</p>';
+          } finally {
+            // Re-enable the submit button
+            submitButton.disabled = false;
+            // Reset the form if needed
+            // form.reset();
+          }
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          resultDiv.innerHTML = '<p>Unable to retrieve your location. Please allow location access or enter your location manually.</p>';
+          // Re-enable the submit button
+          submitButton.disabled = false;
         }
-
-        L.marker([locLat, locLng])
-          .addTo(map)
-          .bindPopup(popupContent);
-      });
+      );
+    } else {
+      resultDiv.innerHTML = '<p>Geolocation is not supported by your browser.</p>';
+      // Re-enable the submit button
+      submitButton.disabled = false;
     }
-  } catch (error) {
-    console.error('Error:', error);
-    document.getElementById('response-container').innerText = 'An error occurred while processing your request.';
-  }
-}
+  });
+});

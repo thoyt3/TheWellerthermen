@@ -26,7 +26,7 @@ const openai = new OpenAIApi(configuration);
 
 // Load locations data from JSON file
 const locationsData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'data', 'locations.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, 'data', 'clean_locations.json'), 'utf8')
 );
 
 // Endpoint to handle user queries
@@ -250,7 +250,7 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
     data = data;
   } else {
     try {
-      // Read from locations.json
+      // Read from clean_locations.json
       const locations = locationsData.filter((loc) => loc.activities.includes(activity));
       data = locations;
 
