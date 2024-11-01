@@ -1,12 +1,15 @@
-# scrape_golf_courses.py
+# collect_locations.py
+
 import json
 import os
 import time
+from urllib.parse import urlparse, parse_qs
 from geopy.geocoders import Nominatim
 from playwright.sync_api import sync_playwright
 
-def scrape_golf_courses():
-    courses = []
+def collect_dive_sites():
+    base_url = "https://www.idivenewengland.com"
+    locations = []
     geolocator = Nominatim(user_agent="ActivityRecommender/1.0 (your.email@example.com)")
 
     with sync_playwright() as p:
@@ -15,73 +18,145 @@ def scrape_golf_courses():
         context = browser.new_context()
         page = context.new_page()
 
-        # Navigate to the website
-        page.goto("http://www.newenglandgolf.com/map/")
+        # Navigate to the main page
+        page.goto(base_url, wait_until="networkidle")
 
-        # Wait for the map to load
-        page.wait_for_selector(".leaflet-marker-icon", timeout=10000)
+        # Wait for the navigation menu to load
+        page.wait_for_selector("div.site-menu ul", timeout=60000)
 
-        # Get all the markers
-        markers = page.query_selector_all(".leaflet-marker-icon")
-        print(f"Found {len(markers)} markers on the map.")
+        # Expand all menu items to ensure all links are accessible
+        page.evaluate("""
+            () => {
+                const checkboxes = document.querySelectorAll('div.site-menu input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.checked = true);
+            }
+        """)
 
-        for index, marker in enumerate(markers):
+        # Find all dive site links in the navigation menu
+        dive_site_links = page.query_selector_all("div.site-menu ul a[href^='/dive-sites/']")
+
+        # Filter out links that are just state links (e.g., /dive-sites/ma)
+        dive_site_links = [link for link in dive_site_links if link.get_attribute('href').count('/') > 2]
+
+        print(f"Found {len(dive_site_links)} dive site links.")
+
+        for site_link_elem in dive_site_links:
             try:
-                print(f"Processing marker {index + 1}/{len(markers)}")
-                # Click on the marker
-                marker.click()
-                time.sleep(1)  # Wait for the popup to appear
+                site_href = site_link_elem.get_attribute('href')
+                site_url = base_url + site_href
 
-                # Extract the popup content
-                popup_content = page.query_selector(".leaflet-popup-content")
-                if not popup_content:
-                    print("Popup content not found.")
-                    continue
+                # Open the dive site page
+                site_page = context.new_page()
+                site_page.goto(site_url, wait_until="networkidle")
+                site_page.wait_for_selector("div.narrow-section-wrapper", timeout=60000)
 
-                # Extract course name and address
-                course_name = popup_content.query_selector("strong").inner_text().strip()
-                address_elements = popup_content.inner_text().split("\n")
-                address = address_elements[-1].strip()
+                # Extract the site name and city
+                site_name_elem = site_page.query_selector("div.narrow-section-wrapper h2.title")
+                site_name = site_name_elem.inner_text().strip()
 
-                print(f"Course Name: {course_name}")
-                print(f"Address: {address}")
+                city_elem = site_page.query_selector("div.narrow-section-wrapper h3.title")
+                city_name = city_elem.inner_text().strip()
+
+                print(f"Processing dive site: {site_name}")
+
+                # Extract dive site details
+                description_elems = site_page.query_selector_all("div.narrow-section-wrapper p")
+                description = "\n".join([elem.inner_text().strip() for elem in description_elems])
+
+                # Extract address from Google Maps iframe
+                iframe_elem = site_page.query_selector("iframe")
+                if iframe_elem:
+                    iframe_src = iframe_elem.get_attribute('src')
+                    # Extract address from iframe URL parameters
+                    parsed_url = urlparse(iframe_src)
+                    query_params = parse_qs(parsed_url.query)
+                    address = query_params.get('q', [''])[0]
+                else:
+                    address = ''
+
+                # Extract state abbreviation from URL
+                state_abbr = site_href.split('/')[2].upper()
 
                 # Geocode the address
-                location = geolocator.geocode(address)
+                location = None
+                if address:
+                    address = address.strip()
+                    # Try reverse geocoding if address is coordinates
+                    latlon = address.split(',')
+                    if len(latlon) == 2:
+                        try:
+                            lat = float(latlon[0].strip())
+                            lon = float(latlon[1].strip())
+                            location = geolocator.reverse((lat, lon), exactly_one=True)
+                            print(f"Coordinates from reverse geocoding: {lat}, {lon}")
+                        except ValueError:
+                            # Not coordinates, proceed to geocode the address
+                            pass
+                    if not location:
+                        # Try geocoding the address with variations
+                        attempts = [address]
+                        # Remove ZIP code if present
+                        if address[-5:].isdigit():
+                            address_no_zip = address[:-5].strip(' ,')
+                            attempts.append(address_no_zip)
+                        # Remove last component
+                        address_parts = address.split(',')
+                        if len(address_parts) > 2:
+                            address_no_last = ','.join(address_parts[:-1])
+                            attempts.append(address_no_last)
+                        # Include site name, city, and state in attempts
+                        attempts.append(f"{site_name}, {city_name}, {state_abbr}, USA")
+                        attempts.append(f"{city_name}, {state_abbr}, USA")
+                        # Try geocoding each attempt
+                        for addr in attempts:
+                            location = geolocator.geocode(addr)
+                            if location:
+                                print(f"Found location for address: {addr}")
+                                break
+                else:
+                    # Try to geocode using site name and state
+                    location = geolocator.geocode(f"{site_name}, {state_abbr}, USA")
+                    if not location:
+                        location = geolocator.geocode(f"{city_name}, {state_abbr}, USA")
+
                 if location:
                     lat = location.latitude
                     lng = location.longitude
                     print(f"Coordinates: {lat}, {lng}")
                 else:
-                    print(f"Could not geocode address: {address}")
+                    print(f"Could not geocode address or site name for {site_name}")
+                    site_page.close()
                     continue
 
                 # Get city and state
                 address_components = location.raw.get('address', {})
-                city = address_components.get('city', '') or address_components.get('town', '') or address_components.get('village', '')
-                state = address_components.get('state', '')
+                city = (
+                    address_components.get('city', '')
+                    or address_components.get('town', '')
+                    or address_components.get('village', '')
+                )
+                state_full = address_components.get('state', '')
 
-                course_data = {
-                    "name": course_name,
+                site_data = {
+                    "name": site_name,
+                    "description": description,
                     "geometry": {
                         "location": {
                             "lat": lat,
-                            "lng": lng
+                            "lng": lng,
                         }
                     },
                     "city": city,
-                    "state": state,
-                    "activities": ["golf"]
+                    "state": state_full,
+                    "activities": ["scuba_diving"],
                 }
 
-                courses.append(course_data)
+                locations.append(site_data)
 
-                # Close the popup by clicking elsewhere
-                page.click("body", position={"x": 0, "y": 0})
-                time.sleep(0.5)
-
+                site_page.close()
+                time.sleep(1)
             except Exception as e:
-                print(f"An error occurred: {e}")
+                print(f"An error occurred while processing dive site {site_name}: {e}")
                 continue
 
         browser.close()
@@ -99,18 +174,22 @@ def scrape_golf_courses():
         for loc in existing_locations
     )
 
-    # Add new courses to existing locations
-    for course in courses:
-        key = (course['name'], course['geometry']['location']['lat'], course['geometry']['location']['lng'])
+    # Add new locations to existing locations
+    for location in locations:
+        key = (
+            location['name'],
+            location['geometry']['location']['lat'],
+            location['geometry']['location']['lng'],
+        )
         if key not in existing_set:
-            existing_locations.append(course)
+            existing_locations.append(location)
             existing_set.add(key)
         else:
             # Update activities if not already present
             for loc in existing_locations:
-                if loc['name'] == course['name']:
-                    if 'golf' not in loc['activities']:
-                        loc['activities'].append('golf')
+                if loc['name'] == location['name']:
+                    if 'scuba_diving' not in loc['activities']:
+                        loc['activities'].append('scuba_diving')
                     break
 
     # Save updated locations
@@ -120,4 +199,4 @@ def scrape_golf_courses():
     print('Data collection complete. Locations saved to data/locations.json')
 
 if __name__ == '__main__':
-    scrape_golf_courses()
+    collect_dive_sites()

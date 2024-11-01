@@ -1,4 +1,4 @@
-// script.js
+// public/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('query-form');
@@ -7,8 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const distanceInput = document.getElementById('distance');
   const unitsSelect = document.getElementById('units');
 
+  // Check if form element exists
+  if (!form) {
+    console.error('Form element with id "query-form" not found.');
+    return;
+  }
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    alert('Submit button clicked'); // This will alert when the form is submitted
+    console.log('Form submitted'); // Debugging
 
     // Clear previous results or errors
     resultDiv.innerHTML = '';
@@ -22,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit-button');
     submitButton.disabled = true;
 
+    // Show "Processing..." message
+    resultDiv.innerHTML = '<p>Processing your request. Please wait...</p>';
+
     // Get user's location (latitude and longitude)
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -29,34 +41,44 @@ document.addEventListener('DOMContentLoaded', () => {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
 
+          console.log('Geolocation obtained:', latitude, longitude); // Debugging
+
           try {
+            const requestData = {
+              query: query,
+              activity: selectedActivity,
+              distance: selectedDistance,
+              units: selectedUnits,
+              latitude: latitude,
+              longitude: longitude,
+            };
+
+            console.log('Sending fetch request with data:', requestData); // Debugging
+
             const response = await fetch('/api/query', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({
-                query: query,
-                activity: selectedActivity,
-                distance: selectedDistance,
-                units: selectedUnits,
-                latitude: latitude,
-                longitude: longitude,
-              }),
+              body: JSON.stringify(requestData),
             });
 
+            console.log('Fetch response:', response); // Debugging
+
             if (!response.ok) {
-              throw new Error('Network response was not ok');
+              throw new Error(`Network response was not ok. Status: ${response.status}`);
             }
 
             const data = await response.json();
+
+            console.log('Response data:', data); // Debugging
 
             if (data.error) {
               resultDiv.innerHTML = `<p>${data.error}</p>`;
             } else {
               resultDiv.innerHTML = `<p>${data.response}</p>`;
               // Optionally display recommendations
-              if (data.recommendations) {
+              if (data.recommendations && data.recommendations.length > 0) {
                 const recommendationsList = document.createElement('ul');
                 data.recommendations.forEach((location) => {
                   const listItem = document.createElement('li');
@@ -78,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         (error) => {
           console.error('Geolocation error:', error);
-          resultDiv.innerHTML = '<p>Unable to retrieve your location. Please allow location access or enter your location manually.</p>';
+          resultDiv.innerHTML =
+            '<p>Unable to retrieve your location. Please allow location access or enter your location manually.</p>';
           // Re-enable the submit button
           submitButton.disabled = false;
         }

@@ -1,4 +1,5 @@
 // server.js
+
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
@@ -55,6 +56,13 @@ app.post('/api/query', async (req, res) => {
       selectedDistance
     );
 
+    if (activityLocations.length === 0) {
+      return res.json({
+        response: `No suitable locations found within ${selectedDistance} miles.`,
+        recommendations: [],
+      });
+    }
+
     // Process data and generate recommendations
     const recommendations = await processRecommendations(
       activityLocations,
@@ -62,15 +70,22 @@ app.post('/api/query', async (req, res) => {
       selectedUnits
     );
 
+    if (recommendations.length === 0) {
+      return res.json({
+        response: `No suitable locations found within ${selectedDistance} miles.`,
+        recommendations: [],
+      });
+    }
+
     // Use OpenAI API to format the response
     const aiResponse = await getAIResponse(userQuery, recommendations, selectedUnits, activity);
 
     res.json({ response: aiResponse, recommendations });
   } catch (error) {
     console.error('Error during /api/query:', error);
-    res
-      .status(500)
-      .json({ error: 'An error occurred while processing your request. Please try again later.' });
+    res.status(500).json({
+      error: 'An error occurred while processing your request. Please try again later.',
+    });
   }
 });
 
@@ -261,15 +276,24 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
     }
   }
 
-  // Filter locations based on distance
-  const filteredLocations = data.filter((location) => {
+  // Calculate distances and filter locations based on distance
+  const locationsWithDistance = data.map((location) => {
     const locLat = location.geometry.location.lat;
     const locLng = location.geometry.location.lng;
     const distance = calculateDistance(latitude, longitude, locLat, locLng);
-    return distance <= maxDistance;
+    return { ...location, distance };
   });
 
-  return filteredLocations;
+  // Filter locations within maxDistance
+  const filteredLocations = locationsWithDistance.filter((loc) => loc.distance <= maxDistance);
+
+  // Sort locations by distance
+  filteredLocations.sort((a, b) => a.distance - b.distance);
+
+  // Select the top 5 nearest locations
+  const topNearestLocations = filteredLocations.slice(0, 5);
+
+  return topNearestLocations;
 }
 
 // Function to process recommendations
@@ -412,62 +436,64 @@ async function processRecommendations(locations, activity, units) {
   // Sort locations by score in descending order
   scoredLocations.sort((a, b) => b.score - a.score);
 
-  // Return top recommendations
-  return scoredLocations.slice(0, 5);
+  // Return top 3 recommendations
+  return scoredLocations.slice(0, 3);
 }
 
 // Function to get AI response from OpenAI API
 async function getAIResponse(userQuery, recommendations, units, activity) {
   const activityName = activity.replace('_', ' ');
-  const locationInfo = recommendations.map((loc) => {
-    const locName = loc.name;
-    const city = loc.city || '';
-    const state = loc.state || '';
-    const weather = loc.weather || {};
-    const unitsTemp = units === 'imperial' ? '°F' : '°C';
-    const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
+  const locationInfo = recommendations
+    .map((loc) => {
+      const locName = loc.name;
+      const city = loc.city || '';
+      const state = loc.state || '';
+      const weather = loc.weather || {};
+      const unitsTemp = units === 'imperial' ? '°F' : '°C';
+      const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
 
-    let info = `${locName} in ${city}, ${state}\n`;
-    info += `Weather: ${weather.description}, Temperature: ${
-      units === 'imperial'
-        ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
-        : weather.temperature.toFixed(2)
-    }${unitsTemp}, Wind Speed: ${
-      units === 'imperial'
-        ? (weather.windSpeed * 2.23694).toFixed(2)
-        : weather.windSpeed.toFixed(2)
-    } ${unitsSpeed}\n`;
+      let info = `${locName} in ${city}, ${state}\n`;
+      info += `Weather: ${weather.description}, Temperature: ${
+        units === 'imperial'
+          ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+          : weather.temperature.toFixed(2)
+      }${unitsTemp}, Wind Speed: ${
+        units === 'imperial'
+          ? (weather.windSpeed * 2.23694).toFixed(2)
+          : weather.windSpeed.toFixed(2)
+      } ${unitsSpeed}\n`;
 
-    if (activity === 'scuba_diving') {
-      const waveData = loc.waveData || {};
-      const waterTemp = loc.waterTemperature;
-      const unitsHeight = units === 'imperial' ? 'ft' : 'm';
+      if (activity === 'scuba_diving') {
+        const waveData = loc.waveData || {};
+        const waterTemp = loc.waterTemperature;
+        const unitsHeight = units === 'imperial' ? 'ft' : 'm';
 
-      if (waveData.waveHeight !== undefined) {
-        info += `Wave Height: ${waveData.waveHeight} ${unitsHeight}, Wave Period: ${waveData.wavePeriod} s\n`;
-        info += `Water Temperature: ${waterTemp} ${unitsTemp}\n`;
-        info += `Appropriate Thermal Protection: ${loc.thermalProtectionRecommendation}\n`;
+        if (waveData.waveHeight !== undefined) {
+          info += `Wave Height: ${waveData.waveHeight} ${unitsHeight}, Wave Period: ${waveData.wavePeriod} s\n`;
+          info += `Water Temperature: ${waterTemp} ${unitsTemp}\n`;
+          info += `Appropriate Thermal Protection: ${loc.thermalProtectionRecommendation}\n`;
+        }
+
+        if (loc.poorVisibility !== undefined) {
+          info += `Poor Visibility: ${loc.poorVisibility ? 'Yes' : 'No'}\n`;
+        }
+
+        if (loc.nextHighTide) {
+          info += `Next High Tide: ${loc.nextHighTide}\n`;
+          info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
+        }
+
+        if (loc.isFullMoon) {
+          info += `It's a full moon tonight.\n`;
+        }
+      } else {
+        // Add clothing recommendations for other activities
+        // ...
       }
 
-      if (loc.poorVisibility !== undefined) {
-        info += `Poor Visibility: ${loc.poorVisibility ? 'Yes' : 'No'}\n`;
-      }
-
-      if (loc.nextHighTide) {
-        info += `Next High Tide: ${loc.nextHighTide}\n`;
-        info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
-      }
-
-      if (loc.isFullMoon) {
-        info += `It's a full moon tonight.\n`;
-      }
-    } else {
-      // Add clothing recommendations for other activities
-      // ...
-    }
-
-    return info;
-  }).join('\n');
+      return info;
+    })
+    .join('\n');
 
   let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations. Use ${units} units in your responses.
 
