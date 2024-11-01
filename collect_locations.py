@@ -63,6 +63,12 @@ def collect_dive_sites():
                 description_elems = site_page.query_selector_all("div.narrow-section-wrapper p")
                 description = "\n".join([elem.inner_text().strip() for elem in description_elems])
 
+                # Determine dive type based on description
+                dive_type = 'shore'
+                description_lower = description.lower()
+                if 'boat dive' in description_lower or 'accessible by boat' in description_lower:
+                    dive_type = 'boat'
+
                 # Extract address from Google Maps iframe
                 iframe_elem = site_page.query_selector("iframe")
                 if iframe_elem:
@@ -149,6 +155,7 @@ def collect_dive_sites():
                     "city": city,
                     "state": state_full,
                     "activities": ["scuba_diving"],
+                    "diveType": dive_type  # Add the diveType field
                 }
 
                 locations.append(site_data)
@@ -190,6 +197,8 @@ def collect_dive_sites():
                 if loc['name'] == location['name']:
                     if 'scuba_diving' not in loc['activities']:
                         loc['activities'].append('scuba_diving')
+                    if 'diveType' not in loc:
+                        loc['diveType'] = location['diveType']
                     break
 
     # Save updated locations

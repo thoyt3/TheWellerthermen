@@ -2,13 +2,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('query-form');
-  const resultDiv = document.getElementById('response-container'); // Updated ID
-  const queryInput = document.getElementById('user-query'); // Updated ID
-  const manualLocationInput = document.getElementById('manual-location'); // Added for manual location
-  const activitySelect = document.getElementById('activity-select'); // Updated ID
-  const distanceSelect = document.getElementById('distance-select'); // Updated ID
-  const unitsSelect = document.getElementById('units-select'); // Updated ID
-  const submitButton = form.querySelector('button[type="submit"]'); // Get the submit button from the form
+  const resultDiv = document.getElementById('response-container');
+  const queryInput = document.getElementById('user-query');
+  const manualLocationInput = document.getElementById('manual-location');
+  const activitySelect = document.getElementById('activity-select');
+  const distanceSelect = document.getElementById('distance-select');
+  const unitsSelect = document.getElementById('units-select');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  // Initialize the map
+  const map = L.map('map').setView([42.3601, -71.0589], 10); // Default to Boston
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+
+  // Layer group for markers
+  const markersLayer = L.featureGroup().addTo(map);
 
   // Check if elements exist
   if (!form || !resultDiv || !queryInput || !activitySelect || !distanceSelect || !unitsSelect) {
@@ -19,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    alert('Submit button clicked'); // This will display an alert when the form is submitted
     console.log('Form submitted'); // Debugging
 
     // Clear previous results or errors
     resultDiv.innerHTML = '';
+    markersLayer.clearLayers();
 
     const query = queryInput.value;
     const selectedActivity = activitySelect.value;
@@ -51,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           throw new Error('Location not found.');
         }
+
+        await sendQuery();
       } catch (error) {
         console.error('Error during geocoding:', error);
         resultDiv.innerHTML = '<p>Failed to geocode the address. Please check your input.</p>';
@@ -76,17 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
           submitButton.disabled = false;
         }
       );
-      return; // Wait for geolocation callback
     } else {
       resultDiv.innerHTML = '<p>Geolocation is not supported by your browser. Please enter your location manually.</p>';
       // Re-enable the submit button
       submitButton.disabled = false;
       return;
-    }
-
-    // If manual location is used or geolocation is already obtained
-    if (latitude && longitude) {
-      await sendQuery();
     }
 
     async function sendQuery() {
@@ -124,15 +131,51 @@ document.addEventListener('DOMContentLoaded', () => {
           resultDiv.innerHTML = `<p>${data.error}</p>`;
         } else {
           resultDiv.innerHTML = `<p>${data.response}</p>`;
-          // Optionally display recommendations
+          // Display recommendations
           if (data.recommendations && data.recommendations.length > 0) {
-            const recommendationsList = document.createElement('ul');
-            data.recommendations.forEach((location) => {
-              const listItem = document.createElement('li');
-              listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
-              recommendationsList.appendChild(listItem);
-            });
-            resultDiv.appendChild(recommendationsList);
+            if (selectedActivity === 'scuba_diving') {
+              data.recommendations.forEach((section) => {
+                const sectionTitle = section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
+                const sectionHeader = document.createElement('h2');
+                sectionHeader.textContent = sectionTitle;
+                resultDiv.appendChild(sectionHeader);
+
+                const recommendationsList = document.createElement('ul');
+                section.dives.forEach((location) => {
+                  const listItem = document.createElement('li');
+                  listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
+                  recommendationsList.appendChild(listItem);
+
+                  // Add marker to map
+                  const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
+                    .addTo(markersLayer)
+                    .bindPopup(`${location.name} in ${location.city}, ${location.state}`);
+                });
+                resultDiv.appendChild(recommendationsList);
+              });
+            } else {
+              // For other activities
+              const recommendationsList = document.createElement('ul');
+              data.recommendations.forEach((location) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
+                recommendationsList.appendChild(listItem);
+
+                // Add marker to map
+                const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
+                  .addTo(markersLayer)
+                  .bindPopup(`${location.name} in ${location.city}, ${location.state}`);
+              });
+              resultDiv.appendChild(recommendationsList);
+            }
+
+            // Adjust map view to fit all markers
+            const bounds = markersLayer.getBounds();
+            if (bounds.isValid()) {
+              map.fitBounds(bounds, { padding: [50, 50] });
+            } else {
+              map.setView([latitude, longitude], 10);
+            }
           }
         }
       } catch (error) {
@@ -141,8 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } finally {
         // Re-enable the submit button
         submitButton.disabled = false;
-        // Reset the form if needed
-        // form.reset();
       }
     }
   });

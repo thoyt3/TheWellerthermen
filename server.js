@@ -26,9 +26,18 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 // Load locations data from JSON file
-const locationsData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'data', 'clean_locations.json'), 'utf8')
+let locationsData = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'data', 'locations.json'), 'utf8')
 );
+
+// Ensure that diveType is set for each location
+locationsData = locationsData.map((loc) => {
+  if (!loc.diveType) {
+    // If diveType is missing, default to 'shore' (or handle as needed)
+    loc.diveType = 'shore';
+  }
+  return loc;
+});
 
 // Endpoint to handle user queries
 app.post('/api/query', async (req, res) => {
@@ -186,6 +195,10 @@ async function getWaveData(latitude, longitude) {
     return data;
   } else {
     try {
+      const now = new Date();
+      const start = now.toISOString();
+      const end = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString(); // 1 hour later
+
       const waveUrl = 'https://api.stormglass.io/v2/weather/point';
       const response = await axios.get(waveUrl, {
         params: {
@@ -193,7 +206,8 @@ async function getWaveData(latitude, longitude) {
           lng: longitude,
           params: 'waveHeight,wavePeriod,waterTemperature',
           source: 'noaa',
-          end: new Date().toISOString(),
+          start: start,
+          end: end,
         },
         headers: {
           Authorization: process.env.STORMGLASS_API_KEY,
@@ -265,7 +279,7 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
     data = data;
   } else {
     try {
-      // Read from clean_locations.json
+      // Read from locationsData (already loaded)
       const locations = locationsData.filter((loc) => loc.activities.includes(activity));
       data = locations;
 
@@ -290,10 +304,7 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
   // Sort locations by distance
   filteredLocations.sort((a, b) => a.distance - b.distance);
 
-  // Select the top 5 nearest locations
-  const topNearestLocations = filteredLocations.slice(0, 5);
-
-  return topNearestLocations;
+  return filteredLocations;
 }
 
 // Function to process recommendations
@@ -327,12 +338,27 @@ async function processRecommendations(locations, activity, units) {
     if (activity === 'scuba_diving') {
       // Fetch wave data
       const waveData = await getWaveData(locLat, locLng);
-      const waveInfo = waveData && waveData.hours && waveData.hours[0];
 
-      if (waveInfo) {
-        const waveHeight = waveInfo.waveHeight.noaa;
-        const wavePeriod = waveInfo.wavePeriod.noaa;
-        const waterTemperatureC = waveInfo.waterTemperature.noaa;
+      // Find the data point closest to the current time
+      const now = new Date();
+      let closestHour = null;
+      let minTimeDiff = Infinity;
+
+      if (waveData && waveData.hours && waveData.hours.length > 0) {
+        waveData.hours.forEach((hourData) => {
+          const dataTime = new Date(hourData.time);
+          const timeDiff = Math.abs(dataTime - now);
+          if (timeDiff < minTimeDiff) {
+            minTimeDiff = timeDiff;
+            closestHour = hourData;
+          }
+        });
+      }
+
+      if (closestHour) {
+        const waveHeight = closestHour.waveHeight.noaa;
+        const wavePeriod = closestHour.wavePeriod.noaa;
+        const waterTemperatureC = closestHour.waterTemperature.noaa;
         const waterTemperatureF = (waterTemperatureC * 9) / 5 + 32;
 
         location.waveData = {
@@ -359,9 +385,9 @@ async function processRecommendations(locations, activity, units) {
 
       // Include tide data
       if (location.tideData && location.tideData.extremes && location.tideData.extremes.length > 0) {
-        const now = Date.now() / 1000;
+        const nowTimestamp = Date.now() / 1000;
         const upcomingHighTides = location.tideData.extremes.filter(
-          (extreme) => extreme.type === 'High' && extreme.timestamp >= now
+          (extreme) => extreme.type === 'High' && extreme.timestamp >= nowTimestamp
         );
         if (upcomingHighTides.length > 0) {
           const nextHighTide = upcomingHighTides[0];
@@ -433,37 +459,63 @@ async function processRecommendations(locations, activity, units) {
     scoredLocations.push(location);
   }
 
-  // Sort locations by score in descending order
-  scoredLocations.sort((a, b) => b.score - a.score);
+  if (activity === 'scuba_diving') {
+    // Segregate shore and boat dives
+    const shoreDives = scoredLocations.filter((loc) => loc.diveType === 'shore');
+    const boatDives = scoredLocations.filter((loc) => loc.diveType === 'boat');
 
-  // Return top 3 recommendations
-  return scoredLocations.slice(0, 3);
+    // Sort each list by score
+    shoreDives.sort((a, b) => b.score - a.score);
+    boatDives.sort((a, b) => b.score - a.score);
+
+    // Select top 3 shore dives and top 1 boat dive
+    const topShoreDives = shoreDives.slice(0, 3);
+    const topBoatDives = boatDives.slice(0, 1);
+
+    // Combine the recommendations with section labels
+    const recommendations = [
+      { type: 'shore', dives: topShoreDives },
+      { type: 'boat', dives: topBoatDives },
+    ];
+
+    return recommendations;
+  } else {
+    // Sort locations by score in descending order
+    scoredLocations.sort((a, b) => b.score - a.score);
+
+    // Return top 3 recommendations
+    return scoredLocations.slice(0, 3);
+  }
 }
 
 // Function to get AI response from OpenAI API
 async function getAIResponse(userQuery, recommendations, units, activity) {
   const activityName = activity.replace('_', ' ');
-  const locationInfo = recommendations
-    .map((loc) => {
-      const locName = loc.name;
-      const city = loc.city || '';
-      const state = loc.state || '';
-      const weather = loc.weather || {};
-      const unitsTemp = units === 'imperial' ? '°F' : '°C';
-      const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
+  let locationInfo = '';
 
-      let info = `${locName} in ${city}, ${state}\n`;
-      info += `Weather: ${weather.description}, Temperature: ${
-        units === 'imperial'
-          ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
-          : weather.temperature.toFixed(2)
-      }${unitsTemp}, Wind Speed: ${
-        units === 'imperial'
-          ? (weather.windSpeed * 2.23694).toFixed(2)
-          : weather.windSpeed.toFixed(2)
-      } ${unitsSpeed}\n`;
+  if (activity === 'scuba_diving') {
+    recommendations.forEach((section) => {
+      const sectionTitle = section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
+      locationInfo += `---\n${sectionTitle}:\n---\n`;
+      section.dives.forEach((loc) => {
+        const locName = loc.name;
+        const city = loc.city || '';
+        const state = loc.state || '';
+        const weather = loc.weather || {};
+        const unitsTemp = units === 'imperial' ? '°F' : '°C';
+        const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
 
-      if (activity === 'scuba_diving') {
+        let info = `${locName} in ${city}, ${state}\n`;
+        info += `Weather: ${weather.description}, Temperature: ${
+          units === 'imperial'
+            ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+            : weather.temperature.toFixed(2)
+        }${unitsTemp}, Wind Speed: ${
+          units === 'imperial'
+            ? (weather.windSpeed * 2.23694).toFixed(2)
+            : weather.windSpeed.toFixed(2)
+        } ${unitsSpeed}\n`;
+
         const waveData = loc.waveData || {};
         const waterTemp = loc.waterTemperature;
         const unitsHeight = units === 'imperial' ? 'ft' : 'm';
@@ -486,14 +538,38 @@ async function getAIResponse(userQuery, recommendations, units, activity) {
         if (loc.isFullMoon) {
           info += `It's a full moon tonight.\n`;
         }
-      } else {
-        // Add clothing recommendations for other activities
-        // ...
-      }
 
-      return info;
-    })
-    .join('\n');
+        locationInfo += info + '\n';
+      });
+    });
+  } else {
+    // For other activities
+    locationInfo = recommendations
+      .map((loc) => {
+        const locName = loc.name;
+        const city = loc.city || '';
+        const state = loc.state || '';
+        const weather = loc.weather || {};
+        const unitsTemp = units === 'imperial' ? '°F' : '°C';
+        const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
+
+        let info = `${locName} in ${city}, ${state}\n`;
+        info += `Weather: ${weather.description}, Temperature: ${
+          units === 'imperial'
+            ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+            : weather.temperature.toFixed(2)
+        }${unitsTemp}, Wind Speed: ${
+          units === 'imperial'
+            ? (weather.windSpeed * 2.23694).toFixed(2)
+            : weather.windSpeed.toFixed(2)
+        } ${unitsSpeed}\n`;
+
+        // Add other activity-specific info here
+
+        return info;
+      })
+      .join('\n');
+  }
 
   let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations. Use ${units} units in your responses.
 
@@ -508,6 +584,7 @@ For ${activityName}, consider the following when making recommendations:
 - If "Poor Visibility" is "Yes," advise accordingly.
 - Suggest dive/no dive recommendations based on wave conditions.
 - If air temperature is below freezing, advise on additional surface protection.
+- Segregate shore dives and boat dives in your recommendations.
 `;
 
   let userPrompt = `Based on my query "${userQuery}" and the current conditions at the following locations, please provide your recommendations:
