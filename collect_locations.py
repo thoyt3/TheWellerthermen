@@ -63,10 +63,10 @@ def collect_dive_sites():
                 description_elems = site_page.query_selector_all("div.narrow-section-wrapper p")
                 description = "\n".join([elem.inner_text().strip() for elem in description_elems])
 
-                # Determine dive type based on description
+                # Determine dive type based on description and site name
                 dive_type = 'shore'
-                description_lower = description.lower()
-                if 'boat dive' in description_lower or 'accessible by boat' in description_lower:
+                combined_text = (site_name + " " + description).lower()
+                if 'boat dive' in combined_text or 'accessible by boat' in combined_text:
                     dive_type = 'boat'
 
                 # Extract address from Google Maps iframe

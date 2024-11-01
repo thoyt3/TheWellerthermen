@@ -1,51 +1,5 @@
 [
   {
-    "name": "Nubble Light",
-    "geometry": {
-      "location": {
-        "lat": 43.1656,
-        "lng": -70.5917
-      }
-    },
-    "city": "York",
-    "state": "Maine",
-    "activities": [
-      "scuba_diving"
-    ],
-    "beachOrientation": 90
-  },
-  {
-    "name": "Cathedral Rocks",
-    "geometry": {
-      "location": {
-        "lat": 42.6615,
-        "lng": -70.622
-      }
-    },
-    "city": "Rockport",
-    "state": "Massachusetts",
-    "activities": [
-      "scuba_diving"
-    ],
-    "beachOrientation": 180,
-    "diveType": "shore"
-  },
-  {
-    "name": "Forty Steps",
-    "geometry": {
-      "location": {
-        "lat": 42.4238,
-        "lng": -70.9132
-      }
-    },
-    "city": "Nahant",
-    "state": "Massachusetts",
-    "activities": [
-      "scuba_diving"
-    ],
-    "beachOrientation": 270
-  },
-  {
     "name": "Leicester Village Golf Course, New London Street, Leicester Community, New England, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
     "geometry": {
       "location": {
@@ -12268,6 +12222,54 @@
     ]
   },
   {
+    "name": "Bigelow Hollow State Park",
+    "description": "Bigelow Hollow works as a training spot during outside of the warmer months when boat traffic begins to pick up. This is a decent freshwater site that has accommodations such as porta potty's at the parking lot and benches feet from the dive site where divers can prep their gear.\nThere is a long trail walk (5-6 minutes) to get to the dive site. It's best to use a cart suitable for trails if carrying the gear will be difficult for you.\nBeware of heavy boat traffic during summer months",
+    "geometry": {
+      "location": {
+        "lat": 41.7655475,
+        "lng": -72.6657569
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Brownstone Quarry",
+    "description": "Brownstone Park is a popular destination for local dive centers to bring students to train and complete their open water certification dives. Brownstone Exploration and Discovery Park contains two freshwater quarries- only one of them currently open to scuba diving on a regular basis. If you're looking to dive here, you'll want to visit the north quarry. The north quarry is a 27 acre brownstone quarry with beautiful views of 80 to 100-foot brownstone cliffs. Water depths range to 85 feet. An easy walk-in entry is available.\nDivers will need to purchase the Adventure Pass from the park in order to dive here.($49)\nDive platforms both on the surface and underwater make training moreeasy for all. Scuba divers must be certified and dive with a buddy.",
+    "geometry": {
+      "location": {
+        "lat": 41.5666791,
+        "lng": -72.64786637826913
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Stonington Point/ Dubois Beach",
+    "description": "Dubois Beach is an easy beach entry and popular for night diving. The site makes a perfect spot for beginner divers given the easy entrance but please note the website states that scuba diving is not allowed during normal beach hours, typically 10am-4pm, so be cognizant of times when you're planning your dive trip.",
+    "geometry": {
+      "location": {
+        "lat": 41.3359327,
+        "lng": -71.9059042
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
     "name": "3 1/2 Fathoms Ledge (boat dive)",
     "description": "This dive site, located outside of the Boston Harbor Islands, is loaded with beautiful walls, some that drop down to depths surpassing 80 feet. There are a bunch of crevices and cool swim throughs. Divers can come across stunning black sea raven, loads of sea stars, flounder, anemones, rock gunnels, lobsters, Jonah crabs, cunner, and nudibranchs.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels (especially if there is fog) to help guide divers back to the anchor line.",
     "geometry": {
@@ -12281,7 +12283,7 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "Back Beach",
@@ -12322,6 +12324,38 @@
       "location": {
         "lat": 42.3413883,
         "lng": -70.89594670150237
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "Cathedral Rocks",
+    "description": "This is a dive site for the advanced diver. Advanced divers may still only be up to it when they're feeling bold enough to make the extra effort as this one can be exhausting. Conditions must be absolutely perfect, or divers will find themselves making their way to another dive spot. Divers will pay very close attention to the tides and even still, it's quite dodgy to say the least.\nThere are have been fatalities here. The boulders are wildly slippery and steep. With all your gear on coupled with the cumbersome entrance, it's no surprise divers have had accidents.",
+    "geometry": {
+      "location": {
+        "lat": 42.6556507,
+        "lng": -70.6203216
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "City of Salisbury Wreck (boat dive)",
+    "description": "City of Salisbury wreck is a unique debris field located outside of the Boston Harbor Islands and is accessible by boat. The freighter was built in 1924 in England and was later grounded on Grave's Ledge, allowing the crew and cargo be removed. She had been carrying exotic animals, including 20 pythons, 40 cobras, 300 monkeys and 20 crates of rare birds. The day after she was grounded, the stress of the tides caused her to split in half. She was later blasted with much of her steel removed. It's today a debris field not resembling the beautiful freighter she once was. A unique place to check out, nonetheless.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels when there is limited visibility (also if there is fog) to help guide divers back to the anchor line.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.3554334,
+        "lng": -71.060511
       }
     },
     "city": "",
@@ -12396,6 +12430,70 @@
     "diveType": "shore"
   },
   {
+    "name": "Graves Light (boat dive)",
+    "description": "Graves light located at the outer Boston Harbor Islands is only accessible by boat but it's well worth the charter. This site is loaded with large boulders and rock formations making it a great home to the wide variety of marine life you will find. Here you can see crab, sea star, cunner, anemone, lobster, urchin, nudibranch, sea raven, sculpin, rock gunnel and flounder.\nThis site is a prime area for seals who like to sunbath on the rocks sheltering the lighthouse and you can sometimes find them taking naps underwater.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels (especially if there is fog) to help guide divers back to the anchor line.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.3554334,
+        "lng": -71.060511
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "Halfway Rock (boat dive)",
+    "description": "Halfway Rock is a gorgeous dive site known for being halfway the distance between Gloucester and Boston, east of Marblehead. This dive site is a cool pinnacle with stunning formations of pink stone and large boulders covered with tons of life. Divers often come across lobsters, sea stars, muscles, Jonah crabs, green crabs, anemones, sea ravens, sculpin, nudibranchs and so much more.\nCurrent can be strong around changing tides, beware.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.5195292,
+        "lng": -70.8967226
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "Harborview Beach",
+    "description": "Harborview Beach near Sesuit Harbor, MA is another easy shore dive. Like Corporation Beach, it's best to dive within hour of high tide. As the site is 10 minutes from our house in Dennis Port, it's nice to go there (or Corporation Beach) when it;s high tide and conditions are ideal for quick end of day dusk/night dive splash. Navigation is easy \u2013 keep the breakwater to your right exploring in the rocks for critters.\nDivers do need to be mindful of fisherman fishing off the breakwater. If you swim out further beyond the breakwater, just remember there is incoming and outgoing boat traffic right there. It's a relatively shallow dive, high tide max depth is about 20ft at the end of the breakwater, but most of the dive is around 10ft at high tide. It's a great site for beginners.",
+    "geometry": {
+      "location": {
+        "lat": 41.75721275,
+        "lng": -70.15547293507264
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Hathaways Pond",
+    "description": "Hathaways Pond in Barnstable, Cape Cod offers an easy access for divers to get in and out of the water, especially when the ocean conditions are a wash. Divers use it as a training ground to test out new gear and practice skills. There are some neat features to this pond- including a dive platform and a car and a cabin cruiser. The bottom incredibly silty so buoyancy is key here. There is some vegetation, rocks and logs that offer protection for the several variations of fish that reside here.",
+    "geometry": {
+      "location": {
+        "lat": 41.68425295,
+        "lng": -70.3115479824049
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
     "name": "Kettle Island (boat dive)",
     "description": "Kettle Island is a nice dive site located out of Manchester by the Sea. It's an intermediate dive site due to the depths of 65 feet, but it's also a boat dive so divers need to be familiar with navigation techniques in normal limited visibility conditions. It's a site with boat traffic and lobster pot lines. Divers can come across anemones (white, frilled and northern red), urchins, northern sea stars, forbes sea stars, blood stars, sea ravens, rock gunnel, nudibranchs, lobster, Jonah crabs, and so much more.\nCurrent can be strong around changing tides, beware.",
     "geometry": {
@@ -12412,12 +12510,44 @@
     "diveType": "boat"
   },
   {
+    "name": "Lanes Cove",
+    "description": "Lanes Cove in Gloucester, MA. Lanes Cove is a great place to dive when it works out. There is limited parking here so the earlier you can get here the better chance you have of grabbing a spot. The entrance is dangerous at low-tide as there are wet slippery rocks. We HIGHLY recommend this site during high tide only. When all works out, there is a beautiful wall teeming with life with 60+ max depth during high tide, with potential sightings of a torpedo ray or goose fish.\nDivers are not loved by all of the lobstermen in the area. Divers HAVE gotten their tires slashed here on multiple occasions so be aware of timing for your visits! As always, divers should be respectful of where they visit, but especially at the sites that we're not necessarily welcomed at.\n\n\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.6792613,
+        "lng": -70.6592119
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
     "name": "Loblolly",
     "description": "This is one of my favorite dive sites. It's one not often visited as parking is limited, or should we say non-existent. If you happen to have a Rockport resident friend, drag them along so you can get free residential parking a few meters away from the dive entrance. If that isn't the case, team up with your dive buddy- and divide and conquer. One of you can man the gear and the other can grab parking a few blocks away.\nThis dive site is teaming with life. Towards the entrance of the cove- we've seen bait balls, schools of fish, and even a tuna, yes a TUNA. (good thing for the GoPro or no-one would have believe us! Check out the video below)\nIf you don't feel up to the longer surface swim to drop down towards the mouth of the cove, you'll still find the dive enjoyable. Make sure you bring your camera, you can capture great photos in the shallow depths on a sunny day.\n\n\n\n",
     "geometry": {
       "location": {
-        "lat": 35.062521,
-        "lng": -78.994629
+        "lat": 42.643151,
+        "lng": -70.5939318
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Morton's Park- Little Pond",
+    "description": "Little Pond in Plymouth, MA offers an easy access for divers to get in and out of the water, especially when the ocean conditions are a wash. This site is best to do off season because of the beach that brings crowds after memorial weekend and parking fees back in effect.\nThere isn't a whole lot to see at this site, so divers use it as a training ground to test out new gear and practice skills. There is some vegetation, rocks and logs that offer protection for the several variations of fish that reside here. The bottom incredibly silty so buoyancy is key here.",
+    "geometry": {
+      "location": {
+        "lat": 41.941848300000004,
+        "lng": -70.68526474254213
       }
     },
     "city": "",
@@ -12473,15 +12603,15 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "Pebble Beach",
     "description": "Pebble Beach is a great dive spot for all levels of divers. There is plenty of parking along the beach. Make your way over the heap of rocks to set up your dive gear or even just prep your gear right at your car as some find it easier.\nThere is a good chunk of the dive that is sand. While you will find some beautiful light rays reflecting on the bottom of the grooved sand, along with some hermit crabs, there isn't much of a habitat for marine life. One tip is to surface swim out a bit before you drop down to maximize your diving time (plus, you'll get to see the grooved sand where you can see loads of hermit crabs on your way back.\n\n",
     "geometry": {
       "location": {
-        "lat": 33.6551708,
-        "lng": -78.9219743
+        "lat": 41.24179,
+        "lng": -69.9930695
       }
     },
     "city": "",
@@ -12490,6 +12620,86 @@
       "scuba_diving"
     ],
     "diveType": "shore"
+  },
+  {
+    "name": "Picketts Ledge (boat dive)",
+    "description": "Pickett's Ledge is a beautiful pinnacle filled with crevices large boulders and a few walls abundant with life. It's an intermediate dive site due to the depths reaching 65ft, but also because it's open ocean dive so divers need to be quite familiar with navigation techniques in normally limited visibility conditions and boat traffic. That being said, open water divers could feel comfortable brining a dive guide out here and remaining at 40-60ft, where there is plenty to experience. Divers can come across anemones (white, frilled and northern red), urchins, northern sea stars, forbes sea stars, blood stars, sea ravens, lobster, Jonah crabs, and so much more.\nCurrent can be strong around changing tides, beware.",
+    "geometry": {
+      "location": {
+        "lat": 42.577873,
+        "lng": -70.7689354
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "Pinthis Wreck (boat dive)",
+    "description": "The Pinthis is an excellent dive site for advanced and technical divers. Here divers will drop down to the wreck at 100ft. She sunk in 1919 after being hit by another boat in heavy fog. She now lays turtled but there are several several chambers divers can pass through inside the wreck. Note that there were 47 reported casualties from the PInthis and Fairfax resulting from this collision.\nCharters will require you to show your advanced certification.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.1924492,
+        "lng": -70.7261966
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "Sandwich Town Beach (Town Neck Beach)",
+    "description": "Sandwich Town Beach in Sandwich, MA offers an easy access for divers to get in and out of the water. This site is best to dive at high tide for less of a walk car to water. At high tide, most of the dive will be 15- 25 feet. The bottom is a mix of small rocks and sand close into shore. As divers traverse further, there will be an area of larger rocks and clay bank reefs with lobsters burrowed in the clay, moon snails, crabs, sea robins, flounder, Tautog (blackfish) and the occasional mating horseshoe crabs. It's an excellent site for night dives with lots of comb jellies and schools of squid.",
+    "geometry": {
+      "location": {
+        "lat": 41.7579043,
+        "lng": -70.4968152
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Saturday Night Ledge (boat dive)",
+    "description": "Saturday Night Ledge, also known as SNL, is a fun deep dive site known for its crevices and walls with depths of 145 feet. It's an advanced dive site due to the depths, but it's also an open ocean dive so divers need to be quite familiar with navigation techniques in limited visibility conditions. We recommend using a wreck reel here to err on the safe side.\nDivers will find everything from frilled anemones, northern red anemones lobster, crab, sculpin, schools of cunner, urchin, northern sea stars, forbes sea stars, blood stars, badge sea stars, ocean pout, sea ravens and wolf fish.\nCurrent can be strong, beware.",
+    "geometry": {
+      "location": {
+        "lat": 42.6153595,
+        "lng": -70.6624608
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
+    "name": "The Patriot (boat dive)",
+    "description": "The Patriot is a dive spot for advanced divers. Here you will drop down to the Patriot Wreck that sunk in 2009 and now lies at 100 ft on a sandy bottom. There's often lots of life teaming here. There are lots of cod, pollock, a resident wolffish to see here. We've also been told of a fair number of goosefish sightings.\nFor advanced divers, it's a must. Charters will require you to show your advanced certification.\nNote that there were casualties resulting from this wreck.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.6153595,
+        "lng": -70.6624608
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
   },
   {
     "name": "Dyer Cove",
@@ -12524,12 +12734,44 @@
     "diveType": "shore"
   },
   {
+    "name": "Kettle Cove",
+    "description": "Kettle Cove dive site is found on Cape Elizabeth. Divers enter/exit at the furthest left cove (there are two) with an easy beach entry a short distance from the parking lot. The cove is protected making this a great spot. In about 8-10 ft of water, beds of tall eel grass is seen that continues on for a few yards. After the eel grass, it then turns into a silty bottom with some rock formations.\nDivers can also head closer to the left side of the cove to check out what was around the rocks.\nWe found variations of crabs, flounder, hermit crabs, sea raven and we also saw crates of oysters. It turned out there is a lot of oyster farming so make sure you're staying away from the buoys and connected ropes.\nIt's important that divers stay out of the middle cove as that's designation for commercial fisherman to bring their boats and out. They will not be happy with divers that disobey.",
+    "geometry": {
+      "location": {
+        "lat": 43.5677657,
+        "lng": -70.220517
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
     "name": "Nubble Lighthouse",
     "description": "Nubble Lighthouse is a favorite for divers as it offers a diverse topography and awesome displays of marine life. This dive site has a dicey entrance as there are some slippery rocks but it is doable if you go slow. There is free parking with close proximity of the entrance, allowing you to prep your gear right at your car.\nDivers often spot sea ravens, anemones, different variations of crabs, and some have even seen torpedo rays. Once in a blue moon, divers spot whales and tuna.\nNote, there is no diving on Sundays except for winter. Please respect this rule.",
     "geometry": {
       "location": {
         "lat": 43.165541000000005,
         "lng": -70.59399404734694
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Ships Cove",
+    "description": "Ships Cove is located in Fort Williams State Park that is rich with history. There are two nice dives in this protected Cape Elizabeth, ME cove- to the right of the cove and to the left of the cove hugging the rocks. It's a similar idea of a dive to those familiar with the very popular dive site, Folly Cove, in Cape Ann, MA. The park does close around dusk, so there are no night dives available here.\nThe dive site is just down the road from the famous Portland Head Lighthouse, and there are also portions of the original fort that can be seen. making this an overall really enjoyable location for family too.",
+    "geometry": {
+      "location": {
+        "lat": 43.5931434,
+        "lng": -70.2289333
       }
     },
     "city": "",
@@ -12564,8 +12806,8 @@
         "lng": -70.71154794513333
       }
     },
-    "city": "",
-    "state": "",
+    "city": "New Castle",
+    "state": "New Hampshire",
     "activities": [
       "scuba_diving"
     ],
@@ -12580,8 +12822,8 @@
         "lng": -70.71358349679487
       }
     },
-    "city": "",
-    "state": "",
+    "city": "New Castle",
+    "state": "New Hampshire",
     "activities": [
       "scuba_diving"
     ],
@@ -12596,8 +12838,8 @@
         "lng": -70.60260656804509
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Kittery",
+    "state": "Maine",
     "activities": [
       "scuba_diving"
     ],
@@ -12628,6 +12870,22 @@
         "lng": -71.2111692
       }
     },
+    "city": "Wolfeboro",
+    "state": "New Hampshire",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Old Navy Test Site",
+    "description": "The Old Navy Test Site reveals a unique story. Apparently in the 1950s, the Navy did some covert laser tests underwater in Lake Winnipesaukee. A rail car that ran on a track, like a coal-mining rail car, was used to measure how fast the laser beams were traveling through water per Dive Winnipesaukee. A tower that was part of the rail track operation remains intact in 45 feet of water. A few pieces of the rail car track can also be found laying on the bottom.\nAt this site, there is also a small fiberglass wreck called the \"Empty Pockets Wreck\", about 30ft in length that lays in 55ft of water. Dive Winnipesaukee reports that she sank in the 1970s. This wreck can be visited along with seeing the tower mentioned above during the same dive.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks only on all dives in the lake",
+    "geometry": {
+      "location": {
+        "lat": 43.58437,
+        "lng": -71.207886
+      }
+    },
     "city": "",
     "state": "",
     "activities": [
@@ -12644,8 +12902,8 @@
         "lng": -70.74203606905937
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Portsmouth",
+    "state": "New Hampshire",
     "activities": [
       "scuba_diving"
     ],
@@ -12660,12 +12918,28 @@
         "lng": -70.72276929523622
       }
     },
+    "city": "Rye",
+    "state": "New Hampshire",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Ship Island",
+    "description": "Ship Island is a nice boat dive that all levels can enjoy. For those that are beginner divers, the dive can be done in about 30 feet of water. There are large boulders and curious sunfish to explore. There are two small wrecks at this site.\nThe first small wreck is in about 30 feet of water. It\u2019s a wooden boat with an engine, that appears to be about a 25 foot cruiser with a closed bow from the 1950's per Dive Winnipesaukee. The wooden wreck is interesting enough to spend a bit of time there without venturing on to the second. For the advanced diver, there is a line from the stern of the wooden boat that leads to the smaller plexiglass wreck. It\u2019s a very simple wreck but interesting enough to check out and get that deeper dive in. Not worth staying long.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks for all dives in the lake",
+    "geometry": {
+      "location": {
+        "lat": 43.58437,
+        "lng": -71.207886
+      }
+    },
     "city": "",
     "state": "",
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "Sunken Forest",
@@ -12676,8 +12950,8 @@
         "lng": -70.7129847
       }
     },
-    "city": "",
-    "state": "",
+    "city": "Rye",
+    "state": "New Hampshire",
     "activities": [
       "scuba_diving"
     ],
@@ -12706,6 +12980,22 @@
       "location": {
         "lat": 41.4775536,
         "lng": -71.3581629
+      }
+    },
+    "city": "",
+    "state": "",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Kings Beach",
+    "description": "King's Beach is a great spot for divers of all levels. This site is a lot quieter than Fort Wetherill, good for the divers that like the spot to themselves. Divers make their way down to the cove's beach from the parking lot located just across the street. The cove offers two areas to explore, the right that runs perpendicular to the street and the left side where there are rocky boulders that jetty out and even more rocks just a bit further beyond that you can see in the last photo below. Divers can find flounder, cunner, black bass, Jonah crabs, sea stars and more There is limited non-metered parking and there is also an easy beach entrance/exit.",
+    "geometry": {
+      "location": {
+        "lat": 41.4899827,
+        "lng": -71.3137707
       }
     },
     "city": "",
@@ -12745,7 +13035,7 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "Horse Ferry Wreck (boat dive)",
@@ -12761,7 +13051,7 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "O.J. Walker Wreck (boat dive)",
@@ -12777,7 +13067,7 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
+    "diveType": "boat"
   },
   {
     "name": "Tugboat U.S. La Vallee Wreck (boat dive)",
@@ -12793,416 +13083,6 @@
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Bigelow Hollow State Park",
-    "description": "Bigelow Hollow works as a training spot during outside of the warmer months when boat traffic begins to pick up. This is a decent freshwater site that has accommodations such as porta potty's at the parking lot and benches feet from the dive site where divers can prep their gear.\nThere is a long trail walk (5-6 minutes) to get to the dive site. It's best to use a cart suitable for trails if carrying the gear will be difficult for you.\nBeware of heavy boat traffic during summer months",
-    "geometry": {
-      "location": {
-        "lat": 41.7655475,
-        "lng": -72.6657569
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Brownstone Quarry",
-    "description": "Brownstone Park is a popular destination for local dive centers to bring students to train and complete their open water certification dives. Brownstone Exploration and Discovery Park contains two freshwater quarries- only one of them currently open to scuba diving on a regular basis. If you're looking to dive here, you'll want to visit the north quarry. The north quarry is a 27 acre brownstone quarry with beautiful views of 80 to 100-foot brownstone cliffs. Water depths range to 85 feet. An easy walk-in entry is available.\nDivers will need to purchase the Adventure Pass from the park in order to dive here.($49)\nDive platforms both on the surface and underwater make training moreeasy for all. Scuba divers must be certified and dive with a buddy.",
-    "geometry": {
-      "location": {
-        "lat": 41.5666791,
-        "lng": -72.64786637826913
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Stonington Point/ Dubois Beach",
-    "description": "Dubois Beach is an easy beach entry and popular for night diving. The site makes a perfect spot for beginner divers given the easy entrance but please note the website states that scuba diving is not allowed during normal beach hours, typically 10am-4pm, so be cognizant of times when you're planning your dive trip.",
-    "geometry": {
-      "location": {
-        "lat": 41.3359327,
-        "lng": -71.9059042
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Cathedral Rocks",
-    "description": "This is a dive site for the advanced diver. Advanced divers may still only be up to it when they're feeling bold enough to make the extra effort as this one can be exhausting. Conditions must be absolutely perfect, or divers will find themselves making their way to another dive spot. Divers will pay very close attention to the tides and even still, it's quite dodgy to say the least.\nThere are have been fatalities here. The boulders are wildly slippery and steep. With all your gear on coupled with the cumbersome entrance, it's no surprise divers have had accidents.",
-    "geometry": {
-      "location": {
-        "lat": 42.6556507,
-        "lng": -70.6203216
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "City of Salisbury Wreck (boat dive)",
-    "description": "City of Salisbury wreck is a unique debris field located outside of the Boston Harbor Islands and is accessible by boat. The freighter was built in 1924 in England and was later grounded on Grave's Ledge, allowing the crew and cargo be removed. She had been carrying exotic animals, including 20 pythons, 40 cobras, 300 monkeys and 20 crates of rare birds. The day after she was grounded, the stress of the tides caused her to split in half. She was later blasted with much of her steel removed. It's today a debris field not resembling the beautiful freighter she once was. A unique place to check out, nonetheless.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels when there is limited visibility (also if there is fog) to help guide divers back to the anchor line.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.3554334,
-        "lng": -71.060511
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
     "diveType": "boat"
-  },
-  {
-    "name": "Garbage Beach",
-    "description": "Garbage Beach, (a.k.a. Woods Hole Waterfront Park) Woods Hole/Falmouth, MA is a small narrow lawn overlooking a small sandy beach in Woods Hole Harbor with several small piers to the left extending out. The entry / exit is off the small stairs leading down to the small beach ('Garbage Beach') that is to the right of 2nd Marine Biological Labs (MBL) pier. Don't be turned off by the name of Garbage beach. I have no idea on how it got its name but It's actually also a nice beach for non-divers while divers are in the water.\nAs for the dive, divers have two options to enter. One is a giant stride entry off the MBL Pier, the other is to walk down the small set of stairs off Garbage Beach. into the water.",
-    "geometry": {
-      "location": {
-        "lat": 41.52514615,
-        "lng": -70.67305274276771
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "Graves Light (boat dive)",
-    "description": "Graves light located at the outer Boston Harbor Islands is only accessible by boat but it's well worth the charter. This site is loaded with large boulders and rock formations making it a great home to the wide variety of marine life you will find. Here you can see crab, sea star, cunner, anemone, lobster, urchin, nudibranch, sea raven, sculpin, rock gunnel and flounder.\nThis site is a prime area for seals who like to sunbath on the rocks sheltering the lighthouse and you can sometimes find them taking naps underwater.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels (especially if there is fog) to help guide divers back to the anchor line.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.3554334,
-        "lng": -71.060511
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "boat"
-  },
-  {
-    "name": "Halfway Rock (boat dive)",
-    "description": "Halfway Rock is a gorgeous dive site known for being halfway the distance between Gloucester and Boston, east of Marblehead. This dive site is a cool pinnacle with stunning formations of pink stone and large boulders covered with tons of life. Divers often come across lobsters, sea stars, muscles, Jonah crabs, green crabs, anemones, sea ravens, sculpin, nudibranchs and so much more.\nCurrent can be strong around changing tides, beware.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.5195292,
-        "lng": -70.8967226
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Harborview Beach",
-    "description": "Harborview Beach near Sesuit Harbor, MA is another easy shore dive. Like Corporation Beach, it's best to dive within hour of high tide. As the site is 10 minutes from our house in Dennis Port, it's nice to go there (or Corporation Beach) when it;s high tide and conditions are ideal for quick end of day dusk/night dive splash. Navigation is easy \u2013 keep the breakwater to your right exploring in the rocks for critters.\nDivers do need to be mindful of fisherman fishing off the breakwater. If you swim out further beyond the breakwater, just remember there is incoming and outgoing boat traffic right there. It's a relatively shallow dive, high tide max depth is about 20ft at the end of the breakwater, but most of the dive is around 10ft at high tide. It's a great site for beginners.",
-    "geometry": {
-      "location": {
-        "lat": 41.75721275,
-        "lng": -70.15547293507264
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Hathaways Pond",
-    "description": "Hathaways Pond in Barnstable, Cape Cod offers an easy access for divers to get in and out of the water, especially when the ocean conditions are a wash. Divers use it as a training ground to test out new gear and practice skills. There are some neat features to this pond- including a dive platform and a car and a cabin cruiser. The bottom incredibly silty so buoyancy is key here. There is some vegetation, rocks and logs that offer protection for the several variations of fish that reside here.",
-    "geometry": {
-      "location": {
-        "lat": 41.68425295,
-        "lng": -70.3115479824049
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Lanes Cove",
-    "description": "Lanes Cove in Gloucester, MA. Lanes Cove is a great place to dive when it works out. There is limited parking here so the earlier you can get here the better chance you have of grabbing a spot. The entrance is dangerous at low-tide as there are wet slippery rocks. We HIGHLY recommend this site during high tide only. When all works out, there is a beautiful wall teeming with life with 60+ max depth during high tide, with potential sightings of a torpedo ray or goose fish.\nDivers are not loved by all of the lobstermen in the area. Divers HAVE gotten their tires slashed here on multiple occasions so be aware of timing for your visits! As always, divers should be respectful of where they visit, but especially at the sites that we're not necessarily welcomed at.\n\n\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.6792613,
-        "lng": -70.6592119
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Loblolly",
-    "description": "This is one of my favorite dive sites. It's one not often visited as parking is limited, or should we say non-existent. If you happen to have a Rockport resident friend, drag them along so you can get free residential parking a few meters away from the dive entrance. If that isn't the case, team up with your dive buddy- and divide and conquer. One of you can man the gear and the other can grab parking a few blocks away.\nThis dive site is teaming with life. Towards the entrance of the cove- we've seen bait balls, schools of fish, and even a tuna, yes a TUNA. (good thing for the GoPro or no-one would have believe us! Check out the video below)\nIf you don't feel up to the longer surface swim to drop down towards the mouth of the cove, you'll still find the dive enjoyable. Make sure you bring your camera, you can capture great photos in the shallow depths on a sunny day.\n\n\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.643151,
-        "lng": -70.5939318
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "Morton's Park- Little Pond",
-    "description": "Little Pond in Plymouth, MA offers an easy access for divers to get in and out of the water, especially when the ocean conditions are a wash. This site is best to do off season because of the beach that brings crowds after memorial weekend and parking fees back in effect.\nThere isn't a whole lot to see at this site, so divers use it as a training ground to test out new gear and practice skills. There is some vegetation, rocks and logs that offer protection for the several variations of fish that reside here. The bottom incredibly silty so buoyancy is key here.",
-    "geometry": {
-      "location": {
-        "lat": 41.941848300000004,
-        "lng": -70.68526474254213
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Pebble Beach",
-    "description": "Pebble Beach is a great dive spot for all levels of divers. There is plenty of parking along the beach. Make your way over the heap of rocks to set up your dive gear or even just prep your gear right at your car as some find it easier.\nThere is a good chunk of the dive that is sand. While you will find some beautiful light rays reflecting on the bottom of the grooved sand, along with some hermit crabs, there isn't much of a habitat for marine life. One tip is to surface swim out a bit before you drop down to maximize your diving time (plus, you'll get to see the grooved sand where you can see loads of hermit crabs on your way back.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 41.24179,
-        "lng": -69.9930695
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "Picketts Ledge (boat dive)",
-    "description": "Pickett's Ledge is a beautiful pinnacle filled with crevices large boulders and a few walls abundant with life. It's an intermediate dive site due to the depths reaching 65ft, but also because it's open ocean dive so divers need to be quite familiar with navigation techniques in normally limited visibility conditions and boat traffic. That being said, open water divers could feel comfortable brining a dive guide out here and remaining at 40-60ft, where there is plenty to experience. Divers can come across anemones (white, frilled and northern red), urchins, northern sea stars, forbes sea stars, blood stars, sea ravens, lobster, Jonah crabs, and so much more.\nCurrent can be strong around changing tides, beware.",
-    "geometry": {
-      "location": {
-        "lat": 42.577873,
-        "lng": -70.7689354
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Pinthis Wreck (boat dive)",
-    "description": "The Pinthis is an excellent dive site for advanced and technical divers. Here divers will drop down to the wreck at 100ft. She sunk in 1919 after being hit by another boat in heavy fog. She now lays turtled but there are several several chambers divers can pass through inside the wreck. Note that there were 47 reported casualties from the PInthis and Fairfax resulting from this collision.\nCharters will require you to show your advanced certification.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.1924492,
-        "lng": -70.7261966
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Plum Cove",
-    "description": "Plum Cove is a nice dive spot on Cape Ann, MA. Divers can explore each rocky side of the cove, both with plenty of life to see. The cove is fairly small so it would be easy to get to do each side of the cove if desired. Once parked, divers make their way through the sandy beach towards to enter the dive site.\nThe downside of this beach is that Plum Cove isn't just a great spot for divers, it's a residential beach so parking is a nightmare during the summer in which all the parking becomes resident only parking 6:00AM through 6:00PM. Divers can still hit a great dusk to night dive during peak hours so don't fully shy away from this spot. We saw skate, horseshoe crabs, nudibranch (early season, lobsters, rock gunnel, moonsnails, flounder, and some fish variations\nThere is zero shellfishing allowed at this spot, with a $400 fine if ignored.",
-    "geometry": {
-      "location": {
-        "lat": 42.6556507,
-        "lng": -70.6203216
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Sandwich Town Beach (Town Neck Beach)",
-    "description": "Sandwich Town Beach in Sandwich, MA offers an easy access for divers to get in and out of the water. This site is best to dive at high tide for less of a walk car to water. At high tide, most of the dive will be 15- 25 feet. The bottom is a mix of small rocks and sand close into shore. As divers traverse further, there will be an area of larger rocks and clay bank reefs with lobsters burrowed in the clay, moon snails, crabs, sea robins, flounder, Tautog (blackfish) and the occasional mating horseshoe crabs. It's an excellent site for night dives with lots of comb jellies and schools of squid.",
-    "geometry": {
-      "location": {
-        "lat": 41.7579043,
-        "lng": -70.4968152
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "Saturday Night Ledge (boat dive)",
-    "description": "Saturday Night Ledge, also known as SNL, is a fun deep dive site known for its crevices and walls with depths of 145 feet. It's an advanced dive site due to the depths, but it's also an open ocean dive so divers need to be quite familiar with navigation techniques in limited visibility conditions. We recommend using a wreck reel here to err on the safe side.\nDivers will find everything from frilled anemones, northern red anemones lobster, crab, sculpin, schools of cunner, urchin, northern sea stars, forbes sea stars, blood stars, badge sea stars, ocean pout, sea ravens and wolf fish.\nCurrent can be strong, beware.",
-    "geometry": {
-      "location": {
-        "lat": 42.6153595,
-        "lng": -70.6624608
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Stage Fort Park",
-    "description": "This site is ideal for that diver who wants to bring the family along to hang at the beach while you dive.\nThere are two dive sites at this location- Half Moon Beach and Cressy Beach. Half Moon Beach is located down the grassy hill behind the visitor center and Cressy Beach is located down the hill via the road. You'll find different variations of crabs, and our good friend the moon snail. There are loads of different vegetation- tall eel grass and what looks like fluffy beds of red-pink blankets.\nAfterwards, pull out your picnic blanket, snacks and soak in that warm sun and maybe even grab an ice cream, especially if you paid for that parking!!",
-    "geometry": {
-      "location": {
-        "lat": 42.605703950000006,
-        "lng": -70.67845409509204
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ]
-  },
-  {
-    "name": "The Patriot (boat dive)",
-    "description": "The Patriot is a dive spot for advanced divers. Here you will drop down to the Patriot Wreck that sunk in 2009 and now lies at 100 ft on a sandy bottom. There's often lots of life teaming here. There are lots of cod, pollock, a resident wolffish to see here. We've also been told of a fair number of goosefish sightings.\nFor advanced divers, it's a must. Charters will require you to show your advanced certification.\nNote that there were casualties resulting from this wreck.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.6153595,
-        "lng": -70.6624608
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Kettle Cove",
-    "description": "Kettle Cove dive site is found on Cape Elizabeth. Divers enter/exit at the furthest left cove (there are two) with an easy beach entry a short distance from the parking lot. The cove is protected making this a great spot. In about 8-10 ft of water, beds of tall eel grass is seen that continues on for a few yards. After the eel grass, it then turns into a silty bottom with some rock formations.\nDivers can also head closer to the left side of the cove to check out what was around the rocks.\nWe found variations of crabs, flounder, hermit crabs, sea raven and we also saw crates of oysters. It turned out there is a lot of oyster farming so make sure you're staying away from the buoys and connected ropes.\nIt's important that divers stay out of the middle cove as that's designation for commercial fisherman to bring their boats and out. They will not be happy with divers that disobey.",
-    "geometry": {
-      "location": {
-        "lat": 43.5677657,
-        "lng": -70.220517
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Ships Cove",
-    "description": "Ships Cove is located in Fort Williams State Park that is rich with history. There are two nice dives in this protected Cape Elizabeth, ME cove- to the right of the cove and to the left of the cove hugging the rocks. It's a similar idea of a dive to those familiar with the very popular dive site, Folly Cove, in Cape Ann, MA. The park does close around dusk, so there are no night dives available here.\nThe dive site is just down the road from the famous Portland Head Lighthouse, and there are also portions of the original fort that can be seen. making this an overall really enjoyable location for family too.",
-    "geometry": {
-      "location": {
-        "lat": 43.5931434,
-        "lng": -70.2289333
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Old Navy Test Site",
-    "description": "The Old Navy Test Site reveals a unique story. Apparently in the 1950s, the Navy did some covert laser tests underwater in Lake Winnipesaukee. A rail car that ran on a track, like a coal-mining rail car, was used to measure how fast the laser beams were traveling through water per Dive Winnipesaukee. A tower that was part of the rail track operation remains intact in 45 feet of water. A few pieces of the rail car track can also be found laying on the bottom.\nAt this site, there is also a small fiberglass wreck called the \"Empty Pockets Wreck\", about 30ft in length that lays in 55ft of water. Dive Winnipesaukee reports that she sank in the 1970s. This wreck can be visited along with seeing the tower mentioned above during the same dive.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks only on all dives in the lake",
-    "geometry": {
-      "location": {
-        "lat": 43.58437,
-        "lng": -71.207886
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Ship Island",
-    "description": "Ship Island is a nice boat dive that all levels can enjoy. For those that are beginner divers, the dive can be done in about 30 feet of water. There are large boulders and curious sunfish to explore. There are two small wrecks at this site.\nThe first small wreck is in about 30 feet of water. It\u2019s a wooden boat with an engine, that appears to be about a 25 foot cruiser with a closed bow from the 1950's per Dive Winnipesaukee. The wooden wreck is interesting enough to spend a bit of time there without venturing on to the second. For the advanced diver, there is a line from the stern of the wooden boat that leads to the smaller plexiglass wreck. It\u2019s a very simple wreck but interesting enough to check out and get that deeper dive in. Not worth staying long.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks for all dives in the lake",
-    "geometry": {
-      "location": {
-        "lat": 43.58437,
-        "lng": -71.207886
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "boat"
-  },
-  {
-    "name": "Kings Beach",
-    "description": "King's Beach is a great spot for divers of all levels. This site is a lot quieter than Fort Wetherill, good for the divers that like the spot to themselves. Divers make their way down to the cove's beach from the parking lot located just across the street. The cove offers two areas to explore, the right that runs perpendicular to the street and the left side where there are rocky boulders that jetty out and even more rocks just a bit further beyond that you can see in the last photo below. Divers can find flounder, cunner, black bass, Jonah crabs, sea stars and more There is limited non-metered parking and there is also an easy beach entrance/exit.",
-    "geometry": {
-      "location": {
-        "lat": 41.4899827,
-        "lng": -71.3137707
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
   }
 ]

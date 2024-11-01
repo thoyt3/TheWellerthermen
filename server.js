@@ -41,13 +41,14 @@ locationsData = locationsData.map((loc) => {
 
 // Endpoint to handle user queries
 app.post('/api/query', async (req, res) => {
-  const userQuery = req.body.query;
+  const selectedDate = req.body.date; // Get the selected date
   const selectedActivity = req.body.activity;
   const selectedDistance = req.body.distance || 25; // Default to 25 miles
   const selectedUnits = req.body.units || 'imperial';
-  const activity = selectedActivity || extractActivity(userQuery);
+  const activity = selectedActivity;
 
   console.log('Activity:', activity); // Debugging
+  console.log('Selected Date:', selectedDate);
 
   try {
     const latitude = req.body.latitude;
@@ -76,7 +77,8 @@ app.post('/api/query', async (req, res) => {
     const recommendations = await processRecommendations(
       activityLocations,
       activity,
-      selectedUnits
+      selectedUnits,
+      selectedDate
     );
 
     if (recommendations.length === 0) {
@@ -87,7 +89,7 @@ app.post('/api/query', async (req, res) => {
     }
 
     // Use OpenAI API to format the response
-    const aiResponse = await getAIResponse(userQuery, recommendations, selectedUnits, activity);
+    const aiResponse = await getAIResponse(selectedDate, recommendations, selectedUnits, activity);
 
     res.json({ response: aiResponse, recommendations });
   } catch (error) {
@@ -121,24 +123,6 @@ app.get('/api/geocode', async (req, res) => {
   }
 });
 
-// Function to extract activity from user query using NLP
-function extractActivity(query) {
-  const doc = nlp(query.toLowerCase());
-
-  // Look for specific keywords with variants
-  if (doc.has('scuba') || doc.has('diving') || doc.has('scuba diving')) {
-    return 'scuba_diving';
-  } else if (doc.has('golf') || doc.has('golfing')) {
-    return 'golf';
-  } else if (doc.has('surfing') || doc.has('surf')) {
-    return 'surfing';
-  } else if (doc.has('hiking') || doc.has('hike')) {
-    return 'hiking';
-  } else {
-    return 'general';
-  }
-}
-
 // Function to calculate distance between two coordinates using the Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
   function toRadians(degrees) {
@@ -158,20 +142,20 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 
 // Function to fetch per-location weather data with caching
-async function getLocationWeatherData(latitude, longitude) {
-  const cacheKey = `weather_${latitude}_${longitude}`;
+async function getLocationWeatherData(latitude, longitude, timestamp) {
+  const cacheKey = `weather_${latitude}_${longitude}_${timestamp}`;
   let data = cache.get(cacheKey);
 
   if (data) {
     return data;
   } else {
     try {
-      const weatherUrl = 'https://api.openweathermap.org/data/3.0/onecall';
+      const weatherUrl = 'https://api.openweathermap.org/data/3.0/onecall/timemachine';
       const response = await axios.get(weatherUrl, {
         params: {
           lat: latitude,
           lon: longitude,
-          exclude: 'minutely,hourly',
+          dt: timestamp,
           units: 'metric',
           appid: process.env.OPENWEATHERMAP_API_KEY,
         },
@@ -187,19 +171,16 @@ async function getLocationWeatherData(latitude, longitude) {
 }
 
 // Function to fetch wave and water temperature data with caching
-async function getWaveData(latitude, longitude) {
-  const cacheKey = `wave_${latitude}_${longitude}`;
+async function getWaveData(latitude, longitude, start, end) {
+  const cacheKey = `wave_${latitude}_${longitude}_${start}_${end}`;
   let data = cache.get(cacheKey);
 
   if (data) {
     return data;
   } else {
     try {
-      const now = new Date();
-      const start = now.toISOString();
-      const end = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString(); // 1 hour later
-
       const waveUrl = 'https://api.stormglass.io/v2/weather/point';
+
       const response = await axios.get(waveUrl, {
         params: {
           lat: latitude,
@@ -217,15 +198,15 @@ async function getWaveData(latitude, longitude) {
       cache.set(cacheKey, data);
       return data;
     } catch (error) {
-      console.error('Error fetching wave data:', error);
+      console.error('Error fetching wave data:', error.response ? error.response.data : error.message);
       throw new Error('Failed to fetch wave data.');
     }
   }
 }
 
 // Function to fetch tide data with caching
-async function getTideData(latitude, longitude) {
-  const cacheKey = `tide_${latitude}_${longitude}`;
+async function getTideData(latitude, longitude, date) {
+  const cacheKey = `tide_${latitude}_${longitude}_${date}`;
   let data = cache.get(cacheKey);
 
   if (data) {
@@ -237,7 +218,7 @@ async function getTideData(latitude, longitude) {
         params: {
           lat: latitude,
           lon: longitude,
-          days: 1,
+          date: date,
           key: process.env.WORLDTIDES_API_KEY,
           extremes: '', // Include the 'extremes' parameter
         },
@@ -279,7 +260,7 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
     data = data;
   } else {
     try {
-      // Read from locationsData (already loaded)
+      // Read from locations.json (already loaded as locationsData)
       const locations = locationsData.filter((loc) => loc.activities.includes(activity));
       data = locations;
 
@@ -308,9 +289,13 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
 }
 
 // Function to process recommendations
-async function processRecommendations(locations, activity, units) {
+async function processRecommendations(locations, activity, units, selectedDate) {
   // Iterate over locations and score them
   let scoredLocations = [];
+
+  // Convert selectedDate to UNIX timestamp
+  const selectedDateObj = new Date(selectedDate);
+  const selectedTimestamp = Math.floor(selectedDateObj.getTime() / 1000);
 
   for (const location of locations) {
     let score = 0;
@@ -319,43 +304,37 @@ async function processRecommendations(locations, activity, units) {
     const locLng = location.geometry.location.lng;
 
     // Fetch per-location weather data
-    const locationWeatherData = await getLocationWeatherData(locLat, locLng);
-    const locationDailyWeather = locationWeatherData.daily[0];
+    const locationWeatherData = await getLocationWeatherData(locLat, locLng, selectedTimestamp);
+    const locationCurrentWeather = locationWeatherData.data[0];
 
     location.weather = {
-      temperature: locationDailyWeather.temp.day,
-      windSpeed: locationDailyWeather.wind_speed,
-      windDeg: locationDailyWeather.wind_deg,
-      clouds: locationDailyWeather.clouds,
-      pop: locationDailyWeather.pop,
-      uvi: locationDailyWeather.uvi,
-      description: locationDailyWeather.weather[0].description,
-      moonPhase: locationDailyWeather.moon_phase,
-      sunrise: locationDailyWeather.sunrise,
-      sunset: locationDailyWeather.sunset,
+      temperature: locationCurrentWeather.temp,
+      windSpeed: locationCurrentWeather.wind_speed,
+      windDeg: locationCurrentWeather.wind_deg,
+      clouds: locationCurrentWeather.clouds,
+      pop: locationCurrentWeather.pop,
+      uvi: locationCurrentWeather.uvi,
+      description: locationCurrentWeather.weather[0].description,
+      // OpenWeatherMap Timemachine API doesn't provide moon phase, sunrise, or sunset
     };
 
     if (activity === 'scuba_diving') {
       // Fetch wave data
-      const waveData = await getWaveData(locLat, locLng);
+      const waveStart = selectedTimestamp;
+      const waveEnd = waveStart + 6 * 3600; // 6 hours ahead
 
-      // Find the data point closest to the current time
-      const now = new Date();
-      let closestHour = null;
-      let minTimeDiff = Infinity;
+      const waveData = await getWaveData(locLat, locLng, waveStart, waveEnd);
+      const waveHours = waveData && waveData.hours;
 
-      if (waveData && waveData.hours && waveData.hours.length > 0) {
-        waveData.hours.forEach((hourData) => {
-          const dataTime = new Date(hourData.time);
-          const timeDiff = Math.abs(dataTime - now);
-          if (timeDiff < minTimeDiff) {
-            minTimeDiff = timeDiff;
-            closestHour = hourData;
-          }
+      if (waveHours && waveHours.length > 0) {
+        // Find the data point closest to selected date and time
+        const selectedDateTime = new Date(selectedTimestamp * 1000);
+        let closestHour = waveHours.reduce((prev, curr) => {
+          const prevDiff = Math.abs(new Date(prev.time) - selectedDateTime);
+          const currDiff = Math.abs(new Date(curr.time) - selectedDateTime);
+          return currDiff < prevDiff ? curr : prev;
         });
-      }
 
-      if (closestHour) {
         const waveHeight = closestHour.waveHeight.noaa;
         const wavePeriod = closestHour.wavePeriod.noaa;
         const waterTemperatureC = closestHour.waterTemperature.noaa;
@@ -380,12 +359,12 @@ async function processRecommendations(locations, activity, units) {
       }
 
       // Fetch tide data
-      const tideData = await getTideData(locLat, locLng);
+      const tideData = await getTideData(locLat, locLng, selectedDate);
       location.tideData = tideData;
 
       // Include tide data
       if (location.tideData && location.tideData.extremes && location.tideData.extremes.length > 0) {
-        const nowTimestamp = Date.now() / 1000;
+        const nowTimestamp = selectedTimestamp;
         const upcomingHighTides = location.tideData.extremes.filter(
           (extreme) => extreme.type === 'High' && extreme.timestamp >= nowTimestamp
         );
@@ -396,39 +375,12 @@ async function processRecommendations(locations, activity, units) {
             minute: '2-digit',
           });
 
-          // Determine if next high tide is during night time (after sunset and before sunrise)
-          const sunset = new Date(location.weather.sunset * 1000);
-          const sunrise = new Date(location.weather.sunrise * 1000);
-          const nextHighTideDate = new Date(nextHighTide.timestamp * 1000);
-
-          if (
-            nextHighTideDate >= sunset ||
-            nextHighTideDate <= sunrise
-          ) {
-            location.nextHighTideIsAtNight = true;
-          } else {
-            location.nextHighTideIsAtNight = false;
-          }
+          // We cannot determine if it's night without sunrise and sunset times
+          location.nextHighTideIsAtNight = null;
         }
       }
 
-      // Determine if it's a full moon
-      if (location.weather.moonPhase >= 0.47 && location.weather.moonPhase <= 0.53) {
-        location.isFullMoon = true;
-      } else {
-        location.isFullMoon = false;
-      }
-
-      // Determine visibility based on wind direction and beach orientation
-      if (location.weather.windDeg !== undefined && location.beachOrientation !== undefined) {
-        let angleDifference = Math.abs(location.weather.windDeg - location.beachOrientation);
-        if (angleDifference > 180) {
-          angleDifference = 360 - angleDifference;
-        }
-        location.poorVisibility = angleDifference <= 90;
-      } else {
-        location.poorVisibility = false; // Default if data is missing
-      }
+      // We cannot determine moon phase, sunrise, or sunset without additional data
 
       // Scoring logic for scuba diving
       // Example: Lower wave height and favorable visibility increase score
@@ -443,11 +395,9 @@ async function processRecommendations(locations, activity, units) {
         }
       }
 
-      if (location.poorVisibility) {
-        score -= 5;
-      } else {
-        score += 5;
-      }
+      // For now, set poorVisibility to false as we lack necessary data
+      location.poorVisibility = false;
+      score += 5;
 
     } else {
       // Scoring logic for other activities
@@ -489,7 +439,7 @@ async function processRecommendations(locations, activity, units) {
 }
 
 // Function to get AI response from OpenAI API
-async function getAIResponse(userQuery, recommendations, units, activity) {
+async function getAIResponse(selectedDate, recommendations, units, activity) {
   const activityName = activity.replace('_', ' ');
   let locationInfo = '';
 
@@ -532,11 +482,7 @@ async function getAIResponse(userQuery, recommendations, units, activity) {
 
         if (loc.nextHighTide) {
           info += `Next High Tide: ${loc.nextHighTide}\n`;
-          info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
-        }
-
-        if (loc.isFullMoon) {
-          info += `It's a full moon tonight.\n`;
+          // Cannot determine if next high tide is at night without additional data
         }
 
         locationInfo += info + '\n';
@@ -571,13 +517,9 @@ async function getAIResponse(userQuery, recommendations, units, activity) {
       .join('\n');
   }
 
-  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations. Use ${units} units in your responses.
+  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations for the date ${selectedDate}. Use ${units} units in your responses.
 
-Use the data provided to make specific recommendations. Only recommend a night dive if:
-- It's a full moon tonight (as indicated by "It's a full moon tonight." in the data).
-- The next high tide is at night (as indicated by "Next High Tide Is At Night: Yes").
-
-Include the actual high tide times in your recommendations. Do not suggest checking for high tide times; provide them directly.
+Use the data provided to make specific recommendations.
 
 For ${activityName}, consider the following when making recommendations:
 - Use the "Appropriate Thermal Protection" provided in the data.
@@ -587,7 +529,7 @@ For ${activityName}, consider the following when making recommendations:
 - Segregate shore dives and boat dives in your recommendations.
 `;
 
-  let userPrompt = `Based on my query "${userQuery}" and the current conditions at the following locations, please provide your recommendations:
+  let userPrompt = `Based on the selected date "${selectedDate}" and the current conditions at the following locations, please provide your recommendations:
 
 ${locationInfo}`;
 

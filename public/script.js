@@ -3,8 +3,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('query-form');
   const resultDiv = document.getElementById('response-container');
-  const queryInput = document.getElementById('user-query');
+  // Removed user-query input
+  // const queryInput = document.getElementById('user-query');
   const manualLocationInput = document.getElementById('manual-location');
+  const dateSelect = document.getElementById('date-select');
   const activitySelect = document.getElementById('activity-select');
   const distanceSelect = document.getElementById('distance-select');
   const unitsSelect = document.getElementById('units-select');
@@ -21,8 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Layer group for markers
   const markersLayer = L.featureGroup().addTo(map);
 
+  // Enforce date range (today to next 7 days)
+  const today = new Date();
+  const maxDate = new Date();
+  maxDate.setDate(today.getDate() + 7);
+  const todayStr = today.toISOString().split('T')[0];
+  const maxDateStr = maxDate.toISOString().split('T')[0];
+
+  dateSelect.setAttribute('min', todayStr);
+  dateSelect.setAttribute('max', maxDateStr);
+  dateSelect.value = todayStr; // Default to today
+
   // Check if elements exist
-  if (!form || !resultDiv || !queryInput || !activitySelect || !distanceSelect || !unitsSelect) {
+  if (!form || !resultDiv || !dateSelect || !activitySelect || !distanceSelect || !unitsSelect) {
     console.error('One or more form elements not found.');
     return;
   }
@@ -36,10 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
     resultDiv.innerHTML = '';
     markersLayer.clearLayers();
 
-    const query = queryInput.value;
+    // const query = ''; // Removed user query
+    const selectedDate = dateSelect.value;
     const selectedActivity = activitySelect.value;
     const selectedDistance = distanceSelect.value;
     const selectedUnits = unitsSelect.value;
+
+    // Validate selected date
+    const selectedDateObj = new Date(selectedDate);
+    if (selectedDateObj < today || selectedDateObj > maxDate) {
+      resultDiv.innerHTML = '<p>Please select a date within the next 7 days.</p>';
+      return;
+    }
 
     // Disable the submit button to prevent multiple submissions
     submitButton.disabled = true;
@@ -99,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function sendQuery() {
       try {
         const requestData = {
-          query: query,
+          date: selectedDate,
           activity: selectedActivity,
           distance: selectedDistance,
           units: selectedUnits,

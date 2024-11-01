@@ -11,7 +11,13 @@
 <body>
   <h1>Find the Best Spot for Your Activity</h1>
   <form id="query-form">
-    <input type="text" id="user-query" placeholder="Ask a question..." required>
+    <!-- Removed the user query input -->
+    <!-- <input type="text" id="user-query" placeholder="Ask a question..." required> -->
+
+    <!-- Date selector input -->
+    <label for="date-select">Select a date (Today or next 7 days):</label>
+    <input type="date" id="date-select" required>
+
     <input type="text" id="manual-location" placeholder="Enter your location (optional)">
     <!-- Activity dropdown -->
     <select id="activity-select">
