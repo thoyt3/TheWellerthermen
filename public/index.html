@@ -7,6 +7,13 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic styling for the map */
+    #map {
+      height: 400px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <h1>Find the Best Spot for Your Activity</h1>
@@ -18,9 +25,13 @@
     <label for="date-select">Select a date (Today or next 7 days):</label>
     <input type="date" id="date-select" required>
 
+    <!-- Time selector input (optional) -->
+    <label for="time-select">Select a time (optional):</label>
+    <input type="time" id="time-select">
+
     <input type="text" id="manual-location" placeholder="Enter your location (optional)">
     <!-- Activity dropdown -->
-    <select id="activity-select">
+    <select id="activity-select" required>
       <option value="">Select an activity</option>
       <option value="scuba_diving">Scuba Diving</option>
       <option value="golf">Golfing</option>

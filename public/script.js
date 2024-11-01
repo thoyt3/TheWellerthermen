@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // const queryInput = document.getElementById('user-query');
   const manualLocationInput = document.getElementById('manual-location');
   const dateSelect = document.getElementById('date-select');
+  const timeSelect = document.getElementById('time-select');
   const activitySelect = document.getElementById('activity-select');
   const distanceSelect = document.getElementById('distance-select');
   const unitsSelect = document.getElementById('units-select');
@@ -25,8 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Enforce date range (today to next 7 days)
   const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set to midnight
   const maxDate = new Date();
   maxDate.setDate(today.getDate() + 7);
+  maxDate.setHours(0, 0, 0, 0); // Set to midnight
   const todayStr = today.toISOString().split('T')[0];
   const maxDateStr = maxDate.toISOString().split('T')[0];
 
@@ -49,17 +52,47 @@ document.addEventListener('DOMContentLoaded', () => {
     resultDiv.innerHTML = '';
     markersLayer.clearLayers();
 
-    // const query = ''; // Removed user query
     const selectedDate = dateSelect.value;
+    const selectedTime = timeSelect.value; // Optional
     const selectedActivity = activitySelect.value;
     const selectedDistance = distanceSelect.value;
     const selectedUnits = unitsSelect.value;
 
     // Validate selected date
     const selectedDateObj = new Date(selectedDate);
-    if (selectedDateObj < today || selectedDateObj > maxDate) {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set to midnight
+
+    const maxDateObj = new Date();
+    maxDateObj.setDate(currentDate.getDate() + 7);
+    maxDateObj.setHours(0, 0, 0, 0); // Set to midnight
+
+    if (selectedDateObj < currentDate || selectedDateObj > maxDateObj) {
       resultDiv.innerHTML = '<p>Please select a date within the next 7 days.</p>';
       return;
+    }
+
+    // Validate selected time (optional)
+    let selectedDateTime = null;
+    if (selectedTime) {
+      const timeParts = selectedTime.split(':');
+      if (timeParts.length === 2) {
+        selectedDateTime = new Date(selectedDate);
+        selectedDateTime.setHours(parseInt(timeParts[0], 10));
+        selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
+        selectedDateTime.setSeconds(0);
+        selectedDateTime.setMilliseconds(0);
+      } else {
+        resultDiv.innerHTML = '<p>Please select a valid time.</p>';
+        return;
+      }
+    } else {
+      // Default to 12:00 PM if time is not selected
+      selectedDateTime = new Date(selectedDate);
+      selectedDateTime.setHours(12);
+      selectedDateTime.setMinutes(0);
+      selectedDateTime.setSeconds(0);
+      selectedDateTime.setMilliseconds(0);
     }
 
     // Disable the submit button to prevent multiple submissions
@@ -121,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const requestData = {
           date: selectedDate,
+          time: selectedTime || null, // Optional
           activity: selectedActivity,
           distance: selectedDistance,
           units: selectedUnits,
@@ -164,13 +198,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const recommendationsList = document.createElement('ul');
                 section.dives.forEach((location) => {
                   const listItem = document.createElement('li');
-                  listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
+
+                  // Handle missing city and state
+                  const city = location.city && location.city !== 'Unknown' ? location.city : '';
+                  const state = location.state && location.state !== 'Unknown' ? location.state : '';
+
+                  let locationText = `${location.name}`;
+                  if (city || state) {
+                    locationText += ` in ${city}${city && state ? ', ' : ''}${state}`;
+                  }
+
+                  listItem.textContent = locationText;
                   recommendationsList.appendChild(listItem);
 
                   // Add marker to map
                   const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
                     .addTo(markersLayer)
-                    .bindPopup(`${location.name} in ${location.city}, ${location.state}`);
+                    .bindPopup(`${location.name} in ${city}, ${state}`);
                 });
                 resultDiv.appendChild(recommendationsList);
               });
@@ -179,13 +223,23 @@ document.addEventListener('DOMContentLoaded', () => {
               const recommendationsList = document.createElement('ul');
               data.recommendations.forEach((location) => {
                 const listItem = document.createElement('li');
-                listItem.textContent = `${location.name} in ${location.city}, ${location.state}`;
+
+                // Handle missing city and state
+                const city = location.city && location.city !== 'Unknown' ? location.city : '';
+                const state = location.state && location.state !== 'Unknown' ? location.state : '';
+
+                let locationText = `${location.name}`;
+                if (city || state) {
+                  locationText += ` in ${city}${city && state ? ', ' : ''}${state}`;
+                }
+
+                listItem.textContent = locationText;
                 recommendationsList.appendChild(listItem);
 
                 // Add marker to map
                 const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
                   .addTo(markersLayer)
-                  .bindPopup(`${location.name} in ${location.city}, ${location.state}`);
+                  .bindPopup(`${location.name} in ${city}, ${state}`);
               });
               resultDiv.appendChild(recommendationsList);
             }

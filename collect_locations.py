@@ -134,7 +134,7 @@ def collect_dive_sites():
                     site_page.close()
                     continue
 
-                # Get city and state
+                # Get city and state, defaulting to 'Unknown' if not found
                 address_components = location.raw.get('address', {})
                 city = (
                     address_components.get('city', '')
@@ -142,6 +142,11 @@ def collect_dive_sites():
                     or address_components.get('village', '')
                 )
                 state_full = address_components.get('state', '')
+
+                if not city:
+                    city = "Unknown"
+                if not state_full:
+                    state_full = "Unknown"
 
                 site_data = {
                     "name": site_name,
@@ -169,6 +174,7 @@ def collect_dive_sites():
         browser.close()
 
     # Load existing locations
+        # Load existing locations
     locations_file = os.path.join('data', 'locations.json')
     existing_locations = []
     if os.path.exists(locations_file):
@@ -192,7 +198,7 @@ def collect_dive_sites():
             existing_locations.append(location)
             existing_set.add(key)
         else:
-            # Update activities if not already present
+            # Update activities and diveType if not already present
             for loc in existing_locations:
                 if loc['name'] == location['name']:
                     if 'scuba_diving' not in loc['activities']:

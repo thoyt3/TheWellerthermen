@@ -13084,5 +13084,21 @@
       "scuba_diving"
     ],
     "diveType": "boat"
+  },
+  {
+    "name": "Stage Fort Park",
+    "description": "This site is ideal for that diver who wants to bring the family along to hang at the beach while you dive.\nThere are two dive sites at this location- Half Moon Beach and Cressy Beach. Half Moon Beach is located down the grassy hill behind the visitor center and Cressy Beach is located down the hill via the road. You'll find different variations of crabs, and our good friend the moon snail. There are loads of different vegetation- tall eel grass and what looks like fluffy beds of red-pink blankets.\nAfterwards, pull out your picnic blanket, snacks and soak in that warm sun and maybe even grab an ice cream, especially if you paid for that parking!!",
+    "geometry": {
+      "location": {
+        "lat": 42.605703950000006,
+        "lng": -70.67845409509204
+      }
+    },
+    "city": "Unknown",
+    "state": "Unknown",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
   }
 ]
