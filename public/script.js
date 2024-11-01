@@ -62,16 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Validate selected date
     const selectedDateObj = new Date(selectedDate);
     const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Set to midnight
+    currentDate.setHours(0, 0, 0, 0); // Set to midnight 
 
     const maxDateObj = new Date();
     maxDateObj.setDate(currentDate.getDate() + 7);
     maxDateObj.setHours(0, 0, 0, 0); // Set to midnight
 
-    if (selectedDateObj < currentDate || selectedDateObj > maxDateObj) {
-      resultDiv.innerHTML = '<p>Please select a date within the next 7 days.</p>';
-      return;
-    }
+    //if (selectedDateObj < currentDate || selectedDateObj > maxDateObj) { // Check if selected date is within the next 7 days
+  //    resultDiv.innerHTML = '<p>Please select a date within the next 7 days.</p>'; // Error message
+  //    return; // Exit the function
+ //   }
 
     // Validate selected time (optional)
     let selectedDateTime = null;
@@ -83,6 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
         selectedDateTime.setSeconds(0);
         selectedDateTime.setMilliseconds(0);
+
+        const now = new Date();
+        if (selectedDateObj.toDateString() === now.toDateString()) {
+          // If selected date is today, ensure time is in the future
+          if (selectedDateTime <= now) {
+            resultDiv.innerHTML = '<p>Please select a time in the future for today\'s date.</p>';
+            return;
+          }
+        }
       } else {
         resultDiv.innerHTML = '<p>Please select a valid time.</p>';
         return;
@@ -209,13 +218,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     locationText += ` in ${city}${city && state ? ', ' : ''}${state}`;
                   }
 
+                  // Add address if available
+                  const address = location.address || '';
+                  if (address) {
+                    locationText += `, ${address}`;
+                  }
+
+                  // Add navigation prompt
+                  const navigationLink = document.createElement('a');
+                  navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address || `${latitude},${longitude}`)}`;
+                  navigationLink.target = '_blank';
+                  navigationLink.textContent = ' Navigate';
+
                   listItem.textContent = locationText;
+                  listItem.appendChild(navigationLink);
                   recommendationsList.appendChild(listItem);
 
                   // Add marker to map
                   const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
                     .addTo(markersLayer)
-                    .bindPopup(`${location.name} in ${city}, ${state}`);
+                    .bindPopup(`${location.name} in ${city}, ${state}${address ? ', ' + address : ''} <br><a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address || `${latitude},${longitude}`)}" target="_blank">Navigate</a>`);
                 });
                 resultDiv.appendChild(recommendationsList);
               });
@@ -234,13 +256,26 @@ document.addEventListener('DOMContentLoaded', () => {
                   locationText += ` in ${city}${city && state ? ', ' : ''}${state}`;
                 }
 
+                // Add address if available
+                const address = location.address || '';
+                if (address) {
+                  locationText += `, ${address}`;
+                }
+
+                // Add navigation prompt
+                const navigationLink = document.createElement('a');
+                navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address || `${latitude},${longitude}`)}`;
+                navigationLink.target = '_blank';
+                navigationLink.textContent = ' Navigate';
+
                 listItem.textContent = locationText;
+                listItem.appendChild(navigationLink);
                 recommendationsList.appendChild(listItem);
 
                 // Add marker to map
                 const marker = L.marker([location.geometry.location.lat, location.geometry.location.lng])
                   .addTo(markersLayer)
-                  .bindPopup(`${location.name} in ${city}, ${state}`);
+                  .bindPopup(`${location.name} in ${city}, ${state}${address ? ', ' + address : ''} <br><a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address || `${latitude},${longitude}`)}" target="_blank">Navigate</a>`);
               });
               resultDiv.appendChild(recommendationsList);
             }

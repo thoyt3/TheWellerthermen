@@ -449,12 +449,30 @@ async function processRecommendations(locations, activity, units, selectedDate, 
         }
       }
 
+      // Incorporate wind speed into scoring
+      if (location.weather.windSpeed > 20) {
+        score -= 15; // Not a good site for the day
+      } else if (location.weather.windSpeed > 15) {
+        score -= 10; // Raise concerns over visibility
+      }
+
       // For now, set poorVisibility to false as we lack necessary data
-      location.poorVisibility = false;
-      score += 5;
+      location.poorVisibility = location.weather.windSpeed > 15 ? true : false;
+
+      // Adjust score based on visibility concerns
+      if (location.poorVisibility) {
+        score -= 5;
+      } else {
+        score += 5;
+      }
+
+      // Attach score to location
+      location.score = score;
+      scoredLocations.push(location);
     } else {
       // Scoring logic for other activities
       // For brevity, I'm not including detailed scoring logic here
+      // You can implement similar logic based on activity requirements
     }
 
     // Attach score to location
@@ -518,7 +536,7 @@ async function getAIResponse(selectedDate, selectedTime, recommendations, units,
           units === 'imperial'
             ? (weather.windSpeed * 2.23694).toFixed(2)
             : weather.windSpeed.toFixed(2)
-        } ${unitsSpeed}, Wind Direction: ${windDirection}\n`;
+        } ${unitsSpeed}, Wind Direction: ${windDirection} from the ${windDirection}\n`;
 
         const waveData = loc.waveData || {};
         const waterTemp = loc.waterTemperature;
@@ -539,6 +557,14 @@ async function getAIResponse(selectedDate, selectedTime, recommendations, units,
           if (loc.nextHighTideIsAtNight !== null) {
             info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
           }
+        }
+
+        // Additional information based on wind speed
+        if (weather.windSpeed > 15) {
+          info += `Visibility Concerns: Wind speed is above 15 mph. Visibility may be reduced.\n`;
+        }
+        if (weather.windSpeed > 20) {
+          info += `Wind Speed Warning: Wind speed exceeds 20 mph. This site is not recommended for diving today.\n`;
         }
 
         locationInfo += info + '\n';
@@ -565,7 +591,7 @@ async function getAIResponse(selectedDate, selectedTime, recommendations, units,
           units === 'imperial'
             ? (weather.windSpeed * 2.23694).toFixed(2)
             : weather.windSpeed.toFixed(2)
-        } ${unitsSpeed}, Wind Direction: ${windDirection}\n`;
+        } ${unitsSpeed}, Wind Direction: ${windDirection} from the ${windDirection}\n`;
 
         // Add other activity-specific info here
 
@@ -584,6 +610,7 @@ For ${activityName}, consider the following when making recommendations:
 - Suggest dive/no dive recommendations based on wave conditions.
 - If air temperature is below freezing, advise on additional surface protection.
 - Segregate shore dives and boat dives in your recommendations.
+- Consider wind speed and direction when making recommendations.
 `;
 
   let userPrompt = `Based on the selected date "${selectedDate}" and time "${selectedTime || 'any time'}", and the current conditions at the following locations, please provide your recommendations:
