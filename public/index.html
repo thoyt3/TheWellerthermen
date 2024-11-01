@@ -13,14 +13,27 @@
       height: 400px;
       margin-top: 20px;
     }
+
+    /* Additional styling for form */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+
+    input, select, button {
+      padding: 8px;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <h1>Find the Best Spot for Your Activity</h1>
   <form id="query-form">
-    <!-- Removed the user query input -->
-    <!-- <input type="text" id="user-query" placeholder="Ask a question..." required> -->
-
     <!-- Date selector input -->
     <label for="date-select">Select a date (Today or next 7 days):</label>
     <input type="date" id="date-select" required>
@@ -29,8 +42,12 @@
     <label for="time-select">Select a time (optional):</label>
     <input type="time" id="time-select">
 
-    <input type="text" id="manual-location" placeholder="Enter your location (optional)">
+    <!-- Manual location input (optional) -->
+    <label for="manual-location">Enter your location (optional):</label>
+    <input type="text" id="manual-location" placeholder="e.g., Boston, MA">
+
     <!-- Activity dropdown -->
+    <label for="activity-select">Select an activity:</label>
     <select id="activity-select" required>
       <option value="">Select an activity</option>
       <option value="scuba_diving">Scuba Diving</option>
@@ -38,7 +55,9 @@
       <option value="surfing">Surfing</option>
       <option value="hiking">Hiking</option>
     </select>
+
     <!-- Distance dropdown -->
+    <label for="distance-select">Select a distance:</label>
     <select id="distance-select">
       <option value="1">1 mile</option>
       <option value="10">10 miles</option>
@@ -46,11 +65,14 @@
       <option value="50">50 miles</option>
       <option value="100">100 miles</option>
     </select>
+
     <!-- Units dropdown -->
+    <label for="units-select">Select units:</label>
     <select id="units-select">
       <option value="imperial" selected>Imperial</option>
       <option value="metric">Metric</option>
     </select>
+
     <button type="submit" id="submit-button">Submit</button>
   </form>
   <div id="response-container"></div>

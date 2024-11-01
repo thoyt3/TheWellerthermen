@@ -3,8 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('query-form');
   const resultDiv = document.getElementById('response-container');
-  // Removed user-query input
-  // const queryInput = document.getElementById('user-query');
   const manualLocationInput = document.getElementById('manual-location');
   const dateSelect = document.getElementById('date-select');
   const timeSelect = document.getElementById('time-select');
@@ -36,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   dateSelect.setAttribute('min', todayStr);
   dateSelect.setAttribute('max', maxDateStr);
   dateSelect.value = todayStr; // Default to today
+
+  // Initialize time selector to empty
+  timeSelect.value = '';
 
   // Check if elements exist
   if (!form || !resultDiv || !dateSelect || !activitySelect || !distanceSelect || !unitsSelect) {

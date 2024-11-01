@@ -4,7 +4,6 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const path = require('path');
-const nlp = require('compromise');
 const NodeCache = require('node-cache');
 const { Configuration, OpenAIApi } = require('openai');
 const fs = require('fs');
@@ -42,6 +41,7 @@ locationsData = locationsData.map((loc) => {
 // Endpoint to handle user queries
 app.post('/api/query', async (req, res) => {
   const selectedDate = req.body.date; // Get the selected date
+  const selectedTime = req.body.time; // Get the selected time (optional)
   const selectedActivity = req.body.activity;
   const selectedDistance = req.body.distance || 25; // Default to 25 miles
   const selectedUnits = req.body.units || 'imperial';
@@ -49,6 +49,7 @@ app.post('/api/query', async (req, res) => {
 
   console.log('Activity:', activity); // Debugging
   console.log('Selected Date:', selectedDate);
+  console.log('Selected Time:', selectedTime);
 
   try {
     const latitude = req.body.latitude;
@@ -78,7 +79,8 @@ app.post('/api/query', async (req, res) => {
       activityLocations,
       activity,
       selectedUnits,
-      selectedDate
+      selectedDate,
+      selectedTime
     );
 
     if (recommendations.length === 0) {
@@ -89,7 +91,7 @@ app.post('/api/query', async (req, res) => {
     }
 
     // Use OpenAI API to format the response
-    const aiResponse = await getAIResponse(selectedDate, recommendations, selectedUnits, activity);
+    const aiResponse = await getAIResponse(selectedDate, selectedTime, recommendations, selectedUnits, activity);
 
     res.json({ response: aiResponse, recommendations });
   } catch (error) {
@@ -142,14 +144,25 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 
 // Function to fetch per-location weather data with caching
-async function getLocationWeatherData(latitude, longitude, timestamp) {
-  const cacheKey = `weather_${latitude}_${longitude}_${timestamp}`;
+async function getLocationWeatherData(latitude, longitude, selectedDate, selectedTime) {
+  const cacheKey = `weather_${latitude}_${longitude}_${selectedDate}_${selectedTime}`;
   let data = cache.get(cacheKey);
 
   if (data) {
     return data;
   } else {
     try {
+      // Convert selectedDate and selectedTime to UNIX timestamp
+      let timestamp;
+      if (selectedTime) {
+        const dateTime = new Date(`${selectedDate}T${selectedTime}:00`);
+        timestamp = Math.floor(dateTime.getTime() / 1000);
+      } else {
+        // Default to 12:00 PM if time is not selected
+        const dateTime = new Date(`${selectedDate}T12:00:00`);
+        timestamp = Math.floor(dateTime.getTime() / 1000);
+      }
+
       const weatherUrl = 'https://api.openweathermap.org/data/3.0/onecall/timemachine';
       const response = await axios.get(weatherUrl, {
         params: {
@@ -205,8 +218,8 @@ async function getWaveData(latitude, longitude, start, end) {
 }
 
 // Function to fetch tide data with caching
-async function getTideData(latitude, longitude, date) {
-  const cacheKey = `tide_${latitude}_${longitude}_${date}`;
+async function getTideData(latitude, longitude, date, selectedTime) {
+  const cacheKey = `tide_${latitude}_${longitude}_${date}_${selectedTime}`;
   let data = cache.get(cacheKey);
 
   if (data) {
@@ -214,11 +227,16 @@ async function getTideData(latitude, longitude, date) {
   } else {
     try {
       const tideUrl = 'https://www.worldtides.info/api/v3';
+      // Combine date and time to get accurate tide data
+      let datetime = date;
+      if (selectedTime) {
+        datetime += ` ${selectedTime}`;
+      }
       const response = await axios.get(tideUrl, {
         params: {
           lat: latitude,
           lon: longitude,
-          date: date,
+          date: datetime,
           key: process.env.WORLDTIDES_API_KEY,
           extremes: '', // Include the 'extremes' parameter
         },
@@ -289,13 +307,20 @@ async function getActivityLocations(activity, latitude, longitude, maxDistance) 
 }
 
 // Function to process recommendations
-async function processRecommendations(locations, activity, units, selectedDate) {
+async function processRecommendations(locations, activity, units, selectedDate, selectedTime) {
   // Iterate over locations and score them
   let scoredLocations = [];
 
-  // Convert selectedDate to UNIX timestamp
-  const selectedDateObj = new Date(selectedDate);
-  const selectedTimestamp = Math.floor(selectedDateObj.getTime() / 1000);
+  // Convert selectedDate and selectedTime to UNIX timestamp
+  let selectedTimestamp;
+  if (selectedTime) {
+    const dateTime = new Date(`${selectedDate}T${selectedTime}:00`);
+    selectedTimestamp = Math.floor(dateTime.getTime() / 1000);
+  } else {
+    // Default to 12:00 PM if time is not selected
+    const dateTime = new Date(`${selectedDate}T12:00:00`);
+    selectedTimestamp = Math.floor(dateTime.getTime() / 1000);
+  }
 
   for (const location of locations) {
     let score = 0;
@@ -304,13 +329,21 @@ async function processRecommendations(locations, activity, units, selectedDate) 
     const locLng = location.geometry.location.lng;
 
     // Fetch per-location weather data
-    const locationWeatherData = await getLocationWeatherData(locLat, locLng, selectedTimestamp);
+    let locationWeatherData;
+    try {
+      locationWeatherData = await getLocationWeatherData(locLat, locLng, selectedDate, selectedTime);
+    } catch (error) {
+      console.error(`Skipping location ${location.name} due to weather data error.`);
+      continue;
+    }
+
+    // Extract weather information
     const locationCurrentWeather = locationWeatherData.data[0];
 
     location.weather = {
       temperature: locationCurrentWeather.temp,
       windSpeed: locationCurrentWeather.wind_speed,
-      windDeg: locationCurrentWeather.wind_deg,
+      windDeg: locationCurrentWeather.wind_deg, // Wind direction in degrees
       clouds: locationCurrentWeather.clouds,
       pop: locationCurrentWeather.pop,
       uvi: locationCurrentWeather.uvi,
@@ -323,7 +356,14 @@ async function processRecommendations(locations, activity, units, selectedDate) 
       const waveStart = selectedTimestamp;
       const waveEnd = waveStart + 6 * 3600; // 6 hours ahead
 
-      const waveData = await getWaveData(locLat, locLng, waveStart, waveEnd);
+      let waveData;
+      try {
+        waveData = await getWaveData(locLat, locLng, waveStart, waveEnd);
+      } catch (error) {
+        console.error(`Skipping location ${location.name} due to wave data error.`);
+        continue;
+      }
+
       const waveHours = waveData && waveData.hours;
 
       if (waveHours && waveHours.length > 0) {
@@ -343,14 +383,14 @@ async function processRecommendations(locations, activity, units, selectedDate) 
         location.waveData = {
           waveHeight:
             units === 'imperial'
-              ? (waveHeight * 3.28084).toFixed(2)
-              : waveHeight.toFixed(2),
-          wavePeriod: wavePeriod.toFixed(2),
+              ? (waveHeight * 3.28084).toFixed(2) // meters to feet
+              : waveHeight.toFixed(2), // meters
+          wavePeriod: wavePeriod.toFixed(2), // seconds
         };
         location.waterTemperature =
           units === 'imperial'
-            ? waterTemperatureF.toFixed(2)
-            : waterTemperatureC.toFixed(2);
+            ? waterTemperatureF.toFixed(2) // Celsius to Fahrenheit
+            : waterTemperatureC.toFixed(2); // Celsius
 
         // Determine thermal protection recommendation
         location.thermalProtectionRecommendation = getThermalProtectionRecommendation(
@@ -359,7 +399,13 @@ async function processRecommendations(locations, activity, units, selectedDate) 
       }
 
       // Fetch tide data
-      const tideData = await getTideData(locLat, locLng, selectedDate);
+      let tideData;
+      try {
+        tideData = await getTideData(locLat, locLng, selectedDate, selectedTime);
+      } catch (error) {
+        console.error(`Error fetching tide data for location ${location.name}:`, error);
+        tideData = null;
+      }
       location.tideData = tideData;
 
       // Include tide data
@@ -375,12 +421,10 @@ async function processRecommendations(locations, activity, units, selectedDate) 
             minute: '2-digit',
           });
 
-          // We cannot determine if it's night without sunrise and sunset times
+          // Without sunrise and sunset data, we cannot determine if it's night
           location.nextHighTideIsAtNight = null;
         }
       }
-
-      // We cannot determine moon phase, sunrise, or sunset without additional data
 
       // Scoring logic for scuba diving
       // Example: Lower wave height and favorable visibility increase score
@@ -395,10 +439,19 @@ async function processRecommendations(locations, activity, units, selectedDate) 
         }
       }
 
+      // Incorporate wind direction into scoring (e.g., favorable wind direction)
+      if (location.weather.windDeg !== undefined) {
+        // Example: Favor wind directions between 90 and 270 degrees (from east to west)
+        if (location.weather.windDeg >= 90 && location.weather.windDeg <= 270) {
+          score += 5;
+        } else {
+          score -= 5;
+        }
+      }
+
       // For now, set poorVisibility to false as we lack necessary data
       location.poorVisibility = false;
       score += 5;
-
     } else {
       // Scoring logic for other activities
       // For brevity, I'm not including detailed scoring logic here
@@ -439,7 +492,7 @@ async function processRecommendations(locations, activity, units, selectedDate) 
 }
 
 // Function to get AI response from OpenAI API
-async function getAIResponse(selectedDate, recommendations, units, activity) {
+async function getAIResponse(selectedDate, selectedTime, recommendations, units, activity) {
   const activityName = activity.replace('_', ' ');
   let locationInfo = '';
 
@@ -454,6 +507,7 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
         const weather = loc.weather || {};
         const unitsTemp = units === 'imperial' ? '°F' : '°C';
         const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
+        const windDirection = getWindDirection(weather.windDeg);
 
         let info = `${locName} in ${city}, ${state}\n`;
         info += `Weather: ${weather.description}, Temperature: ${
@@ -464,7 +518,7 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
           units === 'imperial'
             ? (weather.windSpeed * 2.23694).toFixed(2)
             : weather.windSpeed.toFixed(2)
-        } ${unitsSpeed}\n`;
+        } ${unitsSpeed}, Wind Direction: ${windDirection}\n`;
 
         const waveData = loc.waveData || {};
         const waterTemp = loc.waterTemperature;
@@ -482,7 +536,9 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
 
         if (loc.nextHighTide) {
           info += `Next High Tide: ${loc.nextHighTide}\n`;
-          // Cannot determine if next high tide is at night without additional data
+          if (loc.nextHighTideIsAtNight !== null) {
+            info += `Next High Tide Is At Night: ${loc.nextHighTideIsAtNight ? 'Yes' : 'No'}\n`;
+          }
         }
 
         locationInfo += info + '\n';
@@ -498,6 +554,7 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
         const weather = loc.weather || {};
         const unitsTemp = units === 'imperial' ? '°F' : '°C';
         const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
+        const windDirection = getWindDirection(weather.windDeg);
 
         let info = `${locName} in ${city}, ${state}\n`;
         info += `Weather: ${weather.description}, Temperature: ${
@@ -508,7 +565,7 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
           units === 'imperial'
             ? (weather.windSpeed * 2.23694).toFixed(2)
             : weather.windSpeed.toFixed(2)
-        } ${unitsSpeed}\n`;
+        } ${unitsSpeed}, Wind Direction: ${windDirection}\n`;
 
         // Add other activity-specific info here
 
@@ -517,7 +574,7 @@ async function getAIResponse(selectedDate, recommendations, units, activity) {
       .join('\n');
   }
 
-  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations for the date ${selectedDate}. Use ${units} units in your responses.
+  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations for the date ${selectedDate} and time ${selectedTime || 'any time'}. Use ${units} units in your responses.
 
 Use the data provided to make specific recommendations.
 
@@ -529,7 +586,7 @@ For ${activityName}, consider the following when making recommendations:
 - Segregate shore dives and boat dives in your recommendations.
 `;
 
-  let userPrompt = `Based on the selected date "${selectedDate}" and the current conditions at the following locations, please provide your recommendations:
+  let userPrompt = `Based on the selected date "${selectedDate}" and time "${selectedTime || 'any time'}", and the current conditions at the following locations, please provide your recommendations:
 
 ${locationInfo}`;
 
@@ -557,6 +614,17 @@ ${locationInfo}`;
     console.error('Error from OpenAI API:', error.response ? error.response.data : error.message);
     throw new Error('Failed to get response from AI assistant.');
   }
+}
+
+// Helper function to convert wind degrees to compass direction
+function getWindDirection(degrees) {
+  if (degrees === undefined || degrees === null) return 'Unknown';
+  const directions = [
+    'N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE',
+    'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N',
+  ];
+  const index = Math.round(degrees / 22.5);
+  return directions[index];
 }
 
 // Start the server
