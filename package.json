@@ -11,6 +11,7 @@
         "compromise": "^13.11.3",
         "dotenv": "^16.4.5",
         "express": "^4.21.1",
+        "fs": "^0.0.1-security",
         "node-cache": "^5.1.2",
         "openai": "^3.3.0"
     },
