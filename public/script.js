@@ -83,15 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
         selectedDateTime.setSeconds(0);
         selectedDateTime.setMilliseconds(0);
-
-        const now = new Date();
-        if (selectedDateObj.toDateString() === now.toDateString()) {
-          // If selected date is today, ensure time is in the future
-          if (selectedDateTime <= now) {
-            resultDiv.innerHTML = '<p>Please select a time in the future for today\'s date.</p>';
-            return;
-          }
-        }
       } else {
         resultDiv.innerHTML = '<p>Please select a valid time.</p>';
         return;
