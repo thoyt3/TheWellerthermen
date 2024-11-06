@@ -11,8 +11,8 @@ const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Initialize cache with a TTL (Time To Live) of 1 hour
-const cache = new NodeCache({ stdTTL: 3600 });
+// Initialize cache with a TTL (Time To Live) of 6 hours
+const cache = new NodeCache({ stdTTL: 21600 });
 
 // Middleware
 app.use(express.json());
@@ -65,13 +65,15 @@ app.post('/api/query', async (req, res) => {
   const selectedDate = req.body.date; // Get the selected date
   const selectedTime = req.body.time; // Get the selected time (optional)
   const selectedActivity = req.body.activity;
-  const selectedDistance = req.body.distance || 25; // Default to 25 miles
+  const distanceRange = req.body.distanceRange;
   const selectedUnits = req.body.units || 'imperial';
   const activity = selectedActivity;
 
   console.log('Activity:', activity); // Debugging
   console.log('Selected Date:', selectedDate);
   console.log('Selected Time:', selectedTime);
+  console.log('Selected Distance Range:', distanceRange);
+  console.log('Selected Units:', selectedUnits);
 
   try {
     const latitude = req.body.latitude;
@@ -83,17 +85,68 @@ app.post('/api/query', async (req, res) => {
         .json({ error: 'Invalid or missing location data.' });
     }
 
+    // Handle surfing activity
+    if (activity === 'surfing') {
+      // For now, return a fun message
+      let isInNewEngland = false;
+      const newEnglandStates = ['ME', 'NH', 'VT', 'MA', 'CT', 'RI'];
+
+      try {
+        const response = await axios.get(
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+        );
+        if (
+          response.data.address &&
+          newEnglandStates.includes(response.data.address.state_code)
+        ) {
+          isInNewEngland = true;
+        }
+      } catch (error) {
+        console.error('Error determining user location:', error);
+      }
+
+      let message = 'Surfing is not available in this area.';
+      if (isInNewEngland) {
+        message = 'Surfing in New England? You might need a thicker wetsuit!';
+      } else {
+        message = 'Surfing is not available in your selected area.';
+      }
+
+      return res.json({ response: message, recommendations: [] });
+    }
+
+    // Parse distanceRange into minDistance and maxDistance
+    let minDistance = 0;
+    let maxDistance = 25; // Default maxDistance
+
+    if (distanceRange) {
+      const [minStr, maxStr] = distanceRange.split('-');
+      minDistance = parseFloat(minStr);
+      maxDistance = parseFloat(maxStr);
+    }
+
+    console.log('Parsed Min Distance:', minDistance);
+    console.log('Parsed Max Distance:', maxDistance);
+
+    // Convert distances to miles if units are metric
+    if (selectedUnits === 'metric') {
+      minDistance = minDistance / 1.60934; // Convert km to miles
+      maxDistance = maxDistance / 1.60934;
+    }
+
     // Fetch activity locations
     const activityLocations = await getActivityLocations(
       activity,
       latitude,
       longitude,
-      selectedDistance
+      minDistance,
+      maxDistance,
+      10 // Limit to 10 locations
     );
 
     if (activityLocations.length === 0) {
       return res.json({
-        response: `No suitable locations found within ${selectedDistance} miles.`,
+        response: `No suitable locations found within your selected distance range.`,
         recommendations: [],
       });
     }
@@ -111,7 +164,7 @@ app.post('/api/query', async (req, res) => {
 
     if (recommendations.length === 0) {
       return res.json({
-        response: `No suitable locations found within ${selectedDistance} miles.`,
+        response: `No suitable locations found within your selected distance range.`,
         recommendations: [],
       });
     }
@@ -138,6 +191,7 @@ app.post('/api/query', async (req, res) => {
 // Endpoint to geocode address
 app.get('/api/geocode', async (req, res) => {
   const address = req.query.address;
+  console.log('Geocoding address:', address);
   try {
     const geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
     const response = await axios.get(geocodeUrl, {
@@ -195,29 +249,45 @@ async function getLocationWeatherData(
     return data;
   } else {
     try {
-      // Convert selectedDate and selectedTime to UNIX timestamp
-      let timestamp;
-      if (selectedTime) {
-        const dateTime = new Date(`${selectedDate}T${selectedTime}:00`);
-        timestamp = Math.floor(dateTime.getTime() / 1000);
+      // Convert selectedDate and selectedTime to Date object
+      const selectedDateTime = selectedTime
+        ? new Date(`${selectedDate}T${selectedTime}:00`)
+        : new Date(`${selectedDate}T12:00:00`);
+
+      const currentTime = new Date();
+      const isPastDate = selectedDateTime < currentTime;
+
+      if (isPastDate) {
+        // Use Timemachine API
+        const timestamp = Math.floor(selectedDateTime.getTime() / 1000);
+
+        const weatherUrl =
+          'https://api.openweathermap.org/data/3.0/onecall/timemachine';
+        const response = await axios.get(weatherUrl, {
+          params: {
+            lat: latitude,
+            lon: longitude,
+            dt: timestamp,
+            units: 'metric',
+            appid: process.env.OPENWEATHERMAP_API_KEY,
+          },
+        });
+        data = response.data;
       } else {
-        // Default to 12:00 PM if time is not selected
-        const dateTime = new Date(`${selectedDate}T12:00:00`);
-        timestamp = Math.floor(dateTime.getTime() / 1000);
+        // Use One Call API
+        const weatherUrl = 'https://api.openweathermap.org/data/3.0/onecall';
+        const response = await axios.get(weatherUrl, {
+          params: {
+            lat: latitude,
+            lon: longitude,
+            units: 'metric',
+            exclude: 'minutely,alerts',
+            appid: process.env.OPENWEATHERMAP_API_KEY,
+          },
+        });
+        data = response.data;
       }
 
-      const weatherUrl =
-        'https://api.openweathermap.org/data/3.0/onecall/timemachine';
-      const response = await axios.get(weatherUrl, {
-        params: {
-          lat: latitude,
-          lon: longitude,
-          dt: timestamp,
-          units: 'metric',
-          appid: process.env.OPENWEATHERMAP_API_KEY,
-        },
-      });
-      data = response.data;
       cache.set(cacheKey, data);
       return data;
     } catch (error) {
@@ -264,40 +334,6 @@ async function getWaveData(latitude, longitude, start, end) {
   }
 }
 
-// Function to fetch astronomy data with caching
-async function getAstronomyData(latitude, longitude, date) {
-  const cacheKey = `astronomy_${latitude}_${longitude}_${date}`;
-  let data = cache.get(cacheKey);
-
-  if (data) {
-    return data;
-  } else {
-    try {
-      const astronomyUrl = 'https://api.stormglass.io/v2/astronomy/point';
-
-      const response = await axios.get(astronomyUrl, {
-        params: {
-          lat: latitude,
-          lng: longitude,
-          date: date,
-        },
-        headers: {
-          Authorization: process.env.STORMGLASS_API_KEY,
-        },
-      });
-      data = response.data;
-      cache.set(cacheKey, data);
-      return data;
-    } catch (error) {
-      console.error(
-        'Error fetching astronomy data:',
-        error.response ? error.response.data : error.message
-      );
-      throw new Error('Failed to fetch astronomy data.');
-    }
-  }
-}
-
 // Function to determine thermal protection recommendation
 function getThermalProtectionRecommendation(waterTempF) {
   if (waterTempF > 82.4) {
@@ -320,7 +356,8 @@ async function getActivityLocations(
   activity,
   latitude,
   longitude,
-  maxDistance
+  maxDistance,
+  maxLocations = 10
 ) {
   const cacheKey = `locations_${activity}`;
   let data = cache.get(cacheKey);
@@ -358,7 +395,8 @@ async function getActivityLocations(
   // Sort locations by distance
   filteredLocations.sort((a, b) => a.distance - b.distance);
 
-  return filteredLocations;
+  // Limit to maxLocations
+  return filteredLocations.slice(0, maxLocations);
 }
 
 // Function to process recommendations
@@ -408,50 +446,66 @@ async function processRecommendations(
     }
 
     // Extract weather information
-    const locationCurrentWeather = locationWeatherData.data[0];
+    let currentWeather;
+    let dailyData;
+    let hourlyData;
 
-    location.weather = {
-      temperature: locationCurrentWeather.temp,
-      windSpeed: locationCurrentWeather.wind_speed,
-      windDeg: locationCurrentWeather.wind_deg, // Wind direction in degrees
-      clouds: locationCurrentWeather.clouds,
-      pop: locationCurrentWeather.pop,
-      uvi: locationCurrentWeather.uvi,
-      description: locationCurrentWeather.weather[0].description,
-      // OpenWeatherMap Timemachine API doesn't provide moon phase, sunrise, or sunset
-    };
-
-    // Fetch astronomy data
-    let astronomyData;
-    try {
-      astronomyData = await getAstronomyData(locLat, locLng, selectedDate);
-    } catch (error) {
-      console.error(
-        `Skipping location ${location.name} due to astronomy data error.`
-      );
-      continue;
-    }
-
-    const astroData = astronomyData.data[0];
-
-    location.astronomy = {
-      sunrise: astroData.sunrise,
-      sunset: astroData.sunset,
-      moonPhase: astroData.moonPhase.current.text,
-      moonFraction: astroData.moonFraction,
-      moonrise: astroData.moonrise,
-      moonset: astroData.moonset,
-    };
-
-    // Parse astronomy times and adjust for local time zone
-    const options = { timeZone: astroData.timezone };
-
-    const sunsetTime = new Date(location.astronomy.sunset);
-    const moonriseTime = new Date(location.astronomy.moonrise);
-    const moonsetTime = new Date(location.astronomy.moonset);
+    const selectedDateObj = new Date(selectedDate);
     const selectedDateTime = selectedTime
       ? new Date(`${selectedDate}T${selectedTime}:00`)
       : new Date(`${selectedDate}T12:00:00`);
+
+    if (locationWeatherData.current) {
+      // Data from One Call API
+      currentWeather = locationWeatherData.current;
+      dailyData = locationWeatherData.daily.find((daily) => {
+        const date = new Date(daily.dt * 1000);
+        return date.getDate() === selectedDateObj.getDate();
+      });
+      hourlyData = locationWeatherData.hourly;
+    } else if (locationWeatherData.data) {
+      // Data from Timemachine API
+      currentWeather = locationWeatherData.data[0];
+      dailyData = null;
+      hourlyData = locationWeatherData.data;
+    } else {
+      console.error('Unexpected weather data format');
+      continue;
+    }
+
+    location.weather = {
+      temperature: currentWeather.temp,
+      windSpeed: currentWeather.wind_speed,
+      windDeg: currentWeather.wind_deg,
+      clouds: currentWeather.clouds,
+      pop: currentWeather.pop || 0,
+      uvi: currentWeather.uvi,
+      description: currentWeather.weather[0].description,
+    };
+
+    // Astronomy data
+    if (dailyData) {
+      location.astronomy = {
+        sunrise: new Date(dailyData.sunrise * 1000).toISOString(),
+        sunset: new Date(dailyData.sunset * 1000).toISOString(),
+        moonrise: new Date(dailyData.moonrise * 1000).toISOString(),
+        moonset: new Date(dailyData.moonset * 1000).toISOString(),
+        moonPhase: getMoonPhaseDescription(dailyData.moon_phase),
+      };
+    } else {
+      location.astronomy = null;
+    }
+
+    // Parse astronomy times
+    const sunsetTime = location.astronomy
+      ? new Date(location.astronomy.sunset)
+      : null;
+    const moonriseTime = location.astronomy
+      ? new Date(location.astronomy.moonrise)
+      : null;
+    const moonsetTime = location.astronomy
+      ? new Date(location.astronomy.moonset)
+      : null;
 
     if (activity === 'scuba_diving') {
       // Fetch wave data
@@ -530,7 +584,9 @@ async function processRecommendations(
           ).toISOString();
 
           location.nextHighTideIsAtNight =
-            new Date(nextHighTide.timestamp * 1000) >= sunsetTime ? true : false;
+            sunsetTime && new Date(nextHighTide.timestamp * 1000) >= sunsetTime
+              ? true
+              : false;
         }
       }
 
@@ -575,9 +631,11 @@ async function processRecommendations(
 
       // Check for night dive conditions
       if (
+        location.astronomy &&
         location.astronomy.moonPhase.toLowerCase() === 'full moon' &&
         moonriseTime <= sunsetTime &&
-        moonsetTime >= new Date(sunsetTime.getTime() + 3 * 60 * 60 * 1000)
+        moonsetTime >=
+          new Date(sunsetTime.getTime() + 3 * 60 * 60 * 1000)
       ) {
         location.isGoodForNightDive = true;
         score += 10; // Boost score for good night dive conditions
@@ -590,12 +648,14 @@ async function processRecommendations(
       scoredLocations.push(location);
     } else if (activity === 'golf' || activity === 'hiking') {
       // Do not recommend starting activity within 3 hours of sunset
-      const timeDifference = sunsetTime - selectedDateTime; // in milliseconds
-      if (timeDifference <= 3 * 60 * 60 * 1000 && timeDifference >= 0) {
-        console.log(
-          `Skipping location ${location.name} due to proximity to sunset (${timeDifference} ms).`
-        );
-        continue;
+      if (sunsetTime) {
+        const timeDifference = sunsetTime - selectedDateTime; // in milliseconds
+        if (timeDifference <= 3 * 60 * 60 * 1000 && timeDifference >= 0) {
+          console.log(
+            `Skipping location ${location.name} due to proximity to sunset (${timeDifference} ms).`
+          );
+          continue;
+        }
       }
 
       // Check if temperature is below freezing
@@ -606,22 +666,15 @@ async function processRecommendations(
         // Find the time when temperature will be above freezing
         let tempAboveFreezingTime = null;
 
-        try {
-          const hourlyWeatherData = await getHourlyWeatherData(
-            locLat,
-            locLng,
-            selectedDateTime,
-            selectedDate
-          );
-
-          for (const hourData of hourlyWeatherData) {
+        if (hourlyData) {
+          for (const hourData of hourlyData) {
             if (hourData.temp > 0) {
-              tempAboveFreezingTime = new Date(hourData.dt * 1000).toISOString();
+              tempAboveFreezingTime = new Date(
+                hourData.dt * 1000
+              ).toISOString();
               break;
             }
           }
-        } catch (error) {
-          console.error(`Error fetching hourly weather data:`, error);
         }
 
         location.tempAboveFreezingTime = tempAboveFreezingTime;
@@ -670,40 +723,6 @@ async function processRecommendations(
 
     // Return top 3 recommendations
     return scoredLocations.slice(0, 3);
-  }
-}
-
-// Function to get hourly weather data
-async function getHourlyWeatherData(
-  latitude,
-  longitude,
-  selectedDateTime,
-  selectedDate
-) {
-  const cacheKey = `hourly_weather_${latitude}_${longitude}_${selectedDate}`;
-  let data = cache.get(cacheKey);
-
-  if (data) {
-    return data;
-  } else {
-    try {
-      const weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
-      const response = await axios.get(weatherUrl, {
-        params: {
-          lat: latitude,
-          lon: longitude,
-          exclude: 'current,minutely,daily,alerts',
-          units: 'metric',
-          appid: process.env.OPENWEATHERMAP_API_KEY,
-        },
-      });
-      data = response.data.hourly;
-      cache.set(cacheKey, data);
-      return data;
-    } catch (error) {
-      console.error('Error fetching hourly weather data:', error);
-      throw new Error('Failed to fetch hourly weather data.');
-    }
   }
 }
 
@@ -794,7 +813,10 @@ async function getAIResponse(
         info += `Visibility: ${visibility}\n`;
 
         if (loc.nextHighTide) {
-          info += `Next High Tide: ${formatTime(loc.nextHighTide, loc.geometry.location)}\n`;
+          info += `Next High Tide: ${formatTime(
+            loc.nextHighTide,
+            loc.geometry.location
+          )}\n`;
         }
 
         // Astronomy data
@@ -806,7 +828,10 @@ async function getAIResponse(
           info += `Moon Phase: ${loc.astronomy.moonPhase} (Moonrise: ${formatTime(
             loc.astronomy.moonrise,
             loc.geometry.location
-          )}, Moonset: ${formatTime(loc.astronomy.moonset, loc.geometry.location)})\n`;
+          )}, Moonset: ${formatTime(
+            loc.astronomy.moonset,
+            loc.geometry.location
+          )})\n`;
         }
 
         // Additional details from JSON file (e.g., dive site description)
@@ -1028,5 +1053,28 @@ function getClothingRecommendation(temperatureC, units) {
     return 'Long-sleeved shirt and pants';
   } else {
     return 'Shorts and a t-shirt';
+  }
+}
+
+// Helper function to get moon phase description
+function getMoonPhaseDescription(moonPhase) {
+  if (moonPhase === 0 || moonPhase === 1) {
+    return 'New Moon';
+  } else if (moonPhase > 0 && moonPhase < 0.25) {
+    return 'Waxing Crescent';
+  } else if (moonPhase === 0.25) {
+    return 'First Quarter';
+  } else if (moonPhase > 0.25 && moonPhase < 0.5) {
+    return 'Waxing Gibbous';
+  } else if (moonPhase === 0.5) {
+    return 'Full Moon';
+  } else if (moonPhase > 0.5 && moonPhase < 0.75) {
+    return 'Waning Gibbous';
+  } else if (moonPhase === 0.75) {
+    return 'Last Quarter';
+  } else if (moonPhase > 0.75 && moonPhase < 1) {
+    return 'Waning Crescent';
+  } else {
+    return 'Unknown';
   }
 }

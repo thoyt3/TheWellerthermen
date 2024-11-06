@@ -49,53 +49,80 @@
       color: blue;
       text-decoration: underline;
     }
+
+    /* Style for the activity image */
+    #activity-image {
+      max-width: 400px;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    /* Layout adjustments */
+    #main-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #form-container {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    #image-container {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <h1>Find the Best Spot for Your Activity</h1>
-  <form id="query-form">
-    <!-- Date selector input -->
-    <label for="date-select">Select a date (Today or next 7 days):</label>
-    <input type="date" id="date-select" required>
-
-    <!-- Time selector input (optional) -->
-    <label for="time-select">Select a time (optional):</label>
-    <input type="time" id="time-select">
-
-    <!-- Manual location input (optional) -->
-    <label for="manual-location">Enter desired location (optional):</label>
-    <input type="text" id="manual-location" placeholder="e.g., Boston, MA">
-
-    <!-- Activity dropdown -->
-    <label for="activity-select">Select an activity:</label>
-    <select id="activity-select" required>
-      <option value="">Select an activity</option>
-      <option value="scuba_diving">Scuba Diving</option>
-      <option value="golf">Golfing</option>
-      <option value="surfing">Surfing</option>
-      <option value="hiking">Hiking</option>
-    </select>
-
-    <!-- Distance dropdown -->
-    <label for="distance-select">Select a distance:</label>
-    <select id="distance-select">
-      <option value="1">1 mile</option>
-      <option value="5">5 mile</option>
-      <option value="10">10 miles</option>
-      <option value="25" selected>25 miles</option>
-      <option value="50">50 miles</option>
-      <option value="100">100 miles</option>
-    </select>
-
-    <!-- Units dropdown -->
-    <label for="units-select">Select units:</label>
-    <select id="units-select">
-      <option value="imperial" selected>Imperial</option>
-      <option value="metric">Metric</option>
-    </select>
-
-    <button type="submit" id="submit-button">Submit</button>
-  </form>
+  <div id="main-container">
+    <div id="form-container">
+      <form id="query-form">
+        <!-- Date selector input -->
+        <label for="date-select">Select a date (Today or next 7 days):</label>
+        <input type="date" id="date-select" required>
+    
+        <!-- Time selector input (optional) -->
+        <label for="time-select">Select a time (optional):</label>
+        <input type="time" id="time-select">
+    
+        <!-- Manual location input (optional) -->
+        <label for="manual-location">Enter desired location (optional):</label>
+        <input type="text" id="manual-location" placeholder="e.g., Boston, MA">
+    
+        <!-- Activity dropdown -->
+        <label for="activity-select">Select an activity:</label>
+        <select id="activity-select" required>
+          <option value="">Select an activity</option>
+          <option value="scuba_diving">Scuba Diving</option>
+          <option value="golf">Golfing</option>
+          <option value="surfing">Surfing</option>
+          <option value="hiking">Hiking</option>
+        </select>
+    
+        <!-- Distance dropdown -->
+        <label for="distance-select">Select a distance range:</label>
+        <select id="distance-select">
+          <!-- Options will be populated by script.js based on units -->
+        </select>
+    
+        <!-- Units dropdown -->
+        <label for="units-select">Select units:</label>
+        <select id="units-select">
+          <option value="imperial" selected>Imperial</option>
+          <option value="metric">Metric</option>
+        </select>
+    
+        <button type="submit" id="submit-button">Submit</button>
+      </form>
+    </div>
+    <div id="image-container">
+      <img id="activity-image" src="" alt="Activity Image">
+    </div>
+  </div>
+  
   <div id="response-container"></div>
 
   <!-- Map Container -->
