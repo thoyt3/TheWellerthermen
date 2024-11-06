@@ -13,7 +13,8 @@
         "express": "^4.21.1",
         "fs": "^0.0.1-security",
         "node-cache": "^5.1.2",
-        "openai": "^3.3.0"
+        "openai": "^3.3.0",
+        "sqlite3": "^5.1.7"
     },
     "author": "",
     "license": "ISC"
