@@ -39,7 +39,7 @@ fs.readFile(
       try {
         locationsData = JSON.parse(data);
 
-        // Ensure that diveType is set for each location (if exists)
+        // Ensure that diveSiteDescription is set for each location (if exists)
         locationsData = locationsData.map((loc) => {
           if (!loc.diveType) {
             // If diveType is missing, default to 'shore' (or handle as needed)
@@ -83,7 +83,7 @@ app.post('/api/query', async (req, res) => {
         .json({ error: 'Invalid or missing location data.' });
     }
 
-    // Fetch activity locations within the selectedDistance
+    // Fetch activity locations
     const activityLocations = await getActivityLocations(
       activity,
       latitude,
@@ -98,99 +98,18 @@ app.post('/api/query', async (req, res) => {
       });
     }
 
-    // Sort activityLocations by distance
-    activityLocations.sort((a, b) => a.distance - b.distance);
+    // Process data and generate recommendations
+    const recommendations = await processRecommendations(
+      activityLocations,
+      activity,
+      selectedUnits,
+      selectedDate,
+      selectedTime,
+      latitude,
+      longitude
+    );
 
-    let suitableLocations = [];
-    let minRadius = 0;
-    const radiusIncrement = 10;
-    const maxDistance = selectedDistance;
-
-    // Loop until we find at least 3 suitable locations or reach the maximum distance
-    while (minRadius <= maxDistance && suitableLocations.length < 3) {
-      console.log(
-        `Searching locations with minimum radius ${minRadius} miles and increment ${radiusIncrement} miles...`
-      );
-
-      // Filter locations within the current radius range
-      const locationsInRange = activityLocations.filter(
-        (loc) =>
-          loc.distance >= minRadius &&
-          loc.distance < Math.min(minRadius + radiusIncrement, maxDistance)
-      );
-
-      // Process locations in batches of 5
-      for (let i = 0; i < locationsInRange.length; i += 5) {
-        const batch = locationsInRange.slice(i, i + 5);
-
-        // Group locations by proximity (within 1 mile)
-        const locationGroups = groupLocationsByProximity(batch, 1);
-
-        // Process each group
-        for (const group of locationGroups) {
-          const groupCenter = calculateGroupCenter(group);
-
-          // Fetch weather data once for the group center
-          let locationWeatherData;
-          try {
-            locationWeatherData = await getLocationWeatherData(
-              groupCenter.lat,
-              groupCenter.lng,
-              selectedDate,
-              selectedTime
-            );
-          } catch (error) {
-            console.error(
-              `Skipping group due to weather data error:`,
-              error.message
-            );
-            continue;
-          }
-
-          // Assign weather data to each location in the group
-          for (const location of group) {
-            // Check if location is suitable
-            let isSuitable = false;
-            try {
-              isSuitable = await isLocationSuitable(
-                location,
-                selectedDate,
-                selectedTime,
-                activity,
-                selectedUnits,
-                locationWeatherData
-              );
-            } catch (error) {
-              console.error(
-                `Skipping location ${location.name} due to error:`,
-                error.message
-              );
-              continue;
-            }
-
-            if (isSuitable) {
-              suitableLocations.push(location);
-              if (suitableLocations.length >= 3) {
-                break;
-              }
-            }
-          }
-
-          if (suitableLocations.length >= 3) {
-            break;
-          }
-        }
-
-        if (suitableLocations.length >= 3) {
-          break;
-        }
-      }
-
-      // Increase minRadius for the next iteration
-      minRadius += radiusIncrement;
-    }
-
-    if (suitableLocations.length === 0) {
+    if (recommendations.length === 0) {
       return res.json({
         response: `No suitable locations found within ${selectedDistance} miles.`,
         recommendations: [],
@@ -201,12 +120,12 @@ app.post('/api/query', async (req, res) => {
     const aiResponse = await getAIResponse(
       selectedDate,
       selectedTime,
-      suitableLocations,
+      recommendations,
       selectedUnits,
       activity
     );
 
-    res.json({ response: aiResponse, recommendations: suitableLocations });
+    res.json({ response: aiResponse, recommendations });
   } catch (error) {
     console.error('Error during /api/query:', error);
     res.status(500).json({
@@ -262,324 +181,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-// Function to fetch activity locations with caching and distance filtering
-async function getActivityLocations(
-  activity,
-  latitude,
-  longitude,
-  maxDistance
-) {
-  const cacheKey = `locations_${activity}`;
-  let data = cache.get(cacheKey);
-
-  if (data) {
-    // Data is already cached
-  } else {
-    try {
-      // Read from locationsData
-      const locations = locationsData.filter((loc) =>
-        loc.activities.includes(activity)
-      );
-      data = locations;
-
-      cache.set(cacheKey, data);
-    } catch (error) {
-      console.error('Error fetching activity locations:', error);
-      throw new Error('Failed to fetch activity locations.');
-    }
-  }
-
-  // Calculate distances and filter locations based on distance
-  const locationsWithDistance = data.map((location) => {
-    const locLat = location.geometry.location.lat;
-    const locLng = location.geometry.location.lng;
-    const distance = calculateDistance(latitude, longitude, locLat, locLng);
-    return { ...location, distance };
-  });
-
-  // Filter locations within maxDistance
-  const filteredLocations = locationsWithDistance.filter(
-    (loc) => loc.distance <= maxDistance
-  );
-
-  // Sort locations by distance
-  filteredLocations.sort((a, b) => a.distance - b.distance);
-
-  return filteredLocations;
-}
-
-// Function to group locations by proximity
-function groupLocationsByProximity(locations, proximityMiles) {
-  const groups = [];
-  const visited = new Set();
-
-  for (let i = 0; i < locations.length; i++) {
-    if (visited.has(locations[i].id)) continue;
-    const group = [locations[i]];
-    visited.add(locations[i].id);
-
-    for (let j = i + 1; j < locations.length; j++) {
-      if (visited.has(locations[j].id)) continue;
-      const distance = calculateDistance(
-        locations[i].geometry.location.lat,
-        locations[i].geometry.location.lng,
-        locations[j].geometry.location.lat,
-        locations[j].geometry.location.lng
-      );
-      if (distance <= proximityMiles) {
-        group.push(locations[j]);
-        visited.add(locations[j].id);
-      }
-    }
-    groups.push(group);
-  }
-  return groups;
-}
-
-// Function to calculate the center of a group of locations
-function calculateGroupCenter(group) {
-  let sumLat = 0;
-  let sumLng = 0;
-  for (const loc of group) {
-    sumLat += loc.geometry.location.lat;
-    sumLng += loc.geometry.location.lng;
-  }
-  return {
-    lat: sumLat / group.length,
-    lng: sumLng / group.length,
-  };
-}
-
-// Function to check if a location is suitable
-async function isLocationSuitable(
-  location,
-  selectedDate,
-  selectedTime,
-  activity,
-  units,
-  locationWeatherData
-) {
-  let score = 0;
-
-  const locLat = location.geometry.location.lat;
-  const locLng = location.geometry.location.lng;
-
-  // Extract weather information
-  const locationCurrentWeather = locationWeatherData.data[0];
-
-  location.weather = {
-    temperature: locationCurrentWeather.temp,
-    windSpeed: locationCurrentWeather.wind_speed,
-    windDeg: locationCurrentWeather.wind_deg, // Wind direction in degrees
-    clouds: locationCurrentWeather.clouds,
-    pop: locationCurrentWeather.pop,
-    uvi: locationCurrentWeather.uvi,
-    description: locationCurrentWeather.weather[0].description,
-  };
-
-  // Fetch astronomy data
-  let astronomyData;
-  try {
-    astronomyData = await getAstronomyData(locLat, locLng, selectedDate);
-  } catch (error) {
-    console.error(
-      `Skipping location ${location.name} due to astronomy data error:`,
-      error.message
-    );
-    throw error;
-  }
-
-  const astroData = astronomyData.data[0];
-
-  location.astronomy = {
-    sunrise: astroData.sunrise,
-    sunset: astroData.sunset,
-    moonPhase: astroData.moonPhase.current.text,
-    moonFraction: astroData.moonFraction,
-    moonrise: astroData.moonrise,
-    moonset: astroData.moonset,
-  };
-
-  // Continue with scoring logic
-
-  const sunsetTime = new Date(location.astronomy.sunset);
-  const selectedDateTime = selectedTime
-    ? new Date(`${selectedDate}T${selectedTime}:00`)
-    : new Date(`${selectedDate}T12:00:00`);
-
-  if (activity === 'golf' || activity === 'hiking') {
-    // Do not recommend starting activity within 3 hours of sunset
-    const timeDifference = sunsetTime - selectedDateTime; // in milliseconds
-    if (timeDifference <= 3 * 60 * 60 * 1000 && timeDifference >= 0) {
-      console.log(
-        `Skipping location ${location.name} due to proximity to sunset (${timeDifference} ms).`
-      );
-      return false;
-    }
-
-    // Check if temperature is below freezing
-    const temperatureC = location.weather.temperature;
-    if (temperatureC < 0) {
-      location.frostWarning = true;
-
-      // Find the time when temperature will be above freezing
-      let tempAboveFreezingTime = null;
-
-      try {
-        const hourlyWeatherData = await getHourlyWeatherData(
-          locLat,
-          locLng,
-          selectedDateTime,
-          selectedDate
-        );
-
-        for (const hourData of hourlyWeatherData) {
-          if (hourData.temp > 0) {
-            tempAboveFreezingTime = new Date(hourData.dt * 1000).toISOString();
-            break;
-          }
-        }
-      } catch (error) {
-        console.error(`Error fetching hourly weather data:`, error.message);
-      }
-
-      location.tempAboveFreezingTime = tempAboveFreezingTime;
-    } else {
-      location.frostWarning = false;
-    }
-
-    // Scoring logic for golfing/hiking
-    score += temperatureC > 5 ? 10 : 5; // Prefer warmer temperatures
-    score += location.weather.windSpeed < 5 ? 5 : 0; // Prefer low wind
-    score -= location.weather.pop > 0.5 ? 5 : 0; // Reduce score if high chance of precipitation
-
-    location.score = score;
-
-    // Decide if location is suitable based on score
-    if (score >= 15) {
-      return true;
-    } else {
-      return false;
-    }
-  } else if (activity === 'scuba_diving') {
-    // Implement scuba diving suitability logic
-
-    // Fetch wave data
-    const selectedTimestamp = Math.floor(selectedDateTime.getTime() / 1000);
-    const waveStart = selectedTimestamp;
-    const waveEnd = waveStart + 6 * 3600; // 6 hours ahead
-
-    let waveData;
-    try {
-      waveData = await getWaveData(locLat, locLng, waveStart, waveEnd);
-    } catch (error) {
-      console.error(
-        `Skipping location ${location.name} due to wave data error:`,
-        error.message
-      );
-      return false;
-    }
-
-    const waveHours = waveData && waveData.hours;
-
-    if (waveHours && waveHours.length > 0) {
-      // Find the data point closest to selected date and time
-      let closestHour = waveHours.reduce((prev, curr) => {
-        const prevDiff = Math.abs(new Date(prev.time) - selectedDateTime);
-        const currDiff = Math.abs(new Date(curr.time) - selectedDateTime);
-        return currDiff < prevDiff ? curr : prev;
-      });
-
-      const waveHeight = closestHour.waveHeight.noaa;
-      const wavePeriod = closestHour.wavePeriod.noaa;
-      const waterTemperatureC = closestHour.waterTemperature.noaa;
-      const waterTemperatureF = (waterTemperatureC * 9) / 5 + 32;
-
-      location.waveData = {
-        waveHeight:
-          units === 'imperial'
-            ? (waveHeight * 3.28084).toFixed(2) // meters to feet
-            : waveHeight.toFixed(2), // meters
-        wavePeriod: wavePeriod.toFixed(2), // seconds
-      };
-      location.waterTemperature =
-        units === 'imperial'
-          ? waterTemperatureF.toFixed(2) // Celsius to Fahrenheit
-          : waterTemperatureC.toFixed(2); // Celsius
-
-      // Determine thermal protection recommendation
-      location.thermalProtectionRecommendation =
-        getThermalProtectionRecommendation(waterTemperatureF);
-    }
-
-    // Scoring logic for scuba diving
-    // Example: Lower wave height and favorable visibility increase score
-    if (location.waveData && location.waveData.waveHeight) {
-      const waveHeight = parseFloat(location.waveData.waveHeight);
-      if (waveHeight <= 3) {
-        score += 10;
-      } else if (waveHeight <= 5) {
-        score += 5;
-      } else {
-        score -= 5;
-      }
-    }
-
-    // Incorporate wind direction into scoring
-    if (location.weather.windDeg !== undefined) {
-      // Favor wind directions between 90 and 270 degrees (from east to west)
-      if (location.weather.windDeg >= 90 && location.weather.windDeg <= 270) {
-        score += 5;
-      } else {
-        score -= 5;
-      }
-    }
-
-    // Incorporate wind speed into scoring
-    if (location.weather.windSpeed > 20) {
-      score -= 15; // Not a good site for the day
-    } else if (location.weather.windSpeed > 15) {
-      score -= 10; // Raise concerns over visibility
-    }
-
-    // Adjust score based on visibility concerns
-    location.poorVisibility = location.weather.windSpeed > 15 ? true : false;
-
-    if (location.poorVisibility) {
-      score -= 5;
-    } else {
-      score += 5;
-    }
-
-    // Check for night dive conditions
-    const moonriseTime = new Date(location.astronomy.moonrise);
-    const moonsetTime = new Date(location.astronomy.moonset);
-    const sunsetTime = new Date(location.astronomy.sunset);
-    if (
-      location.astronomy.moonPhase.toLowerCase() === 'full moon' &&
-      moonriseTime <= sunsetTime &&
-      moonsetTime >= new Date(sunsetTime.getTime() + 3 * 60 * 60 * 1000)
-    ) {
-      location.isGoodForNightDive = true;
-      score += 10; // Boost score for good night dive conditions
-    } else {
-      location.isGoodForNightDive = false;
-    }
-
-    location.score = score;
-
-    // Decide if location is suitable based on score
-    if (score >= 15) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    // Other activities can be added
-    return false;
-  }
-}
-
 // Function to fetch per-location weather data with caching
 async function getLocationWeatherData(
   latitude,
@@ -604,6 +205,7 @@ async function getLocationWeatherData(
         const dateTime = new Date(`${selectedDate}T12:00:00`);
         timestamp = Math.floor(dateTime.getTime() / 1000);
       }
+
       const weatherUrl =
         'https://api.openweathermap.org/data/3.0/onecall/timemachine';
       const response = await axios.get(weatherUrl, {
@@ -619,42 +221,8 @@ async function getLocationWeatherData(
       cache.set(cacheKey, data);
       return data;
     } catch (error) {
-      console.error('Error fetching location weather data:', error.message);
+      console.error('Error fetching location weather data:', error);
       throw new Error('Failed to fetch location weather data.');
-    }
-  }
-}
-
-// Function to fetch astronomy data with caching
-async function getAstronomyData(latitude, longitude, date) {
-  const cacheKey = `astronomy_${latitude}_${longitude}_${date}`;
-  let data = cache.get(cacheKey);
-
-  if (data) {
-    return data;
-  } else {
-    try {
-      const astronomyUrl = 'https://api.stormglass.io/v2/astronomy/point';
-
-      const response = await axios.get(astronomyUrl, {
-        params: {
-          lat: latitude,
-          lng: longitude,
-          date: date,
-        },
-        headers: {
-          Authorization: process.env.STORMGLASS_API_KEY,
-        },
-      });
-      data = response.data;
-      cache.set(cacheKey, data);
-      return data;
-    } catch (error) {
-      console.error(
-        'Error fetching astronomy data:',
-        error.response ? error.response.data : error.message
-      );
-      throw new Error('Failed to fetch astronomy data.');
     }
   }
 }
@@ -696,6 +264,415 @@ async function getWaveData(latitude, longitude, start, end) {
   }
 }
 
+// Function to fetch astronomy data with caching
+async function getAstronomyData(latitude, longitude, date) {
+  const cacheKey = `astronomy_${latitude}_${longitude}_${date}`;
+  let data = cache.get(cacheKey);
+
+  if (data) {
+    return data;
+  } else {
+    try {
+      const astronomyUrl = 'https://api.stormglass.io/v2/astronomy/point';
+
+      const response = await axios.get(astronomyUrl, {
+        params: {
+          lat: latitude,
+          lng: longitude,
+          date: date,
+        },
+        headers: {
+          Authorization: process.env.STORMGLASS_API_KEY,
+        },
+      });
+      data = response.data;
+      cache.set(cacheKey, data);
+      return data;
+    } catch (error) {
+      console.error(
+        'Error fetching astronomy data:',
+        error.response ? error.response.data : error.message
+      );
+      throw new Error('Failed to fetch astronomy data.');
+    }
+  }
+}
+
+// Function to determine thermal protection recommendation
+function getThermalProtectionRecommendation(waterTempF) {
+  if (waterTempF > 82.4) {
+    return 'Swim suit, rashguard, or UV protective dive skin';
+  } else if (waterTempF >= 77 && waterTempF <= 80.6) {
+    return '2 mm shorty wetsuit or 1 mm full suit';
+  } else if (waterTempF >= 71.6 && waterTempF <= 75.2) {
+    return '3 mm full suit';
+  } else if (waterTempF >= 62.6 && waterTempF <= 69.8) {
+    return '5 mm full suit';
+  } else if (waterTempF >= 55 && waterTempF <= 62.5) {
+    return '7 mm full suit';
+  } else {
+    return 'Dry suit';
+  }
+}
+
+// Function to fetch activity locations with caching and distance filtering
+async function getActivityLocations(
+  activity,
+  latitude,
+  longitude,
+  maxDistance
+) {
+  const cacheKey = `locations_${activity}`;
+  let data = cache.get(cacheKey);
+
+  if (data) {
+    data = data;
+  } else {
+    try {
+      // Read from locationsData
+      const locations = locationsData.filter((loc) =>
+        loc.activities.includes(activity)
+      );
+      data = locations;
+
+      cache.set(cacheKey, data);
+    } catch (error) {
+      console.error('Error fetching activity locations:', error);
+      throw new Error('Failed to fetch activity locations.');
+    }
+  }
+
+  // Calculate distances and filter locations based on distance
+  const locationsWithDistance = data.map((location) => {
+    const locLat = location.geometry.location.lat;
+    const locLng = location.geometry.location.lng;
+    const distance = calculateDistance(latitude, longitude, locLat, locLng);
+    return { ...location, distance };
+  });
+
+  // Filter locations within maxDistance
+  const filteredLocations = locationsWithDistance.filter(
+    (loc) => loc.distance <= maxDistance
+  );
+
+  // Sort locations by distance
+  filteredLocations.sort((a, b) => a.distance - b.distance);
+
+  return filteredLocations;
+}
+
+// Function to process recommendations
+async function processRecommendations(
+  locations,
+  activity,
+  units,
+  selectedDate,
+  selectedTime,
+  userLatitude,
+  userLongitude
+) {
+  // Iterate over locations and score them
+  let scoredLocations = [];
+
+  // Convert selectedDate and selectedTime to UNIX timestamp
+  let selectedTimestamp;
+  if (selectedTime) {
+    const dateTime = new Date(`${selectedDate}T${selectedTime}:00`);
+    selectedTimestamp = Math.floor(dateTime.getTime() / 1000);
+  } else {
+    // Default to 12:00 PM if time is not selected
+    const dateTime = new Date(`${selectedDate}T12:00:00`);
+    selectedTimestamp = Math.floor(dateTime.getTime() / 1000);
+  }
+
+  for (const location of locations) {
+    let score = 0;
+
+    const locLat = location.geometry.location.lat;
+    const locLng = location.geometry.location.lng;
+
+    // Fetch per-location weather data
+    let locationWeatherData;
+    try {
+      locationWeatherData = await getLocationWeatherData(
+        locLat,
+        locLng,
+        selectedDate,
+        selectedTime
+      );
+    } catch (error) {
+      console.error(
+        `Skipping location ${location.name} due to weather data error.`
+      );
+      continue;
+    }
+
+    // Extract weather information
+    const locationCurrentWeather = locationWeatherData.data[0];
+
+    location.weather = {
+      temperature: locationCurrentWeather.temp,
+      windSpeed: locationCurrentWeather.wind_speed,
+      windDeg: locationCurrentWeather.wind_deg, // Wind direction in degrees
+      clouds: locationCurrentWeather.clouds,
+      pop: locationCurrentWeather.pop,
+      uvi: locationCurrentWeather.uvi,
+      description: locationCurrentWeather.weather[0].description,
+      // OpenWeatherMap Timemachine API doesn't provide moon phase, sunrise, or sunset
+    };
+
+    // Fetch astronomy data
+    let astronomyData;
+    try {
+      astronomyData = await getAstronomyData(locLat, locLng, selectedDate);
+    } catch (error) {
+      console.error(
+        `Skipping location ${location.name} due to astronomy data error.`
+      );
+      continue;
+    }
+
+    const astroData = astronomyData.data[0];
+
+    location.astronomy = {
+      sunrise: astroData.sunrise,
+      sunset: astroData.sunset,
+      moonPhase: astroData.moonPhase.current.text,
+      moonFraction: astroData.moonFraction,
+      moonrise: astroData.moonrise,
+      moonset: astroData.moonset,
+    };
+
+    // Parse astronomy times and adjust for local time zone
+    const options = { timeZone: astroData.timezone };
+
+    const sunsetTime = new Date(location.astronomy.sunset);
+    const moonriseTime = new Date(location.astronomy.moonrise);
+    const moonsetTime = new Date(location.astronomy.moonset);
+    const selectedDateTime = selectedTime
+      ? new Date(`${selectedDate}T${selectedTime}:00`)
+      : new Date(`${selectedDate}T12:00:00`);
+
+    if (activity === 'scuba_diving') {
+      // Fetch wave data
+      const waveStart = selectedTimestamp;
+      const waveEnd = waveStart + 6 * 3600; // 6 hours ahead
+
+      let waveData;
+      try {
+        waveData = await getWaveData(locLat, locLng, waveStart, waveEnd);
+      } catch (error) {
+        console.error(
+          `Skipping location ${location.name} due to wave data error.`
+        );
+        continue;
+      }
+
+      const waveHours = waveData && waveData.hours;
+
+      if (waveHours && waveHours.length > 0) {
+        // Find the data point closest to selected date and time
+        let closestHour = waveHours.reduce((prev, curr) => {
+          const prevDiff = Math.abs(new Date(prev.time) - selectedDateTime);
+          const currDiff = Math.abs(new Date(curr.time) - selectedDateTime);
+          return currDiff < prevDiff ? curr : prev;
+        });
+
+        const waveHeight = closestHour.waveHeight.noaa;
+        const wavePeriod = closestHour.wavePeriod.noaa;
+        const waterTemperatureC = closestHour.waterTemperature.noaa;
+        const waterTemperatureF = (waterTemperatureC * 9) / 5 + 32;
+
+        location.waveData = {
+          waveHeight:
+            units === 'imperial'
+              ? (waveHeight * 3.28084).toFixed(2) // meters to feet
+              : waveHeight.toFixed(2), // meters
+          wavePeriod: wavePeriod.toFixed(2), // seconds
+        };
+        location.waterTemperature =
+          units === 'imperial'
+            ? waterTemperatureF.toFixed(2) // Celsius to Fahrenheit
+            : waterTemperatureC.toFixed(2); // Celsius
+
+        // Determine thermal protection recommendation
+        location.thermalProtectionRecommendation =
+          getThermalProtectionRecommendation(waterTemperatureF);
+      }
+
+      // Fetch tide data
+      let tideData;
+      try {
+        tideData = await getTideData(locLat, locLng, selectedDate, selectedTime);
+      } catch (error) {
+        console.error(
+          `Error fetching tide data for location ${location.name}:`,
+          error
+        );
+        tideData = null;
+      }
+      location.tideData = tideData;
+
+      // Include tide data
+      if (
+        location.tideData &&
+        location.tideData.extremes &&
+        location.tideData.extremes.length > 0
+      ) {
+        const nowTimestamp = selectedTimestamp;
+        const upcomingHighTides = location.tideData.extremes.filter(
+          (extreme) => extreme.type === 'High' && extreme.timestamp >= nowTimestamp
+        );
+        if (upcomingHighTides.length > 0) {
+          const nextHighTide = upcomingHighTides[0];
+          location.nextHighTide = new Date(
+            nextHighTide.timestamp * 1000
+          ).toISOString();
+
+          location.nextHighTideIsAtNight =
+            new Date(nextHighTide.timestamp * 1000) >= sunsetTime ? true : false;
+        }
+      }
+
+      // Scoring logic for scuba diving
+      // Example: Lower wave height and favorable visibility increase score
+      if (location.waveData && location.waveData.waveHeight) {
+        const waveHeight = parseFloat(location.waveData.waveHeight);
+        if (waveHeight <= 3) {
+          score += 10;
+        } else if (waveHeight <= 5) {
+          score += 5;
+        } else {
+          score -= 5;
+        }
+      }
+
+      // Incorporate wind direction into scoring (e.g., favorable wind direction)
+      if (location.weather.windDeg !== undefined) {
+        // Example: Favor wind directions between 90 and 270 degrees (from east to west)
+        if (location.weather.windDeg >= 90 && location.weather.windDeg <= 270) {
+          score += 5;
+        } else {
+          score -= 5;
+        }
+      }
+
+      // Incorporate wind speed into scoring
+      if (location.weather.windSpeed > 20) {
+        score -= 15; // Not a good site for the day
+      } else if (location.weather.windSpeed > 15) {
+        score -= 10; // Raise concerns over visibility
+      }
+
+      // Adjust score based on visibility concerns
+      location.poorVisibility = location.weather.windSpeed > 15 ? true : false;
+
+      if (location.poorVisibility) {
+        score -= 5;
+      } else {
+        score += 5;
+      }
+
+      // Check for night dive conditions
+      if (
+        location.astronomy.moonPhase.toLowerCase() === 'full moon' &&
+        moonriseTime <= sunsetTime &&
+        moonsetTime >= new Date(sunsetTime.getTime() + 3 * 60 * 60 * 1000)
+      ) {
+        location.isGoodForNightDive = true;
+        score += 10; // Boost score for good night dive conditions
+      } else {
+        location.isGoodForNightDive = false;
+      }
+
+      // Attach score to location
+      location.score = score;
+      scoredLocations.push(location);
+    } else if (activity === 'golf' || activity === 'hiking') {
+      // Do not recommend starting activity within 3 hours of sunset
+      const timeDifference = sunsetTime - selectedDateTime; // in milliseconds
+      if (timeDifference <= 3 * 60 * 60 * 1000 && timeDifference >= 0) {
+        console.log(
+          `Skipping location ${location.name} due to proximity to sunset (${timeDifference} ms).`
+        );
+        continue;
+      }
+
+      // Check if temperature is below freezing
+      const temperatureC = location.weather.temperature;
+      if (temperatureC < 0) {
+        location.frostWarning = true;
+
+        // Find the time when temperature will be above freezing
+        let tempAboveFreezingTime = null;
+
+        try {
+          const hourlyWeatherData = await getHourlyWeatherData(
+            locLat,
+            locLng,
+            selectedDateTime,
+            selectedDate
+          );
+
+          for (const hourData of hourlyWeatherData) {
+            if (hourData.temp > 0) {
+              tempAboveFreezingTime = new Date(hourData.dt * 1000).toISOString();
+              break;
+            }
+          }
+        } catch (error) {
+          console.error(`Error fetching hourly weather data:`, error);
+        }
+
+        location.tempAboveFreezingTime = tempAboveFreezingTime;
+      } else {
+        location.frostWarning = false;
+      }
+
+      // Scoring logic for golfing/hiking (simplified)
+      score += temperatureC > 5 ? 10 : 5; // Prefer warmer temperatures
+      score += location.weather.windSpeed < 5 ? 5 : 0; // Prefer low wind
+      score -= location.weather.pop > 0.5 ? 5 : 0; // Reduce score if high chance of precipitation
+
+      location.score = score;
+      scoredLocations.push(location);
+    } else {
+      // Scoring logic for other activities
+      // Implement as needed
+      location.score = score;
+      scoredLocations.push(location);
+    }
+  }
+
+  if (activity === 'scuba_diving') {
+    // Segregate shore and boat dives
+    const shoreDives = scoredLocations.filter((loc) => loc.diveType === 'shore');
+    const boatDives = scoredLocations.filter((loc) => loc.diveType === 'boat');
+
+    // Sort each list by score
+    shoreDives.sort((a, b) => b.score - a.score);
+    boatDives.sort((a, b) => b.score - a.score);
+
+    // Select top 3 shore dives and top 1 boat dive
+    const topShoreDives = shoreDives.slice(0, 3);
+    const topBoatDives = boatDives.slice(0, 1);
+
+    // Combine the recommendations with section labels
+    const recommendations = [
+      { type: 'shore', dives: topShoreDives },
+      { type: 'boat', dives: topBoatDives },
+    ];
+
+    return recommendations;
+  } else {
+    // Sort locations by score in descending order
+    scoredLocations.sort((a, b) => b.score - a.score);
+
+    // Return top 3 recommendations
+    return scoredLocations.slice(0, 3);
+  }
+}
+
 // Function to get hourly weather data
 async function getHourlyWeatherData(
   latitude,
@@ -724,26 +701,44 @@ async function getHourlyWeatherData(
       cache.set(cacheKey, data);
       return data;
     } catch (error) {
-      console.error('Error fetching hourly weather data:', error.message);
+      console.error('Error fetching hourly weather data:', error);
       throw new Error('Failed to fetch hourly weather data.');
     }
   }
 }
 
-// Function to determine thermal protection recommendation
-function getThermalProtectionRecommendation(waterTempF) {
-  if (waterTempF > 82.4) {
-    return 'Swim suit, rashguard, or UV protective dive skin';
-  } else if (waterTempF >= 77 && waterTempF <= 80.6) {
-    return '2 mm shorty wetsuit or 1 mm full suit';
-  } else if (waterTempF >= 71.6 && waterTempF <= 75.2) {
-    return '3 mm full suit';
-  } else if (waterTempF >= 62.6 && waterTempF <= 69.8) {
-    return '5 mm full suit';
-  } else if (waterTempF >= 55 && waterTempF <= 62.5) {
-    return '7 mm full suit';
+// Function to fetch tide data with caching
+async function getTideData(latitude, longitude, date, selectedTime) {
+  const cacheKey = `tide_${latitude}_${longitude}_${date}_${selectedTime}`;
+  let data = cache.get(cacheKey);
+
+  if (data) {
+    return data;
   } else {
-    return 'Dry suit';
+    try {
+      const tideUrl = 'https://www.worldtides.info/api/v3';
+      // Combine date and time to get accurate tide data
+      let datetime = date;
+      if (selectedTime) {
+        datetime += ` ${selectedTime}`;
+      }
+      const response = await axios.get(tideUrl, {
+        params: {
+          lat: latitude,
+          lon: longitude,
+          date: datetime,
+          key: process.env.WORLDTIDES_API_KEY,
+          extremes: '', // Include the 'extremes' parameter
+        },
+      });
+      data = response.data;
+      cache.set(cacheKey, data);
+      return data;
+    } catch (error) {
+      console.error('Error fetching tide data:', error);
+      // Handle tide data failure gracefully
+      return null;
+    }
   }
 }
 
@@ -763,65 +758,66 @@ async function getAIResponse(
   const unitsHeight = units === 'imperial' ? 'ft' : 'm';
 
   if (activity === 'scuba_diving') {
-    recommendations.forEach((loc) => {
-      const locName = loc.name;
-      const city = loc.city || '';
-      const state = loc.state || '';
-      const weather = loc.weather || {};
-      const windDirection = getWindDirection(weather.windDeg);
+    recommendations.forEach((section) => {
+      const sectionTitle = section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
+      locationInfo += `${sectionTitle}:\n`;
+      section.dives.forEach((loc) => {
+        const locName = loc.name;
+        const city = loc.city || '';
+        const state = loc.state || '';
+        const weather = loc.weather || {};
+        const windDirection = getWindDirection(weather.windDeg);
 
-      let info = `${locName} in ${city}, ${state}\n`;
-      info += `Weather: ${weather.description}, Air Temperature: ${
-        units === 'imperial'
-          ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
-          : weather.temperature.toFixed(2)
-      }${unitsTemp}\n`;
-
-      const waveData = loc.waveData || {};
-      const waterTemp = loc.waterTemperature;
-
-      if (waveData.waveHeight !== undefined) {
-        info += `Water Temperature: ${waterTemp} ${unitsTemp}\n`;
-        info += `Wind: ${
+        let info = `${locName} in ${city}, ${state}\n`;
+        info += `Weather: ${weather.description}, Air Temperature: ${
           units === 'imperial'
-            ? (weather.windSpeed * 2.23694).toFixed(2)
-            : weather.windSpeed.toFixed(2)
-        } ${unitsSpeed} from ${windDirection}\n`;
-        info += `Wave Height: ${waveData.waveHeight} ${unitsHeight}, Period: ${waveData.wavePeriod} s\n`;
-        info += `Appropriate Thermal Protection: ${loc.thermalProtectionRecommendation}\n`;
-      }
+            ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+            : weather.temperature.toFixed(2)
+        }${unitsTemp}\n`;
 
-      // Visibility
-      const visibility = loc.poorVisibility ? 'Possibly Reduced' : 'Likely Good';
-      info += `Visibility: ${visibility}\n`;
+        const waveData = loc.waveData || {};
+        const waterTemp = loc.waterTemperature;
 
-      // Astronomy data
-      if (loc.astronomy) {
-        info += `Sunset: ${formatTime(
-          loc.astronomy.sunset,
-          loc.geometry.location
-        )}\n`;
-        info += `Moon Phase: ${loc.astronomy.moonPhase} (Moonrise: ${formatTime(
-          loc.astronomy.moonrise,
-          loc.geometry.location
-        )}, Moonset: ${formatTime(
-          loc.astronomy.moonset,
-          loc.geometry.location
-        )})\n`;
-      }
+        if (waveData.waveHeight !== undefined) {
+          info += `Water Temperature: ${waterTemp} ${unitsTemp}\n`;
+          info += `Wind: ${
+            units === 'imperial'
+              ? (weather.windSpeed * 2.23694).toFixed(2)
+              : weather.windSpeed.toFixed(2)
+          } ${unitsSpeed} from ${windDirection}\n`;
+          info += `Wave Height: ${waveData.waveHeight} ${unitsHeight}, Period: ${waveData.wavePeriod} s\n`;
+          info += `Appropriate Thermal Protection: ${loc.thermalProtectionRecommendation}\n`;
+        }
 
-      // Additional details from JSON file (e.g., dive site description)
-      if (loc.diveSiteDescription) {
-        info += `About the site: ${loc.diveSiteDescription}\n`;
-      }
+        // Visibility
+        const visibility = loc.poorVisibility ? 'Possibly Reduced' : 'Likely Good';
+        info += `Visibility: ${visibility}\n`;
 
-      // Prepare data for recommendations
-      loc.formattedInfo = info;
+        if (loc.nextHighTide) {
+          info += `Next High Tide: ${formatTime(loc.nextHighTide, loc.geometry.location)}\n`;
+        }
+
+        // Astronomy data
+        if (loc.astronomy) {
+          info += `Sunset: ${formatTime(
+            loc.astronomy.sunset,
+            loc.geometry.location
+          )}\n`;
+          info += `Moon Phase: ${loc.astronomy.moonPhase} (Moonrise: ${formatTime(
+            loc.astronomy.moonrise,
+            loc.geometry.location
+          )}, Moonset: ${formatTime(loc.astronomy.moonset, loc.geometry.location)})\n`;
+        }
+
+        // Additional details from JSON file (e.g., dive site description)
+        if (loc.diveSiteDescription) {
+          info += `About the site: ${loc.diveSiteDescription}\n`;
+        }
+
+        // Prepare data for recommendations
+        loc.formattedInfo = info;
+      });
     });
-
-    locationInfo = recommendations
-      .map((loc) => loc.formattedInfo)
-      .join('\n');
   } else if (activity === 'golf' || activity === 'hiking') {
     // For golfing and hiking
     locationInfo = recommendations
@@ -1013,7 +1009,8 @@ function formatTime(timeString, location) {
 
 // Placeholder function to get time zone from latitude and longitude
 function getTimeZone(lat, lng) {
-  // For simplicity, return a default time zone
+  // For simplicity, return 'America/New_York' for this example
+  // In production, use a proper geocoding API or library to get the time zone
   return 'America/New_York';
 }
 
@@ -1021,13 +1018,13 @@ function getTimeZone(lat, lng) {
 function getClothingRecommendation(temperatureC, units) {
   let tempF = (temperatureC * 9) / 5 + 32;
   let temp = units === 'imperial' ? tempF : temperatureC;
-  if (temp <= 32) {
+  if (temp <= 0) {
     return 'Heavy jacket, gloves, and warm layers';
-  } else if (temp > 32 && temp <= 50) {
+  } else if (temp > 0 && temp <= 10) {
     return 'Medium jacket and warm clothing';
-  } else if (temp > 50 && temp <= 68) {
+  } else if (temp > 10 && temp <= 20) {
     return 'Light jacket or sweater';
-  } else if (temp > 68 && temp <= 86) {
+  } else if (temp > 20 && temp <= 30) {
     return 'Long-sleeved shirt and pants';
   } else {
     return 'Shorts and a t-shirt';
