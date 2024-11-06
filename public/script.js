@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     attribution: '&copy; OpenStreetMap contributors',
   }).addTo(map);
 
+  // Set the default image on page load
+activityImage.src = 'images/default.jpg';
+activityImage.alt = 'Default Image';
+
   // Layer group for markers
   const markersLayer = L.featureGroup().addTo(map);
 
