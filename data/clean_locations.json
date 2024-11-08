@@ -1,47 +1,5 @@
 [
   {
-    "name": "Leicester Village Golf Course, New London Street, Leicester Community, New England, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
-    "geometry": {
-      "location": {
-        "lat": 8.456801,
-        "lng": -13.222879203997369
-      }
-    },
-    "city": "Leicester Village",
-    "state": "Western Area Urban",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Sesay Drive Golf Course, Sesay Drive, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
-    "geometry": {
-      "location": {
-        "lat": 8.4614212,
-        "lng": -13.214436892687377
-      }
-    },
-    "city": "Leicester Village",
-    "state": "Western Area Urban",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Loko Town Golf Course, Shalom Road, Bato, Regent, Western Area Urban, Western Area, Sierra Leone",
-    "geometry": {
-      "location": {
-        "lat": 8.444536,
-        "lng": -13.214789450842602
-      }
-    },
-    "city": "Regent",
-    "state": "Western Area Urban",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Freetown Golf Club, Nas Carew Drive, NDMC Compound, Lumley, Freetown, Western Area Urban, Western Area, Sierra Leone",
     "geometry": {
       "location": {
@@ -84,20 +42,6 @@
     ]
   },
   {
-    "name": "Denmark Golf Course (Abandoned)",
-    "geometry": {
-      "location": {
-        "lat": 43.9433742,
-        "lng": -70.7759819
-      }
-    },
-    "city": "Denmark",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Golf RX",
     "geometry": {
       "location": {
@@ -112,6 +56,34 @@
     ]
   },
   {
+    "name": "Sesay Drive Golf Course, Sesay Drive, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.4614212,
+        "lng": -13.214436892687377
+      }
+    },
+    "city": "Leicester Village",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Denmark Golf Course (Abandoned)",
+    "geometry": {
+      "location": {
+        "lat": 43.9433742,
+        "lng": -70.7759819
+      }
+    },
+    "city": "Denmark",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Morack Public Golf Course",
     "geometry": {
       "location": {
@@ -121,6 +93,48 @@
     },
     "city": "Melbourne",
     "state": "Victoria",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Wampanoag Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.8015135,
+        "lng": -72.7585646
+      }
+    },
+    "city": "West Hartford",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Leicester Village Golf Course, New London Street, Leicester Community, New England, Leicester Village, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.456801,
+        "lng": -13.222879203997369
+      }
+    },
+    "city": "Leicester Village",
+    "state": "Western Area Urban",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Loko Town Golf Course, Shalom Road, Bato, Regent, Western Area Urban, Western Area, Sierra Leone",
+    "geometry": {
+      "location": {
+        "lat": 8.444536,
+        "lng": -13.214789450842602
+      }
+    },
+    "city": "Regent",
+    "state": "Western Area Urban",
     "activities": [
       "golf"
     ]
@@ -149,20 +163,6 @@
     },
     "city": "Lexington",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Wampanoag Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.8015135,
-        "lng": -72.7585646
-      }
-    },
-    "city": "West Hartford",
-    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -364,6 +364,20 @@
     ]
   },
   {
+    "name": "Ould Newbury Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.7527689,
+        "lng": -70.8922745
+      }
+    },
+    "city": "Newbury",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Essex County Club",
     "geometry": {
       "location": {
@@ -406,6 +420,20 @@
     ]
   },
   {
+    "name": "Olde Salem Greens",
+    "geometry": {
+      "location": {
+        "lat": 42.5015297,
+        "lng": -70.9083002
+      }
+    },
+    "city": "Salem",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Kelly Greens Golf Course",
     "geometry": {
       "location": {
@@ -415,20 +443,6 @@
     },
     "city": "Nahant",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Ould Newbury Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.7527689,
-        "lng": -70.8922745
-      }
-    },
-    "city": "Newbury",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -471,20 +485,6 @@
     },
     "city": "Abington",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Olde Salem Greens",
-    "geometry": {
-      "location": {
-        "lat": 42.5015297,
-        "lng": -70.9083002
-      }
-    },
-    "city": "Salem",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -728,6 +728,20 @@
     ]
   },
   {
+    "name": "Bass Rocks Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.6089237,
+        "lng": -70.6382784
+      }
+    },
+    "city": "Gloucester",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Reservation Golf Club",
     "geometry": {
       "location": {
@@ -737,6 +751,34 @@
     },
     "city": "Mattapoisett",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Hillcrest Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.232568,
+        "lng": -71.908448
+      }
+    },
+    "city": "Leicester",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Plymouth Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.9339432,
+        "lng": -70.6075906
+      }
+    },
+    "city": "Plymouth",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -784,20 +826,6 @@
     ]
   },
   {
-    "name": "Bass Rocks Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.6089237,
-        "lng": -70.6382784
-      }
-    },
-    "city": "Gloucester",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Oak Hill Country Club",
     "geometry": {
       "location": {
@@ -807,34 +835,6 @@
     },
     "city": "Fitchburg",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Hillcrest Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.232568,
-        "lng": -71.908448
-      }
-    },
-    "city": "Leicester",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Plymouth Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.9339432,
-        "lng": -70.6075906
-      }
-    },
-    "city": "Plymouth",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -931,8 +931,22 @@
         "lng": -72.9426708
       }
     },
-    "city": "",
+    "city": "Worthington Center",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Gardner Municipal Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.5955963,
+        "lng": -71.9929511
+      }
+    },
+    "city": "Gardner",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -959,7 +973,7 @@
         "lng": -72.9336982
       }
     },
-    "city": "",
+    "city": "Blandford",
     "state": "Massachusetts",
     "activities": [
       "golf"
@@ -989,20 +1003,6 @@
     },
     "city": "Dudley",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Gardner Municipal Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.5955963,
-        "lng": -71.9929511
-      }
-    },
-    "city": "Gardner",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -1456,6 +1456,20 @@
     ]
   },
   {
+    "name": "Cranberry Valley Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.6972415,
+        "lng": -70.060238
+      }
+    },
+    "city": "Harwich",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Harwich Port Golf Club",
     "geometry": {
       "location": {
@@ -1507,20 +1521,6 @@
     },
     "city": "Nantucket",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Cranberry Valley Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.6972415,
-        "lng": -70.060238
-      }
-    },
-    "city": "Harwich",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -1596,6 +1596,20 @@
     ]
   },
   {
+    "name": "White Pines Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.042846,
+        "lng": -71.0215404
+      }
+    },
+    "city": "Brockton",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Cedar Hill Golf Course",
     "geometry": {
       "location": {
@@ -1605,6 +1619,20 @@
     },
     "city": "Stoughton",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Unicorn Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.4866079,
+        "lng": -71.1117585
+      }
+    },
+    "city": "Stoneham",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -1652,20 +1680,6 @@
     ]
   },
   {
-    "name": "White Pines Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.042846,
-        "lng": -71.0215404
-      }
-    },
-    "city": "Brockton",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Reedy Meadow Golf Course",
     "geometry": {
       "location": {
@@ -1675,20 +1689,6 @@
     },
     "city": "Lynnfield",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Unicorn Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.4866079,
-        "lng": -71.1117585
-      }
-    },
-    "city": "Stoneham",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -1946,6 +1946,20 @@
     ]
   },
   {
+    "name": "Crestview Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.0361531,
+        "lng": -72.6503977
+      }
+    },
+    "city": "Agawam",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Captains Golf Course",
     "geometry": {
       "location": {
@@ -2002,20 +2016,6 @@
     ]
   },
   {
-    "name": "Crestview Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.0361531,
-        "lng": -72.6503977
-      }
-    },
-    "city": "Agawam",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Longmeadow Country Club",
     "geometry": {
       "location": {
@@ -2025,6 +2025,20 @@
     },
     "city": "Longmeadow",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Bear Hill Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.5004855,
+        "lng": -71.0968228
+      }
+    },
+    "city": "Stoneham",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -2081,20 +2095,6 @@
     },
     "city": "Brockton",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Bear Hill Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.5004855,
-        "lng": -71.0968228
-      }
-    },
-    "city": "Stoneham",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -2534,6 +2534,20 @@
     ]
   },
   {
+    "name": "Elmcrest Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.0366425,
+        "lng": -72.4746132
+      }
+    },
+    "city": "East Longmeadow",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Southampton Country Club",
     "geometry": {
       "location": {
@@ -2585,20 +2599,6 @@
     },
     "city": "Springfield",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Elmcrest Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.0366425,
-        "lng": -72.4746132
-      }
-    },
-    "city": "East Longmeadow",
-    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -2702,6 +2702,20 @@
     ]
   },
   {
+    "name": "Keney Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.8074587,
+        "lng": -72.6699231
+      }
+    },
+    "city": "Hartford",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Country Club of Wilbraham",
     "geometry": {
       "location": {
@@ -2730,76 +2744,6 @@
     ]
   },
   {
-    "name": "Quaboag Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.1216798,
-        "lng": -72.3129175
-      }
-    },
-    "city": "Monson",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Mill Valley Golf Links",
-    "geometry": {
-      "location": {
-        "lat": 42.2528246,
-        "lng": -72.376223
-      }
-    },
-    "city": "Belchertown",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Keney Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.8074587,
-        "lng": -72.6699231
-      }
-    },
-    "city": "Hartford",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Hoodkroft Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.8866334,
-        "lng": -71.3144477
-      }
-    },
-    "city": "Derry",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Passaconaway Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.8632767,
-        "lng": -71.4797882
-      }
-    },
-    "city": "Litchfield",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Fairchild Wheeler Golf Course",
     "geometry": {
       "location": {
@@ -2814,15 +2758,15 @@
     ]
   },
   {
-    "name": "H Smith Richardson Golf Course",
+    "name": "Quaboag Country Club",
     "geometry": {
       "location": {
-        "lat": 41.2156508,
-        "lng": -73.2714832
+        "lat": 42.1216798,
+        "lng": -72.3129175
       }
     },
-    "city": "Fairfield",
-    "state": "Connecticut",
+    "city": "Monson",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -2856,15 +2800,15 @@
     ]
   },
   {
-    "name": "Bangor Municipal Golf Course",
+    "name": "Mill Valley Golf Links",
     "geometry": {
       "location": {
-        "lat": 44.7918717,
-        "lng": -68.7955645
+        "lat": 42.2528246,
+        "lng": -72.376223
       }
     },
-    "city": "Bangor",
-    "state": "Maine",
+    "city": "Belchertown",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -3472,15 +3416,15 @@
     ]
   },
   {
-    "name": "Twin Lakes Golf Course",
+    "name": "Hoodkroft Country Club",
     "geometry": {
       "location": {
-        "lat": 41.3153257,
-        "lng": -72.7814187
+        "lat": 42.8866334,
+        "lng": -71.3144477
       }
     },
-    "city": "North Branford",
-    "state": "",
+    "city": "Derry",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -3570,15 +3514,15 @@
     ]
   },
   {
-    "name": "Norfolk Country Club",
+    "name": "Passaconaway Country Club",
     "geometry": {
       "location": {
-        "lat": 41.9833057,
-        "lng": -73.2187332
+        "lat": 42.8632767,
+        "lng": -71.4797882
       }
     },
-    "city": "Norfolk",
-    "state": "",
+    "city": "Litchfield",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -3654,14 +3598,14 @@
     ]
   },
   {
-    "name": "Hartford Golf Club",
+    "name": "H Smith Richardson Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.794158,
-        "lng": -72.7256983
+        "lat": 41.2156508,
+        "lng": -73.2714832
       }
     },
-    "city": "West Hartford",
+    "city": "Fairfield",
     "state": "Connecticut",
     "activities": [
       "golf"
@@ -3794,15 +3738,15 @@
     ]
   },
   {
-    "name": "Chippanee Golf Club,Inc.",
+    "name": "Bangor Municipal Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.7044606,
-        "lng": -72.9825949
+        "lat": 44.7918717,
+        "lng": -68.7955645
       }
     },
-    "city": "Bristol",
-    "state": "Connecticut",
+    "city": "Bangor",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -3817,20 +3761,6 @@
     },
     "city": "Newington",
     "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Sharon Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.8660787,
-        "lng": -73.4880999
-      }
-    },
-    "city": "Sharon",
-    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -3873,20 +3803,6 @@
     },
     "city": "West Suffield",
     "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Western Hills Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.5581356,
-        "lng": -73.0859009
-      }
-    },
-    "city": "Waterbury",
-    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -4027,6 +3943,62 @@
     },
     "city": "Enfield",
     "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Hartford Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.794158,
+        "lng": -72.7256983
+      }
+    },
+    "city": "West Hartford",
+    "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Chippanee Golf Club,Inc.",
+    "geometry": {
+      "location": {
+        "lat": 41.7044606,
+        "lng": -72.9825949
+      }
+    },
+    "city": "Bristol",
+    "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Sharon Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.8660787,
+        "lng": -73.4880999
+      }
+    },
+    "city": "Sharon",
+    "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Western Hills Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.5581356,
+        "lng": -73.0859009
+      }
+    },
+    "city": "Waterbury",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -4270,6 +4242,20 @@
     ]
   },
   {
+    "name": "The Links - LaBelle Winery Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.8552987,
+        "lng": -71.2123421
+      }
+    },
+    "city": "Derry",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Londonderry Country Club",
     "geometry": {
       "location": {
@@ -4293,6 +4279,20 @@
     },
     "city": "Worcester",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Green Hill Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.2856374,
+        "lng": -71.7774209
+      }
+    },
+    "city": "Worcester",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -4326,20 +4326,6 @@
     ]
   },
   {
-    "name": "The Links - LaBelle Winery Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.8552987,
-        "lng": -71.2123421
-      }
-    },
-    "city": "Derry",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Mars Hill Country Club",
     "geometry": {
       "location": {
@@ -4354,6 +4340,20 @@
     ]
   },
   {
+    "name": "Leo Jerome Martin Memorial Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.3322177,
+        "lng": -71.2651014
+      }
+    },
+    "city": "Weston",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Whip Poor Will Golf Club",
     "geometry": {
       "location": {
@@ -4363,20 +4363,6 @@
     },
     "city": "Hudson",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Green Hill Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.2856374,
-        "lng": -71.7774209
-      }
-    },
-    "city": "Worcester",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -4424,20 +4410,6 @@
     ]
   },
   {
-    "name": "Leo Jerome Martin Memorial Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.3322177,
-        "lng": -71.2651014
-      }
-    },
-    "city": "Weston",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Meadow at Peabody Golf Course",
     "geometry": {
       "location": {
@@ -4447,6 +4419,20 @@
     },
     "city": "Peabody",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Rockrimmon Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.1647681,
+        "lng": -73.5927489
+      }
+    },
+    "city": "Stamford",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -4494,6 +4480,20 @@
     ]
   },
   {
+    "name": "Cranston Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.7398437,
+        "lng": -71.5170718
+      }
+    },
+    "city": "Cranston",
+    "state": "RI",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Maine",
     "geometry": {
       "location": {
@@ -4503,20 +4503,6 @@
     },
     "city": "F\u00e9camp",
     "state": "Normandie",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Rockrimmon Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.1647681,
-        "lng": -73.5927489
-      }
-    },
-    "city": "Stamford",
-    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -4559,20 +4545,6 @@
     },
     "city": "Cranston",
     "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Cranston Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.7398437,
-        "lng": -71.5170718
-      }
-    },
-    "city": "Cranston",
-    "state": "RI",
     "activities": [
       "golf"
     ]
@@ -4676,6 +4648,20 @@
     ]
   },
   {
+    "name": "Prospect Point Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.6416919,
+        "lng": -73.203717
+      }
+    },
+    "city": "Castleton",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Mt Anthony Country Club",
     "geometry": {
       "location": {
@@ -4732,15 +4718,15 @@
     ]
   },
   {
-    "name": "Prospect Point Golf Club",
+    "name": "Ponemah Green Family Golf Center",
     "geometry": {
       "location": {
-        "lat": 43.6416919,
-        "lng": -73.203717
+        "lat": 42.8307253,
+        "lng": -71.6136536
       }
     },
-    "city": "Castleton",
-    "state": "VT",
+    "city": "Amherst",
+    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -4774,6 +4760,20 @@
     ]
   },
   {
+    "name": "Chequessett Yacht and Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.9306701,
+        "lng": -70.0552922
+      }
+    },
+    "city": "Wellfleet",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "North Conway Country Club",
     "geometry": {
       "location": {
@@ -4788,6 +4788,20 @@
     ]
   },
   {
+    "name": "Sakonnet Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.4744053,
+        "lng": -71.1856901
+      }
+    },
+    "city": "Little Compton",
+    "state": "RI",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "East Greenwich Golf Club",
     "geometry": {
       "location": {
@@ -4797,20 +4811,6 @@
     },
     "city": "East Greenwich",
     "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Ponemah Green Family Golf Center",
-    "geometry": {
-      "location": {
-        "lat": 42.8307253,
-        "lng": -71.6136536
-      }
-    },
-    "city": "Amherst",
-    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -4844,15 +4844,15 @@
     ]
   },
   {
-    "name": "Chequessett Yacht and Country Club",
+    "name": "River Ridge Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.9306701,
-        "lng": -70.0552922
+        "lat": 41.5760249,
+        "lng": -71.9826973
       }
     },
-    "city": "Wellfleet",
-    "state": "MA",
+    "city": "Jewett City",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -4867,20 +4867,6 @@
     },
     "city": "Westford",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Sakonnet Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.4744053,
-        "lng": -71.1856901
-      }
-    },
-    "city": "Little Compton",
-    "state": "RI",
     "activities": [
       "golf"
     ]
@@ -4914,6 +4900,20 @@
     ]
   },
   {
+    "name": "Great River Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.2748803,
+        "lng": -73.0816426
+      }
+    },
+    "city": "Milford",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Button Hole",
     "geometry": {
       "location": {
@@ -4928,20 +4928,6 @@
     ]
   },
   {
-    "name": "River Ridge Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.5760249,
-        "lng": -71.9826973
-      }
-    },
-    "city": "Jewett City",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Bellows Falls Country Club",
     "geometry": {
       "location": {
@@ -4951,6 +4937,20 @@
     },
     "city": "Rockingham",
     "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Fox Hopyard Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.4406534,
+        "lng": -72.3461458
+      }
+    },
+    "city": "East Haddam",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -4984,20 +4984,6 @@
     ]
   },
   {
-    "name": "Great River Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.2748803,
-        "lng": -73.0816426
-      }
-    },
-    "city": "Milford",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Connecticut National Golf Course",
     "geometry": {
       "location": {
@@ -5026,15 +5012,43 @@
     ]
   },
   {
-    "name": "Fox Hopyard Golf Club",
+    "name": "Hillcrest Golf Club",
     "geometry": {
       "location": {
-        "lat": 41.4406534,
-        "lng": -72.3461458
+        "lat": 45.6629105,
+        "lng": -68.7011561
       }
     },
-    "city": "East Haddam",
-    "state": "CT",
+    "city": "Millinocket",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Mount Snow Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.9330269,
+        "lng": -72.8667014
+      }
+    },
+    "city": "West Dover",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "The Golf Club at The Equinox Resort",
+    "geometry": {
+      "location": {
+        "lat": 43.1629861,
+        "lng": -73.0643426
+      }
+    },
+    "city": "Manchester Village",
+    "state": "VT",
     "activities": [
       "golf"
     ]
@@ -5096,48 +5110,6 @@
     ]
   },
   {
-    "name": "Hillcrest Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 45.6629105,
-        "lng": -68.7011561
-      }
-    },
-    "city": "Millinocket",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Mount Snow Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.9330269,
-        "lng": -72.8667014
-      }
-    },
-    "city": "West Dover",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Golf Club at The Equinox Resort",
-    "geometry": {
-      "location": {
-        "lat": 43.1629861,
-        "lng": -73.0643426
-      }
-    },
-    "city": "Manchester Village",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Manchester Country Club",
     "geometry": {
       "location": {
@@ -5147,6 +5119,20 @@
     },
     "city": "Manchester",
     "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Sheepscot Links Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.1786477,
+        "lng": -69.6313964
+      }
+    },
+    "city": "Whitefield",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -5180,6 +5166,20 @@
     ]
   },
   {
+    "name": "Pembroke Pines Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.1645791,
+        "lng": -71.4865713
+      }
+    },
+    "city": "Pembroke",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "The Oaks",
     "geometry": {
       "location": {
@@ -5208,20 +5208,6 @@
     ]
   },
   {
-    "name": "Sheepscot Links Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.1786477,
-        "lng": -69.6313964
-      }
-    },
-    "city": "Whitefield",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Wahconah Golf & Country Club",
     "geometry": {
       "location": {
@@ -5245,20 +5231,6 @@
     },
     "city": "Jackson",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Pembroke Pines Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.1645791,
-        "lng": -71.4865713
-      }
-    },
-    "city": "Pembroke",
-    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -5334,6 +5306,20 @@
     ]
   },
   {
+    "name": "Brunswick Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.9169092,
+        "lng": -69.9979321
+      }
+    },
+    "city": "Brunswick",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Maine",
     "geometry": {
       "location": {
@@ -5357,6 +5343,20 @@
     },
     "city": "Bretton Woods",
     "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Lochmere Golf & Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.4708658,
+        "lng": -71.5538819
+      }
+    },
+    "city": "Tilton",
+    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -5390,15 +5390,29 @@
     ]
   },
   {
-    "name": "Brunswick Golf Club",
+    "name": "The Cape Club",
     "geometry": {
       "location": {
-        "lat": 43.9169092,
-        "lng": -69.9979321
+        "lat": 41.6362301,
+        "lng": -70.602295
       }
     },
-    "city": "Brunswick",
-    "state": "ME",
+    "city": "East Falmouth",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "New Haven Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.3488816,
+        "lng": -72.9066172
+      }
+    },
+    "city": "Hamden",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -5432,20 +5446,6 @@
     ]
   },
   {
-    "name": "Lochmere Golf & Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.4708658,
-        "lng": -71.5538819
-      }
-    },
-    "city": "Tilton",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Bayberry Hills Golf Course",
     "geometry": {
       "location": {
@@ -5455,90 +5455,6 @@
     },
     "city": "Yarmouth",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Falcon Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.650659,
-        "lng": -70.5606801
-      }
-    },
-    "city": "Sandwich",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Cape Club",
-    "geometry": {
-      "location": {
-        "lat": 41.6362301,
-        "lng": -70.602295
-      }
-    },
-    "city": "East Falmouth",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "New Haven Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.3488816,
-        "lng": -72.9066172
-      }
-    },
-    "city": "Hamden",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Jamestown Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.5048824,
-        "lng": -71.3696521
-      }
-    },
-    "city": "Jamestown",
-    "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Webhannet Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.3496819,
-        "lng": -70.4987137
-      }
-    },
-    "city": "Kennebunk",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Cape Arundel Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.373087,
-        "lng": -70.4795785
-      }
-    },
-    "city": "Kennebunkport",
-    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5572,29 +5488,29 @@
     ]
   },
   {
-    "name": "Ridgewood Country Club",
+    "name": "Falcon Golf Course",
     "geometry": {
       "location": {
-        "lat": 43.744733,
-        "lng": -71.370741
+        "lat": 41.650659,
+        "lng": -70.5606801
       }
     },
-    "city": "Moultonborough",
-    "state": "New Hampshire",
+    "city": "Sandwich",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Rockingham Country Club",
+    "name": "Jamestown Golf Course",
     "geometry": {
       "location": {
-        "lat": 43.0535044,
-        "lng": -70.940892
+        "lat": 41.5048824,
+        "lng": -71.3696521
       }
     },
-    "city": "Newmarket",
-    "state": "New Hampshire",
+    "city": "Jamestown",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -5614,15 +5530,15 @@
     ]
   },
   {
-    "name": "Candlewood Lake Golf and Country Club",
+    "name": "Webhannet Golf Club",
     "geometry": {
       "location": {
-        "lat": 41.4960074,
-        "lng": -73.4350841
+        "lat": 43.3496819,
+        "lng": -70.4987137
       }
     },
-    "city": "New Milford",
-    "state": "Connecticut",
+    "city": "Kennebunk",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -5665,6 +5581,62 @@
     },
     "city": "Prospect",
     "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Cape Arundel Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.373087,
+        "lng": -70.4795785
+      }
+    },
+    "city": "Kennebunkport",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Ridgewood Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.744733,
+        "lng": -71.370741
+      }
+    },
+    "city": "Moultonborough",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Rockingham Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.0535044,
+        "lng": -70.940892
+      }
+    },
+    "city": "Newmarket",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Candlewood Lake Golf and Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.4960074,
+        "lng": -73.4350841
+      }
+    },
+    "city": "New Milford",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -5768,62 +5740,6 @@
     ]
   },
   {
-    "name": "Sankaty Head Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.2782653,
-        "lng": -69.9690097
-      }
-    },
-    "city": "Nantucket",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Siasconset Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.2654024,
-        "lng": -69.9812651
-      }
-    },
-    "city": "Nantucket",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Golf Club of Cape Cod",
-    "geometry": {
-      "location": {
-        "lat": 41.6331202,
-        "lng": -70.5942864
-      }
-    },
-    "city": "Falmouth",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Waverly Oaks Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.8904199,
-        "lng": -70.6187738
-      }
-    },
-    "city": "Plymouth",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Wintonbury Hills Golf Course",
     "geometry": {
       "location": {
@@ -5880,6 +5796,76 @@
     ]
   },
   {
+    "name": "Sankaty Head Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.2782653,
+        "lng": -69.9690097
+      }
+    },
+    "city": "Nantucket",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Hermon Meadow Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.8198315,
+        "lng": -68.8869798
+      }
+    },
+    "city": "Hermon",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Siasconset Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.2654024,
+        "lng": -69.9812651
+      }
+    },
+    "city": "Nantucket",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "The Golf Club of Cape Cod",
+    "geometry": {
+      "location": {
+        "lat": 41.6331202,
+        "lng": -70.5942864
+      }
+    },
+    "city": "Falmouth",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Waverly Oaks Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.8904199,
+        "lng": -70.6187738
+      }
+    },
+    "city": "Plymouth",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Grindstone Neck Golf Course",
     "geometry": {
       "location": {
@@ -5894,14 +5880,14 @@
     ]
   },
   {
-    "name": "Hermon Meadow Golf Club",
+    "name": "Mingo Springs Golf Course",
     "geometry": {
       "location": {
-        "lat": 44.8198315,
-        "lng": -68.8869798
+        "lat": 44.9639035,
+        "lng": -70.6950044
       }
     },
-    "city": "Hermon",
+    "city": "Rangeley",
     "state": "ME",
     "activities": [
       "golf"
@@ -5950,76 +5936,6 @@
     ]
   },
   {
-    "name": "Lucerne Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.7043115,
-        "lng": -68.5994233
-      }
-    },
-    "city": "Dedham",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Mingo Springs Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.9639035,
-        "lng": -70.6950044
-      }
-    },
-    "city": "Rangeley",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Fogg Brook Resort Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.8539945,
-        "lng": -69.3468179
-      }
-    },
-    "city": "Palmyra",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Pine Hill Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.7600839,
-        "lng": -68.7692975
-      }
-    },
-    "city": "Brewer",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Saint Croix Country Club",
-    "geometry": {
-      "location": {
-        "lat": 45.1774033,
-        "lng": -67.2522998
-      }
-    },
-    "city": "Calais",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "The Causeway Club",
     "geometry": {
       "location": {
@@ -6062,14 +5978,14 @@
     ]
   },
   {
-    "name": "Augusta Country Club",
+    "name": "Lucerne Golf Course",
     "geometry": {
       "location": {
-        "lat": 44.3246771,
-        "lng": -69.8756408
+        "lat": 44.7043115,
+        "lng": -68.5994233
       }
     },
-    "city": "Manchester",
+    "city": "Dedham",
     "state": "Maine",
     "activities": [
       "golf"
@@ -6132,6 +6048,62 @@
     ]
   },
   {
+    "name": "Fogg Brook Resort Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.8539945,
+        "lng": -69.3468179
+      }
+    },
+    "city": "Palmyra",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Pine Hill Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.7600839,
+        "lng": -68.7692975
+      }
+    },
+    "city": "Brewer",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Saint Croix Country Club",
+    "geometry": {
+      "location": {
+        "lat": 45.1774033,
+        "lng": -67.2522998
+      }
+    },
+    "city": "Calais",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Augusta Country Club",
+    "geometry": {
+      "location": {
+        "lat": 44.3246771,
+        "lng": -69.8756408
+      }
+    },
+    "city": "Manchester",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Samoset Golf Course",
     "geometry": {
       "location": {
@@ -6160,6 +6132,20 @@
     ]
   },
   {
+    "name": "Riverside Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.714921,
+        "lng": -70.3151216
+      }
+    },
+    "city": "Portland",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Abenakee Golf Club",
     "geometry": {
       "location": {
@@ -6174,6 +6160,20 @@
     ]
   },
   {
+    "name": "South Portland Municipal Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.6284141,
+        "lng": -70.3079372
+      }
+    },
+    "city": "South Portland",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Frye Island Golf Club",
     "geometry": {
       "location": {
@@ -6181,7 +6181,7 @@
         "lng": -70.5216507
       }
     },
-    "city": "",
+    "city": "Frye Island",
     "state": "Maine",
     "activities": [
       "golf"
@@ -6216,20 +6216,6 @@
     ]
   },
   {
-    "name": "Riverside Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.714921,
-        "lng": -70.3151216
-      }
-    },
-    "city": "Portland",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Salmon Falls Country Club",
     "geometry": {
       "location": {
@@ -6239,20 +6225,6 @@
     },
     "city": "Hollis",
     "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "South Portland Municipal Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.6284141,
-        "lng": -70.3079372
-      }
-    },
-    "city": "South Portland",
-    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -6328,6 +6300,20 @@
     ]
   },
   {
+    "name": "Links at Lang Farm",
+    "geometry": {
+      "location": {
+        "lat": 44.5024813,
+        "lng": -73.0867214
+      }
+    },
+    "city": "Essex",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Mount Pleasant Course",
     "geometry": {
       "location": {
@@ -6365,76 +6351,6 @@
     },
     "city": "Jackson",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Waukewan Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.6874172,
-        "lng": -71.5225444
-      }
-    },
-    "city": "Center Harbor",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Links at Lang Farm",
-    "geometry": {
-      "location": {
-        "lat": 44.5024813,
-        "lng": -73.0867214
-      }
-    },
-    "city": "Essex",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Fall River Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.7560889,
-        "lng": -71.1255015
-      }
-    },
-    "city": "Fall River",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Amesbury Golf and Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.8615264,
-        "lng": -70.9121
-      }
-    },
-    "city": "Amesbury",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Pine Ridge Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.531666,
-        "lng": -69.6635117
-      }
-    },
-    "city": "Waterville",
-    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6482,29 +6398,29 @@
     ]
   },
   {
-    "name": "Indian Pond Country Club",
+    "name": "Waukewan Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.9777376,
-        "lng": -70.7330846
+        "lat": 43.6874172,
+        "lng": -71.5225444
       }
     },
-    "city": "Kingston",
-    "state": "Massachusetts",
+    "city": "Center Harbor",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Highfield Club",
+    "name": "Fall River Country Club",
     "geometry": {
       "location": {
-        "lat": 41.555209,
-        "lng": -73.1516377
+        "lat": 41.7560889,
+        "lng": -71.1255015
       }
     },
-    "city": "Middlebury",
-    "state": "",
+    "city": "Fall River",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6566,15 +6482,15 @@
     ]
   },
   {
-    "name": "Taber's on the Lake",
+    "name": "Amesbury Golf and Country Club",
     "geometry": {
       "location": {
-        "lat": 44.1590401,
-        "lng": -70.2538227
+        "lat": 42.8615264,
+        "lng": -70.9121
       }
     },
-    "city": "Auburn",
-    "state": "Maine",
+    "city": "Amesbury",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6594,29 +6510,29 @@
     ]
   },
   {
-    "name": "Tashua Glen Golf Course",
+    "name": "Pine Ridge Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.2861626,
-        "lng": -73.2458965
+        "lat": 44.531666,
+        "lng": -69.6635117
       }
     },
-    "city": "Trumbull",
-    "state": "Connecticut",
+    "city": "Waterville",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Tashua Knolls Golf Course",
+    "name": "Indian Pond Country Club",
     "geometry": {
       "location": {
-        "lat": 41.2861613,
-        "lng": -73.2520452
+        "lat": 41.9777376,
+        "lng": -70.7330846
       }
     },
-    "city": "Trumbull",
-    "state": "Connecticut",
+    "city": "Kingston",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6631,20 +6547,6 @@
     },
     "city": "Oakland",
     "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Outlook Golf",
-    "geometry": {
-      "location": {
-        "lat": 43.2431151,
-        "lng": -70.8010156
-      }
-    },
-    "city": "South Berwick",
-    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -6706,29 +6608,29 @@
     ]
   },
   {
-    "name": "The Country Club of Greenfield",
+    "name": "Taber's on the Lake",
     "geometry": {
       "location": {
-        "lat": 42.6199177,
-        "lng": -72.6002584
+        "lat": 44.1590401,
+        "lng": -70.2538227
       }
     },
-    "city": "Greenfield",
-    "state": "Massachusetts",
+    "city": "Auburn",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Morefar Back O' Beyond",
+    "name": "Tashua Glen Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.4134694,
-        "lng": -73.5420787
+        "lat": 41.2861626,
+        "lng": -73.2458965
       }
     },
-    "city": "",
-    "state": "New York",
+    "city": "Trumbull",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -6743,6 +6645,48 @@
     },
     "city": "Greenwich",
     "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Tashua Knolls Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.2861613,
+        "lng": -73.2520452
+      }
+    },
+    "city": "Trumbull",
+    "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Outlook Golf",
+    "geometry": {
+      "location": {
+        "lat": 43.2431151,
+        "lng": -70.8010156
+      }
+    },
+    "city": "South Berwick",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "The Country Club of Greenfield",
+    "geometry": {
+      "location": {
+        "lat": 42.6199177,
+        "lng": -72.6002584
+      }
+    },
+    "city": "Greenfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -6944,6 +6888,34 @@
     ]
   },
   {
+    "name": "Fairlawn Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.0524389,
+        "lng": -70.3355131
+      }
+    },
+    "city": "Poland",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Proctor Pittsford Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.686035,
+        "lng": -73.0032704
+      }
+    },
+    "city": "Pittsford",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "TPC Boston",
     "geometry": {
       "location": {
@@ -7000,34 +6972,6 @@
     ]
   },
   {
-    "name": "Fairlawn Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.0524389,
-        "lng": -70.3355131
-      }
-    },
-    "city": "Poland",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Proctor Pittsford Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.686035,
-        "lng": -73.0032704
-      }
-    },
-    "city": "Pittsford",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Abenaqui Country Club",
     "geometry": {
       "location": {
@@ -7051,6 +6995,20 @@
     },
     "city": "East Kingston",
     "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Johnson W Parks Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.7943901,
+        "lng": -69.3943574
+      }
+    },
+    "city": "Pittsfield",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -7112,20 +7070,6 @@
     ]
   },
   {
-    "name": "Johnson W Parks Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.7943901,
-        "lng": -69.3943574
-      }
-    },
-    "city": "Pittsfield",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Milford Country Club",
     "geometry": {
       "location": {
@@ -7140,6 +7084,20 @@
     ]
   },
   {
+    "name": "The Maplewood Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.2810606,
+        "lng": -71.6645094
+      }
+    },
+    "city": "Bethlehem",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "The Aquidneck Club",
     "geometry": {
       "location": {
@@ -7149,6 +7107,20 @@
     },
     "city": "Portsmouth",
     "state": "Rhode Island",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Derryfield Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.9916632,
+        "lng": -71.4323452
+      }
+    },
+    "city": "Manchester",
+    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -7196,20 +7168,6 @@
     ]
   },
   {
-    "name": "The Maplewood Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.2810606,
-        "lng": -71.6645094
-      }
-    },
-    "city": "Bethlehem",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Profile Club",
     "geometry": {
       "location": {
@@ -7219,20 +7177,6 @@
     },
     "city": "Franconia",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Derryfield Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.9916632,
-        "lng": -71.4323452
-      }
-    },
-    "city": "Manchester",
-    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -7261,6 +7205,34 @@
     },
     "city": "Edgartown",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Main Golf Center Freeport",
+    "geometry": {
+      "location": {
+        "lat": 43.8354391,
+        "lng": -70.1339369
+      }
+    },
+    "city": "Freeport",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Hopkins Golf Center",
+    "geometry": {
+      "location": {
+        "lat": 43.9126949,
+        "lng": -69.8984511
+      }
+    },
+    "city": "Brunswick",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -7308,6 +7280,20 @@
     ]
   },
   {
+    "name": "Canterbury Woods Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.3449822,
+        "lng": -71.606682
+      }
+    },
+    "city": "Canterbury",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Duston Country Club",
     "geometry": {
       "location": {
@@ -7322,28 +7308,14 @@
     ]
   },
   {
-    "name": "Main Golf Center Freeport",
+    "name": "Belgrade Lakes Golf Club",
     "geometry": {
       "location": {
-        "lat": 43.8354391,
-        "lng": -70.1339369
+        "lat": 44.5150441,
+        "lng": -69.8789982
       }
     },
-    "city": "Freeport",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Hopkins Golf Center",
-    "geometry": {
-      "location": {
-        "lat": 43.9126949,
-        "lng": -69.8984511
-      }
-    },
-    "city": "Brunswick",
+    "city": "Belgrade",
     "state": "ME",
     "activities": [
       "golf"
@@ -7392,20 +7364,6 @@
     ]
   },
   {
-    "name": "Canterbury Woods Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.3449822,
-        "lng": -71.606682
-      }
-    },
-    "city": "Canterbury",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Vermont",
     "geometry": {
       "location": {
@@ -7415,20 +7373,6 @@
     },
     "city": "Santa Maria",
     "state": "Rio Grande do Sul",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Belgrade Lakes Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.5150441,
-        "lng": -69.8789982
-      }
-    },
-    "city": "Belgrade",
-    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -7504,43 +7448,15 @@
     ]
   },
   {
-    "name": "Vermont",
+    "name": "The Meadows Golf Club",
     "geometry": {
       "location": {
-        "lat": 13.2022256,
-        "lng": -61.2313572
+        "lat": 44.1559752,
+        "lng": -69.9799798
       }
     },
-    "city": "Vermont",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Vermont",
-    "geometry": {
-      "location": {
-        "lat": -33.837764,
-        "lng": 18.5482802
-      }
-    },
-    "city": "",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Pine Orchard Yacht & Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.2696479,
-        "lng": -72.7720975
-      }
-    },
-    "city": "Branford",
-    "state": "",
+    "city": "Litchfield",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -7569,34 +7485,6 @@
     },
     "city": "Manchester",
     "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Meadows Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.1559752,
-        "lng": -69.9799798
-      }
-    },
-    "city": "Litchfield",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Vermont",
-    "geometry": {
-      "location": {
-        "lat": -0.1000337,
-        "lng": -78.4808952
-      }
-    },
-    "city": "",
-    "state": "Pichincha",
     "activities": [
       "golf"
     ]
@@ -7756,6 +7644,20 @@
     ]
   },
   {
+    "name": "Charter Oak Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.3832013,
+        "lng": -71.5031468
+      }
+    },
+    "city": "Hudson",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Montague Golf Club",
     "geometry": {
       "location": {
@@ -7798,6 +7700,20 @@
     ]
   },
   {
+    "name": "Rowley Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.7193758,
+        "lng": -70.9302785
+      }
+    },
+    "city": "Rowley",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Atkinson Resort & Country Club",
     "geometry": {
       "location": {
@@ -7807,20 +7723,6 @@
     },
     "city": "Atkinson",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Charter Oak Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.3832013,
-        "lng": -71.5031468
-      }
-    },
-    "city": "Hudson",
-    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -7840,76 +7742,6 @@
     ]
   },
   {
-    "name": "Pleasant Hill Disc Golf",
-    "geometry": {
-      "location": {
-        "lat": 43.5903152,
-        "lng": -70.3047732
-      }
-    },
-    "city": "Scarborough",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Neshobe Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.815789,
-        "lng": -73.077648
-      }
-    },
-    "city": "Brandon",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Rowley Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.7193758,
-        "lng": -70.9302785
-      }
-    },
-    "city": "Rowley",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Stowe Country Club",
-    "geometry": {
-      "location": {
-        "lat": 44.4799407,
-        "lng": -72.7038167
-      }
-    },
-    "city": "Stowe",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Skungamaug River Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.82359,
-        "lng": -72.3487654
-      }
-    },
-    "city": "Coventry",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Olde Scotland Links",
     "geometry": {
       "location": {
@@ -7924,14 +7756,14 @@
     ]
   },
   {
-    "name": "Biddeford Saco Country Club",
+    "name": "Pleasant Hill Disc Golf",
     "geometry": {
       "location": {
-        "lat": 43.5009843,
-        "lng": -70.409879
+        "lat": 43.5903152,
+        "lng": -70.3047732
       }
     },
-    "city": "Saco",
+    "city": "Scarborough",
     "state": "Maine",
     "activities": [
       "golf"
@@ -7952,15 +7784,15 @@
     ]
   },
   {
-    "name": "Sammy K's Golf",
+    "name": "Neshobe Golf Course",
     "geometry": {
       "location": {
-        "lat": 42.6431002,
-        "lng": -72.5628855
+        "lat": 43.815789,
+        "lng": -73.077648
       }
     },
-    "city": "Greenfield",
-    "state": "Massachusetts",
+    "city": "Brandon",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -7980,15 +7812,15 @@
     ]
   },
   {
-    "name": "Fore Kicks",
+    "name": "Stowe Country Club",
     "geometry": {
       "location": {
-        "lat": 42.0882768,
-        "lng": -71.2990801
+        "lat": 44.4799407,
+        "lng": -72.7038167
       }
     },
-    "city": "Norfolk",
-    "state": "Massachusetts",
+    "city": "Stowe",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8003,6 +7835,62 @@
     },
     "city": "Lee",
     "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Biddeford Saco Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.5009843,
+        "lng": -70.409879
+      }
+    },
+    "city": "Saco",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Sammy K's Golf",
+    "geometry": {
+      "location": {
+        "lat": 42.6431002,
+        "lng": -72.5628855
+      }
+    },
+    "city": "Greenfield",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Shennecossett Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.3274059,
+        "lng": -72.0691966
+      }
+    },
+    "city": "Groton",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Fore Kicks",
+    "geometry": {
+      "location": {
+        "lat": 42.0882768,
+        "lng": -71.2990801
+      }
+    },
+    "city": "Norfolk",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8050,20 +7938,6 @@
     ]
   },
   {
-    "name": "Shennecossett Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.3274059,
-        "lng": -72.0691966
-      }
-    },
-    "city": "Groton",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Enosburg Falls Country Club",
     "geometry": {
       "location": {
@@ -8073,62 +7947,6 @@
     },
     "city": "Enosburgh",
     "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Country Club of Vermont",
-    "geometry": {
-      "location": {
-        "lat": 44.3504133,
-        "lng": -72.7276821
-      }
-    },
-    "city": "Waterbury",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Stowe Mountain Club",
-    "geometry": {
-      "location": {
-        "lat": 44.5294743,
-        "lng": -72.7724718
-      }
-    },
-    "city": "Stowe",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Twin Hills Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.800694,
-        "lng": -72.3993627
-      }
-    },
-    "city": "Coventry",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Granite Links Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.2419439,
-        "lng": -71.0550183
-      }
-    },
-    "city": "Quincy",
-    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -8162,6 +7980,62 @@
     ]
   },
   {
+    "name": "Country Club of Vermont",
+    "geometry": {
+      "location": {
+        "lat": 44.3504133,
+        "lng": -72.7276821
+      }
+    },
+    "city": "Waterbury",
+    "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Stowe Mountain Club",
+    "geometry": {
+      "location": {
+        "lat": 44.5294743,
+        "lng": -72.7724718
+      }
+    },
+    "city": "Stowe",
+    "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Moose Meadows Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 45.1190036,
+        "lng": -70.4752366
+      }
+    },
+    "city": "Stratton",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Granite Links Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.2419439,
+        "lng": -71.0550183
+      }
+    },
+    "city": "Quincy",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Braintree Municipal Golf Course",
     "geometry": {
       "location": {
@@ -8185,34 +8059,6 @@
     },
     "city": "Fairfield",
     "state": "Connecticut",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Old Black Point Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.2915763,
-        "lng": -72.2064821
-      }
-    },
-    "city": "East Lyme",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Moose Meadows Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 45.1190036,
-        "lng": -70.4752366
-      }
-    },
-    "city": "Stratton",
-    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -8288,62 +8134,6 @@
     ]
   },
   {
-    "name": "Green Mountain National Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.6981184,
-        "lng": -72.8249388
-      }
-    },
-    "city": "Killington",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "White River Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.8272147,
-        "lng": -72.7935893
-      }
-    },
-    "city": "Rochester",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Bas Ridge Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.443895,
-        "lng": -73.1222897
-      }
-    },
-    "city": "Hinsdale",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Essex Country Club",
-    "geometry": {
-      "location": {
-        "lat": 44.5563586,
-        "lng": -73.0679971
-      }
-    },
-    "city": "Essex",
-    "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Blue Hill Country Club",
     "geometry": {
       "location": {
@@ -8358,15 +8148,15 @@
     ]
   },
   {
-    "name": "Vermont",
+    "name": "Green Mountain National Golf Course",
     "geometry": {
       "location": {
-        "lat": -25.4466683,
-        "lng": -49.353854
+        "lat": 43.6981184,
+        "lng": -72.8249388
       }
     },
-    "city": "Curitiba",
-    "state": "Paran\u00e1",
+    "city": "Killington",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8414,28 +8204,28 @@
     ]
   },
   {
-    "name": "Airport Driving Range",
+    "name": "White River Golf Course",
     "geometry": {
       "location": {
-        "lat": 43.5438882,
-        "lng": -72.9534789
+        "lat": 43.8272147,
+        "lng": -72.7935893
       }
     },
-    "city": "Clarendon",
+    "city": "Rochester",
     "state": "Vermont",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Spencer Driving Range",
+    "name": "Bas Ridge Golf Club",
     "geometry": {
       "location": {
-        "lat": 42.2549126,
-        "lng": -71.9559412
+        "lat": 42.443895,
+        "lng": -73.1222897
       }
     },
-    "city": "Spencer",
+    "city": "Hinsdale",
     "state": "Massachusetts",
     "activities": [
       "golf"
@@ -8456,29 +8246,29 @@
     ]
   },
   {
-    "name": "Vermont",
+    "name": "Essex Country Club",
     "geometry": {
       "location": {
-        "lat": 16.3984083,
-        "lng": -61.4632664
+        "lat": 44.5563586,
+        "lng": -73.0679971
       }
     },
-    "city": "Petit-Canal",
-    "state": "Guadeloupe",
+    "city": "Essex",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Slicer's Driving Range",
+    "name": "Vermont",
     "geometry": {
       "location": {
-        "lat": 41.5131951,
-        "lng": -72.9242443
+        "lat": -25.4466683,
+        "lng": -49.353854
       }
     },
-    "city": "Cheshire",
-    "state": "",
+    "city": "Curitiba",
+    "state": "Paran\u00e1",
     "activities": [
       "golf"
     ]
@@ -8512,15 +8302,15 @@
     ]
   },
   {
-    "name": "Miner Hills Golf Course & Driving Range",
+    "name": "Airport Driving Range",
     "geometry": {
       "location": {
-        "lat": 41.5781931,
-        "lng": -72.7127043
+        "lat": 43.5438882,
+        "lng": -72.9534789
       }
     },
-    "city": "Middletown",
-    "state": "Connecticut",
+    "city": "Clarendon",
+    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -8549,6 +8339,76 @@
     },
     "city": "Richmond",
     "state": "RI",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Spencer Driving Range",
+    "geometry": {
+      "location": {
+        "lat": 42.2549126,
+        "lng": -71.9559412
+      }
+    },
+    "city": "Spencer",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Vermont",
+    "geometry": {
+      "location": {
+        "lat": 16.3984083,
+        "lng": -61.4632664
+      }
+    },
+    "city": "Petit-Canal",
+    "state": "Guadeloupe",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Country View Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.5710803,
+        "lng": -69.1354237
+      }
+    },
+    "city": "Brooks",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Bradford Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.9945982,
+        "lng": -72.125336
+      }
+    },
+    "city": "Bradford",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Miner Hills Golf Course & Driving Range",
+    "geometry": {
+      "location": {
+        "lat": 41.5781931,
+        "lng": -72.7127043
+      }
+    },
+    "city": "Middletown",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -8596,34 +8456,6 @@
     ]
   },
   {
-    "name": "Country View Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.5710803,
-        "lng": -69.1354237
-      }
-    },
-    "city": "Brooks",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Bradford Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.9945982,
-        "lng": -72.125336
-      }
-    },
-    "city": "Bradford",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Jato Highlands",
     "geometry": {
       "location": {
@@ -8633,6 +8465,20 @@
     },
     "city": "Lincoln",
     "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Lake Kezar Country Club",
+    "geometry": {
+      "location": {
+        "lat": 44.1465893,
+        "lng": -70.889694
+      }
+    },
+    "city": "Lovell",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -8680,34 +8526,6 @@
     ]
   },
   {
-    "name": "Vermont",
-    "geometry": {
-      "location": {
-        "lat": 53.2662479,
-        "lng": -6.1714788
-      }
-    },
-    "city": "Cornelscourt",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Lake Kezar Country Club",
-    "geometry": {
-      "location": {
-        "lat": 44.1465893,
-        "lng": -70.889694
-      }
-    },
-    "city": "Lovell",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Fox Run Golf Club",
     "geometry": {
       "location": {
@@ -8717,6 +8535,48 @@
     },
     "city": "Ludlow",
     "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Bakersfeild Country Club",
+    "geometry": {
+      "location": {
+        "lat": 44.8159794,
+        "lng": -72.7835166
+      }
+    },
+    "city": "Bakersfeild",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Crown Point Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.3410186,
+        "lng": -72.4740579
+      }
+    },
+    "city": "Springfield",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Merrimack Valley Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.7537848,
+        "lng": -71.1802522
+      }
+    },
+    "city": "Methuen",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -8778,43 +8638,29 @@
     ]
   },
   {
-    "name": "Bakersfeild Country Club",
+    "name": "Bretwood Golf Course",
     "geometry": {
       "location": {
-        "lat": 44.8159794,
-        "lng": -72.7835166
+        "lat": 42.9803632,
+        "lng": -72.3083095
       }
     },
-    "city": "Bakersfeild",
-    "state": "VT",
+    "city": "Keene",
+    "state": "NH",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Crown Point Golf Course",
+    "name": "Fairview Farm Golf Course",
     "geometry": {
       "location": {
-        "lat": 43.3410186,
-        "lng": -72.4740579
+        "lat": 41.7497571,
+        "lng": -73.0749378
       }
     },
-    "city": "Springfield",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Merrimack Valley Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.7537848,
-        "lng": -71.1802522
-      }
-    },
-    "city": "Methuen",
-    "state": "MA",
+    "city": "Harwinton",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -8876,34 +8722,6 @@
     ]
   },
   {
-    "name": "Bretwood Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.9803632,
-        "lng": -72.3083095
-      }
-    },
-    "city": "Keene",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Fairview Farm Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.7497571,
-        "lng": -73.0749378
-      }
-    },
-    "city": "Harwinton",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "The Balsams Panorama Golf Course",
     "geometry": {
       "location": {
@@ -8960,6 +8778,20 @@
     ]
   },
   {
+    "name": "Newport National Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.5306871,
+        "lng": -71.2531039
+      }
+    },
+    "city": "Middletown",
+    "state": "RI",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Connecticut",
     "geometry": {
       "location": {
@@ -9002,76 +8834,6 @@
     ]
   },
   {
-    "name": "Vermont",
-    "geometry": {
-      "location": {
-        "lat": 38.8898138,
-        "lng": -77.0408035
-      }
-    },
-    "city": "Washington",
-    "state": "District of Columbia",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Newport National Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.5306871,
-        "lng": -71.2531039
-      }
-    },
-    "city": "Middletown",
-    "state": "RI",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Topstone Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.8678135,
-        "lng": -72.5566987
-      }
-    },
-    "city": "East Windsor",
-    "state": "Connecticut",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Bristol Golf Park",
-    "geometry": {
-      "location": {
-        "lat": 41.7005964,
-        "lng": -71.2705207
-      }
-    },
-    "city": "Bristol",
-    "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Homewood Acres Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.3159488,
-        "lng": -73.0266362
-      }
-    },
-    "city": "Woodbridge",
-    "state": "Connecticut",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Cochecho Country Club",
     "geometry": {
       "location": {
@@ -9103,26 +8865,26 @@
     "name": "Vermont",
     "geometry": {
       "location": {
-        "lat": 39.7730626,
-        "lng": -86.1614309
+        "lat": 38.8898138,
+        "lng": -77.0408035
       }
     },
-    "city": "Indianapolis",
-    "state": "Indiana",
+    "city": "Washington",
+    "state": "District of Columbia",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Edgartown Golf Club",
+    "name": "Topstone Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.3995999,
-        "lng": -70.5250561
+        "lat": 41.8678135,
+        "lng": -72.5566987
       }
     },
-    "city": "Edgartown",
-    "state": "Massachusetts",
+    "city": "East Windsor",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -9142,15 +8904,15 @@
     ]
   },
   {
-    "name": "Rolling Meadows Country Club",
+    "name": "Bristol Golf Park",
     "geometry": {
       "location": {
-        "lat": 41.911594,
-        "lng": -72.4942018
+        "lat": 41.7005964,
+        "lng": -71.2705207
       }
     },
-    "city": "Ellington",
-    "state": "",
+    "city": "Bristol",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9198,6 +8960,62 @@
     ]
   },
   {
+    "name": "Homewood Acres Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.3159488,
+        "lng": -73.0266362
+      }
+    },
+    "city": "Woodbridge",
+    "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Vermont",
+    "geometry": {
+      "location": {
+        "lat": 39.7730626,
+        "lng": -86.1614309
+      }
+    },
+    "city": "Indianapolis",
+    "state": "Indiana",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Orchards Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.2500019,
+        "lng": -73.0498894
+      }
+    },
+    "city": "Milford",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Edgartown Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.3995999,
+        "lng": -70.5250561
+      }
+    },
+    "city": "Edgartown",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Cape Arundel Golf Club Practice Area",
     "geometry": {
       "location": {
@@ -9226,20 +9044,6 @@
     ]
   },
   {
-    "name": "Orchards Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.2500019,
-        "lng": -73.0498894
-      }
-    },
-    "city": "Milford",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Malerba's Golf Driving Range",
     "geometry": {
       "location": {
@@ -9249,6 +9053,20 @@
     },
     "city": "Norwich",
     "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Montcalm Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.6060794,
+        "lng": -72.172027
+      }
+    },
+    "city": "Enfield",
+    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -9310,20 +9128,6 @@
     ]
   },
   {
-    "name": "Montcalm Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.6060794,
-        "lng": -72.172027
-      }
-    },
-    "city": "Enfield",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Honey Pond Farm Golf Course",
     "geometry": {
       "location": {
@@ -9347,62 +9151,6 @@
     },
     "city": "Westminster",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Farmington Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.383946,
-        "lng": -71.051399
-      }
-    },
-    "city": "Farmington",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Exeter Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.5729286,
-        "lng": -71.5467526
-      }
-    },
-    "city": "Exeter",
-    "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Bull's Bridge Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.6719377,
-        "lng": -73.4834304
-      }
-    },
-    "city": "Kent",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Apple Island Resort Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.6362878,
-        "lng": -73.2721894
-      }
-    },
-    "city": "South Hero",
-    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -9436,14 +9184,14 @@
     ]
   },
   {
-    "name": "Androscoggin Valley Country Club",
+    "name": "Farmington Country Club",
     "geometry": {
       "location": {
-        "lat": 44.3875982,
-        "lng": -71.157188
+        "lat": 43.383946,
+        "lng": -71.051399
       }
     },
-    "city": "Gorham",
+    "city": "Farmington",
     "state": "New Hampshire",
     "activities": [
       "golf"
@@ -9492,15 +9240,15 @@
     ]
   },
   {
-    "name": "Colchester Driving Range",
+    "name": "Exeter Country Club",
     "geometry": {
       "location": {
-        "lat": 41.5892384,
-        "lng": -72.3495776
+        "lat": 41.5729286,
+        "lng": -71.5467526
       }
     },
-    "city": "Colchester",
-    "state": "",
+    "city": "Exeter",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -9520,6 +9268,48 @@
     ]
   },
   {
+    "name": "Apple Island Resort Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.6362878,
+        "lng": -73.2721894
+      }
+    },
+    "city": "South Hero",
+    "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Androscoggin Valley Country Club",
+    "geometry": {
+      "location": {
+        "lat": 44.3875982,
+        "lng": -71.157188
+      }
+    },
+    "city": "Gorham",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Granite Fields Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.8623831,
+        "lng": -71.0815657
+      }
+    },
+    "city": "Kingston",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "The Preserve Golf Course",
     "geometry": {
       "location": {
@@ -9529,6 +9319,20 @@
     },
     "city": "Richmond",
     "state": "Rhode Island",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Pine Ridge",
+    "geometry": {
+      "location": {
+        "lat": 42.187651,
+        "lng": -71.9047313
+      }
+    },
+    "city": "Oxford",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -9562,20 +9366,6 @@
     ]
   },
   {
-    "name": "Granite Fields Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.8623831,
-        "lng": -71.0815657
-      }
-    },
-    "city": "Kingston",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Fenway Pitch and Putt",
     "geometry": {
       "location": {
@@ -9604,39 +9394,11 @@
     ]
   },
   {
-    "name": "Pine Ridge",
-    "geometry": {
-      "location": {
-        "lat": 42.187651,
-        "lng": -71.9047313
-      }
-    },
-    "city": "Oxford",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Pitch and Putt",
     "geometry": {
       "location": {
         "lat": 41.9162608,
         "lng": -71.3585223
-      }
-    },
-    "city": "Attleboro",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Driving Range",
-    "geometry": {
-      "location": {
-        "lat": 41.9166829,
-        "lng": -71.3561931
       }
     },
     "city": "Attleboro",
@@ -9654,48 +9416,6 @@
       }
     },
     "city": "Charlton",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "LeBaron Hills Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.8667612,
-        "lng": -70.9714772
-      }
-    },
-    "city": "Lakeville",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Unnamed Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.73986,
-        "lng": -71.6710369
-      }
-    },
-    "city": "Ashland",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Caddy Shack Driving Range",
-    "geometry": {
-      "location": {
-        "lat": 41.6400666,
-        "lng": -71.0442044
-      }
-    },
-    "city": "Dartmouth",
     "state": "Massachusetts",
     "activities": [
       "golf"
@@ -9725,6 +9445,62 @@
     },
     "city": "Goffstown",
     "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "LeBaron Hills Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.8667612,
+        "lng": -70.9714772
+      }
+    },
+    "city": "Lakeville",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Driving Range",
+    "geometry": {
+      "location": {
+        "lat": 41.9166829,
+        "lng": -71.3561931
+      }
+    },
+    "city": "Attleboro",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Unnamed Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.73986,
+        "lng": -71.6710369
+      }
+    },
+    "city": "Ashland",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Caddy Shack Driving Range",
+    "geometry": {
+      "location": {
+        "lat": 41.6400666,
+        "lng": -71.0442044
+      }
+    },
+    "city": "Dartmouth",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -9828,6 +9604,20 @@
     ]
   },
   {
+    "name": "Stoneham Oaks Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.4842308,
+        "lng": -71.1133672
+      }
+    },
+    "city": "Stoneham",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Vermont",
     "geometry": {
       "location": {
@@ -9870,76 +9660,6 @@
     ]
   },
   {
-    "name": "Unnamed Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.5993258,
-        "lng": -71.1197517
-      }
-    },
-    "city": "North Reading",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Stoneham Oaks Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.4842308,
-        "lng": -71.1133672
-      }
-    },
-    "city": "Stoneham",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Caribou Country Club",
-    "geometry": {
-      "location": {
-        "lat": 46.8936554,
-        "lng": -68.0447445
-      }
-    },
-    "city": "Caribou",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Presque Isle Country Club",
-    "geometry": {
-      "location": {
-        "lat": 46.7192792,
-        "lng": -67.9424022
-      }
-    },
-    "city": "Presque Isle",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Mount Kineo Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 45.6928069,
-        "lng": -69.7305157
-      }
-    },
-    "city": "Kineo Township",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Barren View Golf Course",
     "geometry": {
       "location": {
@@ -9968,28 +9688,28 @@
     ]
   },
   {
-    "name": "White Birches Golf Course",
+    "name": "Unnamed Golf Course",
     "geometry": {
       "location": {
-        "lat": 44.5309127,
-        "lng": -68.3791376
+        "lat": 42.5993258,
+        "lng": -71.1197517
       }
     },
-    "city": "Hancock",
-    "state": "Maine",
+    "city": "North Reading",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Traditions Golf Course and Learning Center",
+    "name": "Caribou Country Club",
     "geometry": {
       "location": {
-        "lat": 44.7638036,
-        "lng": -68.7150769
+        "lat": 46.8936554,
+        "lng": -68.0447445
       }
     },
-    "city": "Holden",
+    "city": "Caribou",
     "state": "Maine",
     "activities": [
       "golf"
@@ -10024,28 +9744,28 @@
     ]
   },
   {
-    "name": "Lakewood Golf Course",
+    "name": "Presque Isle Country Club",
     "geometry": {
       "location": {
-        "lat": 44.8267189,
-        "lng": -69.7851127
+        "lat": 46.7192792,
+        "lng": -67.9424022
       }
     },
-    "city": "Madison",
+    "city": "Presque Isle",
     "state": "Maine",
     "activities": [
       "golf"
     ]
   },
   {
-    "name": "Loon's Cove Driving Range",
+    "name": "Mount Kineo Golf Course",
     "geometry": {
       "location": {
-        "lat": 44.7315047,
-        "lng": -69.650621
+        "lat": 45.6928069,
+        "lng": -69.7305157
       }
     },
-    "city": "Skowhegan",
+    "city": "Kineo Township",
     "state": "Maine",
     "activities": [
       "golf"
@@ -10108,15 +9828,15 @@
     ]
   },
   {
-    "name": "Den Brae Golf Course",
+    "name": "White Birches Golf Course",
     "geometry": {
       "location": {
-        "lat": 43.5015622,
-        "lng": -71.636142
+        "lat": 44.5309127,
+        "lng": -68.3791376
       }
     },
-    "city": "Sanbornton",
-    "state": "New Hampshire",
+    "city": "Hancock",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -10131,6 +9851,76 @@
     },
     "city": "Vassalboro",
     "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Traditions Golf Course and Learning Center",
+    "geometry": {
+      "location": {
+        "lat": 44.7638036,
+        "lng": -68.7150769
+      }
+    },
+    "city": "Holden",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Lakewood Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.8267189,
+        "lng": -69.7851127
+      }
+    },
+    "city": "Madison",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Loon's Cove Driving Range",
+    "geometry": {
+      "location": {
+        "lat": 44.7315047,
+        "lng": -69.650621
+      }
+    },
+    "city": "Skowhegan",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Den Brae Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.5015622,
+        "lng": -71.636142
+      }
+    },
+    "city": "Sanbornton",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "West Hills Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.495607,
+        "lng": -72.7073785
+      }
+    },
+    "city": "Stowe",
+    "state": "VT",
     "activities": [
       "golf"
     ]
@@ -10178,6 +9968,20 @@
     ]
   },
   {
+    "name": "Nehoiden Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.2865434,
+        "lng": -71.2962516
+      }
+    },
+    "city": "Wellesley",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "The Ridge Club",
     "geometry": {
       "location": {
@@ -10187,20 +9991,6 @@
     },
     "city": "Sandwich",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "West Hills Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.495607,
-        "lng": -72.7073785
-      }
-    },
-    "city": "Stowe",
-    "state": "VT",
     "activities": [
       "golf"
     ]
@@ -10229,76 +10019,6 @@
     },
     "city": "Tisbury",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Stow Acres Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.4169718,
-        "lng": -71.5296204
-      }
-    },
-    "city": "Stow",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Nehoiden Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.2865434,
-        "lng": -71.2962516
-      }
-    },
-    "city": "Wellesley",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Weston Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.3601299,
-        "lng": -71.2850119
-      }
-    },
-    "city": "Weston",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Farm Neck Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.4366203,
-        "lng": -70.5655181
-      }
-    },
-    "city": "Oak Bluffs",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Burlington Country Club",
-    "geometry": {
-      "location": {
-        "lat": 44.4596475,
-        "lng": -73.195602
-      }
-    },
-    "city": "South Burlington",
-    "state": "Vermont",
     "activities": [
       "golf"
     ]
@@ -10374,6 +10094,62 @@
     ]
   },
   {
+    "name": "Stow Acres Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.4169718,
+        "lng": -71.5296204
+      }
+    },
+    "city": "Stow",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "The Weston Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.3601299,
+        "lng": -71.2850119
+      }
+    },
+    "city": "Weston",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Farm Neck Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.4366203,
+        "lng": -70.5655181
+      }
+    },
+    "city": "Oak Bluffs",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Burlington Country Club",
+    "geometry": {
+      "location": {
+        "lat": 44.4596475,
+        "lng": -73.195602
+      }
+    },
+    "city": "South Burlington",
+    "state": "Vermont",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Vermont National Country Club",
     "geometry": {
       "location": {
@@ -10416,6 +10192,20 @@
     ]
   },
   {
+    "name": "Vesper Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.653644,
+        "lng": -71.3938597
+      }
+    },
+    "city": "Tyngsborough",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Highfields Golf & Country Club",
     "geometry": {
       "location": {
@@ -10425,6 +10215,20 @@
     },
     "city": "Grafton",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Raceway Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.9847284,
+        "lng": -71.8321552
+      }
+    },
+    "city": "Thompson",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -10451,7 +10255,7 @@
         "lng": -71.1640361
       }
     },
-    "city": "",
+    "city": "Hale's Location",
     "state": "New Hampshire",
     "activities": [
       "golf"
@@ -10467,90 +10271,6 @@
     },
     "city": "Amherst",
     "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Vesper Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.653644,
-        "lng": -71.3938597
-      }
-    },
-    "city": "Tyngsborough",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Sky Meadow Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.7040363,
-        "lng": -71.4724073
-      }
-    },
-    "city": "Nashua",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Raceway Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 41.9847284,
-        "lng": -71.8321552
-      }
-    },
-    "city": "Thompson",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Wyndhurst Golf and Club",
-    "geometry": {
-      "location": {
-        "lat": 42.3392466,
-        "lng": -73.2620956
-      }
-    },
-    "city": "Lenox",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Wentworth By The Sea Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.0506414,
-        "lng": -70.7365202
-      }
-    },
-    "city": "Rye",
-    "state": "New Hampshire",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Wayland Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.3793874,
-        "lng": -71.3782637
-      }
-    },
-    "city": "Wayland",
-    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -10738,15 +10458,15 @@
     ]
   },
   {
-    "name": "Fenwick Golf Club",
+    "name": "Sky Meadow Country Club",
     "geometry": {
       "location": {
-        "lat": 41.270848,
-        "lng": -72.3560052
+        "lat": 42.7040363,
+        "lng": -71.4724073
       }
     },
-    "city": "Old Saybrook",
-    "state": "Connecticut",
+    "city": "Nashua",
+    "state": "New Hampshire",
     "activities": [
       "golf"
     ]
@@ -10775,6 +10495,62 @@
     },
     "city": "Stratford",
     "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Wyndhurst Golf and Club",
+    "geometry": {
+      "location": {
+        "lat": 42.3392466,
+        "lng": -73.2620956
+      }
+    },
+    "city": "Lenox",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Wentworth By The Sea Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.0506414,
+        "lng": -70.7365202
+      }
+    },
+    "city": "Rye",
+    "state": "New Hampshire",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Wayland Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.3793874,
+        "lng": -71.3782637
+      }
+    },
+    "city": "Wayland",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Fenwick Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.270848,
+        "lng": -72.3560052
+      }
+    },
+    "city": "Old Saybrook",
+    "state": "Connecticut",
     "activities": [
       "golf"
     ]
@@ -10948,6 +10724,20 @@
     ]
   },
   {
+    "name": "Northampton Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.3452633,
+        "lng": -72.6958365
+      }
+    },
+    "city": "Leeds",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "New Seabury Country Club",
     "geometry": {
       "location": {
@@ -10957,6 +10747,34 @@
     },
     "city": "Mashpee",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Ralph Myhre Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.9965128,
+        "lng": -73.1785002
+      }
+    },
+    "city": "Middlebury",
+    "state": "VT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Jay Peak Resort Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 44.9404023,
+        "lng": -72.5012497
+      }
+    },
+    "city": "Jay",
+    "state": "VT",
     "activities": [
       "golf"
     ]
@@ -11004,62 +10822,6 @@
     ]
   },
   {
-    "name": "Northampton Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.3452633,
-        "lng": -72.6958365
-      }
-    },
-    "city": "Leeds",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Quidnessett Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.641148,
-        "lng": -71.4155289
-      }
-    },
-    "city": "North Kingstown",
-    "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Ralph Myhre Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.9965128,
-        "lng": -73.1785002
-      }
-    },
-    "city": "Middlebury",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Jay Peak Resort Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 44.9404023,
-        "lng": -72.5012497
-      }
-    },
-    "city": "Jay",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Cedar Knoll Country Club",
     "geometry": {
       "location": {
@@ -11069,48 +10831,6 @@
     },
     "city": "Hinesburg",
     "state": "Vermont",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "The Golf Club at Turner Hill",
-    "geometry": {
-      "location": {
-        "lat": 42.6657988,
-        "lng": -70.8818467
-      }
-    },
-    "city": "Ipswich",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Meadow Brook Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 42.5456643,
-        "lng": -71.1268695
-      }
-    },
-    "city": "Reading",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Red Tail Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.5297111,
-        "lng": -71.6054026
-      }
-    },
-    "city": "Devens",
-    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11130,14 +10850,14 @@
     ]
   },
   {
-    "name": "Cohasset Golf Club",
+    "name": "The Golf Club at Turner Hill",
     "geometry": {
       "location": {
-        "lat": 42.2499299,
-        "lng": -70.8406989
+        "lat": 42.6657988,
+        "lng": -70.8818467
       }
     },
-    "city": "Cohasset",
+    "city": "Ipswich",
     "state": "Massachusetts",
     "activities": [
       "golf"
@@ -11186,6 +10906,76 @@
     ]
   },
   {
+    "name": "Quidnessett Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.641148,
+        "lng": -71.4155289
+      }
+    },
+    "city": "North Kingstown",
+    "state": "Rhode Island",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Meadow Brook Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.5456643,
+        "lng": -71.1268695
+      }
+    },
+    "city": "Reading",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Potowomut Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 41.6622316,
+        "lng": -71.4274376
+      }
+    },
+    "city": "East Greenwich",
+    "state": "RI",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Red Tail Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 42.5297111,
+        "lng": -71.6054026
+      }
+    },
+    "city": "Devens",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Cohasset Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.2499299,
+        "lng": -70.8406989
+      }
+    },
+    "city": "Cohasset",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Hotchkiss Golf Course",
     "geometry": {
       "location": {
@@ -11214,15 +11004,15 @@
     ]
   },
   {
-    "name": "Potowomut Golf Club",
+    "name": "Ponkapoag Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.6622316,
-        "lng": -71.4274376
+        "lat": 42.1932267,
+        "lng": -71.107588
       }
     },
-    "city": "East Greenwich",
-    "state": "RI",
+    "city": "Canton",
+    "state": "MA",
     "activities": [
       "golf"
     ]
@@ -11284,20 +11074,6 @@
     ]
   },
   {
-    "name": "Ponkapoag Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 42.1932267,
-        "lng": -71.107588
-      }
-    },
-    "city": "Canton",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Pine Brook Country Club",
     "geometry": {
       "location": {
@@ -11354,6 +11130,34 @@
     ]
   },
   {
+    "name": "Minnechaug Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.7318705,
+        "lng": -72.5234705
+      }
+    },
+    "city": "Glastonbury",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Amherst Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.8284866,
+        "lng": -71.6071708
+      }
+    },
+    "city": "Amherst",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Hunter Memorial Golf Course",
     "geometry": {
       "location": {
@@ -11363,6 +11167,20 @@
     },
     "city": "Meriden",
     "state": "Connecticut",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Brooklawn Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.1885175,
+        "lng": -73.2274263
+      }
+    },
+    "city": "Fairfield",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -11410,62 +11228,6 @@
     ]
   },
   {
-    "name": "Minnechaug Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.7318705,
-        "lng": -72.5234705
-      }
-    },
-    "city": "Glastonbury",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Amherst Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.8284866,
-        "lng": -71.6071708
-      }
-    },
-    "city": "Amherst",
-    "state": "NH",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Lake of Isles",
-    "geometry": {
-      "location": {
-        "lat": 41.4854204,
-        "lng": -71.9472676
-      }
-    },
-    "city": "Ledyard",
-    "state": "",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Brooklawn Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.1885175,
-        "lng": -73.2274263
-      }
-    },
-    "city": "Fairfield",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Charles River Country Club",
     "geometry": {
       "location": {
@@ -11480,6 +11242,20 @@
     ]
   },
   {
+    "name": "Wethersfield Country Club",
+    "geometry": {
+      "location": {
+        "lat": 41.6836876,
+        "lng": -72.6788701
+      }
+    },
+    "city": "Wethersfield",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Point Judith Country Club",
     "geometry": {
       "location": {
@@ -11489,6 +11265,34 @@
     },
     "city": "Narragansett",
     "state": "Rhode Island",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Rolling Greens Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.6355961,
+        "lng": -72.690835
+      }
+    },
+    "city": "Rocky Hill",
+    "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Norwich Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 41.5024542,
+        "lng": -72.104885
+      }
+    },
+    "city": "Norwich",
+    "state": "CT",
     "activities": [
       "golf"
     ]
@@ -11536,15 +11340,15 @@
     ]
   },
   {
-    "name": "Wethersfield Country Club",
+    "name": "Lake Morey Golf Course",
     "geometry": {
       "location": {
-        "lat": 41.6836876,
-        "lng": -72.6788701
+        "lat": 43.9068046,
+        "lng": -72.1585685
       }
     },
-    "city": "Wethersfield",
-    "state": "CT",
+    "city": "Fairlee",
+    "state": "VT",
     "activities": [
       "golf"
     ]
@@ -11564,34 +11368,6 @@
     ]
   },
   {
-    "name": "Rolling Greens Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.6355961,
-        "lng": -72.690835
-      }
-    },
-    "city": "Rocky Hill",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Norwich Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 41.5024542,
-        "lng": -72.104885
-      }
-    },
-    "city": "Norwich",
-    "state": "CT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Nonesuch River Golf Club",
     "geometry": {
       "location": {
@@ -11600,76 +11376,6 @@
       }
     },
     "city": "Scarborough",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Dunegrass Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.5256698,
-        "lng": -70.3965598
-      }
-    },
-    "city": "Old Orchard Beach",
-    "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Newport Country Club",
-    "geometry": {
-      "location": {
-        "lat": 41.4596863,
-        "lng": -71.3475667
-      }
-    },
-    "city": "Newport",
-    "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Lake Morey Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.9068046,
-        "lng": -72.1585685
-      }
-    },
-    "city": "Fairlee",
-    "state": "VT",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Myopia Hunt Club",
-    "geometry": {
-      "location": {
-        "lat": 42.6076379,
-        "lng": -70.8571891
-      }
-    },
-    "city": "Hamilton",
-    "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Gorham Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.6543448,
-        "lng": -70.4086438
-      }
-    },
-    "city": "Gorham",
     "state": "Maine",
     "activities": [
       "golf"
@@ -11718,15 +11424,15 @@
     ]
   },
   {
-    "name": "Framingham Country Club",
+    "name": "Dunegrass Golf Club",
     "geometry": {
       "location": {
-        "lat": 42.2899505,
-        "lng": -71.4762586
+        "lat": 43.5256698,
+        "lng": -70.3965598
       }
     },
-    "city": "Framingham",
-    "state": "Massachusetts",
+    "city": "Old Orchard Beach",
+    "state": "Maine",
     "activities": [
       "golf"
     ]
@@ -11746,15 +11452,15 @@
     ]
   },
   {
-    "name": "New Meadows Golf Club",
+    "name": "Newport Country Club",
     "geometry": {
       "location": {
-        "lat": 42.6646788,
-        "lng": -70.9256956
+        "lat": 41.4596863,
+        "lng": -71.3475667
       }
     },
-    "city": "Topsfield",
-    "state": "Massachusetts",
+    "city": "Newport",
+    "state": "Rhode Island",
     "activities": [
       "golf"
     ]
@@ -11769,6 +11475,62 @@
     },
     "city": "Middlefield",
     "state": "CT",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Myopia Hunt Club",
+    "geometry": {
+      "location": {
+        "lat": 42.6076379,
+        "lng": -70.8571891
+      }
+    },
+    "city": "Wenham",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Gorham Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.6543448,
+        "lng": -70.4086438
+      }
+    },
+    "city": "Gorham",
+    "state": "Maine",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Framingham Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.2899505,
+        "lng": -71.4762586
+      }
+    },
+    "city": "Framingham",
+    "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "New Meadows Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 42.6646788,
+        "lng": -70.9256956
+      }
+    },
+    "city": "Topsfield",
+    "state": "Massachusetts",
     "activities": [
       "golf"
     ]
@@ -11816,6 +11578,34 @@
     ]
   },
   {
+    "name": "Castine Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 44.3936777,
+        "lng": -68.8012305
+      }
+    },
+    "city": "Castine",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Sterling National Country Club",
+    "geometry": {
+      "location": {
+        "lat": 42.4487079,
+        "lng": -71.7211901
+      }
+    },
+    "city": "Sterling",
+    "state": "MA",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Chatham Seaside Links",
     "geometry": {
       "location": {
@@ -11839,6 +11629,20 @@
     },
     "city": "Mashpee",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Portland Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.7088474,
+        "lng": -70.2298053
+      }
+    },
+    "city": "Falmouth",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -11872,34 +11676,6 @@
     ]
   },
   {
-    "name": "Castine Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 44.3936777,
-        "lng": -68.8012305
-      }
-    },
-    "city": "Castine",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Sterling National Country Club",
-    "geometry": {
-      "location": {
-        "lat": 42.4487079,
-        "lng": -71.7211901
-      }
-    },
-    "city": "Sterling",
-    "state": "MA",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "GreatHorse",
     "geometry": {
       "location": {
@@ -11914,6 +11690,20 @@
     ]
   },
   {
+    "name": "Eastman Links",
+    "geometry": {
+      "location": {
+        "lat": 43.503001,
+        "lng": -72.1206938
+      }
+    },
+    "city": "Grantham",
+    "state": "NH",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Segregansett Country Club",
     "geometry": {
       "location": {
@@ -11923,20 +11713,6 @@
     },
     "city": "Taunton",
     "state": "Massachusetts",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Portland Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.7088474,
-        "lng": -70.2298053
-      }
-    },
-    "city": "Falmouth",
-    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -11979,20 +11755,6 @@
     },
     "city": "Lincoln",
     "state": "Rhode Island",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Eastman Links",
-    "geometry": {
-      "location": {
-        "lat": 43.503001,
-        "lng": -72.1206938
-      }
-    },
-    "city": "Grantham",
-    "state": "NH",
     "activities": [
       "golf"
     ]
@@ -12068,6 +11830,20 @@
     ]
   },
   {
+    "name": "Sugarloaf Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 45.0687353,
+        "lng": -70.3297609
+      }
+    },
+    "city": "Carrabassett Valley",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Shining Rock Golf Club",
     "geometry": {
       "location": {
@@ -12082,6 +11858,20 @@
     ]
   },
   {
+    "name": "Wawenock Golf Club",
+    "geometry": {
+      "location": {
+        "lat": 43.9513393,
+        "lng": -69.5527171
+      }
+    },
+    "city": "Walpole",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
     "name": "Crystal Lake Golf Club",
     "geometry": {
       "location": {
@@ -12091,6 +11881,34 @@
     },
     "city": "Haverhill",
     "state": "Massachusetts",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Toddy Brook Golf Course",
+    "geometry": {
+      "location": {
+        "lat": 43.8475245,
+        "lng": -70.2305927
+      }
+    },
+    "city": "North Yarmouth",
+    "state": "ME",
+    "activities": [
+      "golf"
+    ]
+  },
+  {
+    "name": "Old Marsh Country Club",
+    "geometry": {
+      "location": {
+        "lat": 43.3056297,
+        "lng": -70.6294004
+      }
+    },
+    "city": "Wells",
+    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -12124,20 +11942,6 @@
     ]
   },
   {
-    "name": "Sugarloaf Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 45.0687353,
-        "lng": -70.3297609
-      }
-    },
-    "city": "Carrabassett Valley",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Sunday River Golf Club",
     "geometry": {
       "location": {
@@ -12152,20 +11956,6 @@
     ]
   },
   {
-    "name": "Wawenock Golf Club",
-    "geometry": {
-      "location": {
-        "lat": 43.9513393,
-        "lng": -69.5527171
-      }
-    },
-    "city": "Walpole",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
     "name": "Highland Green Golf Club",
     "geometry": {
       "location": {
@@ -12175,34 +11965,6 @@
     },
     "city": "Topsham",
     "state": "Maine",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Toddy Brook Golf Course",
-    "geometry": {
-      "location": {
-        "lat": 43.8475245,
-        "lng": -70.2305927
-      }
-    },
-    "city": "North Yarmouth",
-    "state": "ME",
-    "activities": [
-      "golf"
-    ]
-  },
-  {
-    "name": "Old Marsh Country Club",
-    "geometry": {
-      "location": {
-        "lat": 43.3056297,
-        "lng": -70.6294004
-      }
-    },
-    "city": "Wells",
-    "state": "ME",
     "activities": [
       "golf"
     ]
@@ -12248,22 +12010,6 @@
     },
     "city": "Middletown",
     "state": "Connecticut",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Stonington Point/ Dubois Beach",
-    "description": "Dubois Beach is an easy beach entry and popular for night diving. The site makes a perfect spot for beginner divers given the easy entrance but please note the website states that scuba diving is not allowed during normal beach hours, typically 10am-4pm, so be cognizant of times when you're planning your dive trip.",
-    "geometry": {
-      "location": {
-        "lat": 41.3359327,
-        "lng": -71.9059042
-      }
-    },
-    "city": "Stonington",
-    "state": "",
     "activities": [
       "scuba_diving"
     ],
@@ -12366,6 +12112,22 @@
     "diveType": "boat"
   },
   {
+    "name": "Graves Light (boat dive)",
+    "description": "Graves light located at the outer Boston Harbor Islands is only accessible by boat but it's well worth the charter. This site is loaded with large boulders and rock formations making it a great home to the wide variety of marine life you will find. Here you can see crab, sea star, cunner, anemone, lobster, urchin, nudibranch, sea raven, sculpin, rock gunnel and flounder.\nThis site is a prime area for seals who like to sunbath on the rocks sheltering the lighthouse and you can sometimes find them taking naps underwater.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels (especially if there is fog) to help guide divers back to the anchor line.\n\n",
+    "geometry": {
+      "location": {
+        "lat": 42.3554334,
+        "lng": -71.060511
+      }
+    },
+    "city": "Boston",
+    "state": "Massachusetts",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
+  },
+  {
     "name": "Corporation Beach",
     "description": "Corporation Beach in mid-Cape in Dennis, MA is much like Sandwich town beach in terms of ease of entry, exit and in my opinion, one of the best shore dives on the Cape and an awesome night dive. If you want to see squid, this is the spot to have best chance to see them and just about any kind of marine life native to Cape Cod Waters. Also as with Sandwich Town beach, it is best to go in within 1 hour before and exiting 1 hour after high tide. You do not want to dive the site anytime the winds are from North, NW as it impacts the visibility greatly. It's a pretty good location too for lobsters where the large boulders and rock fields are. Depth can get beyond 20 feet but requires a very long swim.\nIt's recommended to dive early in the morning or at the end of the day as it's less crowded with beachgoers and parking is easier to find closer to entry /exit point. During the day, when the lifeguards are present, divers will need to surface swim and descend away from the swimming area as there is no diving permitted in designated swimming areas.",
     "geometry": {
@@ -12428,22 +12190,6 @@
       "scuba_diving"
     ],
     "diveType": "shore"
-  },
-  {
-    "name": "Graves Light (boat dive)",
-    "description": "Graves light located at the outer Boston Harbor Islands is only accessible by boat but it's well worth the charter. This site is loaded with large boulders and rock formations making it a great home to the wide variety of marine life you will find. Here you can see crab, sea star, cunner, anemone, lobster, urchin, nudibranch, sea raven, sculpin, rock gunnel and flounder.\nThis site is a prime area for seals who like to sunbath on the rocks sheltering the lighthouse and you can sometimes find them taking naps underwater.\nNote the general area of Boston Harbor is heavy with boat traffic. We recommend using dive reels (especially if there is fog) to help guide divers back to the anchor line.\n\n",
-    "geometry": {
-      "location": {
-        "lat": 42.3554334,
-        "lng": -71.060511
-      }
-    },
-    "city": "Boston",
-    "state": "Massachusetts",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "boat"
   },
   {
     "name": "Halfway Rock (boat dive)",
@@ -12734,70 +12480,6 @@
     "diveType": "shore"
   },
   {
-    "name": "Kettle Cove",
-    "description": "Kettle Cove dive site is found on Cape Elizabeth. Divers enter/exit at the furthest left cove (there are two) with an easy beach entry a short distance from the parking lot. The cove is protected making this a great spot. In about 8-10 ft of water, beds of tall eel grass is seen that continues on for a few yards. After the eel grass, it then turns into a silty bottom with some rock formations.\nDivers can also head closer to the left side of the cove to check out what was around the rocks.\nWe found variations of crabs, flounder, hermit crabs, sea raven and we also saw crates of oysters. It turned out there is a lot of oyster farming so make sure you're staying away from the buoys and connected ropes.\nIt's important that divers stay out of the middle cove as that's designation for commercial fisherman to bring their boats and out. They will not be happy with divers that disobey.",
-    "geometry": {
-      "location": {
-        "lat": 43.5677657,
-        "lng": -70.220517
-      }
-    },
-    "city": "Cape Elizabeth",
-    "state": "Maine",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Nubble Lighthouse",
-    "description": "Nubble Lighthouse is a favorite for divers as it offers a diverse topography and awesome displays of marine life. This dive site has a dicey entrance as there are some slippery rocks but it is doable if you go slow. There is free parking with close proximity of the entrance, allowing you to prep your gear right at your car.\nDivers often spot sea ravens, anemones, different variations of crabs, and some have even seen torpedo rays. Once in a blue moon, divers spot whales and tuna.\nNote, there is no diving on Sundays except for winter. Please respect this rule.",
-    "geometry": {
-      "location": {
-        "lat": 43.165541000000005,
-        "lng": -70.59399404734694
-      }
-    },
-    "city": "York",
-    "state": "Maine",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Ships Cove",
-    "description": "Ships Cove is located in Fort Williams State Park that is rich with history. There are two nice dives in this protected Cape Elizabeth, ME cove- to the right of the cove and to the left of the cove hugging the rocks. It's a similar idea of a dive to those familiar with the very popular dive site, Folly Cove, in Cape Ann, MA. The park does close around dusk, so there are no night dives available here.\nThe dive site is just down the road from the famous Portland Head Lighthouse, and there are also portions of the original fort that can be seen. making this an overall really enjoyable location for family too.",
-    "geometry": {
-      "location": {
-        "lat": 43.5931434,
-        "lng": -70.2289333
-      }
-    },
-    "city": "Cape Elizabeth",
-    "state": "Maine",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "Wandby (wreck)",
-    "description": "The Wandby is a British freighter built in the late 1800s that has almost all but vanished from when she grounded on rocks in 1921. A few small pieces of the wreck can be found in about 20ft of water- a boiler at most 15x15ft in size are still visible, a small cylinder divers have also reported small portions of the hull located nearby as well.\nNote this dive should be done at high tide and divers will only get one dive in.",
-    "geometry": {
-      "location": {
-        "lat": 43.3457074,
-        "lng": -70.4605787
-      }
-    },
-    "city": "Kennebunkport",
-    "state": "Maine",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
     "name": "Fort Constitution- UNH Pier",
     "description": "Like Pierce Island, Fort Constitution is an advanced dive and should only be done with someone familiar with the site and tides given strong currents in between slack tide. You need to be very comfortable diving in currents before diving here, especially with how silty it is.\nDivers usually enter/exit to the left of the pier but one can also enter/exit to the right of the pier- but don't go too far out as you may interfere with NOAA or USCG operations. To the left of the pier is mud and muck and it can get very silty but if you are persistent, you may find old artifacts such as antique ceramic pipes. Most of the divers remain directly under the UNH Pier checking out the critters and the LOADS of anemones on the pillars and underneath the pier. During winter months, this site is popular for Macro photographers for the abundant amount of nudibranchs. Extremely tidal. Beware and know you tide math before attempting this site as there is heavy boat traffic and strong currents.",
     "geometry": {
@@ -12846,16 +12528,16 @@
     "diveType": "shore"
   },
   {
-    "name": "Lady of the Lake",
-    "description": "\"The Lady\" was built in 1848-1849 by the Winnipesaukee Steamship Co. She was a side wheel paddle steamer, 125 feet long, and went on to dominate commercial lake traffic until 1872when the steamship \"Mt. Washington\" was launched. In 1893, she was docked in Glendale Cove (now named Smith Cove), stripped of machinery and used for temporary housing for the workmen building Kimball's Castle. In 1895, her keel was filled with rocks and she was going to be sunk in deep water north of Rattlesnake Island. While being towed, she sank unexpectedly in the middle of the cove. She rests upright in 30 feet of water in front of NH Marine Patrol Headquarters. She is one of the easiest and most popular dive sites in the lake. The water temperature ranges between 65-78 degrees in the summer, requiring full wetsuits. The average visibility is 10-20 feet. The double layered oak hull and decking remain intact allowing for diving through the deck holes and peeking out the portholes. There is a tremendous fish population living on and around the wreck including; small & large mouth bass, yellow perch, sunfish, hornpout, and an occasional cusk or eel.\"",
+    "name": "Kettle Cove",
+    "description": "Kettle Cove dive site is found on Cape Elizabeth. Divers enter/exit at the furthest left cove (there are two) with an easy beach entry a short distance from the parking lot. The cove is protected making this a great spot. In about 8-10 ft of water, beds of tall eel grass is seen that continues on for a few yards. After the eel grass, it then turns into a silty bottom with some rock formations.\nDivers can also head closer to the left side of the cove to check out what was around the rocks.\nWe found variations of crabs, flounder, hermit crabs, sea raven and we also saw crates of oysters. It turned out there is a lot of oyster farming so make sure you're staying away from the buoys and connected ropes.\nIt's important that divers stay out of the middle cove as that's designation for commercial fisherman to bring their boats and out. They will not be happy with divers that disobey.",
     "geometry": {
       "location": {
-        "lat": 43.587958,
-        "lng": -71.384754
+        "lat": 43.5677657,
+        "lng": -70.220517
       }
     },
-    "city": "Gilford",
-    "state": "New Hampshire",
+    "city": "Cape Elizabeth",
+    "state": "Maine",
     "activities": [
       "scuba_diving"
     ],
@@ -12878,16 +12560,16 @@
     "diveType": "shore"
   },
   {
-    "name": "Old Navy Test Site",
-    "description": "The Old Navy Test Site reveals a unique story. Apparently in the 1950s, the Navy did some covert laser tests underwater in Lake Winnipesaukee. A rail car that ran on a track, like a coal-mining rail car, was used to measure how fast the laser beams were traveling through water per Dive Winnipesaukee. A tower that was part of the rail track operation remains intact in 45 feet of water. A few pieces of the rail car track can also be found laying on the bottom.\nAt this site, there is also a small fiberglass wreck called the \"Empty Pockets Wreck\", about 30ft in length that lays in 55ft of water. Dive Winnipesaukee reports that she sank in the 1970s. This wreck can be visited along with seeing the tower mentioned above during the same dive.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks only on all dives in the lake",
+    "name": "Nubble Lighthouse",
+    "description": "Nubble Lighthouse is a favorite for divers as it offers a diverse topography and awesome displays of marine life. This dive site has a dicey entrance as there are some slippery rocks but it is doable if you go slow. There is free parking with close proximity of the entrance, allowing you to prep your gear right at your car.\nDivers often spot sea ravens, anemones, different variations of crabs, and some have even seen torpedo rays. Once in a blue moon, divers spot whales and tuna.\nNote, there is no diving on Sundays except for winter. Please respect this rule.",
     "geometry": {
       "location": {
-        "lat": 43.58437,
-        "lng": -71.207886
+        "lat": 43.165541000000005,
+        "lng": -70.59399404734694
       }
     },
-    "city": "Wolfeboro",
-    "state": "New Hampshire",
+    "city": "York",
+    "state": "Maine",
     "activities": [
       "scuba_diving"
     ],
@@ -12926,20 +12608,20 @@
     "diveType": "shore"
   },
   {
-    "name": "Ship Island",
-    "description": "Ship Island is a nice boat dive that all levels can enjoy. For those that are beginner divers, the dive can be done in about 30 feet of water. There are large boulders and curious sunfish to explore. There are two small wrecks at this site.\nThe first small wreck is in about 30 feet of water. It\u2019s a wooden boat with an engine, that appears to be about a 25 foot cruiser with a closed bow from the 1950's per Dive Winnipesaukee. The wooden wreck is interesting enough to spend a bit of time there without venturing on to the second. For the advanced diver, there is a line from the stern of the wooden boat that leads to the smaller plexiglass wreck. It\u2019s a very simple wreck but interesting enough to check out and get that deeper dive in. Not worth staying long.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks for all dives in the lake",
+    "name": "Ships Cove",
+    "description": "Ships Cove is located in Fort Williams State Park that is rich with history. There are two nice dives in this protected Cape Elizabeth, ME cove- to the right of the cove and to the left of the cove hugging the rocks. It's a similar idea of a dive to those familiar with the very popular dive site, Folly Cove, in Cape Ann, MA. The park does close around dusk, so there are no night dives available here.\nThe dive site is just down the road from the famous Portland Head Lighthouse, and there are also portions of the original fort that can be seen. making this an overall really enjoyable location for family too.",
     "geometry": {
       "location": {
-        "lat": 43.58437,
-        "lng": -71.207886
+        "lat": 43.5931434,
+        "lng": -70.2289333
       }
     },
-    "city": "Wolfeboro",
-    "state": "New Hampshire",
+    "city": "Cape Elizabeth",
+    "state": "Maine",
     "activities": [
       "scuba_diving"
     ],
-    "diveType": "boat"
+    "diveType": "shore"
   },
   {
     "name": "Sunken Forest",
@@ -12956,6 +12638,70 @@
       "scuba_diving"
     ],
     "diveType": "shore"
+  },
+  {
+    "name": "Wandby (wreck)",
+    "description": "The Wandby is a British freighter built in the late 1800s that has almost all but vanished from when she grounded on rocks in 1921. A few small pieces of the wreck can be found in about 20ft of water- a boiler at most 15x15ft in size are still visible, a small cylinder divers have also reported small portions of the hull located nearby as well.\nNote this dive should be done at high tide and divers will only get one dive in.",
+    "geometry": {
+      "location": {
+        "lat": 43.3457074,
+        "lng": -70.4605787
+      }
+    },
+    "city": "Kennebunkport",
+    "state": "Maine",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Lady of the Lake",
+    "description": "\"The Lady\" was built in 1848-1849 by the Winnipesaukee Steamship Co. She was a side wheel paddle steamer, 125 feet long, and went on to dominate commercial lake traffic until 1872when the steamship \"Mt. Washington\" was launched. In 1893, she was docked in Glendale Cove (now named Smith Cove), stripped of machinery and used for temporary housing for the workmen building Kimball's Castle. In 1895, her keel was filled with rocks and she was going to be sunk in deep water north of Rattlesnake Island. While being towed, she sank unexpectedly in the middle of the cove. She rests upright in 30 feet of water in front of NH Marine Patrol Headquarters. She is one of the easiest and most popular dive sites in the lake. The water temperature ranges between 65-78 degrees in the summer, requiring full wetsuits. The average visibility is 10-20 feet. The double layered oak hull and decking remain intact allowing for diving through the deck holes and peeking out the portholes. There is a tremendous fish population living on and around the wreck including; small & large mouth bass, yellow perch, sunfish, hornpout, and an occasional cusk or eel.\"",
+    "geometry": {
+      "location": {
+        "lat": 43.587958,
+        "lng": -71.384754
+      }
+    },
+    "city": "Gilford",
+    "state": "New Hampshire",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Old Navy Test Site",
+    "description": "The Old Navy Test Site reveals a unique story. Apparently in the 1950s, the Navy did some covert laser tests underwater in Lake Winnipesaukee. A rail car that ran on a track, like a coal-mining rail car, was used to measure how fast the laser beams were traveling through water per Dive Winnipesaukee. A tower that was part of the rail track operation remains intact in 45 feet of water. A few pieces of the rail car track can also be found laying on the bottom.\nAt this site, there is also a small fiberglass wreck called the \"Empty Pockets Wreck\", about 30ft in length that lays in 55ft of water. Dive Winnipesaukee reports that she sank in the 1970s. This wreck can be visited along with seeing the tower mentioned above during the same dive.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks only on all dives in the lake",
+    "geometry": {
+      "location": {
+        "lat": 43.58437,
+        "lng": -71.207886
+      }
+    },
+    "city": "Wolfeboro",
+    "state": "New Hampshire",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "shore"
+  },
+  {
+    "name": "Ship Island",
+    "description": "Ship Island is a nice boat dive that all levels can enjoy. For those that are beginner divers, the dive can be done in about 30 feet of water. There are large boulders and curious sunfish to explore. There are two small wrecks at this site.\nThe first small wreck is in about 30 feet of water. It\u2019s a wooden boat with an engine, that appears to be about a 25 foot cruiser with a closed bow from the 1950's per Dive Winnipesaukee. The wooden wreck is interesting enough to spend a bit of time there without venturing on to the second. For the advanced diver, there is a line from the stern of the wooden boat that leads to the smaller plexiglass wreck. It\u2019s a very simple wreck but interesting enough to check out and get that deeper dive in. Not worth staying long.\nNote, that Lake Winnipesaukee is very silty. We recommend frog kicks for all dives in the lake",
+    "geometry": {
+      "location": {
+        "lat": 43.58437,
+        "lng": -71.207886
+      }
+    },
+    "city": "Wolfeboro",
+    "state": "New Hampshire",
+    "activities": [
+      "scuba_diving"
+    ],
+    "diveType": "boat"
   },
   {
     "name": "Beavertail State Park",
@@ -13000,22 +12746,6 @@
     },
     "city": "Newport",
     "state": "Rhode Island",
-    "activities": [
-      "scuba_diving"
-    ],
-    "diveType": "shore"
-  },
-  {
-    "name": "U-853 (wreck)",
-    "description": "The World War II German U-853 is an advanced and technical dive site. The submarine lays in 130ft of water and is intact but she's deteriorating. She sank at the end of the war after destroying US cargo ship, Black Point, despite commands that all U-boats cease fire.\nDivers will find the periscope, conning tower, and blast holes in the hull.\nU-853 is known to have currents and at times very limited visibility. We recommend reels, lights, strobe and DSMBs.\nNote this dive site is a gravesite and it is also a protected dive site.",
-    "geometry": {
-      "location": {
-        "lat": 39.7837304,
-        "lng": -100.445882
-      }
-    },
-    "city": "",
-    "state": "Kansas",
     "activities": [
       "scuba_diving"
     ],
@@ -13094,11 +12824,713 @@
         "lng": -70.67845409509204
       }
     },
-    "city": "Unknown",
-    "state": "Unknown",
+    "city": "Gloucester",
+    "state": "Massachusetts",
     "activities": [
       "scuba_diving"
     ],
     "diveType": "shore"
+  },
+  {
+    "name": "Mt. Adams",
+    "description": "views, summit, 4000-footer, alpine zone",
+    "geometry": {
+      "location": {
+        "lat": 44.375156,
+        "lng": -71.2815661
+      }
+    },
+    "city": "Randolph",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Difficult",
+    "distance_miles": "8.6",
+    "features": "views, summit, 4000-footer, alpine zone"
+  },
+  {
+    "name": "Adams Point Wildlife Management Area",
+    "description": "Great Bay, water views, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.134564,
+        "lng": -70.927048
+      }
+    },
+    "city": "Durham",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "1.4",
+    "features": "Great Bay, water views, loop hike"
+  },
+  {
+    "name": "Mt. Adams, Adams 4",
+    "description": "summits, views, boulder caves, ice caves, 4000-footer, alpine zone",
+    "geometry": {
+      "location": {
+        "lat": 44.375156,
+        "lng": -71.2815661
+      }
+    },
+    "city": "Randolph",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Difficult",
+    "distance_miles": "10.2",
+    "features": "summits, views, boulder caves, ice caves, 4000-footer, alpine zone"
+  },
+  {
+    "name": "Mt. Adams, Mt. Madison, Madison Hut",
+    "description": "views, summits, 4000-footers, hut, alpine zone, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.375156,
+        "lng": -71.2815661
+      }
+    },
+    "city": "Randolph",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Difficult",
+    "distance_miles": "10.1",
+    "features": "views, summits, 4000-footers, hut, alpine zone, loop hike"
+  },
+  {
+    "name": "Ammonoosuc Lake, Red Bench Viewpoint",
+    "description": "views, lake, loop hike, night hike",
+    "geometry": {
+      "location": {
+        "lat": 44.26502345,
+        "lng": -71.53191236189502
+      }
+    },
+    "city": "Carroll (Twin Mountain)",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "1.8",
+    "features": "views, lake, loop hike, night hike"
+  },
+  {
+    "name": "Mt. Ascutney",
+    "description": "summit, views, fire tower, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.4798875,
+        "lng": -72.3866266
+      }
+    },
+    "city": "Windsor",
+    "state": "VT",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "1.7",
+    "features": "summit, views, fire tower, loop hike"
+  },
+  {
+    "name": "Mt. Ascutney",
+    "description": "summit, views, cascades, fire tower, brooks",
+    "geometry": {
+      "location": {
+        "lat": 43.39076205,
+        "lng": -72.4713504795204
+      }
+    },
+    "city": "Weathersfield",
+    "state": "VT",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "5.8",
+    "features": "summit, views, cascades, fire tower, brooks"
+  },
+  {
+    "name": "Bald Peak , Kinsman Flume",
+    "description": "summit, views, gorge, brooks, waterfall",
+    "geometry": {
+      "location": {
+        "lat": 44.1475343,
+        "lng": -71.7891666
+      }
+    },
+    "city": "Easton",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "4.6",
+    "features": "summit, views, gorge, brooks, waterfall"
+  },
+  {
+    "name": "Baldpate Mtn. West Peak and Table Rock",
+    "description": "summit, views, slab caves",
+    "geometry": {
+      "location": {
+        "lat": 44.5458948,
+        "lng": -70.8331275
+      }
+    },
+    "city": "North Newry",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "6.4",
+    "features": "summit, views, slab caves"
+  },
+  {
+    "name": "Bear Mtn.",
+    "description": "summit, lake",
+    "geometry": {
+      "location": {
+        "lat": 41.394817,
+        "lng": -73.4540111
+      }
+    },
+    "city": "Danbury",
+    "state": "CT",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "3.5",
+    "features": "summit, lake"
+  },
+  {
+    "name": "Beech Mtn.",
+    "description": "summit, views, cliffs, slab caves, fire tower, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.2797546,
+        "lng": -68.3259069
+      }
+    },
+    "city": "Southwest Harbor",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "2.4",
+    "features": "summit, views, cliffs, slab caves, fire tower, loop hike"
+  },
+  {
+    "name": "Beech Mtn., Beech Cliff, Canada Cliffs",
+    "description": "summit, views, cliffs, slab caves, fire tower, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.2797546,
+        "lng": -68.3259069
+      }
+    },
+    "city": "Southwest Harbor",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "4.5",
+    "features": "summit, views, cliffs, slab caves, fire tower, loop hike"
+  },
+  {
+    "name": "The Beehive, Champlain Mtn., The Bowl",
+    "description": "views, summits, pond, rock scrambles, cliffs, ledges",
+    "geometry": {
+      "location": {
+        "lat": 44.3876378,
+        "lng": -68.2043361
+      }
+    },
+    "city": "Bar Harbor",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "4.9",
+    "features": "views, summits, pond, rock scrambles, cliffs, ledges"
+  },
+  {
+    "name": "The Beehive, Gorham Mtn., The Bowl, Thunder Hole, Sand Beach",
+    "description": "views, summits, pond, ocean, rock scrambles, cliffs, ledges, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.3876378,
+        "lng": -68.2043361
+      }
+    },
+    "city": "Bar Harbor",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "5.4",
+    "features": "views, summits, pond, ocean, rock scrambles, cliffs, ledges, loop hike"
+  },
+  {
+    "name": "Belknap Mtn.",
+    "description": "summit, views, fire tower, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.54805,
+        "lng": -71.407013
+      }
+    },
+    "city": "Gilford",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "1.9",
+    "features": "summit, views, fire tower, loop hike"
+  },
+  {
+    "name": "Belknap Ridge,  Gunstock Mtn., Belknap Mtn.,  Round Pond, Mt. Klem, Rand Mtn., West Quarry Mtn., East Quarry Mtn., North Straightback Mtn., Mt. Major",
+    "description": "summits, views, ledges, fire tower,  pond",
+    "geometry": {
+      "location": {
+        "lat": 43.54805,
+        "lng": -71.407013
+      }
+    },
+    "city": "Gilford",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "10.4",
+    "features": "summits, views, ledges, fire tower,  pond"
+  },
+  {
+    "name": "Bellamy River Wildlife Sanctuary",
+    "description": "river, marsh, estuary, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.1981117,
+        "lng": -70.8739761
+      }
+    },
+    "city": "Dover",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "1.5",
+    "features": "river, marsh, estuary, loop hike"
+  },
+  {
+    "name": "Big Rock Cave, Mt. Mexico",
+    "description": "summit, slab caves, brook, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.860277,
+        "lng": -71.263504
+      }
+    },
+    "city": "Tamworth",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "5.6",
+    "features": "summit, slab caves, brook, loop hike"
+  },
+  {
+    "name": "Black Mtn.",
+    "description": "summit, views",
+    "geometry": {
+      "location": {
+        "lat": 44.144276,
+        "lng": -71.181107
+      }
+    },
+    "city": "Jackson",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "3.5",
+    "features": "summit, views"
+  },
+  {
+    "name": "Black Pond, Franconia Falls",
+    "description": "pond, cascades, views, river, brooks",
+    "geometry": {
+      "location": {
+        "lat": 44.0457502,
+        "lng": -71.6705978
+      }
+    },
+    "city": "Lincoln",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "8.0",
+    "features": "pond, cascades, views, river, brooks"
+  },
+  {
+    "name": "Blueberry Mtn.",
+    "description": "summit, views, ledges, brook, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.3223286,
+        "lng": -70.9864260087047
+      }
+    },
+    "city": "Batchelders Grant",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "7.6",
+    "features": "summit, views, ledges, brook, loop hike"
+  },
+  {
+    "name": "Cadillac Mtn., Eagle's Crag, The Featherbed",
+    "description": "views, summits, pond, ocean, rock scrambles",
+    "geometry": {
+      "location": {
+        "lat": 44.3876378,
+        "lng": -68.2043361
+      }
+    },
+    "city": "Bar Harbor",
+    "state": "ME",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "7.3",
+    "features": "views, summits, pond, ocean, rock scrambles"
+  },
+  {
+    "name": "Blueberry Mtn.",
+    "description": "summit, views, ledges",
+    "geometry": {
+      "location": {
+        "lat": 44.103261,
+        "lng": -71.9013142
+      }
+    },
+    "city": "Benton",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "4.7",
+    "features": "summit, views, ledges"
+  },
+  {
+    "name": "Boulder Loop Ledges",
+    "description": "views, ledges, loop hike, covered bridge",
+    "geometry": {
+      "location": {
+        "lat": 43.9599812,
+        "lng": -71.192964
+      }
+    },
+    "city": "Albany",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "3.5",
+    "features": "views, ledges, loop hike, covered bridge"
+  },
+  {
+    "name": "Bridal Veil Falls",
+    "description": "waterfall, cascades, brook",
+    "geometry": {
+      "location": {
+        "lat": 44.2273919,
+        "lng": -71.7478468
+      }
+    },
+    "city": "Franconia",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "5.0",
+    "features": "waterfall, cascades, brook"
+  },
+  {
+    "name": "Cannon Mtn.",
+    "description": "summit, views, lake, brooks, 4000-footer",
+    "geometry": {
+      "location": {
+        "lat": 44.2273919,
+        "lng": -71.7478468
+      }
+    },
+    "city": "Franconia",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "6.2",
+    "features": "summit, views, lake, brooks, 4000-footer"
+  },
+  {
+    "name": "Mt. Cardigan",
+    "description": "summit, views, fire tower",
+    "geometry": {
+      "location": {
+        "lat": 43.654956,
+        "lng": -71.972122
+      }
+    },
+    "city": "Orange",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "3.0",
+    "features": "summit, views, fire tower"
+  },
+  {
+    "name": "Carter Dome, Carter Lakes",
+    "description": "summit, views, hut, lakes, 4000-footer, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.144276,
+        "lng": -71.181107
+      }
+    },
+    "city": "Jackson",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "12.0",
+    "features": "summit, views, hut, lakes, 4000-footer, loop hike"
+  },
+  {
+    "name": "Mt. Cardigan, Firescrew",
+    "description": "summits, views, meteor showers, fire tower",
+    "geometry": {
+      "location": {
+        "lat": 43.654956,
+        "lng": -71.972122
+      }
+    },
+    "city": "Orange",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "7.0",
+    "features": "summits, views, meteor showers, fire tower"
+  },
+  {
+    "name": "Mt. Cardigan, Mt. Cardigan South Peak, Orange Mtn. , Rimrock, Holt Trail, West Ridge Trail)",
+    "description": "summits, views, cliffs, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.61172,
+        "lng": -71.792908
+      }
+    },
+    "city": "Alexandria",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "6.7",
+    "features": "summits, views, cliffs, loop hike"
+  },
+  {
+    "name": "Mt. Carrigain, Signal Ridge",
+    "description": "summit, views, ledges, brooks, cascades, fire tower, 4000-footer",
+    "geometry": {
+      "location": {
+        "lat": 44.070808,
+        "lng": -71.42789424129714
+      }
+    },
+    "city": "Livermore",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate/Difficult",
+    "distance_miles": "10.0",
+    "features": "summit, views, ledges, brooks, cascades, fire tower, 4000-footer"
+  },
+  {
+    "name": "Mt. Carrigain, Signal Ridge, Vose Spur,  Duck Pond",
+    "description": "summits, views, ledges, brooks, cascades, fire tower, 4000-footer, orienteering/route finding, loop hike, backpack",
+    "geometry": {
+      "location": {
+        "lat": 44.070808,
+        "lng": -71.42789424129714
+      }
+    },
+    "city": "Livermore",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Difficult",
+    "distance_miles": "11.3",
+    "features": "summits, views, ledges, brooks, cascades, fire tower, 4000-footer, orienteering/route finding, loop hike, backpack"
+  },
+  {
+    "name": "Castle in the Clouds - Lucknow, Fall of Song, Bridal Veil Falls, Shannon Pond",
+    "description": "castle, cascades, waterfalls, gorges, brooks, pond, orienteering/route finding, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.755225,
+        "lng": -71.3974
+      }
+    },
+    "city": "Moultonborough",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "4.0",
+    "features": "castle, cascades, waterfalls, gorges, brooks, pond, orienteering/route finding, loop hike"
+  },
+  {
+    "name": "Catamount Hill",
+    "description": "summit, views, brooks, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 43.1276195,
+        "lng": -71.4319655
+      }
+    },
+    "city": "Allenstown",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "2.3",
+    "features": "summit, views, brooks, loop hike"
+  },
+  {
+    "name": "Mt. Chocorua, First Sister, Champney Falls, Pitcher Falls",
+    "description": "summits, views, brooks, waterfalls, ledges, rock scrambles",
+    "geometry": {
+      "location": {
+        "lat": 43.9599812,
+        "lng": -71.192964
+      }
+    },
+    "city": "Albany",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Moderate",
+    "distance_miles": "8.4",
+    "features": "summits, views, brooks, waterfalls, ledges, rock scrambles"
+  },
+  {
+    "name": "College Woods",
+    "description": "brook, reservoir",
+    "geometry": {
+      "location": {
+        "lat": 43.134564,
+        "lng": -70.927048
+      }
+    },
+    "city": "Durham",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "variable",
+    "features": "brook, reservoir"
+  },
+  {
+    "name": "Cherry Pond, Little Cherry Pond",
+    "description": "ponds, wetlands, views, bird watching, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 44.419445,
+        "lng": -71.4747452
+      }
+    },
+    "city": "Jefferson",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "9.1",
+    "features": "ponds, wetlands, views, bird watching, loop hike"
+  },
+  {
+    "name": "Cherry Pond, Little Cherry Pond",
+    "description": "ponds, wetlands, views, bird watching",
+    "geometry": {
+      "location": {
+        "lat": 44.3732302,
+        "lng": -71.6119206
+      }
+    },
+    "city": "Whitefield",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy",
+    "distance_miles": "5.2",
+    "features": "ponds, wetlands, views, bird watching"
+  },
+  {
+    "name": "Chesterfield Gorge",
+    "description": "gorge, brook, waterfalls, cascades, loop hike",
+    "geometry": {
+      "location": {
+        "lat": 42.8873038,
+        "lng": -72.4703661
+      }
+    },
+    "city": "Chesterfield",
+    "state": "NH",
+    "activities": [
+      "hiking"
+    ],
+    "difficulty": "Easy/Moderate",
+    "distance_miles": "0.7",
+    "features": "gorge, brook, waterfalls, cascades, loop hike"
   }
 ]

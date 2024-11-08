@@ -64,6 +64,7 @@ activityImage.alt = 'Default Image';
     { value: '10-25', text: '10-25 miles' },
     { value: '25-50', text: '25-50 miles' },
     { value: '50-100', text: '50-100 miles' },
+    { value: '0-300', text: '0-300 miles' },
   ];
 
   const distanceRangesMetric = [
@@ -73,6 +74,7 @@ activityImage.alt = 'Default Image';
     { value: '10-30', text: '10-30 kilometers' },
     { value: '30-60', text: '30-60 kilometers' },
     { value: '60-160', text: '60-160 kilometers' },
+    { value: '0-500', text: '0-500 kilometers' },
   ];
 
   // Function to populate distance select options based on units

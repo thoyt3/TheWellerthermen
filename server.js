@@ -308,9 +308,12 @@ async function getActivityLocations(
   maxDistance,
   limit = 10
 ) {
-  // Filter locations based on activity
+  // Convert the activity to lowercase for case-insensitive comparison
+  const activityLower = activity.toLowerCase();
+
+  // Filter locations based on activity (case-insensitive)
   const filteredLocations = locationsData.filter((loc) =>
-    loc.activities.includes(activity)
+    loc.activities.some((act) => act.toLowerCase() === activityLower)
   );
 
   // Calculate distances and filter based on min and max distance
@@ -332,6 +335,7 @@ async function getActivityLocations(
   // Return the top locations within the limit
   return locationsWithDistance.slice(0, limit);
 }
+
 
 // Haversine formula to calculate distance between two coordinates in miles
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -1013,9 +1017,10 @@ Please follow these guidelines:
 - Make the recommendations section feel conversational and organic.
 - Incorporate additional details about the location if provided.
 - Avoid mentioning coding logic or internal thresholds.
+- For hiking, list the distance, difficulty, elevation gain, and estimated time for each trail.
 - For golfing and hiking, add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
 - for golfing, if it is  after sunset, advise that the course will likely be closed and to check with the course for night play availability.
-- for scuba diving, recommend thermal protection based on water temperature using the following logic: 26C/77F or higher: Shorty, 21-26C/70-77F: 3mm wetsuit, 16-21C/60-70F: 5mm wetsuit, 10-16C/50-60F: 7mm wetsuit, 10C/50F or below: drysuit.
+- for scuba diving, recommend thermal protection based on water temperature using the following logic: 26C/77F or higher: at least a Shorty, 21-26C/70-77F:at least a 3mm wetsuit, 16-21C/60-70F: at least a 5mm wetsuit, 10-16C/50-60F: at leasst a 7mm wetsuit, 10C/50F or below: drysuit.
 - for scuba diving, if the time is before sunrise or after sunset, mention the moon phase and visibility, and recommend bringing at least two dive lights.
 - Only mention ${activityName} in your response and no other activities.
 

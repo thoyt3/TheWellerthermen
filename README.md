@@ -1,10 +1,13 @@
 # TheWealltherMen
 
 to pull golf courses, use 
-python scrape_golf_courses_overpass.py
+python golfing.py (was python scrape_golf_courses_overpass.py)
 this will write them to locations.json
 to pull dive sites, use
-python collect_locations.py
+python diving.py (was python collect_locations.p)
+this will also write them to locations.json
+to pull hiking locations, use
+python hiking.py
 this will also write them to locations.json
 then, run
 python clean_locations.py
