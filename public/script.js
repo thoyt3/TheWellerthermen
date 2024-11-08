@@ -145,38 +145,42 @@ activityImage.alt = 'Default Image';
     maxDateObj.setDate(currentDate.getDate() + 7);
     maxDateObj.setHours(0, 0, 0, 0); // Set to midnight
 
-    // Time validation
-    let selectedDateTime = null;
-    if (selectedTime) {
-      const timeParts = selectedTime.split(':');
-      if (timeParts.length === 2) {
-        selectedDateTime = new Date(selectedDate);
-        selectedDateTime.setHours(parseInt(timeParts[0], 10));
-        selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
-        selectedDateTime.setSeconds(0);
-        selectedDateTime.setMilliseconds(0);
+  // Time validation
+let selectedDateTime = null;
+if (selectedTime) {
+  const timeParts = selectedTime.split(':');
+  if (timeParts.length === 2) {
+    selectedDateTime = new Date(selectedDate);
+    selectedDateTime.setHours(parseInt(timeParts[0], 10));
+    selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
+    selectedDateTime.setSeconds(0);
+    selectedDateTime.setMilliseconds(0);
 
-        const now = new Date();
-        if (
-          selectedDateObj.toDateString() === now.toDateString() &&
-          selectedDateTime <= now
-        ) {
-          resultDiv.innerHTML =
-            '<p>Please select a time in the future for today\'s date.</p>';
-          return;
-        }
-      } else {
-        resultDiv.innerHTML = '<p>Please select a valid time.</p>';
-        return;
-      }
-    } else {
-      // Default to 12:00 PM if time is not selected
-      selectedDateTime = new Date(selectedDate);
-      selectedDateTime.setHours(12);
-      selectedDateTime.setMinutes(0);
-      selectedDateTime.setSeconds(0);
-      selectedDateTime.setMilliseconds(0);
+    // Removed the validation that restricts selecting a past time for today
+    /*
+    const now = new Date();
+    if (
+      selectedDateObj.toDateString() === now.toDateString() &&
+      selectedDateTime <= now
+    ) {
+      resultDiv.innerHTML =
+        '<p>Please select a time in the future for today\'s date.</p>';
+      return;
     }
+    */
+  } else {
+    resultDiv.innerHTML = '<p>Please select a valid time.</p>';
+    return;
+  }
+} else {
+  // Default to 12:00 PM if time is not selected
+  selectedDateTime = new Date(selectedDate);
+  selectedDateTime.setHours(12);
+  selectedDateTime.setMinutes(0);
+  selectedDateTime.setSeconds(0);
+  selectedDateTime.setMilliseconds(0);
+}
+
 
     // Disable the submit button to prevent multiple submissions
     submitButton.disabled = true;

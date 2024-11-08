@@ -14,4 +14,6 @@ node server.js
 
 Things to work on
 ambitious goal: add hiking 
+    scraper tool for hiking websites
 ambitious goal: add a dialogue option for planning a weekend trip (use the app integrated with chat plus mapping features like hotels and restaurants)
+    chat bot more interactive?

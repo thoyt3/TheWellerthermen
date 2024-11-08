@@ -7,6 +7,8 @@ const path = require('path');
 const { Configuration, OpenAIApi } = require('openai');
 const fs = require('fs');
 const sqlite3 = require('sqlite3').verbose();
+const tzLookup = require('tz-lookup'); // Time zone lookup based on lat/lon
+const { DateTime } = require('luxon'); // Date and time handling with time zones
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -42,18 +44,6 @@ db.serialize(() => {
 
   db.run(`
     CREATE TABLE IF NOT EXISTS wave_cache (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      latitude REAL,
-      longitude REAL,
-      start INTEGER,
-      end INTEGER,
-      data TEXT,
-      timestamp INTEGER
-    )
-  `);
-
-  db.run(`
-    CREATE TABLE IF NOT EXISTS tide_cache (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       latitude REAL,
       longitude REAL,
@@ -292,7 +282,9 @@ app.post('/api/query', async (req, res) => {
       selectedTime,
       recommendations,
       selectedUnits,
-      activity
+      activity,
+      latitude,
+      longitude
     );
 
     res.json({ response: aiResponse, recommendations });
@@ -398,12 +390,33 @@ async function processRecommendations(
         continue;
       }
 
+      // Extract daily data for selected date
+      const selectedDateObj = DateTime.fromISO(selectedDate, { zone: 'utc' });
+      const selectedDateTimestamp = selectedDateObj.toSeconds();
+
+      const dailyData = weatherData.daily.find((day) => {
+        const dayDateObj = DateTime.fromSeconds(day.dt, { zone: 'utc' }).startOf('day');
+        const dayDateTimestamp = dayDateObj.toSeconds();
+        return dayDateTimestamp === selectedDateTimestamp;
+      });
+
+      if (!dailyData) {
+        console.error(
+          `No daily data for selected date at location ${location.name}`
+        );
+        continue;
+      }
+
       // Process weather data and calculate scores
-      // Example scoring logic (you can adjust this based on your criteria)
-      const currentWeather = weatherData.current;
-      const temperature = currentWeather.temp; // In Celsius
-      const windSpeed = currentWeather.wind_speed; // In m/s
-      const weatherDescription = currentWeather.weather[0].description;
+      const temperature = dailyData.temp.day; // In Celsius
+      const windSpeed = dailyData.wind_speed; // In m/s
+      const weatherDescription = dailyData.weather[0].description;
+      const windDeg = dailyData.wind_deg;
+      const sunrise = dailyData.sunrise; // Unix time
+      const sunset = dailyData.sunset; // Unix time
+      const moonrise = dailyData.moonrise; // Unix time
+      const moonset = dailyData.moonset; // Unix time
+      const moonPhase = dailyData.moon_phase; // 0 to 1
 
       // Simple scoring based on temperature and wind speed
       if (temperature >= 10 && temperature <= 30) {
@@ -413,14 +426,71 @@ async function processRecommendations(
         score += 1;
       }
 
+      // Fetch wave data with caching
+      let waveData = null;
+      try {
+        waveData = await getWaveData(locLat, locLng, selectedDate);
+      } catch (error) {
+        console.error(
+          `Skipping location ${location.name} due to wave data error.`
+        );
+        continue;
+      }
+
+      // Process wave data
+      let averageWaveHeight = null;
+      let averageWaterTemperature = null;
+      if (waveData && waveData.hours) {
+        const hours = waveData.hours;
+        let totalWaveHeight = 0;
+        let totalWaterTemp = 0;
+        let count = 0;
+
+        for (const hourData of hours) {
+          const waveHeight = hourData.waveHeight && hourData.waveHeight.noaa;
+          const waterTemp =
+            hourData.waterTemperature && hourData.waterTemperature.noaa;
+
+          if (waveHeight !== undefined && waterTemp !== undefined) {
+            totalWaveHeight += waveHeight;
+            totalWaterTemp += waterTemp;
+            count++;
+          }
+        }
+
+        if (count > 0) {
+          averageWaveHeight = totalWaveHeight / count;
+          averageWaterTemperature = totalWaterTemp / count;
+        }
+      }
+
+      // Determine the time zone of the location
+      let timeZone = 'UTC';
+      try {
+        timeZone = tzLookup(locLat, locLng);
+      } catch (error) {
+        console.error(
+          `Error determining time zone for location ${location.name}:`,
+          error
+        );
+      }
+
       // Assign additional properties to location
       location.score = score;
       location.weather = {
         temperature,
         windSpeed,
-        windDeg: currentWeather.wind_deg,
+        windDeg,
         description: weatherDescription,
+        sunrise,
+        sunset,
+        moonrise,
+        moonset,
+        moonPhase,
+        timeZone, // Added time zone
       };
+      location.averageWaveHeight = averageWaveHeight;
+      location.averageWaterTemperature = averageWaterTemperature;
 
       // Add location to the appropriate section based on diveType
       if (location.diveType === 'shore') {
@@ -481,12 +551,33 @@ async function processRecommendations(
         continue;
       }
 
+      // Extract daily data for selected date
+      const selectedDateObj = DateTime.fromISO(selectedDate, { zone: 'utc' });
+      const selectedDateTimestamp = selectedDateObj.toSeconds();
+
+      const dailyData = weatherData.daily.find((day) => {
+        const dayDateObj = DateTime.fromSeconds(day.dt, { zone: 'utc' }).startOf('day');
+        const dayDateTimestamp = dayDateObj.toSeconds();
+        return dayDateTimestamp === selectedDateTimestamp;
+      });
+
+      if (!dailyData) {
+        console.error(
+          `No daily data for selected date at location ${location.name}`
+        );
+        continue;
+      }
+
       // Process weather data and calculate scores
-      // Example scoring logic (you can adjust this based on your criteria)
-      const currentWeather = weatherData.current;
-      const temperature = currentWeather.temp; // In Celsius
-      const windSpeed = currentWeather.wind_speed; // In m/s
-      const weatherDescription = currentWeather.weather[0].description;
+      const temperature = dailyData.temp.day; // In Celsius
+      const windSpeed = dailyData.wind_speed; // In m/s
+      const weatherDescription = dailyData.weather[0].description;
+      const windDeg = dailyData.wind_deg;
+      const sunrise = dailyData.sunrise; // Unix time
+      const sunset = dailyData.sunset; // Unix time
+      const moonrise = dailyData.moonrise; // Unix time
+      const moonset = dailyData.moonset; // Unix time
+      const moonPhase = dailyData.moon_phase; // 0 to 1
 
       // Simple scoring based on temperature and wind speed
       if (temperature >= 10 && temperature <= 30) {
@@ -496,13 +587,30 @@ async function processRecommendations(
         score += 1;
       }
 
+      // Determine the time zone of the location
+      let timeZone = 'UTC';
+      try {
+        timeZone = tzLookup(locLat, locLng);
+      } catch (error) {
+        console.error(
+          `Error determining time zone for location ${location.name}:`,
+          error
+        );
+      }
+
       // Assign additional properties to location
       location.score = score;
       location.weather = {
         temperature,
         windSpeed,
-        windDeg: currentWeather.wind_deg,
+        windDeg,
         description: weatherDescription,
+        sunrise,
+        sunset,
+        moonrise,
+        moonset,
+        moonPhase,
+        timeZone, // Added time zone
       };
 
       scoredLocations.push(location);
@@ -519,8 +627,6 @@ async function processRecommendations(
 // Function to fetch per-location weather data with caching
 async function getLocationWeatherData(latitude, longitude, selectedDate) {
   return new Promise((resolve, reject) => {
-    const dateTimestamp = new Date(selectedDate).setHours(0, 0, 0, 0);
-
     // Check cache first
     db.get(
       `SELECT data FROM weather_cache WHERE latitude = ? AND longitude = ? AND date = ?`,
@@ -575,13 +681,83 @@ async function getLocationWeatherData(latitude, longitude, selectedDate) {
   });
 }
 
+// Function to fetch wave data with caching
+async function getWaveData(latitude, longitude, date) {
+  return new Promise((resolve, reject) => {
+    const dateObj = new Date(date);
+    const start = dateObj.toISOString();
+    dateObj.setDate(dateObj.getDate() + 1);
+    const end = dateObj.toISOString();
+
+    // Check cache first
+    db.get(
+      `SELECT data FROM wave_cache WHERE latitude = ? AND longitude = ? AND date = ?`,
+      [latitude, longitude, date],
+      async (err, row) => {
+        if (err) {
+          console.error('Database error:', err);
+          reject(err);
+        } else if (row) {
+          // Cache hit
+          resolve(JSON.parse(row.data));
+        } else {
+          // Cache miss, fetch from API
+          try {
+            const response = await axios.get(
+              'https://api.stormglass.io/v2/weather/point',
+              {
+                params: {
+                  lat: latitude,
+                  lng: longitude,
+                  params: 'waveHeight,waterTemperature',
+                  start: start,
+                  end: end,
+                },
+                headers: {
+                  Authorization: process.env.STORMGLASS_API_KEY,
+                },
+              }
+            );
+
+            const data = response.data;
+
+            // Store in cache
+            db.run(
+              `INSERT INTO wave_cache (latitude, longitude, date, data, timestamp) VALUES (?, ?, ?, ?, ?)`,
+              [
+                latitude,
+                longitude,
+                date,
+                JSON.stringify(data),
+                Math.floor(Date.now() / 1000),
+              ],
+              (err) => {
+                if (err) {
+                  console.error('Error inserting into wave_cache:', err);
+                }
+              }
+            );
+
+            resolve(data);
+          } catch (error) {
+            console.error('Error fetching wave data:', error);
+            reject(error);
+          }
+        }
+      }
+    );
+  });
+}
+
 // Function to get AI response from OpenAI API
 async function getAIResponse(
   selectedDate,
   selectedTime,
   recommendations,
   units,
-  activity
+  activity,
+  latitude,
+  longitude
 ) {
   const activityName = activity.replace('_', ' ');
   let locationInfo = '';
@@ -601,6 +777,13 @@ async function getAIResponse(
         const weather = loc.weather || {};
         const windDirection = getWindDirection(weather.windDeg);
 
+        // Convert Unix timestamps to local time using luxon
+        const timeZone = weather.timeZone || 'UTC';
+        const sunriseTime = DateTime.fromSeconds(weather.sunrise, { zone: timeZone })
+          .toFormat('hh:mm a');
+        const sunsetTime = DateTime.fromSeconds(weather.sunset, { zone: timeZone })
+          .toFormat('hh:mm a');
+
         let info = `${locName} in ${city}, ${state}\n`;
         info += `Weather: ${weather.description}, Air Temperature: ${
           units === 'imperial'
@@ -608,10 +791,41 @@ async function getAIResponse(
             : weather.temperature.toFixed(2)
         }${unitsTemp}\n`;
 
-        // Wave data and other details can be added here if available
+        // Wave data
+        if (loc.averageWaveHeight !== null) {
+          info += `Average Wave Height: ${
+            units === 'imperial'
+              ? (loc.averageWaveHeight * 3.28084).toFixed(2)
+              : loc.averageWaveHeight.toFixed(2)
+          } ${unitsHeight}\n`;
+        }
+
+        // Water temperature
+        if (loc.averageWaterTemperature !== null) {
+          info += `Water Temperature: ${
+            units === 'imperial'
+              ? ((loc.averageWaterTemperature * 9) / 5 + 32).toFixed(2)
+              : loc.averageWaterTemperature.toFixed(2)
+          }${unitsTemp}\n`;
+        }
+
+        // Wind speed and direction
+        info += `Wind Speed: ${
+          units === 'imperial'
+            ? (weather.windSpeed * 2.23694).toFixed(2)
+            : weather.windSpeed.toFixed(2)
+        } ${unitsSpeed} from ${windDirection}\n`;
+
+        // Moon phase
+        const moonPhase = getMoonPhaseDescription(weather.moonPhase);
+        info += `Moon Phase: ${moonPhase}\n`;
+
+        // Sunrise and Sunset
+        info += `Sunrise: ${sunriseTime}, Sunset: ${sunsetTime}\n`;
 
         // Visibility
-        const visibility = loc.poorVisibility ? 'Possibly Reduced' : 'Likely Good';
+        const visibility =
+          weather.windSpeed > 5 ? 'Possibly Reduced' : 'Likely Good';
         info += `Visibility: ${visibility}\n`;
 
         // Additional details from JSON file (e.g., dive site description)
@@ -623,8 +837,8 @@ async function getAIResponse(
         locationInfo += info + '\n';
       });
     });
-  } else if (activity === 'golf' || activity === 'hiking') {
-    // For golfing and hiking
+  } else if (activity === 'hiking') {
+    // For hiking
     locationInfo = recommendations
       .map((loc) => {
         const locName = loc.name;
@@ -632,6 +846,13 @@ async function getAIResponse(
         const state = loc.state || '';
         const weather = loc.weather || {};
         const windDirection = getWindDirection(weather.windDeg);
+
+        // Convert Unix timestamps to local time using luxon
+        const timeZone = weather.timeZone || 'UTC';
+        const sunriseTime = DateTime.fromSeconds(weather.sunrise, { zone: timeZone })
+          .toFormat('hh:mm a');
+        const sunsetTime = DateTime.fromSeconds(weather.sunset, { zone: timeZone })
+          .toFormat('hh:mm a');
 
         let info = `${locName} in ${city}, ${state}\n`;
         info += `Weather conditions: ${weather.description}\n`;
@@ -646,8 +867,96 @@ async function getAIResponse(
             : weather.windSpeed.toFixed(2)
         } ${unitsSpeed} from ${windDirection}\n`;
 
+        // Moon phase
+        const moonPhase = getMoonPhaseDescription(weather.moonPhase);
+        info += `Moon Phase: ${moonPhase}\n`;
+
+        // Sunrise and Sunset
+        info += `Sunrise: ${sunriseTime}, Sunset: ${sunsetTime}\n`;
+
+        // Clothing recommendation based on temperature
+        let clothingRecommendation = 'Wear comfortable clothing suitable for the weather.';
+        if (units === 'imperial') {
+          if (weather.temperature < 50) {
+            clothingRecommendation = 'Wear warm clothing, including a jacket.';
+          } else if (weather.temperature > 80) {
+            clothingRecommendation = 'Wear light, breathable clothing.';
+          }
+        } else {
+          if (weather.temperature < 10) {
+            clothingRecommendation = 'Wear warm clothing, including a jacket.';
+          } else if (weather.temperature > 27) {
+            clothingRecommendation = 'Wear light, breathable clothing.';
+          }
+        }
+        info += `Clothing Recommendation: ${clothingRecommendation}\n`;
+
+        // Prepare data for recommendations
+        return info;
+      })
+      .join('\n');
+  } else if (activity === 'golf') {
+    // For golfing
+    locationInfo = recommendations
+      .map((loc) => {
+        const locName = loc.name;
+        const city = loc.city || '';
+        const state = loc.state || '';
+        const weather = loc.weather || {};
+        const windDirection = getWindDirection(weather.windDeg);
+
+        // Convert Unix timestamps to local time using luxon
+        const timeZone = weather.timeZone || 'UTC';
+        const sunriseTime = DateTime.fromSeconds(weather.sunrise, { zone: timeZone })
+          .toFormat('hh:mm a');
+        const sunsetTime = DateTime.fromSeconds(weather.sunset, { zone: timeZone })
+          .toFormat('hh:mm a');
+
+        let info = `${locName} in ${city}, ${state}\n`;
+        info += `Weather conditions: ${weather.description}\n`;
+        info += `Temperature: ${
+          units === 'imperial'
+            ? ((weather.temperature * 9) / 5 + 32).toFixed(2)
+            : weather.temperature.toFixed(2)
+        }${unitsTemp}\n`;
+        info += `Wind Speed: ${
+          units === 'imperial'
+            ? (weather.windSpeed * 2.23694).toFixed(2)
+            : weather.windSpeed.toFixed(2)
+        } ${unitsSpeed} from ${windDirection}\n`;
+
+        // Sunrise and Sunset
+        info += `Sunrise: ${sunriseTime}, Sunset: ${sunsetTime}\n`;
+
+        // Clothing recommendation based on temperature
+        let clothingRecommendation = 'Wear comfortable clothing suitable for the weather.';
+        if (units === 'imperial') {
+          if (weather.temperature < 50) {
+            clothingRecommendation = 'Wear warm clothing, including a jacket.';
+          } else if (weather.temperature > 80) {
+            clothingRecommendation = 'Wear light, breathable clothing.';
+          }
+        } else {
+          if (weather.temperature < 10) {
+            clothingRecommendation = 'Wear warm clothing, including a jacket.';
+          } else if (weather.temperature > 27) {
+            clothingRecommendation = 'Wear light, breathable clothing.';
+          }
+        }
+        info += `Clothing Recommendation: ${clothingRecommendation}\n`;
+
+        // Suggest specific times based on sunrise and sunset
+        if (selectedTime === null || selectedTime === undefined) {
+          // If no specific time is selected, suggest optimal times
+          info += `Optimal Play Times: Aim to start your game around sunrise or before sunset to enjoy cooler temperatures and longer daylight hours.\n`;
+        } else {
+          // If a specific time is selected, provide tailored advice
+          info += `Optimal Play Time: ${selectedTime} is a great time to play, ensuring you have ample daylight.\n`;
+        }
+
         // Additional details can be added here
 
+        // Prepare data for recommendations
         return info;
       })
       .join('\n');
@@ -661,6 +970,13 @@ async function getAIResponse(
         const weather = loc.weather || {};
         const windDirection = getWindDirection(weather.windDeg);
 
+        // Convert Unix timestamps to local time using luxon
+        const timeZone = weather.timeZone || 'UTC';
+        const sunriseTime = DateTime.fromSeconds(weather.sunrise, { zone: timeZone })
+          .toFormat('hh:mm a');
+        const sunsetTime = DateTime.fromSeconds(weather.sunset, { zone: timeZone })
+          .toFormat('hh:mm a');
+
         let info = `${locName} in ${city}, ${state}\n`;
         info += `Weather: ${weather.description}, Temperature: ${
           units === 'imperial'
@@ -673,8 +989,12 @@ async function getAIResponse(
             : weather.windSpeed.toFixed(2)
         } ${unitsSpeed} from ${windDirection}\n`;
 
+        // Sunrise and Sunset
+        info += `Sunrise: ${sunriseTime}, Sunset: ${sunsetTime}\n`;
+
         // Additional details can be added here
 
+        // Prepare data for recommendations
         return info;
       })
       .join('\n');
@@ -689,22 +1009,25 @@ Use the data provided to make specific recommendations.
 Please follow these guidelines:
 
 - Do not use asterisks, hashtags, or markdown formatting. Present the information in plain text.
-- When discussing visibility, use phrases like "Visibility is likely good" or "Visibility may be reduced."
+- separate shore and boat dives for scuba diving with a section title for each.
 - Make the recommendations section feel conversational and organic.
 - Incorporate additional details about the location if provided.
 - Avoid mentioning coding logic or internal thresholds.
-- For time-related advice, suggest specific times without mentioning coding logic (e.g., "be on the links by 5 PM to avoid playing in the dark").
-- For golfing and hiking, add a clothing recommendation based on the weather.
+- For golfing and hiking, add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
+- for golfing, if it is  after sunset, advise that the course will likely be closed and to check with the course for night play availability.
+- for scuba diving, recommend thermal protection based on water temperature using the following logic: 26C/77F or higher: Shorty, 21-26C/70-77F: 3mm wetsuit, 16-21C/60-70F: 5mm wetsuit, 10-16C/50-60F: 7mm wetsuit, 10C/50F or below: drysuit.
+- for scuba diving, if the time is before sunrise or after sunset, mention the moon phase and visibility, and recommend bringing at least two dive lights.
+- Only mention ${activityName} in your response and no other activities.
 
 For ${activityName}, consider the following when making recommendations:
 
-- Use the "Appropriate Thermal Protection" provided in the data.
-- Suggest dive/no dive recommendations based on wave conditions.
-- Advise on visibility based on wind speed.
-- Consider wind speed and direction when making recommendations.
-- Use local times for sunrise, sunset, moonrise, and moonset.
-- For scuba diving, recommend night dives when conditions are favorable.
-- For golfing and hiking, suggest appropriate clothing based on temperature and conditions.
+- Provide wave heights and water temperatures for scuba diving.
+- Include moon phase, sunrise, and sunset times where relevant.
+- Suggest optimal play times for golfing.
+- Recommend starting times for hiking based on daylight hours.
+- Suggest optimal times for scuba diving based on tides.
+- Advise on visibility based on wind speed and other factors for scuba diving.
+- advise how wind speed might impact the golf ball for golfing.
 `;
 
   let userPrompt = `Based on the selected date "${selectedDate}" and time "${
@@ -766,6 +1089,20 @@ function getWindDirection(degrees) {
   ];
   const index = Math.round(degrees / 22.5);
   return directions[index];
+}
+
+// Helper function to get moon phase description
+function getMoonPhaseDescription(phase) {
+  if (phase === undefined || phase === null) return 'Unknown';
+  if (phase === 0 || phase === 1) return 'New Moon';
+  if (phase > 0 && phase < 0.25) return 'Waxing Crescent';
+  if (phase === 0.25) return 'First Quarter';
+  if (phase > 0.25 && phase < 0.5) return 'Waxing Gibbous';
+  if (phase === 0.5) return 'Full Moon';
+  if (phase > 0.5 && phase < 0.75) return 'Waning Gibbous';
+  if (phase === 0.75) return 'Last Quarter';
+  if (phase > 0.75 && phase < 1) return 'Waning Crescent';
+  return 'Unknown';
 }
 
 // Remember to close the database when the server shuts down
