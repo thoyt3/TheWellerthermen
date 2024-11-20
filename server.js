@@ -212,11 +212,11 @@ app.post('/api/query', async (req, res) => {
         console.error('Error determining user location:', error);
       }
 
-      let message = 'Surfing is not available in this area.';
+      let message = 'This app does not currently support surfing.';
       if (isInNewEngland) {
         message = 'Surfing in New England? You might need a thicker wetsuit!';
       } else {
-        message = 'Surfing is not available in your selected area.';
+        message = 'Why would you think there is surfing here?';
       }
 
       return res.json({ response: message, recommendations: [] });
@@ -251,7 +251,7 @@ app.post('/api/query', async (req, res) => {
       10 // Limit to 10 locations
     );
 
-    if (activityLocations.length === 0) {
+    if (activityLocations.length === 0 && activity !== 'pickleball') {
       return res.json({
         response: `No suitable locations found within your selected distance range.`,
         recommendations: [],
@@ -269,7 +269,7 @@ app.post('/api/query', async (req, res) => {
       longitude
     );
 
-    if (recommendations.length === 0) {
+    if (recommendations.length === 0 && activity !== 'pickleball') {
       return res.json({
         response: `No suitable locations found within your selected distance range.`,
         recommendations: [],
@@ -336,7 +336,6 @@ async function getActivityLocations(
   return locationsWithDistance.slice(0, limit);
 }
 
-
 // Haversine formula to calculate distance between two coordinates in miles
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const toRadians = (degrees) => (degrees * Math.PI) / 180;
@@ -365,7 +364,29 @@ async function processRecommendations(
   userLat,
   userLng
 ) {
-  if (activity === 'scuba_diving') {
+  if (activity === 'pickleball') {
+    // For pickleball, return the top 3 indoor locations and outdoor conditions
+    const indoorLocations = activityLocations.filter(
+      (loc) => loc.indoor === true
+    );
+    indoorLocations.sort((a, b) => a.distance - b.distance);
+    const topIndoorLocations = indoorLocations.slice(0, 3);
+
+    // Fetch outdoor weather data
+    let weatherData;
+    try {
+      weatherData = await getLocationWeatherData(userLat, userLng, selectedDate);
+    } catch (error) {
+      console.error('Error fetching weather data for pickleball:', error);
+    }
+
+    return {
+      indoorLocations: topIndoorLocations,
+      weatherData,
+    };
+  } else if (activity === 'scuba_diving') {
+    // Existing scuba diving logic (unchanged)
+    // ... (the rest of your scuba diving logic remains the same)
     // Initialize sections for shore and boat dives
     const shoreDives = [];
     const boatDives = [];
@@ -770,7 +791,89 @@ async function getAIResponse(
   const unitsSpeed = units === 'imperial' ? 'mph' : 'm/s';
   const unitsHeight = units === 'imperial' ? 'ft' : 'm';
 
+  let boilerplate = 'This recommendation is for entertainment purposes only. Please verify details before planning your activities.';
+
   if (activity === 'scuba_diving') {
+    boilerplate += ' Always dive with a buddy and within the limits of your training.';
+  }
+
+  if (activity === 'pickleball') {
+    // Fetch outdoor weather data for user's location
+    let weatherData;
+    try {
+      weatherData = await getLocationWeatherData(latitude, longitude, selectedDate);
+    } catch (error) {
+      console.error('Error fetching weather data for pickleball:', error);
+    }
+
+    if (weatherData) {
+      // Extract daily data for selected date
+      const selectedDateObj = DateTime.fromISO(selectedDate, { zone: 'utc' });
+      const selectedDateTimestamp = selectedDateObj.toSeconds();
+
+      const dailyData = weatherData.daily.find((day) => {
+        const dayDateObj = DateTime.fromSeconds(day.dt, { zone: 'utc' }).startOf('day');
+        const dayDateTimestamp = dayDateObj.toSeconds();
+        return dayDateTimestamp === selectedDateTimestamp;
+      });
+
+      if (dailyData) {
+        const temperature = dailyData.temp.day; // In Celsius
+        const weatherDescription = dailyData.weather[0].description;
+        const windSpeed = dailyData.wind_speed; // In m/s
+        const windDeg = dailyData.wind_deg;
+        const windDirection = getWindDirection(windDeg);
+
+        // Determine the time zone of the user's location
+        let timeZone = 'UTC';
+        try {
+          timeZone = tzLookup(latitude, longitude);
+        } catch (error) {
+          console.error(
+            `Error determining time zone for user's location:`,
+            error
+          );
+        }
+
+        // Sunrise and Sunset
+        const sunriseTime = DateTime.fromSeconds(dailyData.sunrise, { zone: timeZone })
+          .toFormat('hh:mm a');
+        const sunsetTime = DateTime.fromSeconds(dailyData.sunset, { zone: timeZone })
+          .toFormat('hh:mm a');
+
+        // Prepare outdoor conditions
+        locationInfo += `Outdoor Conditions at your location:\n`;
+        locationInfo += `Weather: ${weatherDescription}\n`;
+        locationInfo += `Temperature: ${
+          units === 'imperial'
+            ? ((temperature * 9) / 5 + 32).toFixed(2)
+            : temperature.toFixed(2)
+        }${unitsTemp}\n`;
+        locationInfo += `Wind Speed: ${
+          units === 'imperial'
+            ? (windSpeed * 2.23694).toFixed(2)
+            : windSpeed.toFixed(2)
+        } ${unitsSpeed} from ${windDirection}\n`;
+        locationInfo += `Sunrise: ${sunriseTime}, Sunset: ${sunsetTime}\n\n`;
+      }
+    }
+
+    // List top 3 nearby indoor pickleball locations
+    const indoorLocations = recommendations.indoorLocations || [];
+    if (indoorLocations.length > 0) {
+      locationInfo += `Top 3 Nearby Indoor Pickleball Locations:\n`;
+      indoorLocations.forEach((loc, index) => {
+        const locName = loc.name;
+        const city = loc.city || '';
+        const state = loc.state || '';
+        const address = loc.address || '';
+        locationInfo += `${index + 1}. ${locName} in ${city}, ${state}, ${address}\n`;
+      });
+      locationInfo += `\nPlease consider calling ahead to check hours of operation.\n`;
+    } else {
+      locationInfo += `No indoor pickleball locations found within your selected distance range.\n`;
+    }
+  } else if (activity === 'scuba_diving') {
     recommendations.forEach((section) => {
       const sectionTitle = section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
       locationInfo += `${sectionTitle}:\n`;
@@ -958,8 +1061,6 @@ async function getAIResponse(
           info += `Optimal Play Time: ${selectedTime} is a great time to play, ensuring you have ample daylight.\n`;
         }
 
-        // Additional details can be added here
-
         // Prepare data for recommendations
         return info;
       })
@@ -1013,26 +1114,45 @@ Use the data provided to make specific recommendations.
 Please follow these guidelines:
 
 - Do not use asterisks, hashtags, or markdown formatting. Present the information in plain text.
-- separate shore and boat dives for scuba diving with a section title for each.
+- Separate shore and boat dives for scuba diving with a section title for each.
 - Make the recommendations section feel conversational and organic.
 - Incorporate additional details about the location if provided.
 - Avoid mentioning coding logic or internal thresholds.
 - For hiking, list the distance, difficulty, elevation gain, and estimated time for each trail.
 - For golfing and hiking, add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
-- for golfing, if it is  after sunset, advise that the course will likely be closed and to check with the course for night play availability.
-- for scuba diving, recommend thermal protection based on water temperature using the following logic: 26C/77F or higher: at least a Shorty, 21-26C/70-77F:at least a 3mm wetsuit, 16-21C/60-70F: at least a 5mm wetsuit, 10-16C/50-60F: at leasst a 7mm wetsuit, 10C/50F or below: drysuit.
-- for scuba diving, if the time is before sunrise or after sunset, mention the moon phase and visibility, and recommend bringing at least two dive lights.
+- For golfing, if it is after sunset, advise that the course will likely be closed and to check with the course for night play availability.
+- For scuba diving, if the time is before sunrise or after sunset, mention the moon phase, and recommend bringing at least two dive lights.
 - Only mention ${activityName} in your response and no other activities.
+- For pickleball, first discuss the outdoor conditions for playing pickleball at the user's location. Then list the top 3 nearby indoor pickleball locations. Remind the individual to potentially call ahead to check hours.
+- For all activities, include the following boilerplate: "${boilerplate}"
+
+Scuba Diving Thermal Protection Recommendations
+When advising on thermal protection for scuba diving, use the following guidelines based on water temperature. Ensure that the recommended protection is at least the specified level for each temperature range:
+	1.	Water Temperature ≥ 26°C (≥ 77°F):
+	•	Minimum Protection: Shorty
+	2.	Water Temperature > 21°C and < 26°C (70°F - 77°F):
+	•	Minimum Protection: 3mm Wetsuit
+	3.	Water Temperature > 16°C and ≤ 21°C (60°F - 70°F):
+	•	Minimum Protection: 5mm Wetsuit
+	4.	Water Temperature > 10°C and ≤ 16°C (50°F - 60°F):
+	•	Minimum Protection: 7mm Wetsuit
+	5.	Water Temperature ≤ 10°C (≤ 50°F):
+	•	Minimum Protection: Drysuit
+
+Important Instructions:
+	•	Do not recommend a lower level of thermal protection than the minimum specified for the given temperature range.
+	•	If additional protection is necessary based on other factors (e.g., dive duration, individual cold tolerance), you may recommend higher levels of thermal protection, but never lower.
+	•	Ensure consistency in recommendations to maintain diver safety.
 
 For ${activityName}, consider the following when making recommendations:
 
-- Provide wave heights and water temperatures for scuba diving.
+- Provide wave heights, wind speeds, and water temperatures for scuba diving.
 - Include moon phase, sunrise, and sunset times where relevant.
 - Suggest optimal play times for golfing.
 - Recommend starting times for hiking based on daylight hours.
 - Suggest optimal times for scuba diving based on tides.
 - Advise on visibility based on wind speed and other factors for scuba diving.
-- advise how wind speed might impact the golf ball for golfing.
+- Advise how wind speed might impact the golf ball for golfing.
 `;
 
   let userPrompt = `Based on the selected date "${selectedDate}" and time "${

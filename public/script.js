@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }).addTo(map);
 
   // Set the default image on page load
-activityImage.src = 'images/default.jpg';
-activityImage.alt = 'Default Image';
+  activityImage.src = 'images/default.jpg';
+  activityImage.alt = 'Default Image';
 
   // Layer group for markers
   const markersLayer = L.featureGroup().addTo(map);
@@ -147,42 +147,41 @@ activityImage.alt = 'Default Image';
     maxDateObj.setDate(currentDate.getDate() + 7);
     maxDateObj.setHours(0, 0, 0, 0); // Set to midnight
 
-  // Time validation
-let selectedDateTime = null;
-if (selectedTime) {
-  const timeParts = selectedTime.split(':');
-  if (timeParts.length === 2) {
-    selectedDateTime = new Date(selectedDate);
-    selectedDateTime.setHours(parseInt(timeParts[0], 10));
-    selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
-    selectedDateTime.setSeconds(0);
-    selectedDateTime.setMilliseconds(0);
+    // Time validation
+    let selectedDateTime = null;
+    if (selectedTime) {
+      const timeParts = selectedTime.split(':');
+      if (timeParts.length === 2) {
+        selectedDateTime = new Date(selectedDate);
+        selectedDateTime.setHours(parseInt(timeParts[0], 10));
+        selectedDateTime.setMinutes(parseInt(timeParts[1], 10));
+        selectedDateTime.setSeconds(0);
+        selectedDateTime.setMilliseconds(0);
 
-    // Removed the validation that restricts selecting a past time for today
-    /*
-    const now = new Date();
-    if (
-      selectedDateObj.toDateString() === now.toDateString() &&
-      selectedDateTime <= now
-    ) {
-      resultDiv.innerHTML =
-        '<p>Please select a time in the future for today\'s date.</p>';
-      return;
+        // Removed the validation that restricts selecting a past time for today
+        /*
+        const now = new Date();
+        if (
+          selectedDateObj.toDateString() === now.toDateString() &&
+          selectedDateTime <= now
+        ) {
+          resultDiv.innerHTML =
+            '<p>Please select a time in the future for today\'s date.</p>';
+          return;
+        }
+        */
+      } else {
+        resultDiv.innerHTML = '<p>Please select a valid time.</p>';
+        return;
+      }
+    } else {
+      // Default to 12:00 PM if time is not selected
+      selectedDateTime = new Date(selectedDate);
+      selectedDateTime.setHours(12);
+      selectedDateTime.setMinutes(0);
+      selectedDateTime.setSeconds(0);
+      selectedDateTime.setMilliseconds(0);
     }
-    */
-  } else {
-    resultDiv.innerHTML = '<p>Please select a valid time.</p>';
-    return;
-  }
-} else {
-  // Default to 12:00 PM if time is not selected
-  selectedDateTime = new Date(selectedDate);
-  selectedDateTime.setHours(12);
-  selectedDateTime.setMinutes(0);
-  selectedDateTime.setSeconds(0);
-  selectedDateTime.setMilliseconds(0);
-}
-
 
     // Disable the submit button to prevent multiple submissions
     submitButton.disabled = true;
@@ -338,6 +337,73 @@ if (selectedTime) {
                   });
                   resultDiv.appendChild(recommendationsList);
                 });
+              } else if (selectedActivity === 'pickleball') {
+                // For pickleball
+                const recommendationsData = data.recommendations;
+                const indoorLocations = recommendationsData.indoorLocations || [];
+
+                if (indoorLocations.length > 0) {
+                  const sectionHeader = document.createElement('h2');
+                  sectionHeader.textContent = 'Top 3 Nearby Indoor Pickleball Locations';
+                  resultDiv.appendChild(sectionHeader);
+
+                  const recommendationsList = document.createElement('ul');
+                  indoorLocations.forEach((location) => {
+                    const listItem = document.createElement('li');
+
+                    // Handle missing city and state
+                    const city =
+                      location.city && location.city !== 'Unknown'
+                        ? location.city
+                        : '';
+                    const state =
+                      location.state && location.state !== 'Unknown'
+                        ? location.state
+                        : '';
+
+                    let locationText = `${location.name}`;
+                    if (city || state) {
+                      locationText += ` in ${city}${
+                        city && state ? ', ' : ''
+                      }${state}`;
+                    }
+
+                    // Add address if available
+                    const address = location.address || '';
+                    if (address) {
+                      locationText += `, ${address}`;
+                    }
+
+                    // Create navigation link
+                    const navigationLink = document.createElement('a');
+                    navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                      `${location.geometry.location.lat},${location.geometry.location.lng}`
+                    )}`;
+                    navigationLink.target = '_blank';
+                    navigationLink.textContent = ' Navigate';
+
+                    listItem.textContent = locationText;
+                    listItem.appendChild(navigationLink);
+                    recommendationsList.appendChild(listItem);
+
+                    // Add marker to map with popup containing details
+                    const marker = L.marker([
+                      location.geometry.location.lat,
+                      location.geometry.location.lng,
+                    ])
+                      .addTo(markersLayer)
+                      .bindPopup(`
+                        <strong>${location.name}</strong><br>
+                        ${city}, ${state}${address ? ', ' + address : ''}<br>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                          `${location.geometry.location.lat},${location.geometry.location.lng}`
+                        )}" target="_blank">Navigate</a>
+                      `);
+                  });
+                  resultDiv.appendChild(recommendationsList);
+                } else {
+                  resultDiv.innerHTML += '<p>No indoor pickleball locations found within your selected distance range.</p>';
+                }
               } else {
                 // For other activities
                 const recommendationsList = document.createElement('ul');
