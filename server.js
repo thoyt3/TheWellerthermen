@@ -312,6 +312,8 @@ app.post('/api/query', async (req, res) => {
       }
     }
 
+    const isSpecificLocation = specificLocation ? true : false;
+
     // Process data and generate recommendations
     const recommendations = await processRecommendations(
       activityLocations,
@@ -320,7 +322,8 @@ app.post('/api/query', async (req, res) => {
       selectedDate,
       selectedTime,
       latitude,
-      longitude
+      longitude,
+      isSpecificLocation // Pass the flag here
     );
 
     // Check if recommendations are empty due to weather conditions
@@ -381,11 +384,11 @@ async function getActivityLocations(
   // Calculate distances and filter based on min and max distance
   const locationsWithDistance = filteredLocations
     .map((loc) => {
-      const locLat = loc.latitude || loc.geometry.location.lat;
-      const locLng = loc.longitude || loc.geometry.location.lng;
+      const locLat = loc.latitude || (loc.geometry && loc.geometry.location.lat);
+      const locLng = loc.longitude || (loc.geometry && loc.geometry.location.lng);
       const distance = calculateDistance(userLat, userLng, locLat, locLng); // In miles
 
-      return { ...loc, distance };
+      return { ...loc, distance, latitude: locLat, longitude: locLng };
     })
     .filter(
       (loc) => loc.distance >= minDistance && loc.distance <= maxDistance
@@ -424,24 +427,31 @@ async function processRecommendations(
   selectedDate,
   selectedTime,
   userLat,
-  userLng
+  userLng,
+  isSpecificLocation // Accept the flag here
 ) {
   if (activity === 'pickleball') {
     // For pickleball, return the top 3 indoor locations and outdoor conditions
     const indoorLocations = activityLocations.filter(
-      (loc) => loc.indoor === true
+      (loc) => loc.indoor === true || loc.indoor === 'Yes' // Adjust for different representations
     );
 
     // If specific location is selected, use that
     if (activityLocations.length === 1) {
       indoorLocations.length = 0;
-      if (activityLocations[0].indoor === true) {
+      if (activityLocations[0].indoor === true || activityLocations[0].indoor === 'Yes') {
         indoorLocations.push(activityLocations[0]);
       }
     }
 
     indoorLocations.sort((a, b) => a.distance - b.distance);
     const topIndoorLocations = indoorLocations.slice(0, 3);
+
+    // Ensure latitude and longitude are set
+    topIndoorLocations.forEach((loc) => {
+      loc.latitude = loc.latitude || (loc.geometry && loc.geometry.location.lat);
+      loc.longitude = loc.longitude || (loc.geometry && loc.geometry.location.lng);
+    });
 
     // Fetch outdoor weather data
     let weatherData;
@@ -702,8 +712,12 @@ async function processRecommendations(
     for (const location of activityLocations) {
       let score = 0;
 
-      const locLat = location.latitude || location.geometry.location.lat;
-      const locLng = location.longitude || location.geometry.location.lng;
+      const locLat = location.latitude || (location.geometry && location.geometry.location.lat);
+      const locLng = location.longitude || (location.geometry && location.geometry.location.lng);
+
+      // Ensure latitude and longitude are set
+      location.latitude = locLat;
+      location.longitude = locLng;
 
       // Fetch weather data with caching
       let weatherData;
@@ -752,8 +766,8 @@ async function processRecommendations(
       const moonset = dailyData.moonset; // Unix time
       const moonPhase = dailyData.moon_phase; // 0 to 1
 
-      // Skip locations with wind speed above 25 mph
-      if (windSpeedMph > 25) {
+      // Skip locations with wind speed above 25 mph if not specific location
+      if (windSpeedMph > 25 && !isSpecificLocation) {
         continue;
       }
 
@@ -794,13 +808,11 @@ async function processRecommendations(
         moonPhase,
         timeZone,
       };
-      location.latitude = locLat;
-      location.longitude = locLng;
 
       scoredLocations.push(location);
     }
 
-    if (noSuitableLocations) {
+    if (noSuitableLocations && !isSpecificLocation) {
       return { recommendations: [], noSuitableLocations: true };
     }
 
@@ -1032,6 +1044,75 @@ async function getAIResponse(
     boilerplate += ' Always dive with a buddy and within the limits of your training.';
   }
 
+  // Build system prompt with activity-specific guidelines
+  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations for the date ${selectedDate} and time ${
+    selectedTime || 'any time'
+  }. Use ${units} units in your responses.
+
+Use the data provided to make specific recommendations.
+
+Please follow these guidelines:
+
+- Do not use asterisks, hashtags, or markdown formatting. Present the information in plain text.
+- Make the recommendations section feel conversational and organic.
+- Incorporate additional details about the location if provided.
+- Avoid mentioning coding logic or internal thresholds.
+- Only mention ${activityName} in your response and no other activities.
+- For all activities, include the following boilerplate: "${boilerplate}"
+`;
+
+  if (activity === 'scuba_diving') {
+    systemPrompt += `
+- Separate shore and boat dives for scuba diving with a section title for each.
+- Provide wave heights, wind speeds, and water temperatures.
+- Include moon phase, sunrise, and sunset times.
+- Include high and low tide times (with dates).
+- Suggest optimal times for scuba diving based on tides.
+- Advise on visibility based on wind speed and other factors.
+- For scuba diving, if the time is before sunrise or after sunset, mention the moon phase, and recommend bringing at least two dive lights.
+
+Scuba Diving Thermal Protection Recommendations
+When advising on thermal protection for scuba diving, use the following guidelines based on water temperature. Ensure that the recommended protection is at least the specified level for each temperature range:
+	1.	Water Temperature ≥ 26°C (≥ 77°F):
+	•	Minimum Protection: Shorty
+	2.	Water Temperature > 21°C and < 26°C (70°F - 77°F):
+	•	Minimum Protection: 3mm Wetsuit
+	3.	Water Temperature > 16°C and ≤ 21°C (60°F - 70°F):
+	•	Minimum Protection: 5mm Wetsuit
+	4.	Water Temperature > 10°C and ≤ 16°C (50°F - 60°F):
+	•	Minimum Protection: 7mm Wetsuit
+	5.	Water Temperature ≤ 10°C (≤ 50°F):
+	•	Minimum Protection: Drysuit
+
+Important Instructions:
+	•	Do not recommend a lower level of thermal protection than the minimum specified for the given temperature range.
+	•	If additional protection is necessary based on other factors (e.g., dive duration, individual cold tolerance), you may recommend higher levels of thermal protection, but never lower.
+	•	Ensure consistency in recommendations to maintain diver safety.
+`;
+  } else if (activity === 'golf') {
+    systemPrompt += `
+- Suggest optimal play times for golfing.
+- Advise how wind speed might impact the golf ball.
+- For golfing, if it is after sunset, advise that the course will likely be closed and to check with the course for night play availability.
+- Add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
+- Prioritize locations with wind speeds under 25 mph.
+`;
+  } else if (activity === 'hiking') {
+    systemPrompt += `
+- List the distance, difficulty, elevation gain, and estimated time for each trail.
+- Recommend starting times for hiking based on daylight hours.
+- Add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
+`;
+  } else if (activity === 'pickleball') {
+    systemPrompt += `
+- First discuss the outdoor conditions for playing pickleball at the user's location.
+- Then list the top 3 nearby indoor pickleball locations.
+- Include the address and phone number for each.
+- Remind the individual to potentially call ahead to check hours.
+`;
+  }
+
+  // Build locationInfo based on activity
   if (activity === 'pickleball') {
     // Fetch outdoor weather data for user's location
     const weatherData = recommendations.weatherData;
@@ -1197,6 +1278,13 @@ async function getAIResponse(
           info += `About the site: ${loc.diveSiteDescription}\n`;
         }
 
+        // Add recommendation based on suitability
+        if (loc.isSuitable) {
+          info += `\nRecommendation: Conditions are suitable for diving at this location.\n`;
+        } else {
+          info += `\nRecommendation: Based on the current conditions, it is not recommended to dive at this location.\n`;
+        }
+
         // Prepare data for recommendations
         locationInfo += info + '\n';
       });
@@ -1246,62 +1334,8 @@ async function getAIResponse(
         // Prepare data for recommendations
         return info;
       })
-      .join('\n');
+      .join('\n\n');
   }
-
-  let systemPrompt = `You are an expert advisor specializing in ${activityName}. Provide detailed recommendations based on the current conditions at specific locations for the date ${selectedDate} and time ${
-    selectedTime || 'any time'
-  }. Use ${units} units in your responses.
-
-Use the data provided to make specific recommendations.
-
-Please follow these guidelines:
-
-- Do not use asterisks, hashtags, or markdown formatting. Present the information in plain text.
-- Separate shore and boat dives for scuba diving with a section title for each.
-- Make the recommendations section feel conversational and organic.
-- Incorporate additional details about the location if provided.
-- Avoid mentioning coding logic or internal thresholds.
-- For hiking, list the distance, difficulty, elevation gain, and estimated time for each trail.
-- For golfing and hiking, add a clothing recommendation based on the weather, and include likelihood of rain and appropriate considerations for that.
-- For golfing, if it is after sunset, advise that the course will likely be closed and to check with the course for night play availability.
-- For scuba diving, if the time is before sunrise or after sunset, mention the moon phase, and recommend bringing at least two dive lights.
-- Only mention ${activityName} in your response and no other activities.
-- For pickleball, first discuss the outdoor conditions for playing pickleball at the user's location. Then list the top 3 nearby indoor pickleball locations. Include the address and phone number for each. Remind the individual to potentially call ahead to check hours.
-- For all activities, include the following boilerplate: "${boilerplate}"
-
-Scuba Diving Thermal Protection Recommendations
-When advising on thermal protection for scuba diving, use the following guidelines based on water temperature. Ensure that the recommended protection is at least the specified level for each temperature range:
-	1.	Water Temperature ≥ 26°C (≥ 77°F):
-	•	Minimum Protection: Shorty
-	2.	Water Temperature > 21°C and < 26°C (70°F - 77°F):
-	•	Minimum Protection: 3mm Wetsuit
-	3.	Water Temperature > 16°C and ≤ 21°C (60°F - 70°F):
-	•	Minimum Protection: 5mm Wetsuit
-	4.	Water Temperature > 10°C and ≤ 16°C (50°F - 60°F):
-	•	Minimum Protection: 7mm Wetsuit
-	5.	Water Temperature ≤ 10°C (≤ 50°F):
-	•	Minimum Protection: Drysuit
-
-Important Instructions:
-	•	Do not recommend a lower level of thermal protection than the minimum specified for the given temperature range.
-	•	If additional protection is necessary based on other factors (e.g., dive duration, individual cold tolerance), you may recommend higher levels of thermal protection, but never lower.
-	•	Ensure consistency in recommendations to maintain diver safety.
-
-For ${activityName}, consider the following when making recommendations:
-
-- Provide wave heights, wind speeds, and water temperatures for scuba diving.
-- Include moon phase, sunrise, and sunset times where relevant.
-- Include high and low tide times (with dates) for scuba diving locations.
-- Suggest optimal play times for golfing.
-- Recommend starting times for hiking based on daylight hours.
-- Suggest optimal times for scuba diving based on tides.
-- Advise on visibility based on wind speed and other factors for scuba diving.
-- Advise how wind speed might impact the golf ball for golfing.
-- For scuba diving, do not recommend locations where waves are over 5 feet or wind speed is over 25 mph.
-- For golf and pickleball, prioritize locations with wind speeds under 25 mph.
-
-`;
 
   let userPrompt = `Based on the selected date "${selectedDate}" and time "${
     selectedTime || 'any time'

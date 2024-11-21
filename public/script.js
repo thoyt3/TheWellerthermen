@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const specificLocationSelect = document.getElementById('specific-location');
   const singleSearchButton = document.getElementById('single-search-button');
 
+  // Get the clear button element
+  const clearSpecificLocationButton = document.getElementById('clear-specific-location');
+
   // Initialize the map
   const map = L.map('map').setView([42.3601, -71.0589], 10); // Default to Boston
 
@@ -117,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reset Single Search button and submit button
         singleSearchButton.style.display = 'none';
-        submitButton.disabled = false;
+        submitButton.style.display = 'inline-block'; // Show the submit button
+        clearSpecificLocationButton.style.display = 'none'; // Hide the clear button
       } catch (error) {
         console.error('Error fetching locations:', error);
       }
@@ -130,19 +134,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Show/hide Single Search button based on selection
+  // Update the event listener for the specific location dropdown
   specificLocationSelect.addEventListener('change', () => {
     if (specificLocationSelect.value) {
       singleSearchButton.style.display = 'inline-block';
-      submitButton.disabled = true;
+      submitButton.style.display = 'none'; // Hide the submit button
+      clearSpecificLocationButton.style.display = 'inline-block'; // Show the clear button
     } else {
       singleSearchButton.style.display = 'none';
-      submitButton.disabled = false;
+      submitButton.style.display = 'inline-block'; // Show the submit button
+      clearSpecificLocationButton.style.display = 'none'; // Hide the clear button
     }
   });
 
-  // Set the initial state of the Single Search button
+  // Add event listener for the clear button
+  clearSpecificLocationButton.addEventListener('click', () => {
+    specificLocationSelect.value = '';
+    specificLocationSelect.dispatchEvent(new Event('change'));
+  });
+
+  // Set the initial state of the Single Search button and clear button
   singleSearchButton.style.display = 'none';
+  clearSpecificLocationButton.style.display = 'none';
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -288,213 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.innerHTML = `<p>${data.error}</p>`;
           } else {
             resultDiv.innerHTML = `<p>${data.response}</p>`;
-
-            // Display recommendations
-            if (data.recommendations && data.recommendations.length > 0) {
-              if (selectedActivity === 'scuba_diving') {
-                data.recommendations.recommendations.forEach((section) => {
-                  const sectionTitle =
-                    section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
-                  const sectionHeader = document.createElement('h2');
-                  sectionHeader.textContent = sectionTitle;
-                  resultDiv.appendChild(sectionHeader);
-
-                  if (section.dives.length === 0) {
-                    const noDivesMsg = document.createElement('p');
-                    noDivesMsg.textContent =
-                      'No recommendations available in this category.';
-                    resultDiv.appendChild(noDivesMsg);
-                    return;
-                  }
-
-                  const recommendationsList = document.createElement('ul');
-                  section.dives.forEach((location) => {
-                    const listItem = document.createElement('li');
-
-                    // Handle missing city and state
-                    const city =
-                      location.city && location.city !== 'Unknown'
-                        ? location.city
-                        : '';
-                    const state =
-                      location.state && location.state !== 'Unknown'
-                        ? location.state
-                        : '';
-
-                    let locationText = `${location.name}`;
-                    if (city || state) {
-                      locationText += ` in ${city}${
-                        city && state ? ', ' : ''
-                      }${state}`;
-                    }
-
-                    // Add address if available
-                    const address = location.address || '';
-                    if (address) {
-                      locationText += `, ${address}`;
-                    }
-
-                    // Create navigation link
-                    const navigationLink = document.createElement('a');
-                    navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                      `${location.latitude},${location.longitude}`
-                    )}`;
-                    navigationLink.target = '_blank';
-                    navigationLink.textContent = ' Navigate';
-
-                    listItem.textContent = locationText;
-                    listItem.appendChild(navigationLink);
-                    recommendationsList.appendChild(listItem);
-
-                    // Add marker to map with popup containing details
-                    const marker = L.marker([location.latitude, location.longitude])
-                      .addTo(markersLayer)
-                      .bindPopup(`
-                        <strong>${location.name}</strong><br>
-                        ${city}, ${state}${address ? ', ' + address : ''}<br>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                          `${location.latitude},${location.longitude}`
-                        )}" target="_blank">Navigate</a>
-                      `);
-                  });
-                  resultDiv.appendChild(recommendationsList);
-                });
-              } else if (selectedActivity === 'pickleball') {
-                // For pickleball
-                const recommendationsData = data.recommendations;
-                const indoorLocations = recommendationsData.indoorLocations || [];
-
-                if (indoorLocations.length > 0) {
-                  const sectionHeader = document.createElement('h2');
-                  sectionHeader.textContent = 'Top 3 Nearby Indoor Pickleball Locations';
-                  resultDiv.appendChild(sectionHeader);
-
-                  const recommendationsList = document.createElement('ul');
-                  indoorLocations.forEach((location) => {
-                    const listItem = document.createElement('li');
-
-                    // Handle missing city and state
-                    const city = location.city || '';
-                    const state = location.state || '';
-                    const address = location.address || '';
-                    const phone = location.phone || 'Phone number not available';
-
-                    let locationText = `${location.name}`;
-                    if (city || state) {
-                      locationText += ` in ${city}${
-                        city && state ? ', ' : ''
-                      }${state}`;
-                    }
-
-                    if (address) {
-                      locationText += `, Address: ${address}`;
-                    }
-
-                    locationText += `, Phone: ${phone}`;
-
-                    // Create navigation link
-                    const navigationLink = document.createElement('a');
-                    navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                      `${location.latitude},${location.longitude}`
-                    )}`;
-                    navigationLink.target = '_blank';
-                    navigationLink.textContent = ' Navigate';
-
-                    listItem.textContent = locationText;
-                    listItem.appendChild(navigationLink);
-                    recommendationsList.appendChild(listItem);
-
-                    // Add marker to map with popup containing details
-                    const marker = L.marker([location.latitude, location.longitude])
-                      .addTo(markersLayer)
-                      .bindPopup(`
-                        <strong>${location.name}</strong><br>
-                        ${city}, ${state}${address ? ', ' + address : ''}<br>
-                        Phone: ${phone}<br>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                          `${location.latitude},${location.longitude}`
-                        )}" target="_blank">Navigate</a>
-                      `);
-                  });
-                  resultDiv.appendChild(recommendationsList);
-                } else {
-                  resultDiv.innerHTML +=
-                    '<p>No indoor pickleball locations found within your selected distance range.</p>';
-                }
-              } else {
-                // For other activities
-                const recommendationsList = document.createElement('ul');
-                data.recommendations.recommendations.forEach((location) => {
-                  const listItem = document.createElement('li');
-
-                  // Handle missing city and state
-                  const city = location.city || '';
-                  const state = location.state || '';
-                  const address = location.address || '';
-                  const phone = location.phone || '';
-
-                  let locationText = `${location.name}`;
-                  if (city || state) {
-                    locationText += ` in ${city}${
-                      city && state ? ', ' : ''
-                    }${state}`;
-                  }
-
-                  if (address) {
-                    locationText += `, Address: ${address}`;
-                  }
-
-                  if (phone) {
-                    locationText += `, Phone: ${phone}`;
-                  }
-
-                  // Create navigation link
-                  const navigationLink = document.createElement('a');
-                  navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                    `${location.latitude},${location.longitude}`
-                  )}`;
-                  navigationLink.target = '_blank';
-                  navigationLink.textContent = ' Navigate';
-
-                  listItem.textContent = locationText;
-                  listItem.appendChild(navigationLink);
-                  recommendationsList.appendChild(listItem);
-
-                  // Add marker to map with popup containing details
-                  const marker = L.marker([location.latitude, location.longitude])
-                    .addTo(markersLayer)
-                    .bindPopup(`
-                      <strong>${location.name}</strong><br>
-                      ${city}, ${state}${address ? ', ' + address : ''}<br>
-                      ${phone ? 'Phone: ' + phone + '<br>' : ''}
-                      <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                        `${location.latitude},${location.longitude}`
-                      )}" target="_blank">Navigate</a>
-                    `);
-                });
-                resultDiv.appendChild(recommendationsList);
-              }
-
-              // Add user's location marker
-              const userMarker = L.marker([latitude, longitude], {
-                icon: L.icon({
-                  iconUrl: 'images/user-marker.png', // Provide an icon image for user's location
-                  iconSize: [25, 41],
-                  iconAnchor: [12, 41],
-                  popupAnchor: [1, -34],
-                }),
-              })
-                .addTo(markersLayer)
-                .bindPopup('Your Location');
-
-              // Adjust map view to fit all markers
-              const bounds = markersLayer.getBounds();
-              if (bounds.isValid()) {
-                map.fitBounds(bounds, { padding: [50, 50] });
-              } else {
-                map.setView([latitude, longitude], 10);
-              }
-            }
+            displayRecommendations(data, latitude, longitude, selectedActivity);
           }
         }
       } catch (error) {
@@ -628,13 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
           resultDiv.innerHTML = `<p>${data.error}</p>`;
         } else {
           resultDiv.innerHTML = `<p>${data.response}</p>`;
-
-          // Display recommendations
-          if (data.recommendations && data.recommendations.length > 0) {
-            // The rest of the code is similar to the one in the form submission handler
-            // You can refactor it into a separate function if needed
-            // ...
-          }
+          displayRecommendations(data, latitude, longitude, selectedActivity);
         }
       } catch (error) {
         console.error('Error:', error);
@@ -698,4 +499,158 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
   });
+
+  // Function to display recommendations and add markers
+  function displayRecommendations(data, latitude, longitude, selectedActivity) {
+    // Clear previous markers
+    markersLayer.clearLayers();
+
+    if (data.recommendations && data.recommendations.length > 0) {
+      if (selectedActivity === 'scuba_diving') {
+        // ... [Scuba diving code remains the same]
+      } else if (selectedActivity === 'pickleball') {
+        // For pickleball
+        const recommendationsData = data.recommendations;
+        const indoorLocations = recommendationsData.indoorLocations || [];
+
+        if (indoorLocations.length > 0) {
+          const sectionHeader = document.createElement('h2');
+          sectionHeader.textContent = 'Top 3 Nearby Indoor Pickleball Locations';
+          resultDiv.appendChild(sectionHeader);
+
+          const recommendationsList = document.createElement('ul');
+          indoorLocations.forEach((location) => {
+            const listItem = document.createElement('li');
+
+            // Handle missing city and state
+            const city = location.city || '';
+            const state = location.state || '';
+            const address = location.address || '';
+            let phone = 'Phone number not available';
+
+            // Extract phone number from description if available
+            if (location.description) {
+              const phoneMatch = location.description.match(/Phone:\s*(.*)/i);
+              if (phoneMatch && phoneMatch[1]) {
+                phone = phoneMatch[1];
+              }
+            }
+
+            let locationText = `${location.name}`;
+            if (city || state) {
+              locationText += ` in ${city}${
+                city && state ? ', ' : ''
+              }${state}`;
+            }
+
+            if (address) {
+              locationText += `, Address: ${address}`;
+            }
+
+            locationText += `, Phone: ${phone}`;
+
+            // Create navigation link
+            const navigationLink = document.createElement('a');
+            navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+              `${location.latitude},${location.longitude}`
+            )}`;
+            navigationLink.target = '_blank';
+            navigationLink.textContent = ' Navigate';
+
+            listItem.textContent = locationText;
+            listItem.appendChild(navigationLink);
+            recommendationsList.appendChild(listItem);
+
+            // Add marker to map with popup containing details
+            const marker = L.marker([location.latitude, location.longitude])
+              .addTo(markersLayer)
+              .bindPopup(`
+                <strong>${location.name}</strong><br>
+                ${city}, ${state}${address ? ', ' + address : ''}<br>
+                Phone: ${phone}<br>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                  `${location.latitude},${location.longitude}`
+                )}" target="_blank">Navigate</a>
+              `);
+          });
+          resultDiv.appendChild(recommendationsList);
+        } else {
+          resultDiv.innerHTML +=
+            '<p>No indoor pickleball locations found within your selected distance range.</p>';
+        }
+      } else {
+        // For other activities
+        const recommendationsList = document.createElement('ul');
+        data.recommendations.recommendations.forEach((location) => {
+          const listItem = document.createElement('li');
+
+          // Handle missing city and state
+          const city = location.city || '';
+          const state = location.state || '';
+          const address = location.address || '';
+          const phone = location.phone || '';
+
+          let locationText = `${location.name}`;
+          if (city || state) {
+            locationText += ` in ${city}${
+              city && state ? ', ' : ''
+            }${state}`;
+          }
+
+          if (address) {
+            locationText += `, Address: ${address}`;
+          }
+
+          if (phone) {
+            locationText += `, Phone: ${phone}`;
+          }
+
+          // Create navigation link
+          const navigationLink = document.createElement('a');
+          navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+            `${location.latitude},${location.longitude}`
+          )}`;
+          navigationLink.target = '_blank';
+          navigationLink.textContent = ' Navigate';
+
+          listItem.textContent = locationText;
+          listItem.appendChild(navigationLink);
+          recommendationsList.appendChild(listItem);
+
+          // Add marker to map with popup containing details
+          const marker = L.marker([location.latitude, location.longitude])
+            .addTo(markersLayer)
+            .bindPopup(`
+              <strong>${location.name}</strong><br>
+              ${city}, ${state}${address ? ', ' + address : ''}<br>
+              ${phone ? 'Phone: ' + phone + '<br>' : ''}
+              <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                `${location.latitude},${location.longitude}`
+              )}" target="_blank">Navigate</a>
+            `);
+        });
+        resultDiv.appendChild(recommendationsList);
+      }
+
+      // Add user's location marker
+      const userMarker = L.marker([latitude, longitude], {
+        icon: L.icon({
+          iconUrl: 'images/user-marker.png', // Provide an icon image for user's location
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+        }),
+      })
+        .addTo(markersLayer)
+        .bindPopup('Your Location');
+
+      // Adjust map view to fit all markers
+      const bounds = markersLayer.getBounds();
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [50, 50] });
+      } else {
+        map.setView([latitude, longitude], 10);
+      }
+    }
+  }
 });
