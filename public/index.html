@@ -73,6 +73,25 @@
       min-width: 300px;
       text-align: center;
     }
+
+    /* Increase the size of buttons, inputs, and selects */
+    button, input[type="number"], select {
+      font-size: 16px;
+      padding: 12px;
+    }
+
+    button {
+      padding: 12px 24px;
+    }
+
+    input[type="number"] {
+      width: 100px;
+    }
+
+    /* Adjusting the layout for the specific location dropdown */
+    #specific-location-container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -110,19 +129,26 @@
           <option value="metric">Metric</option>
         </select>
         
-        <!-- Distance dropdown -->
-        <label for="distance-select">Select a distance range:</label>
-        <select id="distance-select">
-          <!-- Options will be populated by script.js based on units -->
-        </select>
-    
-    
+        <!-- Distance inputs -->
+        <label for="min-distance">Minimum distance:</label>
+        <input type="number" id="min-distance" min="0" value="0" step="1">
+        <label for="max-distance">Maximum distance:</label>
+        <input type="number" id="max-distance" min="0" value="5" step="1">
+
+        <!-- Specific location dropdown -->
+        <div id="specific-location-container">
+          <label for="specific-location">Select a location (optional):</label>
+          <select id="specific-location">
+            <option value="">Select a location (optional)</option>
+          </select>
+          <button type="button" id="single-search-button" style="display: none;">Single Search</button>
+        </div>
     
         <button type="submit" id="submit-button">Submit</button>
       </form>
     </div>
     <div id="image-container">
-      <img id="activity-image" src="" alt="Activity Image">
+      <img id="activity-image" src="images/default.jpg" alt="Activity Image">
     </div>
   </div>
   

@@ -118,6 +118,10 @@ def clean_locations():
             if result:
                 cleaned_locations.append(result)
 
+    # Assign unique IDs to each location
+    for idx, loc in enumerate(cleaned_locations, start=1):
+        loc['id'] = idx  # Assigning incremental IDs starting from 1
+
     # Save cleaned locations to 'clean_locations.json'
     cleaned_locations_file = os.path.join('data', 'clean_locations.json')
     with open(cleaned_locations_file, 'w') as f:

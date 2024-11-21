@@ -8,9 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeSelect = document.getElementById('time-select');
   const activitySelect = document.getElementById('activity-select');
   const unitsSelect = document.getElementById('units-select');
-  const distanceSelect = document.getElementById('distance-select');
+  const minDistanceInput = document.getElementById('min-distance');
+  const maxDistanceInput = document.getElementById('max-distance');
   const submitButton = form.querySelector('button[type="submit"]');
   const activityImage = document.getElementById('activity-image');
+  const specificLocationSelect = document.getElementById('specific-location');
+  const singleSearchButton = document.getElementById('single-search-button');
 
   // Initialize the map
   const map = L.map('map').setView([42.3601, -71.0589], 10); // Default to Boston
@@ -50,70 +53,96 @@ document.addEventListener('DOMContentLoaded', () => {
     !dateSelect ||
     !activitySelect ||
     !unitsSelect ||
-    !distanceSelect
+    !minDistanceInput ||
+    !maxDistanceInput ||
+    !specificLocationSelect ||
+    !singleSearchButton
   ) {
     console.error('One or more form elements not found.');
     return;
   }
 
-  // Define distance ranges
-  const distanceRangesImperial = [
-    { value: '0-1', text: '0-1 miles' },
-    { value: '1-5', text: '1-5 miles' },
-    { value: '5-10', text: '5-10 miles' },
-    { value: '10-25', text: '10-25 miles' },
-    { value: '25-50', text: '25-50 miles' },
-    { value: '50-100', text: '50-100 miles' },
-    { value: '0-300', text: '0-300 miles' },
-  ];
+  // Function to validate distance inputs
+  function validateDistances() {
+    const units = unitsSelect.value;
+    const maxLimit = units === 'imperial' ? 100 : 160;
+    const minDistance = parseFloat(minDistanceInput.value) || 0;
+    const maxDistance = parseFloat(maxDistanceInput.value) || 5;
 
-  const distanceRangesMetric = [
-    { value: '0-1', text: '0-1 kilometers' },
-    { value: '1-5', text: '1-5 kilometers' },
-    { value: '5-10', text: '5-10 kilometers' },
-    { value: '10-30', text: '10-30 kilometers' },
-    { value: '30-60', text: '30-60 kilometers' },
-    { value: '60-160', text: '60-160 kilometers' },
-    { value: '0-500', text: '0-500 kilometers' },
-  ];
+    if (minDistance < 0) {
+      minDistanceInput.value = 0;
+    }
 
-  // Function to populate distance select options based on units
-  function populateDistanceOptions() {
-    const isImperial = unitsSelect.value === 'imperial';
-    const distanceRanges = isImperial ? distanceRangesImperial : distanceRangesMetric;
-
-    // Clear existing options
-    distanceSelect.innerHTML = '';
-
-    // Populate new options
-    distanceRanges.forEach((range) => {
-      const option = document.createElement('option');
-      option.value = range.value;
-      option.textContent = range.text;
-      distanceSelect.appendChild(option);
-    });
+    if (maxDistance > maxLimit) {
+      maxDistanceInput.value = maxLimit;
+    }
   }
 
-  // Populate distance options on page load
-  populateDistanceOptions();
-
-  // Update distance options when units change
+  // Add event listeners for units change and distance inputs
   unitsSelect.addEventListener('change', () => {
-    populateDistanceOptions();
+    validateDistances();
   });
 
-  // Update activity image when activity changes
-  activitySelect.addEventListener('change', () => {
+  minDistanceInput.addEventListener('input', () => {
+    validateDistances();
+  });
+
+  maxDistanceInput.addEventListener('input', () => {
+    validateDistances();
+  });
+
+  // Update activity image and populate specific location dropdown when activity changes
+  activitySelect.addEventListener('change', async () => {
     const activity = activitySelect.value;
     if (activity) {
       const imageUrl = `images/${activity}.jpg`;
       activityImage.src = imageUrl;
       activityImage.alt = activity.replace('_', ' ');
+
+      // Fetch locations for the selected activity
+      try {
+        const response = await fetch(`/api/locations?activity=${activity}`);
+        const locations = await response.json();
+
+        // Clear previous options
+        specificLocationSelect.innerHTML = '<option value="">Select a location (optional)</option>';
+
+        // Populate dropdown
+        locations.forEach((loc) => {
+          const option = document.createElement('option');
+          option.value = loc.id; // Ensure this is the correct id (number)
+          option.textContent = loc.name;
+          specificLocationSelect.appendChild(option);
+        });
+
+        // Reset Single Search button and submit button
+        singleSearchButton.style.display = 'none';
+        submitButton.disabled = false;
+      } catch (error) {
+        console.error('Error fetching locations:', error);
+      }
     } else {
       activityImage.src = '';
       activityImage.alt = '';
+
+      // Clear specific location dropdown
+      specificLocationSelect.innerHTML = '<option value="">Select a location (optional)</option>';
     }
   });
+
+  // Show/hide Single Search button based on selection
+  specificLocationSelect.addEventListener('change', () => {
+    if (specificLocationSelect.value) {
+      singleSearchButton.style.display = 'inline-block';
+      submitButton.disabled = true;
+    } else {
+      singleSearchButton.style.display = 'none';
+      submitButton.disabled = false;
+    }
+  });
+
+  // Set the initial state of the Single Search button
+  singleSearchButton.style.display = 'none';
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -129,14 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedActivity = activitySelect.value;
     const units = unitsSelect.value;
     const manualLocation = manualLocationInput.value.trim();
-    const selectedDistanceRange = distanceSelect.value;
+    const minDistance = minDistanceInput.value;
+    const maxDistance = maxDistanceInput.value;
+    const specificLocation = null; // Do not include specificLocation in form submission
 
     console.log('Selected Date:', selectedDate);
     console.log('Selected Time:', selectedTime || 'Not specified');
     console.log('Selected Activity:', selectedActivity);
-    console.log('Selected Distance Range:', selectedDistanceRange);
+    console.log('Min Distance:', minDistance);
+    console.log('Max Distance:', maxDistance);
     console.log('Selected Units:', units);
     console.log('Manual Location:', manualLocation || 'Not specified');
+    console.log('Specific Location:', specificLocation || 'Not specified');
 
     // Validate selected date and time
     const selectedDateObj = new Date(selectedDate);
@@ -159,17 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedDateTime.setMilliseconds(0);
 
         // Removed the validation that restricts selecting a past time for today
-        /*
-        const now = new Date();
-        if (
-          selectedDateObj.toDateString() === now.toDateString() &&
-          selectedDateTime <= now
-        ) {
-          resultDiv.innerHTML =
-            '<p>Please select a time in the future for today\'s date.</p>';
-          return;
-        }
-        */
       } else {
         resultDiv.innerHTML = '<p>Please select a valid time.</p>';
         return;
@@ -199,10 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
           date: selectedDate,
           time: selectedTime || null, // Optional
           activity: selectedActivity,
-          distanceRange: selectedDistanceRange,
+          minDistance: minDistance,
+          maxDistance: maxDistance,
           units: units,
           latitude: latitude,
           longitude: longitude,
+          specificLocation: specificLocation || null,
         };
 
         console.log('Sending fetch request with data:', requestData); // Debugging
@@ -264,10 +288,11 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.innerHTML = `<p>${data.error}</p>`;
           } else {
             resultDiv.innerHTML = `<p>${data.response}</p>`;
+
             // Display recommendations
             if (data.recommendations && data.recommendations.length > 0) {
               if (selectedActivity === 'scuba_diving') {
-                data.recommendations.forEach((section) => {
+                data.recommendations.recommendations.forEach((section) => {
                   const sectionTitle =
                     section.type === 'shore' ? 'Shore Dives' : 'Boat Dives';
                   const sectionHeader = document.createElement('h2');
@@ -312,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Create navigation link
                     const navigationLink = document.createElement('a');
                     navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                      `${location.geometry.location.lat},${location.geometry.location.lng}`
+                      `${location.latitude},${location.longitude}`
                     )}`;
                     navigationLink.target = '_blank';
                     navigationLink.textContent = ' Navigate';
@@ -322,16 +347,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     recommendationsList.appendChild(listItem);
 
                     // Add marker to map with popup containing details
-                    const marker = L.marker([
-                      location.geometry.location.lat,
-                      location.geometry.location.lng,
-                    ])
+                    const marker = L.marker([location.latitude, location.longitude])
                       .addTo(markersLayer)
                       .bindPopup(`
                         <strong>${location.name}</strong><br>
                         ${city}, ${state}${address ? ', ' + address : ''}<br>
                         <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                          `${location.geometry.location.lat},${location.geometry.location.lng}`
+                          `${location.latitude},${location.longitude}`
                         )}" target="_blank">Navigate</a>
                       `);
                   });
@@ -352,14 +374,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const listItem = document.createElement('li');
 
                     // Handle missing city and state
-                    const city =
-                      location.city && location.city !== 'Unknown'
-                        ? location.city
-                        : '';
-                    const state =
-                      location.state && location.state !== 'Unknown'
-                        ? location.state
-                        : '';
+                    const city = location.city || '';
+                    const state = location.state || '';
+                    const address = location.address || '';
+                    const phone = location.phone || 'Phone number not available';
 
                     let locationText = `${location.name}`;
                     if (city || state) {
@@ -368,16 +386,16 @@ document.addEventListener('DOMContentLoaded', () => {
                       }${state}`;
                     }
 
-                    // Add address if available
-                    const address = location.address || '';
                     if (address) {
-                      locationText += `, ${address}`;
+                      locationText += `, Address: ${address}`;
                     }
+
+                    locationText += `, Phone: ${phone}`;
 
                     // Create navigation link
                     const navigationLink = document.createElement('a');
                     navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                      `${location.geometry.location.lat},${location.geometry.location.lng}`
+                      `${location.latitude},${location.longitude}`
                     )}`;
                     navigationLink.target = '_blank';
                     navigationLink.textContent = ' Navigate';
@@ -387,38 +405,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     recommendationsList.appendChild(listItem);
 
                     // Add marker to map with popup containing details
-                    const marker = L.marker([
-                      location.geometry.location.lat,
-                      location.geometry.location.lng,
-                    ])
+                    const marker = L.marker([location.latitude, location.longitude])
                       .addTo(markersLayer)
                       .bindPopup(`
                         <strong>${location.name}</strong><br>
                         ${city}, ${state}${address ? ', ' + address : ''}<br>
+                        Phone: ${phone}<br>
                         <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                          `${location.geometry.location.lat},${location.geometry.location.lng}`
+                          `${location.latitude},${location.longitude}`
                         )}" target="_blank">Navigate</a>
                       `);
                   });
                   resultDiv.appendChild(recommendationsList);
                 } else {
-                  resultDiv.innerHTML += '<p>No indoor pickleball locations found within your selected distance range.</p>';
+                  resultDiv.innerHTML +=
+                    '<p>No indoor pickleball locations found within your selected distance range.</p>';
                 }
               } else {
                 // For other activities
                 const recommendationsList = document.createElement('ul');
-                data.recommendations.forEach((location) => {
+                data.recommendations.recommendations.forEach((location) => {
                   const listItem = document.createElement('li');
 
                   // Handle missing city and state
-                  const city =
-                    location.city && location.city !== 'Unknown'
-                      ? location.city
-                      : '';
-                  const state =
-                    location.state && location.state !== 'Unknown'
-                      ? location.state
-                      : '';
+                  const city = location.city || '';
+                  const state = location.state || '';
+                  const address = location.address || '';
+                  const phone = location.phone || '';
 
                   let locationText = `${location.name}`;
                   if (city || state) {
@@ -427,16 +440,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }${state}`;
                   }
 
-                  // Add address if available
-                  const address = location.address || '';
                   if (address) {
-                    locationText += `, ${address}`;
+                    locationText += `, Address: ${address}`;
+                  }
+
+                  if (phone) {
+                    locationText += `, Phone: ${phone}`;
                   }
 
                   // Create navigation link
                   const navigationLink = document.createElement('a');
                   navigationLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                    `${location.geometry.location.lat},${location.geometry.location.lng}`
+                    `${location.latitude},${location.longitude}`
                   )}`;
                   navigationLink.target = '_blank';
                   navigationLink.textContent = ' Navigate';
@@ -446,21 +461,31 @@ document.addEventListener('DOMContentLoaded', () => {
                   recommendationsList.appendChild(listItem);
 
                   // Add marker to map with popup containing details
-                  const marker = L.marker([
-                    location.geometry.location.lat,
-                    location.geometry.location.lng,
-                  ])
+                  const marker = L.marker([location.latitude, location.longitude])
                     .addTo(markersLayer)
                     .bindPopup(`
                       <strong>${location.name}</strong><br>
                       ${city}, ${state}${address ? ', ' + address : ''}<br>
+                      ${phone ? 'Phone: ' + phone + '<br>' : ''}
                       <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                        `${location.geometry.location.lat},${location.geometry.location.lng}`
+                        `${location.latitude},${location.longitude}`
                       )}" target="_blank">Navigate</a>
                     `);
                 });
                 resultDiv.appendChild(recommendationsList);
               }
+
+              // Add user's location marker
+              const userMarker = L.marker([latitude, longitude], {
+                icon: L.icon({
+                  iconUrl: 'images/user-marker.png', // Provide an icon image for user's location
+                  iconSize: [25, 41],
+                  iconAnchor: [12, 41],
+                  popupAnchor: [1, -34],
+                }),
+              })
+                .addTo(markersLayer)
+                .bindPopup('Your Location');
 
               // Adjust map view to fit all markers
               const bounds = markersLayer.getBounds();
@@ -531,6 +556,145 @@ document.addEventListener('DOMContentLoaded', () => {
         '<p>Geolocation is not supported by your browser. Please enter your location manually.</p>';
       // Re-enable the submit button
       submitButton.disabled = false;
+      return;
+    }
+  });
+
+  // Single Search button event listener
+  singleSearchButton.addEventListener('click', async () => {
+    // Clear previous results or errors
+    resultDiv.innerHTML = '';
+    markersLayer.clearLayers();
+
+    const selectedDate = dateSelect.value;
+    const selectedTime = timeSelect.value; // Optional
+    const selectedActivity = activitySelect.value;
+    const units = unitsSelect.value;
+    const manualLocation = manualLocationInput.value.trim();
+    const specificLocation = specificLocationSelect.value;
+
+    console.log('Selected Date:', selectedDate);
+    console.log('Selected Time:', selectedTime || 'Not specified');
+    console.log('Selected Activity:', selectedActivity);
+    console.log('Selected Units:', units);
+    console.log('Manual Location:', manualLocation || 'Not specified');
+    console.log('Specific Location:', specificLocation || 'Not specified');
+
+    // Disable the Single Search button to prevent multiple submissions
+    singleSearchButton.disabled = true;
+
+    // Show "Processing..." message
+    resultDiv.innerHTML = '<p>Processing your request. Please wait...</p>';
+
+    let latitude = null;
+    let longitude = null;
+
+    // Define the sendQuery function here
+    const sendQuery = async () => {
+      try {
+        const requestData = {
+          date: selectedDate,
+          time: selectedTime || null, // Optional
+          activity: selectedActivity,
+          units: units,
+          latitude: latitude,
+          longitude: longitude,
+          specificLocation: specificLocation,
+        };
+
+        console.log('Sending fetch request with data:', requestData); // Debugging
+
+        const response = await fetch('/api/query', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestData),
+        });
+
+        console.log('Fetch response:', response); // Debugging
+
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok. Status: ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        console.log('Response data:', data); // Debugging
+
+        if (data.error) {
+          resultDiv.innerHTML = `<p>${data.error}</p>`;
+        } else {
+          resultDiv.innerHTML = `<p>${data.response}</p>`;
+
+          // Display recommendations
+          if (data.recommendations && data.recommendations.length > 0) {
+            // The rest of the code is similar to the one in the form submission handler
+            // You can refactor it into a separate function if needed
+            // ...
+          }
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        resultDiv.innerHTML =
+          '<p>An error occurred while processing your request.</p>';
+      } finally {
+        // Re-enable the Single Search button
+        singleSearchButton.disabled = false;
+      }
+    };
+
+    // Get user's location (latitude and longitude)
+    if (manualLocation) {
+      // Geocode manual location
+      try {
+        const geocodeResponse = await fetch(
+          `/api/geocode?address=${encodeURIComponent(manualLocation)}`
+        );
+        const geocodeData = await geocodeResponse.json();
+        if (geocodeData.latitude && geocodeData.longitude) {
+          latitude = geocodeData.latitude;
+          longitude = geocodeData.longitude;
+
+          console.log('Geocoded location:', latitude, longitude); // Debugging
+
+          await sendQuery();
+        } else {
+          throw new Error('Location not found.');
+        }
+      } catch (error) {
+        console.error('Error during geocoding:', error);
+        resultDiv.innerHTML =
+          '<p>Failed to geocode the address. Please check your input.</p>';
+        singleSearchButton.disabled = false;
+        return;
+      }
+    } else if ('geolocation' in navigator) {
+      // Use geolocation
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+
+          console.log('Geolocation obtained:', latitude, longitude); // Debugging
+
+          await sendQuery();
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          resultDiv.innerHTML =
+            '<p>Unable to retrieve your location. Please allow location access or enter your location manually.</p>';
+          // Re-enable the Single Search button
+          singleSearchButton.disabled = false;
+        }
+      );
+    } else {
+      resultDiv.innerHTML =
+        '<p>Geolocation is not supported by your browser. Please enter your location manually.</p>';
+      // Re-enable the Single Search button
+      singleSearchButton.disabled = false;
       return;
     }
   });
