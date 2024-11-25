@@ -1106,9 +1106,7 @@ Important Instructions:
   } else if (activity === 'pickleball') {
     systemPrompt += `
 - First discuss the outdoor conditions for playing pickleball at the user's location.
-- Then list the top 3 nearby indoor pickleball locations.
-- Include the address and phone number for each.
-- Remind the individual to potentially call ahead to check hours.
+- If it is expected to rain, advise against outdoor pickleball.
 `;
   }
 
@@ -1174,22 +1172,6 @@ Important Instructions:
       locationInfo += `It is expected to rain. Outdoor pickleball is not recommended.\n\n`;
     }
 
-    // List top 3 nearby indoor pickleball locations
-    const indoorLocations = recommendations.indoorLocations || [];
-    if (indoorLocations.length > 0) {
-      locationInfo += `Top 3 Nearby Indoor Pickleball Locations:\n`;
-      indoorLocations.forEach((loc, index) => {
-        const locName = loc.name;
-        const city = loc.city || '';
-        const state = loc.state || '';
-        const address = loc.address || '';
-        const phone = loc.phone || 'Phone number not available';
-        locationInfo += `${index + 1}. ${locName} in ${city}, ${state}, Address: ${address}, Phone: ${phone}\n`;
-      });
-      locationInfo += `\nPlease consider calling ahead to check hours of operation.\n`;
-    } else {
-      locationInfo += `No indoor pickleball locations found within your selected distance range.\n`;
-    }
   } else if (activity === 'scuba_diving') {
     // Display messages if only shore dives or only boat dives are available
     if (recommendations.noShoreDives && !recommendations.noBoatDives) {
