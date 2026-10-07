@@ -1,172 +1,84 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Activity Recommender</title>
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Wealther Men</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Basic styling for the map */
-    #map {
-      height: 400px;
-      margin-top: 20px;
-    }
-
-    /* Additional styling for form */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin-bottom: 20px;
-    }
-
-    label {
-      margin-top: 10px;
-    }
-
-    input, select, button {
-      padding: 8px;
-      margin-top: 5px;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    #response-container {
-      max-width: 800px;
-      margin-top: 20px;
-    }
-
-    #response-container ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-
-    #response-container a {
-      color: blue;
-      text-decoration: underline;
-    }
-
-    /* Style for the activity image */
-    #activity-image {
-      max-width: 400px;
-      height: auto;
-      margin-top: 20px;
-    }
-
-    /* Layout adjustments */
-    #main-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    #form-container {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    #image-container {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-    }
-
-    /* Increase the size of buttons, inputs, and selects */
-    button, input[type="number"], select {
-      font-size: 16px;
-      padding: 12px;
-    }
-
-    button {
-      padding: 12px 24px;
-    }
-
-    input[type="number"] {
-      width: 100px;
-    }
-
-    /* Adjusting the layout for the specific location dropdown */
-    #specific-location-container {
-      margin-top: 20px;
-    }
-
-    /* Style for the clear button */
-    #clear-specific-location {
-      margin-left: 5px;
-    }
-  </style>
 </head>
 <body>
-  <h1>Find the Best Spot for Your Activity</h1>
-  <div id="main-container">
-    <div id="form-container">
-      <form id="query-form">
-        <!-- Date selector input -->
-        <label for="date-select">Select a date (Today or next 7 days):</label>
-        <input type="date" id="date-select" required>
-    
-        <!-- Time selector input (optional) -->
-        <label for="time-select">Select a time (optional):</label>
-        <input type="time" id="time-select">
-    
-        <!-- Manual location input (optional) -->
-        <label for="manual-location">Enter desired location (optional):</label>
-        <input type="text" id="manual-location" placeholder="e.g., Boston, MA">
-    
-        <!-- Activity dropdown -->
-        <label for="activity-select">Select an activity:</label>
+  <header id="banner">
+    <img id="activity-image" src="images/default.jpg" alt="">
+    <div id="banner-text">
+      <h1>The Wealther Men</h1>
+      <p>Where and when to go, scored hour by hour from the forecast.</p>
+    </div>
+  </header>
+
+  <main>
+    <form id="query-form">
+      <div class="field">
+        <label for="activity-select">Activity</label>
         <select id="activity-select" required>
-          <option value="">Select an activity</option>
-          <option value="scuba_diving">Scuba Diving</option>
-          <option value="golf">Golfing</option>
-          <option value="surfing">Surfing</option>
+          <option value="golf">Golf</option>
           <option value="hiking">Hiking</option>
-          <option value="pickleball">Pickleball</option>
+          <option value="scuba_diving">Scuba diving</option>
+          <option value="surfing">Surfing</option>
         </select>
-    
-        <!-- Units dropdown -->
-        <label for="units-select">Select units:</label>
+      </div>
+      <div class="field grow">
+        <label for="manual-location">Near</label>
+        <div class="row">
+          <input type="text" id="manual-location" placeholder="Boston, MA" autocomplete="off">
+          <button type="button" id="locate-button" title="Use my current location">Locate me</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="date-select">Date</label>
+        <input type="date" id="date-select" required>
+      </div>
+      <div class="field">
+        <label for="time-select">Start time (optional)</label>
+        <input type="time" id="time-select" step="3600">
+      </div>
+      <div class="field">
+        <label for="max-distance">Within (<span id="distance-unit">mi</span>)</label>
+        <input type="number" id="max-distance" min="1" max="500" value="30" step="1">
+      </div>
+      <div class="field">
+        <label for="units-select">Units</label>
         <select id="units-select">
           <option value="imperial" selected>Imperial</option>
           <option value="metric">Metric</option>
         </select>
-        
-        <!-- Distance inputs -->
-        <label for="min-distance">Minimum distance:</label>
-        <input type="number" id="min-distance" min="0" value="0" step="1">
-        <label for="max-distance">Maximum distance:</label>
-        <input type="number" id="max-distance" min="0" value="5" step="1">
+      </div>
+      <div class="field grow">
+        <label for="specific-location">Only this place (optional)</label>
+        <input type="text" id="specific-location" list="location-names" placeholder="Start typing a name" autocomplete="off">
+        <datalist id="location-names"></datalist>
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <button type="submit" id="submit-button">Find spots</button>
+      </div>
+    </form>
 
-        <!-- Specific location dropdown -->
-        <div id="specific-location-container">
-          <label for="specific-location">Select a location (optional):</label>
-          <select id="specific-location">
-            <option value="">Select a location (optional)</option>
-          </select>
-          <button type="button" id="clear-specific-location" style="display: none;">Clear</button>
-          <button type="button" id="single-search-button" style="display: none;">Single Search</button>
-        </div>
-    
-        <button type="submit" id="submit-button">Submit</button>
-      </form>
+    <div id="status" role="status"></div>
+
+    <div id="layout">
+      <section id="results"></section>
+      <div id="map"></div>
     </div>
-    <div id="image-container">
-      <img id="activity-image" src="images/default.jpg" alt="Activity Image">
-    </div>
-  </div>
-  
-  <div id="response-container"></div>
+  </main>
 
-  <!-- Map Container -->
-  <div id="map"></div>
+  <footer>
+    Forecast data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>,
+    geocoding and map from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.
+    Scores are a rule of thumb, so check conditions yourself before you go.
+  </footer>
 
-  <!-- Scripts -->
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Your script -->
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

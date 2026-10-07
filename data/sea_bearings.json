@@ -1,0 +1,4470 @@
+{
+"19.18468,-155.90827": {
+"seaBearing": 281,
+"water": 0.25
+},
+"19.37986,-155.8975": {
+"seaBearing": 248,
+"water": 0.31
+},
+"19.39466,-154.92909": {
+"seaBearing": 140,
+"water": 0.28
+},
+"19.41573,-155.91093": {
+"seaBearing": 270,
+"water": 0.38
+},
+"19.42154,-155.91053": {
+"seaBearing": 252,
+"water": 0.19
+},
+"19.45824,-154.84192": {
+"seaBearing": 130,
+"water": 0.41
+},
+"19.465,-155.9275": {
+"seaBearing": 253,
+"water": 0.53
+},
+"19.46904,-155.92351": {
+"seaBearing": 259,
+"water": 0.12
+},
+"19.47402,-155.91918": {
+"seaBearing": null,
+"water": 0.09
+},
+"19.47824,-155.92593": {
+"seaBearing": 236,
+"water": 0.12
+},
+"19.53528,-155.95825": {
+"seaBearing": 252,
+"water": 0.34
+},
+"19.55958,-155.9678": {
+"seaBearing": 259,
+"water": 0.56
+},
+"19.56202,-155.962": {
+"seaBearing": 259,
+"water": 0.19
+},
+"19.57927,-155.96667": {
+"seaBearing": 264,
+"water": 0.34
+},
+"19.59248,-155.97128": {
+"seaBearing": 253,
+"water": 0.41
+},
+"19.59278,-155.97114": {
+"seaBearing": 253,
+"water": 0.41
+},
+"19.59607,-155.97322": {
+"seaBearing": 248,
+"water": 0.5
+},
+"19.63438,-155.98893": {
+"seaBearing": 236,
+"water": 0.12
+},
+"19.63841,-155.99558": {
+"seaBearing": 229,
+"water": 0.19
+},
+"19.64125,-156.00998": {
+"seaBearing": 208,
+"water": 0.53
+},
+"19.64234,-156.00772": {
+"seaBearing": 214,
+"water": 0.5
+},
+"19.64635,-156.01762": {
+"seaBearing": 191,
+"water": 0.44
+},
+"19.647,-156.01587": {
+"seaBearing": 202,
+"water": 0.38
+},
+"19.66718,-156.0278": {
+"seaBearing": 270,
+"water": 0.25
+},
+"19.66725,-156.02763": {
+"seaBearing": 270,
+"water": 0.25
+},
+"19.6838,-156.037": {
+"seaBearing": 248,
+"water": 0.66
+},
+"19.72618,-156.0613": {
+"seaBearing": 264,
+"water": 0.66
+},
+"19.73402,-155.01624": {
+"seaBearing": 349,
+"water": 0.44
+},
+"19.73578,-155.01331": {
+"seaBearing": 354,
+"water": 0.53
+},
+"19.7358,-156.05543": {
+"seaBearing": 287,
+"water": 0.47
+},
+"19.73598,-156.05401": {
+"seaBearing": 281,
+"water": 0.38
+},
+"19.73648,-156.05547": {
+"seaBearing": 287,
+"water": 0.47
+},
+"19.82198,-155.99952": {
+"seaBearing": 309,
+"water": 0.53
+},
+"19.91626,-155.88469": {
+"seaBearing": 304,
+"water": 0.12
+},
+"19.92217,-155.89227": {
+"seaBearing": 288,
+"water": 0.59
+},
+"19.92317,-155.89182": {
+"seaBearing": 287,
+"water": 0.59
+},
+"19.95846,-155.85825": {
+"seaBearing": 304,
+"water": 0.44
+},
+"19.96709,-155.84835": {
+"seaBearing": 337,
+"water": 0.44
+},
+"20.09817,-155.88158": {
+"seaBearing": 236,
+"water": 0.69
+},
+"20.12107,-155.90492": {
+"seaBearing": null,
+"water": 1.0
+},
+"20.1742,-156.4726": {
+"seaBearing": null,
+"water": 1.0
+},
+"20.18235,-155.90128": {
+"seaBearing": 265,
+"water": 0.41
+},
+"20.18377,-155.90047": {
+"seaBearing": 265,
+"water": 0.34
+},
+"20.60223,-156.44134": {
+"seaBearing": 248,
+"water": 0.69
+},
+"20.61809,-156.43734": {
+"seaBearing": 239,
+"water": 0.25
+},
+"20.62005,-156.44333": {
+"seaBearing": 236,
+"water": 0.44
+},
+"20.63095,-156.49542": {
+"seaBearing": null,
+"water": 0.97
+},
+"20.63178,-156.49757": {
+"seaBearing": null,
+"water": 0.94
+},
+"20.6318,-156.49647": {
+"seaBearing": null,
+"water": 1.0
+},
+"20.63477,-156.49377": {
+"seaBearing": null,
+"water": 0.94
+},
+"20.63552,-156.49842": {
+"seaBearing": null,
+"water": 0.97
+},
+"20.64924,-156.44111": {
+"seaBearing": 304,
+"water": 0.19
+},
+"20.65365,-156.45065": {
+"seaBearing": null,
+"water": 0.81
+},
+"20.6538,-156.44101": {
+"seaBearing": 281,
+"water": 0.19
+},
+"20.65618,-156.44246": {
+"seaBearing": 270,
+"water": 0.31
+},
+"20.67057,-156.44282": {
+"seaBearing": 270,
+"water": 0.31
+},
+"20.68285,-156.44296": {
+"seaBearing": 265,
+"water": 0.34
+},
+"20.69034,-156.44362": {
+"seaBearing": 265,
+"water": 0.34
+},
+"20.69416,-156.45046": {
+"seaBearing": null,
+"water": 0.75
+},
+"20.69417,-156.45047": {
+"seaBearing": null,
+"water": 0.75
+},
+"20.71288,-156.44608": {
+"seaBearing": 270,
+"water": 0.44
+},
+"20.71625,-156.44668": {
+"seaBearing": 270,
+"water": 0.44
+},
+"20.72216,-156.44794": {
+"seaBearing": 248,
+"water": 0.44
+},
+"20.72753,-156.94725": {
+"seaBearing": null,
+"water": 0.88
+},
+"20.73541,-156.88995": {
+"seaBearing": 174,
+"water": 0.66
+},
+"20.75113,-156.86158": {
+"seaBearing": 158,
+"water": 0.5
+},
+"20.77507,-156.53637": {
+"seaBearing": 202,
+"water": 0.5
+},
+"20.80738,-156.60523": {
+"seaBearing": 191,
+"water": 0.25
+},
+"20.80907,-156.61563": {
+"seaBearing": 202,
+"water": 0.38
+},
+"20.88388,-156.68602": {
+"seaBearing": 265,
+"water": 0.59
+},
+"20.90957,-156.68882": {
+"seaBearing": 244,
+"water": 0.28
+},
+"20.9164,-156.69717": {
+"seaBearing": 253,
+"water": 0.59
+},
+"20.92693,-156.69594": {
+"seaBearing": 276,
+"water": 0.53
+},
+"20.92708,-156.69642": {
+"seaBearing": 276,
+"water": 0.53
+},
+"20.93467,-156.6945": {
+"seaBearing": 281,
+"water": 0.5
+},
+"20.93642,-156.6931": {
+"seaBearing": 281,
+"water": 0.5
+},
+"20.93658,-156.69271": {
+"seaBearing": 287,
+"water": 0.47
+},
+"20.93765,-156.34048": {
+"seaBearing": 338,
+"water": 0.16
+},
+"20.94686,-156.32083": {
+"seaBearing": 0,
+"water": 0.56
+},
+"20.9964,-156.66788": {
+"seaBearing": 309,
+"water": 0.41
+},
+"20.9999,-156.66788": {
+"seaBearing": 304,
+"water": 0.5
+},
+"21.01111,-156.64222": {
+"seaBearing": 304,
+"water": 0.19
+},
+"21.01395,-156.63853": {
+"seaBearing": 311,
+"water": 0.16
+},
+"21.02324,-156.61132": {
+"seaBearing": 338,
+"water": 0.16
+},
+"21.02909,-156.59039": {
+"seaBearing": 34,
+"water": 0.56
+},
+"21.13237,-156.70485": {
+"seaBearing": null,
+"water": 0.91
+},
+"21.13255,-156.70361": {
+"seaBearing": null,
+"water": 1.0
+},
+"21.14439,-157.02263": {
+"seaBearing": null,
+"water": 0.0
+},
+"21.25428,-157.73083": {
+"seaBearing": null,
+"water": 0.97
+},
+"21.25898,-157.70578": {
+"seaBearing": 185,
+"water": 0.59
+},
+"21.25913,-157.75113": {
+"seaBearing": null,
+"water": 0.41
+},
+"21.26077,-157.8375": {
+"seaBearing": null,
+"water": 0.84
+},
+"21.2615,-157.71121": {
+"seaBearing": 219,
+"water": 0.59
+},
+"21.26252,-157.78512": {
+"seaBearing": 138,
+"water": 0.16
+},
+"21.26625,-157.7099": {
+"seaBearing": 236,
+"water": 0.31
+},
+"21.2685,-157.73165": {
+"seaBearing": null,
+"water": 0.97
+},
+"21.26904,-157.69379": {
+"seaBearing": 151,
+"water": 0.19
+},
+"21.27648,-157.68561": {
+"seaBearing": 138,
+"water": 0.12
+},
+"21.27987,-157.85995": {
+"seaBearing": null,
+"water": 0.91
+},
+"21.28042,-157.86332": {
+"seaBearing": null,
+"water": 0.91
+},
+"21.28216,-157.67669": {
+"seaBearing": 108,
+"water": 0.12
+},
+"21.28242,-157.84086": {
+"seaBearing": 245,
+"water": 0.22
+},
+"21.28303,-157.84687": {
+"seaBearing": 263,
+"water": 0.5
+},
+"21.28777,-157.87173": {
+"seaBearing": 185,
+"water": 0.59
+},
+"21.29043,-157.86124": {
+"seaBearing": 170,
+"water": 0.44
+},
+"21.32198,-157.6588": {
+"seaBearing": 54,
+"water": 0.62
+},
+"21.33177,-158.12313": {
+"seaBearing": 264,
+"water": 0.34
+},
+"21.34253,-158.12395": {
+"seaBearing": 259,
+"water": 0.19
+},
+"21.35372,-158.13122": {
+"seaBearing": 230,
+"water": 0.25
+},
+"21.47505,-158.22508": {
+"seaBearing": 248,
+"water": 0.28
+},
+"21.47636,-158.22037": {
+"seaBearing": null,
+"water": 0.06
+},
+"21.48015,-158.2327": {
+"seaBearing": 270,
+"water": 0.56
+},
+"21.48569,-158.22995": {
+"seaBearing": 265,
+"water": 0.41
+},
+"21.52688,-158.2296": {
+"seaBearing": 270,
+"water": 0.44
+},
+"21.5319,-158.2294": {
+"seaBearing": 242,
+"water": 0.34
+},
+"21.54833,-158.24333": {
+"seaBearing": 219,
+"water": 0.34
+},
+"21.5634,-158.25514": {
+"seaBearing": null,
+"water": 0.06
+},
+"21.58435,-158.11855": {
+"seaBearing": 318,
+"water": 0.22
+},
+"21.59246,-158.1089": {
+"seaBearing": 331,
+"water": 0.22
+},
+"21.5931,-158.11078": {
+"seaBearing": 326,
+"water": 0.31
+},
+"21.59392,-158.10554": {
+"seaBearing": 312,
+"water": 0.19
+},
+"21.5986,-158.10317": {
+"seaBearing": 292,
+"water": 0.31
+},
+"21.60974,-158.09722": {
+"seaBearing": 310,
+"water": 0.34
+},
+"21.64606,-158.06368": {
+"seaBearing": 306,
+"water": 0.31
+},
+"21.64608,-158.0647": {
+"seaBearing": 298,
+"water": 0.34
+},
+"21.64998,-158.06282": {
+"seaBearing": 288,
+"water": 0.34
+},
+"21.65252,-158.06197": {
+"seaBearing": 287,
+"water": 0.41
+},
+"21.70226,-157.99996": {
+"seaBearing": 333,
+"water": 0.41
+},
+"21.77723,-160.2025": {
+"seaBearing": null,
+"water": 0.75
+},
+"21.87313,-159.45129": {
+"seaBearing": 191,
+"water": 0.19
+},
+"21.87313,-159.46548": {
+"seaBearing": 197,
+"water": 0.38
+},
+"21.87363,-159.4548": {
+"seaBearing": 191,
+"water": 0.19
+},
+"21.87894,-159.46828": {
+"seaBearing": 214,
+"water": 0.19
+},
+"21.88175,-159.47652": {
+"seaBearing": 220,
+"water": 0.25
+},
+"21.88193,-159.47345": {
+"seaBearing": 225,
+"water": 0.16
+},
+"21.89214,-160.15749": {
+"seaBearing": null,
+"water": 0.0
+},
+"21.96056,-156.69028": {
+"seaBearing": null,
+"water": 1.0
+},
+"22.01994,-160.09646": {
+"seaBearing": 11,
+"water": 0.38
+},
+"22.0404,-159.33547": {
+"seaBearing": 101,
+"water": 0.38
+},
+"22.06611,-159.78694": {
+"seaBearing": 327,
+"water": 0.62
+},
+"22.14762,-159.30445": {
+"seaBearing": 45,
+"water": 0.16
+},
+"22.22329,-159.49584": {
+"seaBearing": 292,
+"water": 0.28
+},
+"22.22351,-159.57984": {
+"seaBearing": 349,
+"water": 0.12
+},
+"22.22385,-159.56107": {
+"seaBearing": 11,
+"water": 0.12
+},
+"24.45045,-81.7332": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.45167,-81.87633": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.4535,-81.76633": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.4535,-81.86": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.45933,-81.84617": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.46383,-81.73733": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.47157,-81.76425": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.47332,-81.74425": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.47973,-81.71468": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.48308,-81.69965": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.53068,-81.46147": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.545,-81.40833": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.62562,-81.10988": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.62967,-81.0915": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.64702,-81.03172": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.651,-81.029": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.65978,-81.2744": {
+"seaBearing": null,
+"water": 0.72
+},
+"24.66112,-80.99417": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.66128,-80.9637": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.67917,-80.97217": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.69112,-81.08445": {
+"seaBearing": 188,
+"water": 0.62
+},
+"24.71562,-80.94933": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.83285,-80.62677": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.85098,-80.61928": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.86975,-80.57032": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.87897,-80.56962": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.88518,-80.522": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.8935,-80.58067": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.9025,-80.53083": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.922,-80.50592": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.93583,-80.54733": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.95183,-80.46258": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.9897,-80.38208": {
+"seaBearing": null,
+"water": 1.0
+},
+"24.99517,-80.3795": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.00965,-80.37453": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.01055,-80.37278": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.0343,-80.34833": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.05267,-80.33367": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.10833,-80.34167": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.12525,-80.40608": {
+"seaBearing": 158,
+"water": 0.25
+},
+"25.1333,-80.39912": {
+"seaBearing": 297,
+"water": 0.16
+},
+"25.13778,-80.28888": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.14455,-80.25655": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.14525,-80.25673": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.14643,-80.2559": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.20945,-80.24667": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.31557,-80.18762": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.3678,-80.13102": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.41223,-80.12737": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.41633,-80.1175": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.42422,-80.1242": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.44155,-80.12127": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.44363,-80.11918": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.56627,-80.09063": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.58993,-80.09605": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.6177,-80.09052": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.62903,-80.08712": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.66817,-80.07038": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.67477,-80.09775": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.6902,-80.09075": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.691,-80.08633": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.69325,-80.0972": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.69583,-80.087": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.698,-80.087": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.6995,-80.08317": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70017,-80.08445": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70277,-80.0872": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70355,-80.08707": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70438,-80.08837": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70552,-80.08733": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.70577,-80.0858": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.72363,-80.09925": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.72413,-80.12742": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.7276,-80.13463": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.7689,-80.12823": {
+"seaBearing": 107,
+"water": 0.59
+},
+"25.77343,-80.07338": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.78007,-80.07553": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.811,-80.07338": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.81133,-80.09133": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.81285,-80.08908": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.81327,-80.0894": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.81473,-80.0766": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.82088,-80.08477": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.82172,-80.08252": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.86033,-80.09963": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.86045,-80.10842": {
+"seaBearing": null,
+"water": 0.91
+},
+"25.89405,-80.08555": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.90888,-80.09062": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.90917,-80.09007": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.90937,-80.08995": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.93008,-80.10588": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.93547,-80.11072": {
+"seaBearing": null,
+"water": 0.84
+},
+"25.96267,-80.09783": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.96935,-80.07698": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.98253,-80.085": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.00868,-80.11704": {
+"seaBearing": 71,
+"water": 0.41
+},
+"26.05231,-80.14393": {
+"seaBearing": null,
+"water": 0.09
+},
+"26.0623,-80.10725": {
+"seaBearing": null,
+"water": 0.75
+},
+"26.07565,-80.11132": {
+"seaBearing": 102,
+"water": 0.44
+},
+"26.08317,-80.09533": {
+"seaBearing": null,
+"water": 0.97
+},
+"26.0898,-81.84382": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.09132,-80.06577": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.10814,-80.10626": {
+"seaBearing": 90,
+"water": 0.31
+},
+"26.11184,-97.16813": {
+"seaBearing": null,
+"water": 0.38
+},
+"26.1517,-80.07977": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.15627,-80.07523": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.1588,-80.07933": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.15932,-80.07938": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.1645,-80.07042": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.18652,-80.09268": {
+"seaBearing": 90,
+"water": 0.56
+},
+"26.18847,-80.09305": {
+"seaBearing": 101,
+"water": 0.5
+},
+"26.1905,-80.08517": {
+"seaBearing": null,
+"water": 0.84
+},
+"26.19203,-80.09643": {
+"seaBearing": 90,
+"water": 0.31
+},
+"26.20582,-80.08513": {
+"seaBearing": null,
+"water": 0.78
+},
+"26.21092,-80.06577": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.21875,-80.06625": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.22737,-80.06493": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.2313,-80.06355": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.23786,-80.12477": {
+"seaBearing": null,
+"water": 0.0
+},
+"26.25953,-80.08248": {
+"seaBearing": 113,
+"water": 0.31
+},
+"26.27362,-80.06583": {
+"seaBearing": null,
+"water": 0.97
+},
+"26.30195,-80.06242": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.31026,-80.07606": {
+"seaBearing": 90,
+"water": 0.38
+},
+"26.313,-80.06632": {
+"seaBearing": null,
+"water": 0.84
+},
+"26.3213,-80.05747": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.32225,-80.0615": {
+"seaBearing": null,
+"water": 0.94
+},
+"26.32337,-80.07205": {
+"seaBearing": 90,
+"water": 0.56
+},
+"26.32433,-80.06148": {
+"seaBearing": null,
+"water": 0.88
+},
+"26.325,-80.05072": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.47883,-80.03713": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.48547,-80.03902": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.50312,-80.03537": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.50461,-80.05228": {
+"seaBearing": 101,
+"water": 0.38
+},
+"26.50933,-80.03472": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.65272,-80.0208": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.68482,-80.0308": {
+"seaBearing": null,
+"water": 0.72
+},
+"26.69378,-80.01782": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.69733,-80.0175": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.70068,-80.0305": {
+"seaBearing": 91,
+"water": 0.62
+},
+"26.70517,-80.017": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.70968,-80.02887": {
+"seaBearing": 84,
+"water": 0.66
+},
+"26.71233,-80.01638": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.71533,-80.018": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.71534,-80.05337": {
+"seaBearing": null,
+"water": 0.06
+},
+"26.71735,-80.02952": {
+"seaBearing": 86,
+"water": 0.62
+},
+"26.71901,-80.03384": {
+"seaBearing": 82,
+"water": 0.44
+},
+"26.74067,-80.014": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.74713,-80.00725": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.75465,-80.01168": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.767,-80.00833": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.76702,-80.00837": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.78242,-80.01065": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.78323,-80.04217": {
+"seaBearing": null,
+"water": 0.31
+},
+"26.78418,-80.04293": {
+"seaBearing": 322,
+"water": 0.25
+},
+"26.7853,-80.016": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.78617,-80.01633": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.78783,-80.01583": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.7935,-80.00367": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.81377,-80.00262": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.837,-80.01782": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.86948,-80.01998": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.87615,-80.0402": {
+"seaBearing": null,
+"water": 0.88
+},
+"26.8941,-79.98617": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.89898,-80.05472": {
+"seaBearing": 70,
+"water": 0.66
+},
+"26.96417,-80.008": {
+"seaBearing": null,
+"water": 1.0
+},
+"26.97783,-80.02483": {
+"seaBearing": null,
+"water": 1.0
+},
+"27.09945,-82.46203": {
+"seaBearing": 258,
+"water": 0.56
+},
+"27.49204,-82.71163": {
+"seaBearing": null,
+"water": 0.75
+},
+"27.55695,-81.48968": {
+"seaBearing": null,
+"water": 0.0
+},
+"27.6537,-80.3465": {
+"seaBearing": null,
+"water": 0.88
+},
+"27.83392,-97.0611": {
+"seaBearing": 36,
+"water": 0.25
+},
+"27.85687,-80.44445": {
+"seaBearing": null,
+"water": 0.81
+},
+"27.94397,-82.44487": {
+"seaBearing": 172,
+"water": 0.25
+},
+"28.15404,-82.8054": {
+"seaBearing": null,
+"water": 0.88
+},
+"28.3453,-82.70135": {
+"seaBearing": null,
+"water": 0.06
+},
+"28.37015,-81.54942": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.37469,-81.54941": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.44873,-80.69443": {
+"seaBearing": null,
+"water": 0.62
+},
+"28.46104,-81.24534": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.51733,-82.57337": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.5175,-82.5726": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.53042,-82.6232": {
+"seaBearing": null,
+"water": 0.03
+},
+"28.55492,-82.60917": {
+"seaBearing": null,
+"water": 0.0
+},
+"28.56667,-81.67888": {
+"seaBearing": 75,
+"water": 0.25
+},
+"28.8818,-82.59493": {
+"seaBearing": 281,
+"water": 0.53
+},
+"28.8883,-82.58895": {
+"seaBearing": 271,
+"water": 0.22
+},
+"28.89142,-82.58794": {
+"seaBearing": 228,
+"water": 0.25
+},
+"28.89442,-82.59248": {
+"seaBearing": 239,
+"water": 0.25
+},
+"28.90248,-82.5926": {
+"seaBearing": null,
+"water": 0.06
+},
+"28.9471,-81.3393": {
+"seaBearing": 248,
+"water": 0.16
+},
+"28.94792,-81.33769": {
+"seaBearing": 248,
+"water": 0.22
+},
+"29.02923,-95.42023": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.06287,-82.42771": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.08026,-81.57813": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.09967,-82.08027": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.1346,-81.36365": {
+"seaBearing": 279,
+"water": 0.22
+},
+"29.21081,-81.02283": {
+"seaBearing": 79,
+"water": 0.19
+},
+"29.28963,-82.30873": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.38789,-82.48653": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.40705,-82.4761": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.40943,-82.47513": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.47163,-95.37246": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.48862,-82.97593": {
+"seaBearing": null,
+"water": 0.09
+},
+"29.4975,-82.97579": {
+"seaBearing": 262,
+"water": 0.16
+},
+"29.54278,-98.92975": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.6073,-95.34077": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.62658,-81.95218": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.70815,-98.12483": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.82372,-82.64794": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.83431,-82.70243": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.85048,-98.2081": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.87073,-98.20535": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.87522,-98.26251": {
+"seaBearing": 116,
+"water": 0.34
+},
+"29.89302,-97.93115": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.89388,-97.92951": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.99677,-82.96638": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.00585,-82.99755": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.0608,-85.82388": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.07528,-85.82362": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.12217,-85.73443": {
+"seaBearing": null,
+"water": 0.75
+},
+"30.13144,-85.7366": {
+"seaBearing": null,
+"water": 0.44
+},
+"30.13493,-84.34718": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.17125,-85.75737": {
+"seaBearing": 56,
+"water": 0.12
+},
+"30.21287,-84.30445": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.21422,-87.0536": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.21888,-87.23022": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.22659,-93.21738": {
+"seaBearing": 281,
+"water": 0.12
+},
+"30.2345,-87.52537": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.24093,-84.31057": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.24357,-87.69798": {
+"seaBearing": 178,
+"water": 0.62
+},
+"30.2625,-86.39583": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.26897,-87.16928": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.27148,-87.16028": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.2915,-87.2215": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.29567,-87.31203": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.31133,-87.26533": {
+"seaBearing": null,
+"water": 0.84
+},
+"30.33138,-87.29547": {
+"seaBearing": null,
+"water": 0.72
+},
+"30.37938,-86.85382": {
+"seaBearing": null,
+"water": 0.69
+},
+"30.38123,-86.50733": {
+"seaBearing": null,
+"water": 0.81
+},
+"30.3814,-86.50734": {
+"seaBearing": null,
+"water": 0.81
+},
+"30.39443,-97.90652": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.41563,-97.90065": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.42051,-97.91026": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.65753,-85.9046": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.65815,-85.68443": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.72105,-85.93073": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.77053,-85.94854": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.79013,-85.14015": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.79017,-85.14288": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.8134,-95.60647": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.94431,-103.78852": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.94437,-103.78827": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.051,-80.75033": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.05123,-80.7516": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.0514,-80.7518": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.05148,-80.75005": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.10017,-80.70308": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.16858,-80.55375": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.2107,-95.84368": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.2568,-80.37345": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.25702,-80.37442": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.2574,-80.3717": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.26,-80.374": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.28465,-80.41612": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.2852,-80.41508": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.31442,-80.70867": {
+"seaBearing": null,
+"water": 0.84
+},
+"32.31447,-80.70895": {
+"seaBearing": null,
+"water": 0.84
+},
+"32.42197,-80.19557": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.4228,-80.1998": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.42293,-80.19938": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.47788,-95.29415": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.47915,-80.00173": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.47952,-80.00622": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.47963,-80.00927": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.47983,-80.0067": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48097,-80.00502": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48097,-80.0067": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48117,-80.00735": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48547,-80.00357": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48598,-80.00437": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.48785,-80.00123": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.4906,-80.00405": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.49085,-80.00097": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.49218,-80.00405": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.51733,-80.10002": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.57108,-79.91953": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.66708,-117.24797": {
+"seaBearing": 258,
+"water": 0.72
+},
+"32.68603,-117.26638": {
+"seaBearing": null,
+"water": 0.97
+},
+"32.70945,-79.76005": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.70952,-79.76013": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.70983,-79.76167": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.71042,-79.76102": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.7105,-79.76225": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.71062,-79.7596": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.71092,-79.76043": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.75867,-117.24288": {
+"seaBearing": 15,
+"water": 0.31
+},
+"32.75952,-92.96006": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.75983,-117.24708": {
+"seaBearing": 334,
+"water": 0.41
+},
+"32.76722,-117.27667": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.77193,-117.26868": {
+"seaBearing": null,
+"water": 0.97
+},
+"32.77851,-79.90398": {
+"seaBearing": null,
+"water": 0.91
+},
+"32.78017,-117.285": {
+"seaBearing": null,
+"water": 1.0
+},
+"32.78932,-96.15324": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.78973,-96.15462": {
+"seaBearing": null,
+"water": 0.0
+},
+"32.8475,-117.27745": {
+"seaBearing": 309,
+"water": 0.59
+},
+"32.85027,-117.27015": {
+"seaBearing": 0,
+"water": 0.44
+},
+"32.85062,-117.27252": {
+"seaBearing": 340,
+"water": 0.59
+},
+"32.85298,-117.2769": {
+"seaBearing": null,
+"water": 0.81
+},
+"32.85567,-117.2582": {
+"seaBearing": 298,
+"water": 0.41
+},
+"32.93376,-98.44584": {
+"seaBearing": null,
+"water": 0.81
+},
+"33.07863,-79.92517": {
+"seaBearing": 195,
+"water": 0.22
+},
+"33.08333,-117.31917": {
+"seaBearing": null,
+"water": 0.69
+},
+"33.09672,-79.95215": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.29567,-86.81723": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.29655,-86.81677": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.29733,-118.3259": {
+"seaBearing": 171,
+"water": 0.38
+},
+"33.30033,-118.33367": {
+"seaBearing": 193,
+"water": 0.31
+},
+"33.30733,-118.30583": {
+"seaBearing": 129,
+"water": 0.47
+},
+"33.31797,-104.33075": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.31865,-118.37385": {
+"seaBearing": 181,
+"water": 0.28
+},
+"33.32033,-118.30327": {
+"seaBearing": 70,
+"water": 0.41
+},
+"33.32602,-118.30532": {
+"seaBearing": 81,
+"water": 0.38
+},
+"33.32878,-118.47033": {
+"seaBearing": 206,
+"water": 0.28
+},
+"33.33378,-118.30763": {
+"seaBearing": 56,
+"water": 0.38
+},
+"33.34347,-79.01537": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.34355,-118.51983": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.34365,-79.0149": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.34868,-118.3232": {
+"seaBearing": 44,
+"water": 0.38
+},
+"33.34927,-118.32488": {
+"seaBearing": 65,
+"water": 0.44
+},
+"33.351,-118.32533": {
+"seaBearing": 31,
+"water": 0.38
+},
+"33.3568,-118.4888": {
+"seaBearing": 280,
+"water": 0.44
+},
+"33.35987,-118.33248": {
+"seaBearing": 79,
+"water": 0.28
+},
+"33.37167,-118.34845": {
+"seaBearing": 35,
+"water": 0.31
+},
+"33.37318,-118.48553": {
+"seaBearing": null,
+"water": 0.5
+},
+"33.37787,-118.35548": {
+"seaBearing": 77,
+"water": 0.34
+},
+"33.3838,-118.3592": {
+"seaBearing": 90,
+"water": 0.22
+},
+"33.38913,-118.36512": {
+"seaBearing": 38,
+"water": 0.31
+},
+"33.39238,-118.36852": {
+"seaBearing": 79,
+"water": 0.31
+},
+"33.39913,-118.36675": {
+"seaBearing": 117,
+"water": 0.38
+},
+"33.40462,-118.36767": {
+"seaBearing": 67,
+"water": 0.44
+},
+"33.40558,-118.3666": {
+"seaBearing": 56,
+"water": 0.47
+},
+"33.41068,-118.3735": {
+"seaBearing": 21,
+"water": 0.41
+},
+"33.41737,-118.39562": {
+"seaBearing": 19,
+"water": 0.38
+},
+"33.41817,-118.39033": {
+"seaBearing": 347,
+"water": 0.47
+},
+"33.42208,-118.40533": {
+"seaBearing": 17,
+"water": 0.34
+},
+"33.42693,-118.43443": {
+"seaBearing": 7,
+"water": 0.31
+},
+"33.42745,-118.42012": {
+"seaBearing": 353,
+"water": 0.31
+},
+"33.42802,-118.42535": {
+"seaBearing": 1,
+"water": 0.34
+},
+"33.42958,-118.52777": {
+"seaBearing": 212,
+"water": 0.16
+},
+"33.42972,-118.53487": {
+"seaBearing": 266,
+"water": 0.28
+},
+"33.43313,-118.44833": {
+"seaBearing": 34,
+"water": 0.38
+},
+"33.43322,-79.01197": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.43375,-118.53883": {
+"seaBearing": 203,
+"water": 0.34
+},
+"33.43848,-118.5705": {
+"seaBearing": 226,
+"water": 0.31
+},
+"33.44095,-118.4625": {
+"seaBearing": 31,
+"water": 0.22
+},
+"33.44242,-118.47202": {
+"seaBearing": 2,
+"water": 0.25
+},
+"33.4425,-118.46852": {
+"seaBearing": 1,
+"water": 0.31
+},
+"33.44495,-118.48518": {
+"seaBearing": 351,
+"water": 0.31
+},
+"33.4465,-118.57443": {
+"seaBearing": 236,
+"water": 0.25
+},
+"33.44755,-118.47708": {
+"seaBearing": 10,
+"water": 0.44
+},
+"33.44775,-118.49972": {
+"seaBearing": 59,
+"water": 0.25
+},
+"33.4483,-118.49205": {
+"seaBearing": null,
+"water": 0.59
+},
+"33.45167,-118.501": {
+"seaBearing": 42,
+"water": 0.5
+},
+"33.4524,-118.48873": {
+"seaBearing": null,
+"water": 0.59
+},
+"33.45367,-118.50155": {
+"seaBearing": 47,
+"water": 0.47
+},
+"33.45637,-118.5115": {
+"seaBearing": 37,
+"water": 0.34
+},
+"33.4574,-118.51552": {
+"seaBearing": 31,
+"water": 0.16
+},
+"33.45918,-117.71668": {
+"seaBearing": 246,
+"water": 0.44
+},
+"33.45968,-118.51723": {
+"seaBearing": 4,
+"water": 0.31
+},
+"33.46043,-118.50735": {
+"seaBearing": null,
+"water": 0.56
+},
+"33.46058,-118.50755": {
+"seaBearing": null,
+"water": 0.56
+},
+"33.46305,-118.49112": {
+"seaBearing": null,
+"water": 0.72
+},
+"33.46803,-118.52605": {
+"seaBearing": 54,
+"water": 0.28
+},
+"33.471,-118.5313": {
+"seaBearing": 83,
+"water": 0.25
+},
+"33.47177,-118.60482": {
+"seaBearing": 290,
+"water": 0.47
+},
+"33.47477,-118.55415": {
+"seaBearing": 345,
+"water": 0.38
+},
+"33.47492,-118.53378": {
+"seaBearing": 35,
+"water": 0.38
+},
+"33.47573,-118.58033": {
+"seaBearing": 14,
+"water": 0.44
+},
+"33.47652,-118.53683": {
+"seaBearing": 7,
+"water": 0.41
+},
+"33.47688,-118.58923": {
+"seaBearing": 349,
+"water": 0.38
+},
+"33.48333,-117.7275": {
+"seaBearing": 208,
+"water": 0.22
+},
+"33.5092,-117.75183": {
+"seaBearing": 239,
+"water": 0.28
+},
+"33.5119,-117.7565": {
+"seaBearing": 235,
+"water": 0.25
+},
+"33.51598,-78.96752": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.51785,-78.969": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.52672,-117.7704": {
+"seaBearing": 244,
+"water": 0.25
+},
+"33.53662,-117.7846": {
+"seaBearing": 268,
+"water": 0.34
+},
+"33.53778,-111.43268": {
+"seaBearing": 11,
+"water": 0.25
+},
+"33.54133,-117.80635": {
+"seaBearing": 208,
+"water": 0.47
+},
+"33.54143,-117.78897": {
+"seaBearing": 206,
+"water": 0.34
+},
+"33.54213,-117.78597": {
+"seaBearing": 210,
+"water": 0.25
+},
+"33.54265,-117.792": {
+"seaBearing": 204,
+"water": 0.31
+},
+"33.54298,-117.791": {
+"seaBearing": 197,
+"water": 0.28
+},
+"33.54353,-117.79297": {
+"seaBearing": 188,
+"water": 0.19
+},
+"33.54463,-117.79457": {
+"seaBearing": 205,
+"water": 0.22
+},
+"33.54528,-117.79582": {
+"seaBearing": 183,
+"water": 0.22
+},
+"33.54563,-117.79826": {
+"seaBearing": 190,
+"water": 0.28
+},
+"33.54567,-117.80372": {
+"seaBearing": 244,
+"water": 0.28
+},
+"33.58353,-118.12942": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.5838,-117.86442": {
+"seaBearing": 212,
+"water": 0.47
+},
+"33.5895,-117.86922": {
+"seaBearing": 198,
+"water": 0.41
+},
+"33.60353,-118.23465": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.65552,-78.91635": {
+"seaBearing": 135,
+"water": 0.62
+},
+"33.69885,-118.29203": {
+"seaBearing": null,
+"water": 0.72
+},
+"33.70793,-118.31895": {
+"seaBearing": null,
+"water": 0.53
+},
+"33.70882,-118.2838": {
+"seaBearing": 158,
+"water": 0.34
+},
+"33.72323,-118.18685": {
+"seaBearing": null,
+"water": 0.78
+},
+"33.733,-118.3968": {
+"seaBearing": null,
+"water": 0.66
+},
+"33.736,-118.3979": {
+"seaBearing": 173,
+"water": 0.5
+},
+"33.7377,-118.36818": {
+"seaBearing": 179,
+"water": 0.34
+},
+"33.74063,-118.41225": {
+"seaBearing": 233,
+"water": 0.53
+},
+"33.74163,-118.37932": {
+"seaBearing": 180,
+"water": 0.16
+},
+"33.7469,-118.42057": {
+"seaBearing": null,
+"water": 0.59
+},
+"33.7512,-118.41778": {
+"seaBearing": 259,
+"water": 0.44
+},
+"33.76278,-118.41883": {
+"seaBearing": 257,
+"water": 0.19
+},
+"33.76548,-118.42202": {
+"seaBearing": 248,
+"water": 0.28
+},
+"33.77433,-118.42897": {
+"seaBearing": null,
+"water": 0.47
+},
+"33.7855,-78.29867": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.78855,-118.42803": {
+"seaBearing": 291,
+"water": 0.56
+},
+"33.79705,-118.41007": {
+"seaBearing": 292,
+"water": 0.34
+},
+"33.80402,-118.3943": {
+"seaBearing": 311,
+"water": 0.22
+},
+"33.80502,-118.4089": {
+"seaBearing": 326,
+"water": 0.62
+},
+"33.80937,-118.40552": {
+"seaBearing": null,
+"water": 0.69
+},
+"33.81071,-78.70661": {
+"seaBearing": null,
+"water": 0.56
+},
+"33.81353,-78.5087": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.81968,-118.41628": {
+"seaBearing": null,
+"water": 0.91
+},
+"33.83,-78.21805": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.83,-78.21823": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.8302,-78.21878": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.83555,-78.36555": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.83623,-118.39185": {
+"seaBearing": 265,
+"water": 0.34
+},
+"33.83695,-78.36722": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.83833,-118.41028": {
+"seaBearing": null,
+"water": 0.84
+},
+"33.84958,-78.11152": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.85083,-78.11183": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.8511,-78.1113": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.8514,-78.1105": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.8525,-78.10945": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.85567,-112.25513": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.85808,-112.29448": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.86228,-112.2975": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.87667,-112.29683": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.88417,-78.10945": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.88447,-78.10103": {
+"seaBearing": null,
+"water": 1.0
+},
+"33.92288,-85.90588": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.92603,-118.43517": {
+"seaBearing": 247,
+"water": 0.47
+},
+"33.98835,-118.80582": {
+"seaBearing": null,
+"water": 0.94
+},
+"33.99688,-118.5204": {
+"seaBearing": null,
+"water": 0.94
+},
+"34.01083,-77.84463": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.02725,-97.04808": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.03012,-77.87053": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.03015,-77.86898": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.04308,-118.9154": {
+"seaBearing": 197,
+"water": 0.19
+},
+"34.05341,-81.2629": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.06261,-118.98663": {
+"seaBearing": 213,
+"water": 0.28
+},
+"34.104,-77.747": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.10417,-77.74667": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.16904,-84.07493": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.16977,-94.70283": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.17217,-77.7465": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.17472,-77.74638": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.17483,-77.74983": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.17533,-77.752": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.17555,-77.75138": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.24612,-77.715": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.24638,-77.71417": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.24722,-77.71333": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.24722,-77.71388": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.2475,-77.71388": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.26891,-84.49607": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.34972,-77.60305": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.39663,-119.73117": {
+"seaBearing": 191,
+"water": 0.44
+},
+"34.40727,-119.87828": {
+"seaBearing": 200,
+"water": 0.53
+},
+"34.41623,-119.6423": {
+"seaBearing": 185,
+"water": 0.44
+},
+"34.43877,-97.00953": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.46238,-120.07263": {
+"seaBearing": 154,
+"water": 0.22
+},
+"34.46355,-120.10055": {
+"seaBearing": 208,
+"water": 0.28
+},
+"34.48172,-118.02342": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.60397,-76.49082": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.6092,-77.03648": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.65805,-76.80722": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.65888,-76.80695": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67,-76.74505": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67055,-76.74333": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67215,-76.74633": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67222,-76.74445": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.6725,-76.74417": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.6725,-76.7445": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67253,-76.74393": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67278,-76.74417": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67297,-76.74425": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67333,-76.74138": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.67558,-86.73028": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.70745,-76.67933": {
+"seaBearing": null,
+"water": 0.66
+},
+"34.71245,-82.95583": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.72547,-98.52023": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.79993,-82.89487": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.80243,-82.90485": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.83488,-76.28133": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.83528,-76.27695": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.83583,-76.28083": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.94045,-104.67324": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.94048,-104.67323": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.9524,-82.9476": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.96327,-82.95033": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.9679,-82.91282": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.10202,-75.71585": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.10305,-75.71612": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.10347,-75.71583": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.1125,-75.65388": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.13528,-75.67722": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.24002,-114.57678": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.24183,-120.90575": {
+"seaBearing": null,
+"water": 0.66
+},
+"35.27458,-120.88888": {
+"seaBearing": 290,
+"water": 0.19
+},
+"35.37073,-120.8582": {
+"seaBearing": 265,
+"water": 0.16
+},
+"35.48137,-84.5089": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.4912,-114.68593": {
+"seaBearing": 77,
+"water": 0.28
+},
+"35.59802,-80.91892": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.6042,-95.03895": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.67595,-84.45347": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.72483,-75.441": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.74583,-81.8377": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.78038,-81.85883": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.7946,-80.11842": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.82377,-81.21832": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.91069,-78.42707": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.91215,-78.42535": {
+"seaBearing": null,
+"water": 0.0
+},
+"35.91795,-121.4729": {
+"seaBearing": null,
+"water": 0.03
+},
+"35.94462,-75.53203": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.94568,-75.52968": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.94575,-75.53145": {
+"seaBearing": null,
+"water": 1.0
+},
+"35.98352,-121.49247": {
+"seaBearing": 242,
+"water": 0.47
+},
+"36.0032,-75.53": {
+"seaBearing": null,
+"water": 1.0
+},
+"36.05745,-114.74302": {
+"seaBearing": null,
+"water": 0.97
+},
+"36.14352,-114.41444": {
+"seaBearing": null,
+"water": 1.0
+},
+"36.22138,-86.43992": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.22389,-86.43631": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.34886,-93.93252": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.38317,-92.60422": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.4067,-82.47417": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.4287,-93.85738": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.45074,-79.2417": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.46798,-121.90749": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.51998,-121.93884": {
+"seaBearing": null,
+"water": 0.03
+},
+"36.52042,-121.94065": {
+"seaBearing": 341,
+"water": 0.41
+},
+"36.52324,-121.92811": {
+"seaBearing": 322,
+"water": 0.28
+},
+"36.52402,-121.92717": {
+"seaBearing": 312,
+"water": 0.25
+},
+"36.52632,-121.94892": {
+"seaBearing": null,
+"water": 0.03
+},
+"36.54162,-121.93313": {
+"seaBearing": 253,
+"water": 0.66
+},
+"36.55912,-121.95017": {
+"seaBearing": null,
+"water": 0.75
+},
+"36.57805,-121.9772": {
+"seaBearing": 270,
+"water": 0.28
+},
+"36.58543,-93.32052": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.59435,-93.31187": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.60893,-121.8944": {
+"seaBearing": 62,
+"water": 0.53
+},
+"36.60947,-121.89373": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.61203,-121.8974": {
+"seaBearing": 56,
+"water": 0.44
+},
+"36.61226,-121.85799": {
+"seaBearing": null,
+"water": 0.09
+},
+"36.61385,-121.89844": {
+"seaBearing": 56,
+"water": 0.5
+},
+"36.61565,-121.89883": {
+"seaBearing": null,
+"water": 0.03
+},
+"36.61566,-121.8995": {
+"seaBearing": 56,
+"water": 0.5
+},
+"36.62637,-121.91653": {
+"seaBearing": 45,
+"water": 0.5
+},
+"36.63518,-121.92677": {
+"seaBearing": 18,
+"water": 0.59
+},
+"36.63638,-121.93505": {
+"seaBearing": 270,
+"water": 0.16
+},
+"36.64555,-121.94472": {
+"seaBearing": 281,
+"water": 0.69
+},
+"36.68347,-121.94567": {
+"seaBearing": null,
+"water": 1.0
+},
+"36.8604,-87.46653": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.86115,-87.46793": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.86127,-87.46613": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.91065,-87.909": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.96526,-87.7122": {
+"seaBearing": null,
+"water": 0.0
+},
+"36.97256,-84.1156": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.11957,-113.38222": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.19043,-94.47405": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.28427,-88.85838": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.2845,-88.85802": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.79018,-119.0662": {
+"seaBearing": 285,
+"water": 0.25
+},
+"37.9251,-90.54863": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.22607,-80.88067": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.30677,-123.05298": {
+"seaBearing": null,
+"water": 0.62
+},
+"38.31643,-123.07037": {
+"seaBearing": 240,
+"water": 0.5
+},
+"38.50809,-95.72472": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.50903,-123.23638": {
+"seaBearing": 219,
+"water": 0.22
+},
+"38.5469,-123.29775": {
+"seaBearing": 236,
+"water": 0.31
+},
+"38.5553,-123.30437": {
+"seaBearing": 227,
+"water": 0.22
+},
+"38.56633,-123.3302": {
+"seaBearing": 214,
+"water": 0.25
+},
+"38.56695,-123.33003": {
+"seaBearing": 203,
+"water": 0.22
+},
+"38.73221,-90.87759": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.73288,-90.87688": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.74468,-121.14238": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.91473,-123.7111": {
+"seaBearing": 213,
+"water": 0.22
+},
+"38.93198,-123.73027": {
+"seaBearing": 276,
+"water": 0.44
+},
+"38.94256,-98.51169": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.95368,-120.09073": {
+"seaBearing": null,
+"water": 0.0
+},
+"38.99613,-120.0936": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.00758,-119.95165": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.18737,-79.26062": {
+"seaBearing": null,
+"water": 0.47
+},
+"39.19012,-123.76167": {
+"seaBearing": 227,
+"water": 0.53
+},
+"39.19887,-119.93235": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.20712,-79.25847": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.21533,-76.51863": {
+"seaBearing": null,
+"water": 1.0
+},
+"39.27413,-123.79105": {
+"seaBearing": 236,
+"water": 0.19
+},
+"39.36288,-77.76305": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.41972,-106.12003": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.51872,-105.08297": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.52933,-77.29808": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.534,-119.73055": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.56538,-77.07153": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.61194,-104.66343": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.61812,-104.65363": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.7279,-76.31357": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.75167,-105.01417": {
+"seaBearing": null,
+"water": 0.0
+},
+"39.94495,-75.13138": {
+"seaBearing": null,
+"water": 0.03
+},
+"40.07215,-111.59938": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.07469,-76.65097": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.07592,-76.65588": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.10065,-74.0488": {
+"seaBearing": 304,
+"water": 0.31
+},
+"40.10611,-74.05": {
+"seaBearing": 184,
+"water": 0.22
+},
+"40.11241,-74.0327": {
+"seaBearing": 110,
+"water": 0.56
+},
+"40.179,-74.03347": {
+"seaBearing": 350,
+"water": 0.28
+},
+"40.19252,-73.85558": {
+"seaBearing": null,
+"water": 1.0
+},
+"40.19474,-85.36661": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.20052,-111.17693": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.34196,-105.21656": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.37802,-76.26805": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.37875,-76.2664": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.41495,-111.51263": {
+"seaBearing": 335,
+"water": 0.41
+},
+"40.42365,-111.4924": {
+"seaBearing": 302,
+"water": 0.28
+},
+"40.44362,-78.17652": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.4484,-74.00222": {
+"seaBearing": 231,
+"water": 0.66
+},
+"40.45085,-111.47942": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.52392,-111.485": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.57799,-105.16391": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.57816,-73.93892": {
+"seaBearing": 170,
+"water": 0.56
+},
+"40.58542,-90.04987": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.59477,-73.74262": {
+"seaBearing": 171,
+"water": 0.31
+},
+"40.59925,-73.74327": {
+"seaBearing": null,
+"water": 0.09
+},
+"40.61667,-122.55": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.61793,-74.8474": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.64055,-73.33222": {
+"seaBearing": null,
+"water": 0.75
+},
+"40.64662,-112.52502": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.647,-112.52571": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.68387,-75.35522": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.68449,-75.35543": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.75382,-86.45702": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.75827,-86.46141": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.84159,-72.49918": {
+"seaBearing": null,
+"water": 0.94
+},
+"40.8426,-72.4762": {
+"seaBearing": null,
+"water": 0.88
+},
+"40.86362,-73.65638": {
+"seaBearing": 248,
+"water": 0.69
+},
+"40.89555,-72.50222": {
+"seaBearing": 19,
+"water": 0.56
+},
+"40.9325,-73.18445": {
+"seaBearing": null,
+"water": 1.0
+},
+"40.94195,-73.47638": {
+"seaBearing": 355,
+"water": 0.72
+},
+"40.95417,-73.43417": {
+"seaBearing": null,
+"water": 1.0
+},
+"40.96555,-72.86722": {
+"seaBearing": 356,
+"water": 0.62
+},
+"40.96667,-72.95528": {
+"seaBearing": 355,
+"water": 0.59
+},
+"40.97417,-72.72167": {
+"seaBearing": 349,
+"water": 0.56
+},
+"40.97926,-75.14296": {
+"seaBearing": null,
+"water": 0.0
+},
+"40.99545,-80.49717": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.00555,-72.29": {
+"seaBearing": null,
+"water": 0.78
+},
+"41.0132,-72.5594": {
+"seaBearing": 321,
+"water": 0.53
+},
+"41.03802,-72.52087": {
+"seaBearing": 332,
+"water": 0.59
+},
+"41.07695,-71.93862": {
+"seaBearing": 344,
+"water": 0.66
+},
+"41.08612,-72.445": {
+"seaBearing": 326,
+"water": 0.62
+},
+"41.10433,-80.14612": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.10528,-72.34945": {
+"seaBearing": 135,
+"water": 0.62
+},
+"41.13972,-72.35278": {
+"seaBearing": 326,
+"water": 0.62
+},
+"41.14105,-87.82437": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.2215,-71.4144": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.22897,-101.74099": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.22982,-122.38138": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.24179,-69.99307": {
+"seaBearing": 163,
+"water": 0.53
+},
+"41.26667,-71.82167": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.28333,-122.33833": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.3058,-72.0774": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.30726,-72.09919": {
+"seaBearing": 139,
+"water": 0.56
+},
+"41.3225,-71.804": {
+"seaBearing": null,
+"water": 0.78
+},
+"41.33593,-71.9059": {
+"seaBearing": 222,
+"water": 0.47
+},
+"41.3745,-71.539": {
+"seaBearing": null,
+"water": 0.78
+},
+"41.39742,-75.18768": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.41905,-75.20708": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.4365,-71.4545": {
+"seaBearing": 99,
+"water": 0.53
+},
+"41.45351,-71.39759": {
+"seaBearing": null,
+"water": 0.72
+},
+"41.45441,-71.34356": {
+"seaBearing": 174,
+"water": 0.47
+},
+"41.45716,-71.39533": {
+"seaBearing": null,
+"water": 0.47
+},
+"41.47448,-71.37635": {
+"seaBearing": null,
+"water": 0.62
+},
+"41.47755,-71.35816": {
+"seaBearing": null,
+"water": 0.69
+},
+"41.47785,-71.35846": {
+"seaBearing": 134,
+"water": 0.66
+},
+"41.47935,-71.3606": {
+"seaBearing": 121,
+"water": 0.56
+},
+"41.488,-71.256": {
+"seaBearing": 180,
+"water": 0.44
+},
+"41.48998,-71.31377": {
+"seaBearing": 254,
+"water": 0.19
+},
+"41.4989,-71.32238": {
+"seaBearing": 259,
+"water": 0.56
+},
+"41.51185,-75.84832": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.525,-70.67223": {
+"seaBearing": 236,
+"water": 0.44
+},
+"41.55272,-75.59467": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.56668,-72.64787": {
+"seaBearing": null,
+"water": 0.16
+},
+"41.57507,-72.64443": {
+"seaBearing": 277,
+"water": 0.16
+},
+"41.58878,-70.59758": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.59317,-71.37917": {
+"seaBearing": null,
+"water": 0.97
+},
+"41.68425,-70.31155": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.68438,-70.31237": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.72773,-74.2359": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.75034,-70.18649": {
+"seaBearing": 354,
+"water": 0.47
+},
+"41.75188,-70.1885": {
+"seaBearing": 348,
+"water": 0.62
+},
+"41.75721,-70.15547": {
+"seaBearing": 349,
+"water": 0.56
+},
+"41.7579,-70.49682": {
+"seaBearing": null,
+"water": 0.09
+},
+"41.76555,-72.66576": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.76863,-70.48498": {
+"seaBearing": 66,
+"water": 0.62
+},
+"41.787,-69.936": {
+"seaBearing": 90,
+"water": 0.56
+},
+"41.81432,-93.74187": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.844,-69.946": {
+"seaBearing": 111,
+"water": 0.69
+},
+"41.85528,-112.15812": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.94185,-70.68526": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.95362,-111.27833": {
+"seaBearing": 287,
+"water": 0.53
+},
+"42.0455,-87.5148": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.0458,-87.61803": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.09295,-70.64505": {
+"seaBearing": 59,
+"water": 0.56
+},
+"42.09845,-124.34288": {
+"seaBearing": 248,
+"water": 0.22
+},
+"42.09915,-124.3438": {
+"seaBearing": 248,
+"water": 0.25
+},
+"42.15695,-72.86092": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.172,-72.4774": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.18195,-70.22443": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.19245,-70.7262": {
+"seaBearing": 100,
+"water": 0.31
+},
+"42.275,-70.858": {
+"seaBearing": 39,
+"water": 0.69
+},
+"42.34139,-70.89595": {
+"seaBearing": null,
+"water": 0.97
+},
+"42.3535,-70.84583": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.35543,-71.06051": {
+"seaBearing": null,
+"water": 0.09
+},
+"42.38708,-76.877": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.38828,-76.86072": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.40428,-76.88648": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.42214,-70.91137": {
+"seaBearing": null,
+"water": 0.66
+},
+"42.437,-70.933": {
+"seaBearing": null,
+"water": 0.78
+},
+"42.4811,-89.02585": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.48122,-89.0257": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.48967,-83.72372": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.50247,-70.77498": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.51953,-70.89672": {
+"seaBearing": 97,
+"water": 0.12
+},
+"42.53288,-70.68753": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.54,-70.68112": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.54577,-70.79755": {
+"seaBearing": null,
+"water": 0.81
+},
+"42.5478,-106.72005": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.55972,-70.74415": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.5601,-70.74366": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.56302,-70.75442": {
+"seaBearing": null,
+"water": 0.84
+},
+"42.56397,-70.73698": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.56676,-70.73282": {
+"seaBearing": null,
+"water": 0.88
+},
+"42.56703,-70.70865": {
+"seaBearing": null,
+"water": 0.88
+},
+"42.56797,-70.72217": {
+"seaBearing": null,
+"water": 0.88
+},
+"42.57183,-70.7123": {
+"seaBearing": 172,
+"water": 0.66
+},
+"42.57362,-70.67": {
+"seaBearing": null,
+"water": 0.94
+},
+"42.57682,-70.73612": {
+"seaBearing": 168,
+"water": 0.44
+},
+"42.57683,-70.70167": {
+"seaBearing": 146,
+"water": 0.56
+},
+"42.57787,-70.76894": {
+"seaBearing": null,
+"water": 0.03
+},
+"42.58793,-70.649": {
+"seaBearing": 98,
+"water": 0.66
+},
+"42.59773,-70.6547": {
+"seaBearing": 262,
+"water": 0.56
+},
+"42.60238,-70.67962": {
+"seaBearing": 125,
+"water": 0.44
+},
+"42.6057,-70.67845": {
+"seaBearing": 121,
+"water": 0.44
+},
+"42.61425,-70.58715": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.61426,-70.63532": {
+"seaBearing": 95,
+"water": 0.44
+},
+"42.61536,-70.66246": {
+"seaBearing": 199,
+"water": 0.16
+},
+"42.61917,-70.62448": {
+"seaBearing": 136,
+"water": 0.66
+},
+"42.62,-70.628": {
+"seaBearing": 130,
+"water": 0.47
+},
+"42.635,-70.60118": {
+"seaBearing": 158,
+"water": 0.5
+},
+"42.64315,-70.59393": {
+"seaBearing": 90,
+"water": 0.5
+},
+"42.65565,-70.62032": {
+"seaBearing": 31,
+"water": 0.16
+},
+"42.65572,-79.47655": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.65827,-70.60725": {
+"seaBearing": 11,
+"water": 0.5
+},
+"42.65828,-70.60757": {
+"seaBearing": 11,
+"water": 0.5
+},
+"42.65877,-70.62158": {
+"seaBearing": 40,
+"water": 0.28
+},
+"42.65917,-70.62113": {
+"seaBearing": 34,
+"water": 0.31
+},
+"42.66184,-70.62383": {
+"seaBearing": 69,
+"water": 0.31
+},
+"42.66215,-70.62292": {
+"seaBearing": 63,
+"water": 0.34
+},
+"42.67232,-70.56796": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.67373,-70.66327": {
+"seaBearing": 293,
+"water": 0.44
+},
+"42.67926,-70.65921": {
+"seaBearing": 321,
+"water": 0.53
+},
+"42.68038,-70.62278": {
+"seaBearing": 84,
+"water": 0.41
+},
+"42.68045,-70.65968": {
+"seaBearing": 320,
+"water": 0.59
+},
+"42.68498,-70.64203": {
+"seaBearing": 346,
+"water": 0.34
+},
+"42.68839,-70.64125": {
+"seaBearing": 349,
+"water": 0.56
+},
+"42.69242,-70.62772": {
+"seaBearing": null,
+"water": 0.75
+},
+"42.71548,-82.492": {
+"seaBearing": 119,
+"water": 0.44
+},
+"42.77103,-79.24348": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.84312,-83.71822": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.86543,-79.15424": {
+"seaBearing": null,
+"water": 0.0
+},
+"42.929,-70.795": {
+"seaBearing": 93,
+"water": 0.66
+},
+"42.9753,-70.59957": {
+"seaBearing": null,
+"water": 0.94
+},
+"42.987,-70.76": {
+"seaBearing": 118,
+"water": 0.47
+},
+"43.00137,-70.6014": {
+"seaBearing": null,
+"water": 0.97
+},
+"43.02079,-70.60261": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.0225,-87.80983": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.02981,-70.72277": {
+"seaBearing": 135,
+"water": 0.5
+},
+"43.03354,-70.72047": {
+"seaBearing": 124,
+"water": 0.5
+},
+"43.04236,-70.71298": {
+"seaBearing": 94,
+"water": 0.62
+},
+"43.0483,-86.3191": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.05184,-98.55425": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.05864,-70.71358": {
+"seaBearing": null,
+"water": 0.69
+},
+"43.0665,-98.55016": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.06788,-70.69245": {
+"seaBearing": 220,
+"water": 0.66
+},
+"43.06802,-70.68854": {
+"seaBearing": 185,
+"water": 0.5
+},
+"43.0711,-89.35589": {
+"seaBearing": null,
+"water": 0.81
+},
+"43.07207,-70.71155": {
+"seaBearing": null,
+"water": 0.69
+},
+"43.07452,-70.74204": {
+"seaBearing": null,
+"water": 0.03
+},
+"43.08243,-70.71037": {
+"seaBearing": 171,
+"water": 0.34
+},
+"43.164,-70.617": {
+"seaBearing": 152,
+"water": 0.28
+},
+"43.16528,-70.59115": {
+"seaBearing": 126,
+"water": 0.62
+},
+"43.16554,-70.59399": {
+"seaBearing": 141,
+"water": 0.53
+},
+"43.16592,-70.59192": {
+"seaBearing": 129,
+"water": 0.59
+},
+"43.252,-70.59": {
+"seaBearing": null,
+"water": 0.47
+},
+"43.26182,-82.50968": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.29667,-77.32578": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.30259,-70.56728": {
+"seaBearing": 93,
+"water": 0.47
+},
+"43.33488,-72.04195": {
+"seaBearing": 304,
+"water": 0.38
+},
+"43.34571,-70.46058": {
+"seaBearing": 148,
+"water": 0.41
+},
+"43.34715,-72.04975": {
+"seaBearing": 225,
+"water": 0.41
+},
+"43.36088,-72.0601": {
+"seaBearing": 34,
+"water": 0.47
+},
+"43.37182,-82.43835": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.37274,-95.12388": {
+"seaBearing": 308,
+"water": 0.31
+},
+"43.37357,-72.07102": {
+"seaBearing": 92,
+"water": 0.31
+},
+"43.42425,-70.37783": {
+"seaBearing": 111,
+"water": 0.41
+},
+"43.42483,-89.72715": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.43303,-73.69895": {
+"seaBearing": null,
+"water": 0.69
+},
+"43.44607,-70.35066": {
+"seaBearing": null,
+"water": 0.47
+},
+"43.52086,-111.72191": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.52528,-116.04333": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.562,-70.275": {
+"seaBearing": 160,
+"water": 0.41
+},
+"43.56777,-70.22052": {
+"seaBearing": null,
+"water": 0.09
+},
+"43.57203,-71.21117": {
+"seaBearing": 239,
+"water": 0.62
+},
+"43.58437,-71.20789": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.58796,-71.38475": {
+"seaBearing": 353,
+"water": 0.66
+},
+"43.59314,-70.22893": {
+"seaBearing": null,
+"water": 0.06
+},
+"43.59592,-70.23744": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.615,-79.45147": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.62307,-70.20788": {
+"seaBearing": 73,
+"water": 0.66
+},
+"43.62607,-116.23103": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.62929,-73.05928": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.69922,-111.90312": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.74992,-110.72962": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.75082,-73.48523": {
+"seaBearing": 61,
+"water": 0.22
+},
+"43.90342,-124.11458": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.91303,-114.85819": {
+"seaBearing": null,
+"water": 0.62
+},
+"43.93167,-76.73667": {
+"seaBearing": null,
+"water": 1.0
+},
+"43.93858,-111.73511": {
+"seaBearing": null,
+"water": 0.0
+},
+"43.96433,-76.80167": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.00942,-69.04075": {
+"seaBearing": null,
+"water": 0.91
+},
+"44.00967,-76.74216": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.01625,-124.131": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.01628,-124.13105": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.01871,-76.60201": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.03787,-69.06323": {
+"seaBearing": null,
+"water": 0.94
+},
+"44.0438,-89.09867": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.05671,-115.07723": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.07205,-103.48857": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.07597,-76.73447": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.08165,-122.22953": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.11745,-122.24185": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.12684,-76.6028": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.1388,-76.58452": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.17898,-69.06693": {
+"seaBearing": null,
+"water": 0.03
+},
+"44.206,-73.37633": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.20888,-76.60764": {
+"seaBearing": null,
+"water": 0.88
+},
+"44.22573,-76.41738": {
+"seaBearing": null,
+"water": 0.97
+},
+"44.23333,-73.33467": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.28042,-76.0187": {
+"seaBearing": null,
+"water": 0.78
+},
+"44.28995,-90.72355": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.29787,-68.21153": {
+"seaBearing": 145,
+"water": 0.56
+},
+"44.31248,-73.30808": {
+"seaBearing": 120,
+"water": 0.25
+},
+"44.3127,-73.30818": {
+"seaBearing": 120,
+"water": 0.25
+},
+"44.32692,-68.91123": {
+"seaBearing": null,
+"water": 0.56
+},
+"44.32837,-68.18242": {
+"seaBearing": 149,
+"water": 0.28
+},
+"44.36633,-121.99283": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.42968,-75.82255": {
+"seaBearing": 124,
+"water": 0.62
+},
+"44.42975,-75.82317": {
+"seaBearing": 130,
+"water": 0.59
+},
+"44.44465,-73.2333": {
+"seaBearing": 254,
+"water": 0.62
+},
+"44.44823,-73.27463": {
+"seaBearing": null,
+"water": 0.91
+},
+"44.44935,-100.38767": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.45353,-75.80878": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.4705,-73.22833": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.47867,-73.24067": {
+"seaBearing": 252,
+"water": 0.25
+},
+"44.48499,-73.24301": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.48533,-73.243": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.50238,-84.77515": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.5261,-75.76258": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.54951,-73.33478": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.54967,-73.33517": {
+"seaBearing": null,
+"water": 1.0
+},
+"44.55618,-75.71878": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.5893,-75.67709": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.59202,-75.67724": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.69967,-75.52717": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.77694,-75.40022": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.77753,-75.39956": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.7786,-111.5574": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.7795,-75.39331": {
+"seaBearing": 129,
+"water": 0.22
+},
+"44.78768,-85.63525": {
+"seaBearing": 96,
+"water": 0.53
+},
+"44.82146,-79.86826": {
+"seaBearing": null,
+"water": 0.97
+},
+"44.8953,-75.17511": {
+"seaBearing": null,
+"water": 0.0
+},
+"44.90563,-85.38587": {
+"seaBearing": 118,
+"water": 0.47
+},
+"44.92472,-75.10111": {
+"seaBearing": 146,
+"water": 0.34
+},
+"44.99223,-73.34867": {
+"seaBearing": null,
+"water": 0.88
+},
+"44.9975,-74.89931": {
+"seaBearing": null,
+"water": 0.0
+},
+"45.00913,-86.09088": {
+"seaBearing": 101,
+"water": 0.75
+},
+"45.06917,-79.53194": {
+"seaBearing": null,
+"water": 0.94
+},
+"45.31838,-85.24053": {
+"seaBearing": 121,
+"water": 0.56
+},
+"45.3753,-115.5088": {
+"seaBearing": null,
+"water": 0.0
+},
+"45.40283,-73.68504": {
+"seaBearing": null,
+"water": 0.0
+},
+"45.43017,-123.94567": {
+"seaBearing": 233,
+"water": 0.31
+},
+"45.745,-84.63138": {
+"seaBearing": null,
+"water": 0.91
+},
+"45.78725,-84.6708": {
+"seaBearing": null,
+"water": 1.0
+},
+"45.78845,-84.7315": {
+"seaBearing": 358,
+"water": 0.69
+},
+"45.8015,-84.83467": {
+"seaBearing": null,
+"water": 1.0
+},
+"45.81317,-84.6985": {
+"seaBearing": null,
+"water": 1.0
+},
+"45.81383,-84.66883": {
+"seaBearing": null,
+"water": 1.0
+},
+"46.19817,-123.79645": {
+"seaBearing": 347,
+"water": 0.69
+},
+"46.42396,-86.66141": {
+"seaBearing": 112,
+"water": 0.38
+},
+"46.4627,-86.60797": {
+"seaBearing": null,
+"water": 0.75
+},
+"46.4627,-86.64917": {
+"seaBearing": null,
+"water": 0.66
+},
+"46.49083,-93.99663": {
+"seaBearing": null,
+"water": 0.0
+},
+"46.49202,-93.96135": {
+"seaBearing": null,
+"water": 0.0
+},
+"46.57862,-87.38778": {
+"seaBearing": 109,
+"water": 0.66
+},
+"46.63363,-111.7072": {
+"seaBearing": null,
+"water": 0.0
+},
+"46.63543,-111.69838": {
+"seaBearing": null,
+"water": 0.75
+},
+"46.64953,-111.7006": {
+"seaBearing": 227,
+"water": 0.38
+},
+"46.70643,-85.00328": {
+"seaBearing": null,
+"water": 1.0
+},
+"46.74612,-84.97528": {
+"seaBearing": null,
+"water": 0.84
+},
+"46.7869,-85.13855": {
+"seaBearing": null,
+"water": 1.0
+},
+"46.78878,-85.09185": {
+"seaBearing": null,
+"water": 1.0
+},
+"46.91275,-124.16473": {
+"seaBearing": null,
+"water": 1.0
+},
+"47.16823,-122.61403": {
+"seaBearing": 309,
+"water": 0.53
+},
+"47.17742,-122.59015": {
+"seaBearing": 312,
+"water": 0.16
+},
+"47.2062,-91.35788": {
+"seaBearing": 150,
+"water": 0.53
+},
+"47.24295,-122.56348": {
+"seaBearing": 278,
+"water": 0.31
+},
+"47.25404,-122.55165": {
+"seaBearing": 288,
+"water": 0.16
+},
+"47.2831,-95.31185": {
+"seaBearing": null,
+"water": 0.0
+},
+"47.2843,-122.48365": {
+"seaBearing": 42,
+"water": 0.16
+},
+"47.3487,-122.3245": {
+"seaBearing": 285,
+"water": 0.28
+},
+"47.349,-122.55563": {
+"seaBearing": 112,
+"water": 0.25
+},
+"47.37273,-122.32477": {
+"seaBearing": 252,
+"water": 0.38
+},
+"47.43555,-123.11945": {
+"seaBearing": 113,
+"water": 0.5
+},
+"47.44355,-123.11567": {
+"seaBearing": 115,
+"water": 0.31
+},
+"47.45245,-122.37953": {
+"seaBearing": 253,
+"water": 0.53
+},
+"47.52192,-122.5196": {
+"seaBearing": 41,
+"water": 0.28
+},
+"47.53318,-123.04422": {
+"seaBearing": 113,
+"water": 0.44
+},
+"47.57052,-123.01287": {
+"seaBearing": 120,
+"water": 0.47
+},
+"47.5782,-122.41573": {
+"seaBearing": 322,
+"water": 0.34
+},
+"47.58728,-122.3777": {
+"seaBearing": 33,
+"water": 0.28
+},
+"47.58862,-122.37968": {
+"seaBearing": 37,
+"water": 0.31
+},
+"47.5898,-122.38105": {
+"seaBearing": 35,
+"water": 0.34
+},
+"47.60021,-122.57625": {
+"seaBearing": 273,
+"water": 0.31
+},
+"47.71593,-122.56097": {
+"seaBearing": null,
+"water": 0.06
+},
+"47.76178,-122.85129": {
+"seaBearing": null,
+"water": 0.0
+},
+"47.7945,-102.32716": {
+"seaBearing": null,
+"water": 1.0
+},
+"47.80473,-122.39723": {
+"seaBearing": 264,
+"water": 0.47
+},
+"47.80655,-122.39552": {
+"seaBearing": 292,
+"water": 0.41
+},
+"47.81365,-122.38156": {
+"seaBearing": 304,
+"water": 0.19
+},
+"47.85065,-122.33783": {
+"seaBearing": 287,
+"water": 0.34
+},
+"47.85277,-122.33703": {
+"seaBearing": 284,
+"water": 0.34
+},
+"47.86147,-120.16922": {
+"seaBearing": null,
+"water": 0.0
+},
+"47.89367,-89.22065": {
+"seaBearing": null,
+"water": 0.59
+},
+"47.94953,-122.30447": {
+"seaBearing": 326,
+"water": 0.44
+},
+"48.03368,-122.75063": {
+"seaBearing": 45,
+"water": 0.5
+},
+"48.03895,-122.40298": {
+"seaBearing": 34,
+"water": 0.38
+},
+"48.0915,-122.69042": {
+"seaBearing": 102,
+"water": 0.5
+},
+"48.09709,-122.69231": {
+"seaBearing": 83,
+"water": 0.47
+},
+"48.15775,-122.67098": {
+"seaBearing": 169,
+"water": 0.5
+},
+"48.16643,-123.70547": {
+"seaBearing": 339,
+"water": 0.69
+},
+"48.40614,-122.64439": {
+"seaBearing": null,
+"water": 0.06
+},
+"48.4921,-122.68767": {
+"seaBearing": null,
+"water": 0.0
+},
+"48.51595,-123.15095": {
+"seaBearing": 217,
+"water": 0.22
+},
+"48.53752,-123.01255": {
+"seaBearing": null,
+"water": 0.09
+},
+"48.54202,-123.15994": {
+"seaBearing": 257,
+"water": 0.22
+},
+"48.59592,-122.98062": {
+"seaBearing": null,
+"water": 0.03
+},
+"48.61238,-123.09937": {
+"seaBearing": 70,
+"water": 0.25
+},
+"55.29182,-131.54377": {
+"seaBearing": null,
+"water": 0.0
+},
+"56.3452,-132.34755": {
+"seaBearing": null,
+"water": 0.06
+},
+"60.77732,-148.66957": {
+"seaBearing": null,
+"water": 0.0
+},
+"60.77824,-148.66537": {
+"seaBearing": null,
+"water": 0.0
+}
+}

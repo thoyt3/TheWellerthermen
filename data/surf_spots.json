@@ -1,0 +1,16 @@
+[
+  {"name": "Narragansett Town Beach", "city": "Narragansett", "state": "RI", "lat": 41.4365, "lng": -71.4545},
+  {"name": "Second Beach (Sachuest)", "city": "Middletown", "state": "RI", "lat": 41.4880, "lng": -71.2560},
+  {"name": "Matunuck", "city": "South Kingstown", "state": "RI", "lat": 41.3745, "lng": -71.5390},
+  {"name": "Misquamicut Beach", "city": "Westerly", "state": "RI", "lat": 41.3225, "lng": -71.8040},
+  {"name": "Nantasket Beach", "city": "Hull", "state": "MA", "lat": 42.2750, "lng": -70.8580},
+  {"name": "Nahant Beach", "city": "Nahant", "state": "MA", "lat": 42.4370, "lng": -70.9330},
+  {"name": "Good Harbor Beach", "city": "Gloucester", "state": "MA", "lat": 42.6200, "lng": -70.6280},
+  {"name": "Coast Guard Beach", "city": "Eastham", "state": "MA", "lat": 41.8440, "lng": -69.9460},
+  {"name": "Nauset Beach", "city": "Orleans", "state": "MA", "lat": 41.7870, "lng": -69.9360},
+  {"name": "The Wall (North Beach)", "city": "Hampton", "state": "NH", "lat": 42.9290, "lng": -70.7950},
+  {"name": "Jenness Beach", "city": "Rye", "state": "NH", "lat": 42.9870, "lng": -70.7600},
+  {"name": "Long Sands Beach", "city": "York", "state": "ME", "lat": 43.1640, "lng": -70.6170},
+  {"name": "Ogunquit Beach", "city": "Ogunquit", "state": "ME", "lat": 43.2520, "lng": -70.5900},
+  {"name": "Higgins Beach", "city": "Scarborough", "state": "ME", "lat": 43.5620, "lng": -70.2750}
+]

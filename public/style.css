@@ -1,53 +1,211 @@
-/* public/style.css */
+:root {
+  --bg: #121212;
+  --panel: #1e1e1e;
+  --line: #333;
+  --text: #f2f2f2;
+  --muted: #a8a8a8;
+  --accent: #4da3ff;
+}
+
+* { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  h1 {
-    color: #ffffff;
-  }
-  
-  #query-form {
-    margin-bottom: 20px;
-  }
-  
-  #query-form input,
-  #query-form select {
-    width: 180px;
-    padding: 8px;
-    margin-right: 10px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 1px solid #333333;
-  }
-  
-  button {
-    padding: 8px 16px;
-    background-color: #333333;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555555;
-  }
-  
-  #response-container {
-    margin-top: 20px;
-    white-space: pre-wrap;
-  }
-  
-  #map {
-    height: 500px;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .leaflet-container {
-    background-color: #1e1e1e;
-  }
-  
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+a { color: var(--accent); }
+
+#banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  --hero: url(images/default.jpg);
+}
+
+/* the same picture, blurred and dimmed, fills the space behind */
+#banner::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: var(--hero) center / cover;
+  filter: blur(28px) brightness(0.4);
+}
+
+#activity-image {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  flex: none;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+}
+
+#banner-text {
+  position: relative;
+  text-shadow: 0 1px 6px #000;
+}
+
+#banner-text h1 { margin: 0; font-size: 2.4rem; }
+#banner-text p { margin: 6px 0 0; font-size: 1.05rem; }
+
+main { padding: 16px 20px; max-width: 1400px; margin: 0 auto; }
+
+#query-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
+.field.grow { flex: 1 1 220px; }
+.field label { font-size: 0.8rem; color: var(--muted); }
+.row { display: flex; gap: 6px; }
+.row input { flex: 1; min-width: 0; }
+
+input, select, button {
+  font: inherit;
+  padding: 8px 10px;
+  background: #262626;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color-scheme: dark;
+}
+
+#max-distance { width: 110px; }
+
+button { cursor: pointer; white-space: nowrap; }
+button:hover { background: #3a3a3a; }
+button:disabled { opacity: 0.5; cursor: wait; }
+#submit-button { background: var(--accent); border-color: var(--accent); color: #06121f; font-weight: 600; }
+#submit-button:hover { background: #76b8ff; }
+.linklike { background: none; border: none; color: var(--accent); padding: 0; text-decoration: underline; }
+.linklike:hover { background: none; }
+
+#status { min-height: 1.5em; margin: 12px 0; color: var(--muted); }
+#status.error { color: #ff8a80; }
+
+#layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+#map {
+  height: 560px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  position: sticky;
+  top: 12px;
+}
+
+.leaflet-container { background: var(--panel); }
+
+.summary {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.summary h2 { margin: 0 0 4px; font-size: 1.1rem; }
+.summary p { margin: 0; color: var(--muted); }
+
+h2.section { font-size: 1rem; margin: 18px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.card.active { border-color: var(--accent); }
+
+.card-head { display: flex; gap: 12px; align-items: center; }
+.card-head h3 { margin: 0; font-size: 1.05rem; }
+.card-head .where { color: var(--muted); font-size: 0.9rem; }
+.card-head .title { flex: 1; min-width: 0; }
+
+.badge {
+  flex: none;
+  width: 54px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 4px 0;
+  color: #0b0b0b;
+  font-weight: 700;
+}
+
+.badge small { display: block; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; }
+
+.rank {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #06121f;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.window { margin: 10px 0 4px; font-weight: 600; }
+.conditions { margin: 0 0 6px; }
+.card ul { margin: 6px 0; padding-left: 20px; }
+.card li { margin: 2px 0; }
+.meta { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
+.desc { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; white-space: pre-line; }
+.desc.clamped { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.strip { display: flex; gap: 2px; margin: 8px 0 2px; }
+.strip .cell { flex: 1; height: 16px; border-radius: 2px; background: #2a2a2a; }
+.strip .cell.best { outline: 2px solid #fff; outline-offset: -1px; }
+.strip-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--muted); }
+
+.pin {
+  width: 26px;
+  height: 26px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #0b0b0b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  box-shadow: 0 1px 4px #000;
+}
+
+footer {
+  padding: 16px 20px 28px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  #layout { grid-template-columns: 1fr; }
+  #map { height: 360px; position: static; order: -1; }
+  #banner { gap: 14px; padding: 14px; }
+  #activity-image { width: 120px; height: 120px; }
+  #banner-text h1 { font-size: 1.5rem; }
+}
