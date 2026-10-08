@@ -1,0 +1,39 @@
+name: Suggestion
+description: Suggest a place to add, a fix, or a change to how things are scored.
+title: "[Suggestion] "
+labels: ["recommendation"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of suggestion?
+      options:
+        - Add a place
+        - Fix a place
+        - Scoring or advice
+        - Something else
+    validations:
+      required: true
+  - type: dropdown
+    id: activity
+    attributes:
+      label: Activity
+      options:
+        - Golf
+        - Hiking
+        - Scuba diving
+        - Surfing
+        - General
+    validations:
+      required: true
+  - type: input
+    id: place
+    attributes:
+      label: Place
+      description: Name and town, or coordinates if you have them.
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true

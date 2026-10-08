@@ -70,6 +70,43 @@
       <section id="results"></section>
       <div id="map"></div>
     </div>
+
+    <details id="suggest">
+      <summary>Suggest a place or a fix</summary>
+      <form id="suggest-form">
+        <div class="field">
+          <label for="suggest-kind">What kind?</label>
+          <select id="suggest-kind">
+            <option>Add a place</option>
+            <option>Fix a place</option>
+            <option>Scoring or advice</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="suggest-activity">Activity</label>
+          <select id="suggest-activity">
+            <option>Golf</option>
+            <option>Hiking</option>
+            <option>Scuba diving</option>
+            <option>Surfing</option>
+            <option>General</option>
+          </select>
+        </div>
+        <div class="field grow">
+          <label for="suggest-place">Place (name and town, or coordinates)</label>
+          <input type="text" id="suggest-place" autocomplete="off">
+        </div>
+        <div class="field full">
+          <label for="suggest-details">Details</label>
+          <textarea id="suggest-details" rows="3" required></textarea>
+        </div>
+        <div class="field full">
+          <button type="submit" class="primary">Send suggestion</button>
+          <span class="meta">This opens GitHub with your suggestion filled in. Press "Create" there to send it. You need a free GitHub account.</span>
+        </div>
+      </form>
+    </details>
   </main>
 
   <footer>

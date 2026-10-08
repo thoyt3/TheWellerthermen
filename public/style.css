@@ -236,6 +236,27 @@ h2.section { font-size: 1rem; margin: 18px 0 8px; color: var(--muted); text-tran
   box-shadow: 0 1px 4px #000;
 }
 
+#suggest {
+  margin-top: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+#suggest summary { cursor: pointer; font-weight: 600; }
+#suggest-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-top: 12px; }
+#suggest-form .full { flex: 1 1 100%; }
+#suggest-form textarea {
+  font: inherit;
+  padding: 8px 10px;
+  background: #262626;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  resize: vertical;
+}
+#suggest-form button.primary { margin-top: 0; align-self: flex-start; }
+
 footer {
   padding: 16px 20px 28px;
   color: var(--muted);

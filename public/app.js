@@ -1106,7 +1106,33 @@
     }).catch((error) => setStatus(error.message, true));
   }
 
+  // Suggestions go to a pre-filled GitHub issue. A workflow in the repository then
+  // files each one into recommendations.md for review.
+  const SUGGEST_URL = 'https://github.com/thoyt3/TheWellerthermen/issues/new';
+
+  function initSuggestions() {
+    const activityNames = { golf: 'Golf', hiking: 'Hiking', scuba_diving: 'Scuba diving', surfing: 'Surfing' };
+    $('suggest').addEventListener('toggle', () => {
+      $('suggest-activity').value = activityNames[activitySelect.value] || 'General';
+    });
+    $('suggest-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const place = $('suggest-place').value.trim();
+      const kind = $('suggest-kind').value;
+      const params = new URLSearchParams({
+        template: 'suggestion.yml',
+        title: `[Suggestion] ${kind}${place ? `: ${place}` : ''}`,
+        kind,
+        activity: $('suggest-activity').value,
+        place,
+        details: $('suggest-details').value.trim(),
+      });
+      window.open(`${SUGGEST_URL}?${params}`, '_blank', 'noopener');
+    });
+  }
+
   function init() {
+    initSuggestions();
     const today = new Date();
     const last = new Date();
     last.setDate(today.getDate() + FORECAST_DAYS);
