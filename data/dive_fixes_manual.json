@@ -1,0 +1,38 @@
+{
+ "City of Salisbury Wreck (boat dive)": {
+  "lat": 42.37389, "lng": -70.85972,
+  "how": "42°22'26\"N 70°51'35\"W, next to Graves Light (Thomas)"
+ },
+ "Pinthis Wreck (boat dive)": {
+  "lat": 42.155, "lng": -70.56333,
+  "how": "42°09'18\"N 70°33'48\"W, Massachusetts BUAR exempted shipwreck list, https://www.mass.gov/info-details/pinthis"
+ },
+ "The Patriot (boat dive)": {
+  "lat": 42.40427, "lng": -70.45328,
+  "how": "42-24.256N 70-27.197W, Stellwagen Bank sanctuary, https://stellwagen.noaa.gov/maritime/patriot.html"
+ },
+ "Tugboat U.S. La Vallee Wreck (boat dive)": {
+  "lat": 44.44122, "lng": -73.23683,
+  "how": "44°26'28.38\"N 73°14'12.598\"W, Lake Champlain Maritime Museum, https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/tugboat-u-s-la-vallee/"
+ },
+ "Old Navy Test Site": {
+  "lat": 43.5724, "lng": -71.32063, "diveType": "boat",
+  "how": "Diamond Island, Lake Winnipesaukee (OpenStreetMap). The site is off the northwest side of the island."
+ },
+ "Kettle Cove": {
+  "lat": 43.56178, "lng": -70.21583,
+  "how": "Kettle Cove State Park, Cape Elizabeth (OpenStreetMap)"
+ },
+ "Ships Cove": {
+  "lat": 43.62564, "lng": -70.21255,
+  "how": "Ship Cove at Fort Williams Park, Cape Elizabeth (OpenStreetMap)"
+ },
+ "Sandwich Town Beach (Town Neck Beach)": {
+  "lat": 41.76957, "lng": -70.48652,
+  "how": "Town Neck Beach, Sandwich (OpenStreetMap)"
+ },
+ "Picketts Ledge (boat dive)": {
+  "lat": 42.56703, "lng": -70.70865, "approx": true,
+  "how": "No published position found. Placed at Picketts Point from the newer dive list, which the ledge lies off."
+ }
+}

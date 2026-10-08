@@ -683,6 +683,7 @@
     if (place.distance !== undefined) facts.push(`${fmtDistance(place.distance)} away${place.beyond ? ' (past your limit)' : ''}`);
     if (place.access) facts.push(place.access);
     if (place.diveType) facts.push(`${place.diveType} dive`);
+    if (place.approx) facts.push('location approximate');
     if (place.maxDepth) facts.push(`max depth ${place.maxDepth}`);
     if (place.difficulty) facts.push(place.difficulty);
     if (place.miles) facts.push(`${fmtDistance(place.miles)} hike`);

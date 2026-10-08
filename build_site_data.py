@@ -11,6 +11,7 @@ Sources, all under data/:
   dive_sites_osm.json    Northeast dive sites (diving_osm.py)
   surf_spots.json        hand-entered surf breaks
   sea_bearings.json      which way each shore site faces (coast_bearings.py)
+  dive_fixes.json        corrected positions for the original dive sites (fix_original_dives.py)
 """
 import json
 import math
@@ -54,6 +55,7 @@ class Places:
     """A list of places that refuses near-duplicates, using a coarse grid to stay fast.
 
     add() returns the place already there when it refuses one, or None when it adds.
+    With add=False it only looks for the twin.
     """
 
     def __init__(self):
@@ -63,7 +65,7 @@ class Places:
     def _cell(self, place):
         return (round(place["lat"] * 10), round(place["lng"] * 10))
 
-    def add(self, place, check=True):
+    def add(self, place, check=True, add=True):
         cx, cy = self._cell(place)
         for dx in (-1, 0, 1) if check else ():
             for dy in (-1, 0, 1):
@@ -71,13 +73,18 @@ class Places:
                     limit = SAME_NAME_MILES if norm(place["name"]) == norm(other["name"]) else DUPLICATE_MILES
                     if miles(place, other) < limit:
                         return other
-        self.items.append(place)
-        self.grid[(cx, cy)].append(place)
+        if add:
+            self.items.append(place)
+            self.grid[(cx, cy)].append(place)
         return None
 
 
-def original(activity):
-    """Places from the original scrape, in the page's flat format."""
+def original(activity, fixed=True):
+    """Places from the original scrape, in the page's flat format.
+
+    Dive sites get the corrections from fix_original_dives.py unless fixed=False.
+    """
+    fixes = load("dive_fixes.json") or {} if fixed and activity == "scuba_diving" else {}
     for loc in load("clean_locations.json"):
         if loc["activities"][0] != activity:
             continue
@@ -98,6 +105,10 @@ def original(activity):
             item["desc"] = desc
         if activity == "scuba_diving":
             item["diveType"] = loc.get("diveType") or "shore"
+            fix = fixes.get(item["name"], {})
+            for key in ("lat", "lng", "diveType", "approx"):
+                if key in fix:
+                    item[key] = fix[key]
         if activity == "hiking":
             item["difficulty"] = loc.get("difficulty") or ""
             item["features"] = loc.get("features") or ""
@@ -218,21 +229,30 @@ def directory_type(item, table):
 
 
 def build_golf():
+    # The nationwide OpenStreetMap list is the record. The original New England scrape
+    # only fills in what it lacks: a city for a course it also has, and whole courses
+    # for states the new scrape has not reached yet. An original course missing from a
+    # state that has been scraped is gone or was never real, so it is dropped.
     places = Places()
-    for item in original("golf"):
-        places.add(item)
-    for course in load("golf_courses.json"):
+    courses = load("golf_courses.json")
+    scraped = {course["state"] for course in courses}
+    for course in courses:
         item = plain(course)
         for key in ("website", "phone"):
             if course.get(key):
                 item[key] = course[key]
         item["access"] = golf_access(course)
-        # a course we already had: keep it, but take the new details
-        existing = places.add(item)
-        if existing:
-            for key in ("website", "phone", "access"):
-                if item.get(key) and not existing.get(key):
-                    existing[key] = item[key]
+        places.add(item)
+    for item in original("golf"):
+        state = STATE_CODES.get(item["state"], item["state"])
+        if state not in STATE_CODES.values():
+            continue  # the old scrape picked up a few courses outside the US
+        if state in scraped:
+            twin = places.add(item, add=False)
+            if twin and not twin.get("city"):
+                twin["city"] = item["city"]
+        else:
+            places.add(item)
     # the directory's answer beats OpenStreetMap tags and name guesses
     table = directory_types()
     for item in places.items:

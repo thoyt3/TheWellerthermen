@@ -92,6 +92,11 @@ def site_points():
         if "scuba_diving" in loc["activities"]:
             geo = loc["geometry"]["location"]
             points.add((round(geo["lat"], 5), round(geo["lng"], 5)))
+    fixes = DATA / "dive_fixes.json"
+    if fixes.exists():
+        for fix in json.loads(fixes.read_text(encoding="utf-8")).values():
+            if "lat" in fix:
+                points.add((fix["lat"], fix["lng"]))
     for name in ("dive_sites_extra.json", "dive_sites_osm.json", "surf_spots.json"):
         path = DATA / name
         if path.exists():
