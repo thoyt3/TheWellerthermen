@@ -816,6 +816,29 @@
     });
   }
 
+  // What the hourly bar and the rain above it mean. Shown once, under the results.
+  function renderLegend() {
+    const rainSample = (drops) => {
+      const fill = el('span', { class: 'rain-fill sample' });
+      for (let d = 0; d < drops; d++) fill.append(el('i', { class: 'drop' }));
+      return fill;
+    };
+    const swatch = (style) => el('span', { class: 'swatch', style });
+    const scores = el('span', { class: 'legend-item' }, 'Skip ');
+    [10, 30, 50, 70, 90].forEach((score) => scores.append(swatch(`background:${scoreColor(score)}`)));
+    scores.append(' Great');
+    return el('div', { class: 'legend' },
+      el('div', {}, el('strong', { text: 'Hourly score ' }), scores,
+        el('span', { class: 'legend-item' }, swatch('background:#2a2a2a;outline:2px solid #fff;outline-offset:-1px'), ' best window'),
+        el('span', { class: 'legend-item' }, swatch('background:#2a2a2a'), ' dark or already past')),
+      el('div', {}, el('strong', { text: 'Rain ' }),
+        el('span', { class: 'legend-item', text: 'taller, brighter blue is a higher chance' }),
+        el('span', { class: 'legend-item' }, rainSample(1), ' light'),
+        el('span', { class: 'legend-item' }, rainSample(2), ' moderate'),
+        el('span', { class: 'legend-item' }, rainSample(3), ' heavy'))
+    );
+  }
+
   function renderSummary(top, query, origin) {
     if (!top.chosen) {
       return el('div', { class: 'summary' },
@@ -896,11 +919,14 @@
 
     resultsDiv.append(renderSummary(groups[0].items[0], query, origin));
 
+    // cards go in their own container so "show more" adds above the legend
+    const list = el('div');
+    resultsDiv.append(list);
     let number = 0;
     const addGroup = (group) => {
-      if (group.title) resultsDiv.append(el('h2', { class: 'section', text: group.title }));
-      if (group.note) resultsDiv.append(el('p', { class: 'meta', text: group.note }));
-      group.items.forEach((result) => resultsDiv.append(renderCard(result, ++number, query)));
+      if (group.title) list.append(el('h2', { class: 'section', text: group.title }));
+      if (group.note) list.append(el('p', { class: 'meta', text: group.note }));
+      group.items.forEach((result) => list.append(renderCard(result, ++number, query)));
     };
     groups.forEach(addGroup);
 
@@ -913,6 +939,7 @@
       });
       resultsDiv.append(more);
     }
+    if (groups[0].items[0].chosen) resultsDiv.append(renderLegend());
     map.fitBounds(markersLayer.getBounds(), { padding: [40, 40], maxZoom: 13 });
   }
 
