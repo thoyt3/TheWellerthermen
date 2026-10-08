@@ -782,7 +782,7 @@
   // A button that reruns the search for the day after the one selected.
   function tomorrowButton(text) {
     return el('button', {
-      type: 'button', class: 'linklike', text,
+      type: 'button', class: 'primary', text,
       onclick: () => {
         const next = new Date(`${dateSelect.value}T12:00`);
         next.setDate(next.getDate() + 1);
@@ -825,7 +825,7 @@
     if (query.night) {
       summary.append(
         el('p', { class: 'warning', text: `No daylight is left today, so these are night dives. ${NIGHT_DIVE_RULE} ${NIGHT_ACCESS_RULE}` }),
-        tomorrowButton('See tomorrow in daylight instead')
+        tomorrowButton('See tomorrow in daylight')
       );
     }
     return summary;
@@ -1021,8 +1021,12 @@
       resultsDiv.replaceChildren();
       markersLayer.clearLayers();
       if (isToday && dateSelect.value < dateSelect.max) {
-        setStatus('There is no daylight left today. ');
-        statusDiv.append(tomorrowButton('Search tomorrow instead'));
+        setStatus('');
+        resultsDiv.append(el('div', { class: 'summary notice' },
+          el('h2', { text: 'No daylight left today' }),
+          el('p', { text: `It is too late for ${ACTIVITIES[activity].label.toLowerCase()} today. Tomorrow's forecast is ready.` }),
+          tomorrowButton('Search tomorrow')
+        ));
         return;
       }
       const why = activity === 'surfing' ? 'There is no wave forecast for that date yet.' : 'There is no daylight left on that date.';
