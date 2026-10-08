@@ -37,6 +37,7 @@
   const SHOWN_AT_FIRST = 5;
   const MAX_SUGGESTIONS = 3000;
   const NIGHT_DIVE_RULE = 'Only for divers with Advanced Open Water or a night diving certification.';
+  const NIGHT_ACCESS_RULE = 'Many parks, beaches and parking lots close at dusk. Check with the park, town or harbormaster about night access and hours before you go.';
   const MIN_OPEN_GOLF = 3; // golf recommendations always include this many public or municipal courses
 
   // A course anyone can book. Unlabeled courses may be public too, but we cannot promise it.
@@ -582,6 +583,7 @@
       }
       if (chosen.start < result.sunrise || end > result.sunset) {
         tips.push(`This is a night dive (${moonPhase(query.date)}). ${NIGHT_DIVE_RULE} Carry at least two lights.`);
+        tips.push(NIGHT_ACCESS_RULE);
       }
     } else if (query.activity === 'surfing') {
       if (stats.swell !== null) {
@@ -822,7 +824,7 @@
     );
     if (query.night) {
       summary.append(
-        el('p', { class: 'warning', text: `No daylight is left today, so these are night dives. ${NIGHT_DIVE_RULE}` }),
+        el('p', { class: 'warning', text: `No daylight is left today, so these are night dives. ${NIGHT_DIVE_RULE} ${NIGHT_ACCESS_RULE}` }),
         tomorrowButton('See tomorrow in daylight instead')
       );
     }
