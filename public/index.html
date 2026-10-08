@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Wellerthermen</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=dev">
 </head>
 <body>
   <header id="banner">
@@ -79,6 +79,8 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js"></script>
+  <!-- "dev" is replaced with the commit id at deploy time, so phones never run a stale copy -->
+  <script>window.WM_VERSION = "dev";</script>
+  <script src="app.js?v=dev"></script>
 </body>
 </html>

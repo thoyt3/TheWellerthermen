@@ -230,9 +230,9 @@ def directory_type(item, table):
 
 def build_golf():
     # The nationwide OpenStreetMap list is the record. The original New England scrape
-    # only fills in what it lacks: a city for a course it also has, and whole courses
-    # for states the new scrape has not reached yet. An original course missing from a
-    # state that has been scraped is gone or was never real, so it is dropped.
+    # only fills in what it lacks: a city for a course it also has, and any named course
+    # the new list is missing (a few real ones have no name in OpenStreetMap today).
+    # Its "Unnamed Golf Course" entries and overseas strays are dropped.
     places = Places()
     courses = load("golf_courses.json")
     scraped = {course["state"] for course in courses}
@@ -247,12 +247,12 @@ def build_golf():
         state = STATE_CODES.get(item["state"], item["state"])
         if state not in STATE_CODES.values():
             continue  # the old scrape picked up a few courses outside the US
-        if state in scraped:
-            twin = places.add(item, add=False)
-            if twin and not twin.get("city"):
+        twin = places.add(item, add=False)
+        if twin:
+            if not twin.get("city"):
                 twin["city"] = item["city"]
-        else:
-            places.add(item)
+        elif item["name"] != "Unnamed Golf Course" or state not in scraped:
+            places.add(item, check=False)
     # the directory's answer beats OpenStreetMap tags and name guesses
     table = directory_types()
     for item in places.items:

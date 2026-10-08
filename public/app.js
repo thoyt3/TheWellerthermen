@@ -13,7 +13,7 @@
     if (!placeLoads.has(activity)) {
       placeLoads.set(activity, new Promise((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = `data/${activity}.js`;
+        script.src = `data/${activity}.js?v=${window.WM_VERSION || 'dev'}`;
         script.onload = () => resolve(((window.WM_DATA && window.WM_DATA[activity]) || []).map((p) => ({ ...p, activity })));
         script.onerror = () => {
           placeLoads.delete(activity);
