@@ -10,6 +10,10 @@ Sources, all under data/:
   dive_sites_extra.json  nationwide dive sites (diving_zentacle.py)
   dive_sites_osm.json    Northeast dive sites (diving_osm.py)
   surf_spots.json        hand-entered surf breaks
+  dive_sites_us_osm.json places tagged for diving in OpenStreetMap, nationwide (osm_extras.py)
+  dive_sites_manual.json dive sites entered by hand, each with its source
+  trail_lengths.json     trails at each trailhead and their lengths (trail_lengths.py)
+  slot_canyons_*.json    slot canyons, for the flash flood rule (osm_extras.py and a hand list)
   sea_bearings.json      which way each shore site faces (coast_bearings.py)
   dive_fixes.json        corrected positions for the original dive sites (fix_original_dives.py)
 """
@@ -228,6 +232,10 @@ def directory_type(item, table):
     return in_city.pop() if len(in_city) == 1 else ""
 
 
+# Courses from the original scrape that no longer exist under that name.
+GOLF_REMOVED = {"Bungay Brook Golf Club"}  # now New England Country Club
+
+
 def build_golf():
     # The nationwide OpenStreetMap list is the record. The original New England scrape
     # only fills in what it lacks: a city for a course it also has, and any named course
@@ -247,6 +255,8 @@ def build_golf():
         state = STATE_CODES.get(item["state"], item["state"])
         if state not in STATE_CODES.values():
             continue  # the old scrape picked up a few courses outside the US
+        if item["name"] in GOLF_REMOVED:
+            continue
         twin = places.add(item, add=False)
         if twin:
             if not twin.get("city"):
@@ -279,14 +289,53 @@ def build_golf():
     return places.items
 
 
+SLOT_NEAR_MILES = 10  # generous on purpose: a flash flood travels a long way
+SLOT_WORDS = re.compile(r"\b(slot|narrows)\b", re.I)
+SLOT_STATES = {"UT", "AZ", "NV", "NM", "CO", "CA"}
+DAY_HIKE_MILES = 10  # a matched trail longer than this one way is not a day hike from here
+NAME_MATCH = 0.6  # share of a trail's name that must appear in the trailhead's name
+
+
+def slot_canyon_index():
+    """Slot canyons from OpenStreetMap and the hand list, bucketed on a coarse grid."""
+    grid = defaultdict(list)
+    for canyon in load("slot_canyons_osm.json") + load("slot_canyons_manual.json"):
+        grid[(round(canyon["lat"]), round(canyon["lng"]))].append(canyon)
+    return grid
+
+
+def near_slot_canyon(item, grid):
+    if item.get("state") in SLOT_STATES and SLOT_WORDS.search(item["name"]):
+        return True
+    cx, cy = round(item["lat"]), round(item["lng"])
+    return any(
+        miles(item, canyon) <= SLOT_NEAR_MILES
+        for dx in (-1, 0, 1) for dy in (-1, 0, 1) for canyon in grid.get((cx + dx, cy + dy), ())
+    )
+
+
 def build_hiking():
     places = Places()
     # several of the original hikes share a trailhead, so keep them all
     for item in original("hiking"):
         places.add(item, check=False)
+    lengths = load("trail_lengths.json") or {}
     for trailhead in load("trailheads.json"):
-        if norm(trailhead["name"]) and trailhead["name"].lower() not in NOT_A_NAME:
-            places.add(plain(trailhead))
+        if not norm(trailhead["name"]) or trailhead["name"].lower() in NOT_A_NAME:
+            continue
+        item = plain(trailhead)
+        trails = lengths.get(f"{trailhead['lat']},{trailhead['lng']}") or []
+        if trails:
+            # the trails that leave from here, and the one the trailhead is named for
+            item["trails"] = [[t["name"], t["miles"]] for t in trails[:3]]
+            best = trails[0]
+            if best["match"] >= NAME_MATCH and best["miles"] <= DAY_HIKE_MILES:
+                item["oneWayMiles"] = best["miles"]
+        places.add(item)
+    slots = slot_canyon_index()
+    for item in places.items:
+        if near_slot_canyon(item, slots):
+            item["slot"] = True
     return places.items
 
 
@@ -294,7 +343,12 @@ def build_diving(bearings):
     places = Places()
     for item in original("scuba_diving"):
         places.add(item, check=False)
-    for site in load("dive_sites_extra.json") + load("dive_sites_osm.json"):
+    tagged = [
+        {**site, "diveType": "boat" if site["tags"].get("historic") == "wreck" else "shore",
+         "maxDepthFt": None, "url": site["tags"].get("website", "") if site["tags"].get("website", "").startswith("https://") else ""}
+        for site in load("dive_sites_us_osm.json")
+    ]
+    for site in load("dive_sites_manual.json") + load("dive_sites_extra.json") + load("dive_sites_osm.json") + tagged:
         water = (bearings.get(f"{site['lat']},{site['lng']}") or {}).get("water", 0)
         item = plain(site)
         # no access listed: a point surrounded by water is a boat dive

@@ -1,0 +1,22 @@
+[
+ {
+  "name": "Gilboa Quarry", "lat": 41.01472, "lng": -83.93576, "city": "Gilboa", "state": "OH",
+  "diveType": "shore", "url": "https://dan.org/alert-diver/article/the-quarries-of-northwest-ohio/",
+  "source": "Position from OpenStreetMap. Listed in DAN's 'The Quarries of Northwest Ohio'."
+ },
+ {
+  "name": "White Star Quarry", "lat": 41.37168, "lng": -83.30807, "city": "Gibsonburg", "state": "OH",
+  "diveType": "shore", "url": "https://dan.org/alert-diver/article/the-quarries-of-northwest-ohio/",
+  "source": "Position is White Star Park, which holds the quarry (OpenStreetMap). Listed in DAN's 'The Quarries of Northwest Ohio'."
+ },
+ {
+  "name": "Portage Quarry", "lat": 41.33603, "lng": -83.65012, "city": "Bowling Green", "state": "OH",
+  "diveType": "shore", "url": "https://dan.org/alert-diver/article/the-quarries-of-northwest-ohio/",
+  "source": "Position is 12701 South Dixie Highway (OpenStreetMap). Listed in DAN's 'The Quarries of Northwest Ohio'."
+ },
+ {
+  "name": "Lake Phoenix", "lat": 36.94507, "lng": -77.77051, "city": "Rawlings", "state": "VA",
+  "diveType": "shore", "maxDepthFt": "65 ft", "url": "https://scubadiverlife.com/dive-site-lake-phoenix-virginia",
+  "source": "Formerly Lake Rawlings. Position is Quarry Lane, Rawlings (OpenStreetMap); depth from DiveBuddy's listing."
+ }
+]

@@ -12,6 +12,7 @@ import requests
 BBOX = "40.3,-80,47.5,-66.8"  # New York and New England, with the border waters
 QUERY = f'[out:json][timeout:120];nwr["sport"="scuba_diving"]({BBOX});out center tags;'
 ENDPOINTS = [
+    "https://overpass.openstreetmap.fr/api/interpreter",
     "https://overpass-api.de/api/interpreter",
     "https://overpass.private.coffee/api/interpreter",
 ]

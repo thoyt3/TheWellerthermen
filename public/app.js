@@ -36,6 +36,8 @@
   const FORECAST_DAYS = 15;
   const SHOWN_AT_FIRST = 5;
   const MAX_SUGGESTIONS = 3000;
+  const DRY_BELOW_CHANCE = 20; // percent chance of rain under which an hour counts as dry
+  const SLOT_WET_CAP = 30; // best score near slot canyons without 24 dry hours: "Poor"
   const RAIN_SHOWN_FROM = 15; // percent chance below which an hour shows no rain
   const NIGHT_DIVE_RULE = 'Only for divers with Advanced Open Water or a night diving certification.';
   const NIGHT_ACCESS_RULE = 'Many parks, beaches and parking lots close at dusk. Check with the park, town or harbormaster about night access and hours before you go.';
@@ -210,14 +212,35 @@
     return `${base}?${params}`;
   }
 
-  async function fetchWeather(places, date) {
-    const data = await getJSON(batchUrl('https://api.open-meteo.com/v1/forecast', places, date, {
+  // withDayBefore also fetches the previous day, which the slot canyon rule needs to
+  // see 24 hours back. That day is split off into `before` so the rest of the code
+  // still sees exactly one day.
+  async function fetchWeather(places, date, withDayBefore = false) {
+    const extra = {
       hourly: 'temperature_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m',
       daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max,sunrise,sunset',
       temperature_unit: 'fahrenheit',
       wind_speed_unit: 'mph',
-    }));
-    return Array.isArray(data) ? data : [data];
+    };
+    if (withDayBefore) {
+      const previous = new Date(`${date}T12:00`);
+      previous.setDate(previous.getDate() - 1);
+      extra.start_date = localDateStr(previous);
+    }
+    const data = await getJSON(batchUrl('https://api.open-meteo.com/v1/forecast', places, date, extra));
+    const list = Array.isArray(data) ? data : [data];
+    if (!withDayBefore) return list;
+    return list.map((one) => {
+      const split = one.hourly.time.findIndex((t) => t.startsWith(date));
+      if (split <= 0) return one;
+      const cut = (group, from, to) => Object.fromEntries(Object.entries(group).map(([k, v]) => [k, v.slice(from, to)]));
+      return {
+        ...one,
+        before: cut(one.hourly, 0, split),
+        hourly: cut(one.hourly, split),
+        daily: cut(one.daily, one.daily.time.indexOf(date)),
+      };
+    });
   }
 
   // Waves, water temperature and sea level (tide) from the Open-Meteo marine model.
@@ -302,12 +325,23 @@
 
   const clockToHours = (iso) => parseInt(iso.slice(11, 13), 10) + parseInt(iso.slice(14, 16), 10) / 60;
 
+  // Any real chance of rain counts: a slot canyon floods from storms you cannot see.
+  const isWet = (chance, amount, code) => (chance ?? 0) >= DRY_BELOW_CHANCE || (amount ?? 0) > 0 || code >= 51;
+
   function buildHours(weather, marine) {
     const w = weather.hourly;
     const m = marine ? marine.hourly : null;
     const at = (series, i) => (series && series[i] !== undefined ? series[i] : null);
     const feet = (meters) => (meters === null ? null : meters * 3.28084);
+    // rain history: yesterday's hours (when fetched) followed by today's
+    const b = weather.before;
+    const wet = [
+      ...(b ? b.time.map((_, i) => isWet(b.precipitation_probability[i], b.precipitation[i], b.weather_code[i])) : []),
+      ...w.time.map((_, i) => isWet(w.precipitation_probability[i], w.precipitation[i], w.weather_code[i])),
+    ];
+    const offset = b ? b.time.length : 0;
     return w.time.map((_, i) => ({
+      dry24: !wet.slice(Math.max(0, offset + i - 24), offset + i + 1).some(Boolean),
       temp: w.temperature_2m[i],
       feels: w.apparent_temperature[i],
       rainChance: w.precipitation_probability[i] ?? 0,
@@ -376,6 +410,8 @@
       if (activity === 'hiking') {
         score -= Math.max(0, 40 - h.feels) * 1.5 + Math.max(0, h.feels - 78) * 2;
         score -= Math.max(0, h.wind - 20) * 2;
+        // slot canyon country only scores well after a full dry day
+        if (place.slot && !h.dry24) score = Math.min(score, SLOT_WET_CAP);
       } else {
         score -= Math.max(0, 50 - h.feels) * 1.5 + Math.max(0, h.feels - 85) * 2.5;
         if (activity === 'golf') {
@@ -399,7 +435,9 @@
   }
 
   function outingHours(activity, place) {
-    if (activity === 'hiking' && place.miles) return clamp(Math.round(place.miles / 2) + 1, 2, 8);
+    // 2 mph with stops: `miles` is a whole hike, `oneWayMiles` a trail walked out and back
+    const hikeMiles = place.miles || (place.oneWayMiles ? place.oneWayMiles * 2 : 0);
+    if (activity === 'hiking' && hikeMiles) return clamp(Math.round(hikeMiles / 2) + 1, 2, 8);
     return ACTIVITIES[activity].hours;
   }
 
@@ -547,9 +585,21 @@
       if (stats.rainChance >= 40) tips.push('Pack rain gear and an extra glove.');
       if (end > result.sunset - 0.5) tips.push('That finishes close to sunset, so a full 18 may be tight.');
     } else if (query.activity === 'hiking') {
+      if (place.slot) {
+        tips.push('Slot canyon country. Weather here changes fast, and rain miles upstream can flood a canyon under a clear sky. Check the National Weather Service flash flood forecast and ask a ranger before going in.');
+        if (!stats.slice.every((h) => h.dry24)) {
+          tips.push('Rain is in the forecast within 24 hours of this window. Stay out of slot canyons and washes.');
+        }
+      }
       const duration = outingHours('hiking', place);
-      const latest = result.sunset - 1 - duration;
-      tips.push(`Allow about ${duration} hours. Start by ${fmtClock(Math.max(latest, result.sunrise))} to finish an hour before sunset.`);
+      const latest = fmtClock(Math.max(result.sunset - 1 - duration, result.sunrise));
+      if (place.miles) {
+        tips.push(`Allow about ${duration} hours. Start by ${latest} to finish an hour before sunset.`);
+      } else if (place.oneWayMiles) {
+        tips.push(`${place.trails[0][0]} is ${fmtDistance(place.oneWayMiles)} one way, about ${duration} hours out and back. Start by ${latest} to finish an hour before sunset.`);
+      } else {
+        tips.push(`No trail length on file for this trailhead. Be off the trail by ${fmtClock(result.sunset - 1)}, an hour before sunset.`);
+      }
       if (stats.rainChance >= 40) tips.push('Bring a shell. Wet rock and roots will slow you down.');
       if (/summit|alpine|4000/i.test(place.features || '') && stats.wind >= 15) {
         tips.push('This is a valley forecast. Expect it noticeably colder and windier up high.');
@@ -715,12 +765,17 @@
     if (place.maxDepth) facts.push(`max depth ${place.maxDepth}`);
     if (place.difficulty) facts.push(place.difficulty);
     if (place.miles) facts.push(`${fmtDistance(place.miles)} hike`);
+    if (place.oneWayMiles) facts.push(`${fmtDistance(place.oneWayMiles)} one way`);
+    if (place.slot) facts.push('slot canyon country');
     return [[place.city, place.state].filter(Boolean).join(', '), ...facts].filter(Boolean).join(' · ');
   }
 
   function placeFooter(place) {
     const nodes = [];
     if (place.features) nodes.push(el('p', { class: 'meta', text: `Features: ${place.features}` }));
+    if (place.trails) {
+      nodes.push(el('p', { class: 'meta', text: `Trails from here: ${place.trails.map(([name, miles]) => `${name} (${fmtDistance(miles)})`).join(', ')}` }));
+    }
     if (place.desc) {
       const desc = el('p', { class: 'desc clamped', text: place.desc, title: 'Click to expand' });
       desc.addEventListener('click', () => desc.classList.toggle('clamped'));
@@ -1036,7 +1091,7 @@
     setStatus(`Checking the forecast at ${places.length} ${places.length === 1 ? 'place' : 'places'}...`);
     const needsMarine = Boolean(ACTIVITIES[activity].marine);
     const [weather, marine] = await Promise.all([
-      fetchWeather(places, query.date).catch((error) => {
+      fetchWeather(places, query.date, places.some((place) => place.slot)).catch((error) => {
         console.warn('No weather forecast:', error);
         return { failure: `The forecast lookup failed (${error.message.replace(/\.$/, '')}).` };
       }),

@@ -97,7 +97,8 @@ def site_points():
         for fix in json.loads(fixes.read_text(encoding="utf-8")).values():
             if "lat" in fix:
                 points.add((fix["lat"], fix["lng"]))
-    for name in ("dive_sites_extra.json", "dive_sites_osm.json", "surf_spots.json"):
+    for name in ("dive_sites_extra.json", "dive_sites_osm.json", "dive_sites_us_osm.json",
+                 "dive_sites_manual.json", "surf_spots.json"):
         path = DATA / name
         if path.exists():
             points.update((s["lat"], s["lng"]) for s in json.loads(path.read_text(encoding="utf-8")))

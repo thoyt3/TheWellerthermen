@@ -183,6 +183,18 @@
 "seaBearing": 236,
 "water": 0.44
 },
+"20.63,-156.49599": {
+"seaBearing": null,
+"water": 0.94
+},
+"20.63047,-156.4942": {
+"seaBearing": null,
+"water": 0.97
+},
+"20.63082,-156.49858": {
+"seaBearing": null,
+"water": 0.97
+},
 "20.63095,-156.49542": {
 "seaBearing": null,
 "water": 0.97
@@ -195,9 +207,29 @@
 "seaBearing": null,
 "water": 1.0
 },
+"20.6325,-156.49804": {
+"seaBearing": null,
+"water": 0.91
+},
+"20.63314,-156.49527": {
+"seaBearing": null,
+"water": 0.91
+},
+"20.63385,-156.49692": {
+"seaBearing": null,
+"water": 0.84
+},
+"20.63412,-156.49506": {
+"seaBearing": null,
+"water": 0.91
+},
 "20.63477,-156.49377": {
 "seaBearing": null,
 "water": 0.94
+},
+"20.63482,-156.49779": {
+"seaBearing": null,
+"water": 0.97
 },
 "20.63552,-156.49842": {
 "seaBearing": null,
@@ -575,6 +607,10 @@
 "seaBearing": 11,
 "water": 0.12
 },
+"24.45,-81.7333": {
+"seaBearing": null,
+"water": 1.0
+},
 "24.45045,-81.7332": {
 "seaBearing": null,
 "water": 1.0
@@ -631,6 +667,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"24.64659,-82.86662": {
+"seaBearing": null,
+"water": 1.0
+},
 "24.64702,-81.03172": {
 "seaBearing": null,
 "water": 1.0
@@ -638,6 +678,10 @@
 "24.651,-81.029": {
 "seaBearing": null,
 "water": 1.0
+},
+"24.65803,-81.50563": {
+"seaBearing": 101,
+"water": 0.53
 },
 "24.65978,-81.2744": {
 "seaBearing": null,
@@ -719,11 +763,19 @@
 "seaBearing": null,
 "water": 1.0
 },
+"25.02049,-80.37292": {
+"seaBearing": null,
+"water": 1.0
+},
 "25.0343,-80.34833": {
 "seaBearing": null,
 "water": 1.0
 },
 "25.05267,-80.33367": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.06667,-80.31084": {
 "seaBearing": null,
 "water": 1.0
 },
@@ -784,6 +836,10 @@
 "water": 1.0
 },
 "25.44363,-80.11918": {
+"seaBearing": null,
+"water": 1.0
+},
+"25.47413,-80.10806": {
 "seaBearing": null,
 "water": 1.0
 },
@@ -1015,6 +1071,10 @@
 "seaBearing": 90,
 "water": 0.56
 },
+"26.187,-80.09329": {
+"seaBearing": 96,
+"water": 0.47
+},
 "26.18847,-80.09305": {
 "seaBearing": 101,
 "water": 0.5
@@ -1030,6 +1090,10 @@
 "26.20582,-80.08513": {
 "seaBearing": null,
 "water": 0.78
+},
+"26.20593,-80.08387": {
+"seaBearing": null,
+"water": 0.88
 },
 "26.21092,-80.06577": {
 "seaBearing": null,
@@ -1091,6 +1155,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"26.45363,-80.05634": {
+"seaBearing": 100,
+"water": 0.62
+},
 "26.47883,-80.03713": {
 "seaBearing": null,
 "water": 1.0
@@ -1110,6 +1178,14 @@
 "26.50933,-80.03472": {
 "seaBearing": null,
 "water": 1.0
+},
+"26.54674,-77.05159": {
+"seaBearing": null,
+"water": 0.34
+},
+"26.56278,-80.03833": {
+"seaBearing": 104,
+"water": 0.62
 },
 "26.65272,-80.0208": {
 "seaBearing": null,
@@ -1183,6 +1259,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"26.78258,-80.04217": {
+"seaBearing": null,
+"water": 0.28
+},
 "26.78323,-80.04217": {
 "seaBearing": null,
 "water": 0.31
@@ -1210,6 +1290,10 @@
 "26.81377,-80.00262": {
 "seaBearing": null,
 "water": 1.0
+},
+"26.82396,-80.04262": {
+"seaBearing": null,
+"water": 0.5
 },
 "26.837,-80.01782": {
 "seaBearing": null,
@@ -1259,6 +1343,10 @@
 "seaBearing": 36,
 "water": 0.25
 },
+"27.85576,-80.4535": {
+"seaBearing": null,
+"water": 0.75
+},
 "27.85687,-80.44445": {
 "seaBearing": null,
 "water": 0.81
@@ -1291,6 +1379,10 @@
 "seaBearing": null,
 "water": 0.0
 },
+"28.51727,-82.57323": {
+"seaBearing": null,
+"water": 0.0
+},
 "28.51733,-82.57337": {
 "seaBearing": null,
 "water": 0.0
@@ -1302,6 +1394,10 @@
 "28.53042,-82.6232": {
 "seaBearing": null,
 "water": 0.03
+},
+"28.55492,-82.60914": {
+"seaBearing": null,
+"water": 0.0
 },
 "28.55492,-82.60917": {
 "seaBearing": null,
@@ -1335,6 +1431,10 @@
 "seaBearing": 248,
 "water": 0.16
 },
+"28.94748,-81.33959": {
+"seaBearing": 257,
+"water": 0.19
+},
 "28.94792,-81.33769": {
 "seaBearing": 248,
 "water": 0.22
@@ -1351,13 +1451,29 @@
 "seaBearing": null,
 "water": 0.0
 },
+"29.0813,-81.57588": {
+"seaBearing": null,
+"water": 0.0
+},
 "29.09967,-82.08027": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.10248,-82.43747": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.1027,-82.43788": {
 "seaBearing": null,
 "water": 0.0
 },
 "29.1346,-81.36365": {
 "seaBearing": 279,
 "water": 0.22
+},
+"29.1837,-81.71241": {
+"seaBearing": null,
+"water": 0.0
 },
 "29.21081,-81.02283": {
 "seaBearing": 79,
@@ -1371,7 +1487,15 @@
 "seaBearing": null,
 "water": 0.0
 },
+"29.38795,-82.48659": {
+"seaBearing": null,
+"water": 0.0
+},
 "29.40705,-82.4761": {
+"seaBearing": null,
+"water": 0.0
+},
+"29.40749,-82.47643": {
 "seaBearing": null,
 "water": 0.0
 },
@@ -1386,6 +1510,10 @@
 "29.48862,-82.97593": {
 "seaBearing": null,
 "water": 0.09
+},
+"29.48867,-82.97597": {
+"seaBearing": 263,
+"water": 0.12
 },
 "29.4975,-82.97579": {
 "seaBearing": 262,
@@ -1415,6 +1543,10 @@
 "seaBearing": null,
 "water": 0.0
 },
+"29.83621,-82.70028": {
+"seaBearing": null,
+"water": 0.0
+},
 "29.85048,-98.2081": {
 "seaBearing": null,
 "water": 0.0
@@ -1435,6 +1567,10 @@
 "seaBearing": null,
 "water": 0.0
 },
+"29.98416,-82.76182": {
+"seaBearing": null,
+"water": 0.0
+},
 "29.99677,-82.96638": {
 "seaBearing": null,
 "water": 0.0
@@ -1442,6 +1578,14 @@
 "30.00585,-82.99755": {
 "seaBearing": null,
 "water": 0.0
+},
+"30.00603,-82.9975": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.04389,-87.00694": {
+"seaBearing": null,
+"water": 1.0
 },
 "30.0608,-85.82388": {
 "seaBearing": null,
@@ -1466,6 +1610,38 @@
 "30.17125,-85.75737": {
 "seaBearing": 56,
 "water": 0.12
+},
+"30.17827,-87.24388": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.18175,-87.24363": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.18342,-87.22863": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.18373,-87.23543": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.18594,-85.72476": {
+"seaBearing": 292,
+"water": 0.47
+},
+"30.18842,-87.21825": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.19395,-87.24087": {
+"seaBearing": null,
+"water": 1.0
+},
+"30.19953,-87.24588": {
+"seaBearing": null,
+"water": 1.0
 },
 "30.21287,-84.30445": {
 "seaBearing": null,
@@ -1507,6 +1683,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"30.2915,-87.20483": {
+"seaBearing": null,
+"water": 1.0
+},
 "30.2915,-87.2215": {
 "seaBearing": null,
 "water": 1.0
@@ -1518,6 +1698,14 @@
 "30.31133,-87.26533": {
 "seaBearing": null,
 "water": 0.84
+},
+"30.31811,-87.28313": {
+"seaBearing": 206,
+"water": 0.66
+},
+"30.33096,-87.29336": {
+"seaBearing": null,
+"water": 0.72
 },
 "30.33138,-87.29547": {
 "seaBearing": null,
@@ -1547,7 +1735,15 @@
 "seaBearing": null,
 "water": 0.0
 },
+"30.48044,-83.24436": {
+"seaBearing": null,
+"water": 0.0
+},
 "30.65753,-85.9046": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.65788,-85.90394": {
 "seaBearing": null,
 "water": 0.0
 },
@@ -1563,11 +1759,19 @@
 "seaBearing": null,
 "water": 0.0
 },
+"30.77067,-85.94838": {
+"seaBearing": null,
+"water": 0.0
+},
 "30.79013,-85.14015": {
 "seaBearing": null,
 "water": 0.0
 },
 "30.79017,-85.14288": {
+"seaBearing": null,
+"water": 0.0
+},
+"30.79045,-85.14011": {
 "seaBearing": null,
 "water": 0.0
 },
@@ -1824,6 +2028,10 @@
 "water": 0.69
 },
 "33.09672,-79.95215": {
+"seaBearing": null,
+"water": 0.0
+},
+"33.29526,-86.81742": {
 "seaBearing": null,
 "water": 0.0
 },
@@ -2155,6 +2363,10 @@
 "seaBearing": 205,
 "water": 0.22
 },
+"33.54503,-117.79867": {
+"seaBearing": 205,
+"water": 0.31
+},
 "33.54528,-117.79582": {
 "seaBearing": 183,
 "water": 0.22
@@ -2351,6 +2563,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"33.9228,-85.90593": {
+"seaBearing": null,
+"water": 0.0
+},
 "33.92288,-85.90588": {
 "seaBearing": null,
 "water": 0.0
@@ -2403,6 +2619,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"34.1445,-76.652": {
+"seaBearing": null,
+"water": 1.0
+},
 "34.16904,-84.07493": {
 "seaBearing": null,
 "water": 0.0
@@ -2431,6 +2651,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"34.22767,-76.56597": {
+"seaBearing": null,
+"water": 1.0
+},
 "34.24612,-77.715": {
 "seaBearing": null,
 "water": 1.0
@@ -2454,6 +2678,14 @@
 "34.26891,-84.49607": {
 "seaBearing": null,
 "water": 0.0
+},
+"34.27805,-76.64417": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.31202,-76.45025": {
+"seaBearing": null,
+"water": 1.0
 },
 "34.34972,-77.60305": {
 "seaBearing": null,
@@ -2486,6 +2718,14 @@
 "34.48172,-118.02342": {
 "seaBearing": null,
 "water": 0.0
+},
+"34.51,-75.22": {
+"seaBearing": null,
+"water": 1.0
+},
+"34.56167,-76.85167": {
+"seaBearing": null,
+"water": 1.0
 },
 "34.60397,-76.49082": {
 "seaBearing": null,
@@ -2542,6 +2782,14 @@
 "34.67333,-76.74138": {
 "seaBearing": null,
 "water": 1.0
+},
+"34.67551,-86.72993": {
+"seaBearing": null,
+"water": 0.0
+},
+"34.67551,-86.73018": {
+"seaBearing": null,
+"water": 0.0
 },
 "34.67558,-86.73028": {
 "seaBearing": null,
@@ -2643,6 +2891,10 @@
 "seaBearing": 77,
 "water": 0.28
 },
+"35.55,-75.13": {
+"seaBearing": null,
+"water": 1.0
+},
 "35.59802,-80.91892": {
 "seaBearing": null,
 "water": 0.0
@@ -2739,6 +2991,10 @@
 "seaBearing": null,
 "water": 0.0
 },
+"36.42995,-93.85598": {
+"seaBearing": null,
+"water": 0.0
+},
 "36.45074,-79.2417": {
 "seaBearing": null,
 "water": 0.0
@@ -2754,6 +3010,10 @@
 "36.52042,-121.94065": {
 "seaBearing": 341,
 "water": 0.41
+},
+"36.52179,-121.94054": {
+"seaBearing": null,
+"water": 0.03
 },
 "36.52324,-121.92811": {
 "seaBearing": 322,
@@ -2851,6 +3111,10 @@
 "seaBearing": null,
 "water": 0.0
 },
+"36.94507,-77.77051": {
+"seaBearing": null,
+"water": 0.0
+},
 "36.96526,-87.7122": {
 "seaBearing": null,
 "water": 0.0
@@ -2860,6 +3124,10 @@
 "water": 0.0
 },
 "37.11957,-113.38222": {
+"seaBearing": null,
+"water": 0.0
+},
+"37.19042,-94.474": {
 "seaBearing": null,
 "water": 0.0
 },
@@ -2875,6 +3143,14 @@
 "seaBearing": null,
 "water": 0.0
 },
+"37.435,-74.70193": {
+"seaBearing": null,
+"water": 1.0
+},
+"37.76379,-122.24545": {
+"seaBearing": null,
+"water": 0.06
+},
 "37.79018,-119.0662": {
 "seaBearing": 285,
 "water": 0.25
@@ -2882,6 +3158,10 @@
 "37.9251,-90.54863": {
 "seaBearing": null,
 "water": 0.0
+},
+"38.13521,-76.55552": {
+"seaBearing": null,
+"water": 1.0
 },
 "38.22607,-80.88067": {
 "seaBearing": null,
@@ -2998,6 +3278,10 @@
 "39.534,-119.73055": {
 "seaBearing": null,
 "water": 0.0
+},
+"39.5637,-73.0344": {
+"seaBearing": null,
+"water": 1.0
 },
 "39.56538,-77.07153": {
 "seaBearing": null,
@@ -3211,6 +3495,10 @@
 "seaBearing": 320,
 "water": 0.47
 },
+"41.01472,-83.93576": {
+"seaBearing": null,
+"water": 0.0
+},
 "41.03802,-72.52087": {
 "seaBearing": 321,
 "water": 0.47
@@ -3278,6 +3566,14 @@
 "41.33593,-71.9059": {
 "seaBearing": null,
 "water": 0.28
+},
+"41.33603,-83.65012": {
+"seaBearing": null,
+"water": 0.0
+},
+"41.37168,-83.30807": {
+"seaBearing": null,
+"water": 0.0
 },
 "41.3745,-71.539": {
 "seaBearing": null,
@@ -3407,9 +3703,17 @@
 "seaBearing": 68,
 "water": 0.44
 },
+"41.79166,-82.50528": {
+"seaBearing": null,
+"water": 1.0
+},
 "41.81432,-93.74187": {
 "seaBearing": null,
 "water": 0.0
+},
+"41.82288,-82.53616": {
+"seaBearing": null,
+"water": 1.0
 },
 "41.844,-69.946": {
 "seaBearing": 88,
@@ -3419,13 +3723,33 @@
 "seaBearing": null,
 "water": 0.0
 },
+"41.90362,-81.94635": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.94111,-82.16861": {
+"seaBearing": null,
+"water": 1.0
+},
 "41.94185,-70.68526": {
 "seaBearing": null,
 "water": 0.0
 },
+"41.945,-82.855": {
+"seaBearing": null,
+"water": 1.0
+},
 "41.95362,-111.27833": {
 "seaBearing": 287,
 "water": 0.53
+},
+"41.95908,-81.95403": {
+"seaBearing": null,
+"water": 1.0
+},
+"41.9805,-82.94083": {
+"seaBearing": null,
+"water": 0.84
 },
 "42.00266,-72.13141": {
 "seaBearing": null,
@@ -3471,6 +3795,14 @@
 "seaBearing": 84,
 "water": 0.22
 },
+"42.23258,-81.34647": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.2513,-81.88973": {
+"seaBearing": null,
+"water": 0.97
+},
 "42.275,-70.858": {
 "seaBearing": 47,
 "water": 0.62
@@ -3495,6 +3827,10 @@
 "seaBearing": null,
 "water": 0.97
 },
+"42.37667,-81.005": {
+"seaBearing": null,
+"water": 1.0
+},
 "42.38708,-76.877": {
 "seaBearing": 45,
 "water": 0.44
@@ -3514,6 +3850,10 @@
 "42.42214,-70.91137": {
 "seaBearing": null,
 "water": 0.44
+},
+"42.42527,-80.20094": {
+"seaBearing": null,
+"water": 1.0
 },
 "42.437,-70.933": {
 "seaBearing": null,
@@ -3536,6 +3876,10 @@
 "water": 0.0
 },
 "42.50247,-70.77498": {
+"seaBearing": null,
+"water": 1.0
+},
+"42.51033,-80.08476": {
 "seaBearing": null,
 "water": 1.0
 },
@@ -3564,6 +3908,10 @@
 "water": 1.0
 },
 "42.5601,-70.74366": {
+"seaBearing": null,
+"water": 0.97
+},
+"42.56137,-80.09048": {
 "seaBearing": null,
 "water": 0.97
 },
@@ -3643,6 +3991,10 @@
 "seaBearing": 134,
 "water": 0.38
 },
+"42.62667,-80.09833": {
+"seaBearing": null,
+"water": 1.0
+},
 "42.635,-70.60118": {
 "seaBearing": 175,
 "water": 0.47
@@ -3650,6 +4002,10 @@
 "42.64315,-70.59393": {
 "seaBearing": 85,
 "water": 0.41
+},
+"42.65171,-80.05241": {
+"seaBearing": null,
+"water": 1.0
 },
 "42.65565,-70.62032": {
 "seaBearing": null,
@@ -3711,13 +4067,25 @@
 "seaBearing": 348,
 "water": 0.44
 },
+"42.69122,-82.49581": {
+"seaBearing": 281,
+"water": 0.44
+},
 "42.69242,-70.62772": {
 "seaBearing": 30,
 "water": 0.72
 },
+"42.70283,-80.03447": {
+"seaBearing": null,
+"water": 1.0
+},
 "42.71548,-82.492": {
 "seaBearing": 119,
 "water": 0.44
+},
+"42.76308,-80.22813": {
+"seaBearing": null,
+"water": 0.91
 },
 "42.77103,-79.24348": {
 "seaBearing": null,
@@ -3739,9 +4107,17 @@
 "seaBearing": null,
 "water": 0.94
 },
+"42.98552,-82.42277": {
+"seaBearing": 81,
+"water": 0.31
+},
 "42.987,-70.76": {
 "seaBearing": 118,
 "water": 0.47
+},
+"42.9961,-82.42253": {
+"seaBearing": 187,
+"water": 0.22
 },
 "43.00137,-70.6014": {
 "seaBearing": null,
@@ -3866,6 +4242,10 @@
 "43.37357,-72.07102": {
 "seaBearing": 92,
 "water": 0.31
+},
+"43.4005,-81.88834": {
+"seaBearing": null,
+"water": 1.0
 },
 "43.42425,-70.37783": {
 "seaBearing": 111,
@@ -4199,6 +4579,10 @@
 "seaBearing": null,
 "water": 0.97
 },
+"44.86747,-80.24382": {
+"seaBearing": 263,
+"water": 0.72
+},
 "44.8953,-75.17511": {
 "seaBearing": null,
 "water": 0.0
@@ -4206,6 +4590,18 @@
 "44.90563,-85.38587": {
 "seaBearing": 118,
 "water": 0.47
+},
+"44.9113,-80.15686": {
+"seaBearing": null,
+"water": 0.91
+},
+"44.91611,-80.20416": {
+"seaBearing": null,
+"water": 0.94
+},
+"44.9172,-80.16283": {
+"seaBearing": null,
+"water": 0.81
 },
 "44.92472,-75.10111": {
 "seaBearing": 146,
@@ -4226,6 +4622,50 @@
 "45.06917,-79.53194": {
 "seaBearing": null,
 "water": 0.94
+},
+"45.24225,-81.5762": {
+"seaBearing": 25,
+"water": 0.44
+},
+"45.24555,-81.52344": {
+"seaBearing": 12,
+"water": 0.62
+},
+"45.25003,-81.60257": {
+"seaBearing": 349,
+"water": 0.5
+},
+"45.25488,-81.68082": {
+"seaBearing": 326,
+"water": 0.38
+},
+"45.25831,-81.6614": {
+"seaBearing": 332,
+"water": 0.34
+},
+"45.26557,-81.70933": {
+"seaBearing": null,
+"water": 0.91
+},
+"45.2678,-81.715": {
+"seaBearing": null,
+"water": 0.94
+},
+"45.26888,-81.69721": {
+"seaBearing": null,
+"water": 0.81
+},
+"45.29425,-81.71012": {
+"seaBearing": 65,
+"water": 0.47
+},
+"45.31188,-81.67406": {
+"seaBearing": null,
+"water": 1.0
+},
+"45.31515,-81.55703": {
+"seaBearing": null,
+"water": 0.88
 },
 "45.31838,-85.24053": {
 "seaBearing": 121,
@@ -4267,6 +4707,10 @@
 "seaBearing": null,
 "water": 1.0
 },
+"46.06019,-82.20237": {
+"seaBearing": null,
+"water": 0.97
+},
 "46.19817,-123.79645": {
 "seaBearing": 347,
 "water": 0.69
@@ -4303,6 +4747,10 @@
 "seaBearing": null,
 "water": 0.75
 },
+"46.64444,-84.80805": {
+"seaBearing": null,
+"water": 1.0
+},
 "46.64953,-111.7006": {
 "seaBearing": 227,
 "water": 0.38
@@ -4326,6 +4774,22 @@
 "46.91275,-124.16473": {
 "seaBearing": null,
 "water": 1.0
+},
+"46.99829,-85.11048": {
+"seaBearing": 180,
+"water": 0.62
+},
+"46.99884,-85.10979": {
+"seaBearing": 180,
+"water": 0.62
+},
+"46.99887,-85.10979": {
+"seaBearing": 180,
+"water": 0.62
+},
+"46.9996,-85.10925": {
+"seaBearing": 180,
+"water": 0.56
 },
 "47.16823,-122.61403": {
 "seaBearing": 309,
@@ -4383,6 +4847,10 @@
 "seaBearing": 41,
 "water": 0.28
 },
+"47.52958,-122.49459": {
+"seaBearing": 195,
+"water": 0.47
+},
 "47.53318,-123.04422": {
 "seaBearing": 113,
 "water": 0.44
@@ -4390,6 +4858,10 @@
 "47.57052,-123.01287": {
 "seaBearing": 120,
 "water": 0.47
+},
+"47.57178,-88.44824": {
+"seaBearing": null,
+"water": 1.0
 },
 "47.5782,-122.41573": {
 "seaBearing": 322,
@@ -4400,6 +4872,10 @@
 "water": 0.28
 },
 "47.58862,-122.37968": {
+"seaBearing": 37,
+"water": 0.31
+},
+"47.58892,-122.37968": {
 "seaBearing": 37,
 "water": 0.31
 },
@@ -4434,6 +4910,10 @@
 "47.81365,-122.38156": {
 "seaBearing": 304,
 "water": 0.19
+},
+"47.81371,-122.38458": {
+"seaBearing": 293,
+"water": 0.28
 },
 "47.85065,-122.33783": {
 "seaBearing": 287,
@@ -4479,9 +4959,81 @@
 "seaBearing": 339,
 "water": 0.69
 },
+"48.29928,-123.53276": {
+"seaBearing": null,
+"water": 1.0
+},
+"48.30068,-123.53912": {
+"seaBearing": null,
+"water": 0.97
+},
+"48.31024,-123.58258": {
+"seaBearing": 175,
+"water": 0.66
+},
+"48.31167,-123.60333": {
+"seaBearing": null,
+"water": 0.84
+},
+"48.31211,-123.54141": {
+"seaBearing": null,
+"water": 0.78
+},
 "48.40614,-122.64439": {
 "seaBearing": null,
 "water": 0.06
+},
+"48.40833,-123.29833": {
+"seaBearing": null,
+"water": 0.72
+},
+"48.41487,-123.38411": {
+"seaBearing": 227,
+"water": 0.62
+},
+"48.4174,-123.40222": {
+"seaBearing": 166,
+"water": 0.66
+},
+"48.41785,-123.25407": {
+"seaBearing": null,
+"water": 0.88
+},
+"48.42167,-123.26667": {
+"seaBearing": null,
+"water": 0.97
+},
+"48.42333,-123.25167": {
+"seaBearing": null,
+"water": 0.75
+},
+"48.42333,-123.41833": {
+"seaBearing": 231,
+"water": 0.47
+},
+"48.42459,-123.22255": {
+"seaBearing": null,
+"water": 0.84
+},
+"48.44563,-123.24018": {
+"seaBearing": null,
+"water": 0.94
+},
+"48.45561,-123.26601": {
+"seaBearing": 70,
+"water": 0.66
+},
+"48.45588,-123.26876": {
+"seaBearing": 68,
+"water": 0.62
+},
+"48.46386,-123.27027": {
+"seaBearing": null,
+"water": 0.78
+},
+"48.47833,-123.27167": {
+"seaBearing": null,
+"water": 1.0
 },
 "48.4921,-122.68767": {
 "seaBearing": null,
@@ -4499,13 +5051,113 @@
 "seaBearing": 257,
 "water": 0.22
 },
+"48.54602,-123.53965": {
+"seaBearing": 304,
+"water": 0.75
+},
+"48.55833,-123.505": {
+"seaBearing": 310,
+"water": 0.53
+},
+"48.57833,-123.48499": {
+"seaBearing": null,
+"water": 0.78
+},
+"48.59193,-123.48602": {
+"seaBearing": null,
+"water": 0.91
+},
 "48.59592,-122.98062": {
 "seaBearing": null,
 "water": 0.03
 },
+"48.59789,-123.48074": {
+"seaBearing": 248,
+"water": 0.72
+},
 "48.61238,-123.09937": {
 "seaBearing": 70,
 "water": 0.25
+},
+"48.61833,-123.51333": {
+"seaBearing": null,
+"water": 0.84
+},
+"48.62333,-123.48333": {
+"seaBearing": null,
+"water": 0.78
+},
+"48.65333,-123.3": {
+"seaBearing": null,
+"water": 0.97
+},
+"48.65761,-123.3002": {
+"seaBearing": null,
+"water": 0.91
+},
+"48.66,-123.33333": {
+"seaBearing": null,
+"water": 0.88
+},
+"48.6653,-123.31147": {
+"seaBearing": null,
+"water": 0.91
+},
+"48.67,-123.28667": {
+"seaBearing": null,
+"water": 0.97
+},
+"48.67,-123.32167": {
+"seaBearing": null,
+"water": 0.84
+},
+"48.67092,-123.27675": {
+"seaBearing": null,
+"water": 0.97
+},
+"48.67167,-123.36667": {
+"seaBearing": null,
+"water": 0.94
+},
+"48.67667,-123.32833": {
+"seaBearing": null,
+"water": 0.91
+},
+"48.68472,-123.29368": {
+"seaBearing": null,
+"water": 1.0
+},
+"48.68833,-123.48833": {
+"seaBearing": null,
+"water": 0.81
+},
+"48.69,-123.31667": {
+"seaBearing": null,
+"water": 1.0
+},
+"48.69452,-123.33311": {
+"seaBearing": null,
+"water": 1.0
+},
+"48.7,-123.52": {
+"seaBearing": null,
+"water": 1.0
+},
+"48.70667,-123.435": {
+"seaBearing": null,
+"water": 0.84
+},
+"49.37171,-123.29161": {
+"seaBearing": null,
+"water": 0.78
+},
+"49.39687,-123.25204": {
+"seaBearing": 298,
+"water": 0.47
+},
+"49.45,-123.24025": {
+"seaBearing": 264,
+"water": 0.53
 },
 "55.29182,-131.54377": {
 "seaBearing": null,

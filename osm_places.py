@@ -19,6 +19,7 @@ STATES = (
     "NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC"
 ).split()
 ENDPOINTS = [
+    "https://overpass.openstreetmap.fr/api/interpreter",
     "https://overpass-api.de/api/interpreter",
     "https://overpass.private.coffee/api/interpreter",
 ]

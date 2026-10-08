@@ -1,0 +1,414 @@
+[
+ {
+  "name": "Wire Pass Slot Canyon",
+  "lat": 37.02119,
+  "lng": -112.00772,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "White Domes Slot Canyon",
+  "lat": 36.48152,
+  "lng": -114.53441,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Dry Fork Narrows Slot Canyon",
+  "lat": 37.48147,
+  "lng": -111.2181,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Tunnel Slot Canyon",
+  "lat": 37.65585,
+  "lng": -111.40636,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Peekaboo Slot Canyon",
+  "lat": 37.17929,
+  "lng": -112.55979,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Passage Slot Canyon",
+  "lat": 36.81587,
+  "lng": -111.45789,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Upper Red Cave Slot Canyon",
+  "lat": 37.23723,
+  "lng": -112.64252,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Witches' Slot Canyon",
+  "lat": 37.59598,
+  "lng": -111.3583,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Lower Red Cave Slot Canyon",
+  "lat": 37.22494,
+  "lng": -112.64786,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Seven Keyholes Slot Canyon",
+  "lat": 36.43097,
+  "lng": -114.22137,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Ringtail Slot Canyon",
+  "lat": 37.60057,
+  "lng": -111.15575,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Egypt 3 Slot Canyon",
+  "lat": 37.58368,
+  "lng": -111.22988,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Red Breaks Slot Canyon Trailhead",
+  "lat": 37.68008,
+  "lng": -111.37392,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Red Hollow Slot Canyon",
+  "lat": 37.26715,
+  "lng": -112.6212,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Kaolin Slot Canyon",
+  "lat": 36.48183,
+  "lng": -114.53197,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Zebra Slot Canyon",
+  "lat": 37.66168,
+  "lng": -111.41729,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance"
+  }
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 32.4806,
+  "lng": -107.01553,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Walatoa Slot Canyon",
+  "lat": 35.64931,
+  "lng": -106.71878,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Horseshoe Bend Slot Canyon Tours",
+  "lat": 36.90717,
+  "lng": -111.4813,
+  "city": "Page",
+  "state": "AZ",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon River Rapids",
+  "lat": 36.11795,
+  "lng": -114.8574,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyons",
+  "lat": 35.9846,
+  "lng": -114.70502,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Peek-A-Boo Slot Canyon",
+  "lat": 37.4835,
+  "lng": -111.21606,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Spooky Slot Canyon",
+  "lat": 37.48334,
+  "lng": -111.20896,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Passage Slot Canyon",
+  "lat": 36.81582,
+  "lng": -111.45504,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Red Breaks Slot Canyon",
+  "lat": 37.66085,
+  "lng": -111.35594,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Trail To Witches' Slot Canyon",
+  "lat": 37.59355,
+  "lng": -111.35541,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon Trail",
+  "lat": 35.663,
+  "lng": -106.40868,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Seven Keyholes Slot Canyon Road",
+  "lat": 36.43791,
+  "lng": -114.22806,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Seven Keyholes Slot Canyon",
+  "lat": 36.43069,
+  "lng": -114.22226,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Seven Keyholes Slot Canyon Road",
+  "lat": 36.4326,
+  "lng": -114.22261,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Calcite Mine Slot Canyon",
+  "lat": 33.29686,
+  "lng": -116.11216,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Trail To Witches' Slot Canyon",
+  "lat": 37.59811,
+  "lng": -111.36313,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Trail To Witches' Slot Canyon",
+  "lat": 37.59087,
+  "lng": -111.3537,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon Trail",
+  "lat": 35.78913,
+  "lng": -116.20935,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyons Inn",
+  "lat": 37.76763,
+  "lng": -111.68124,
+  "city": "Escalante",
+  "state": "UT",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 35.49754,
+  "lng": -107.18314,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "North Slot Canyon Place",
+  "lat": 31.98452,
+  "lng": -110.70191,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 33.43474,
+  "lng": -117.63158,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "valley"
+  }
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 37.52894,
+  "lng": -110.72079,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 37.52861,
+  "lng": -110.72258,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Walatoa Slot Canyon",
+  "lat": 35.64988,
+  "lng": -106.71813,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "valley"
+  }
+ },
+ {
+  "name": "Slot Canyon Trail",
+  "lat": 35.79078,
+  "lng": -116.20721,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 32.52209,
+  "lng": -106.98957,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 32.52007,
+  "lng": -106.9904,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Slot Canyon",
+  "lat": 32.47712,
+  "lng": -107.0166,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Happy Canyon Slot Canyon Trail",
+  "lat": 38.13507,
+  "lng": -110.39317,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Spooky Slot Canyon",
+  "lat": 37.48334,
+  "lng": -111.20896,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Peek-A-Boo Slot Canyon",
+  "lat": 37.4835,
+  "lng": -111.21606,
+  "city": "",
+  "state": "",
+  "tags": {}
+ }
+]

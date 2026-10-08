@@ -1,0 +1,2071 @@
+[
+ {
+  "name": "Edmonds Underwater Park",
+  "lat": 47.81371,
+  "lng": -122.38458,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "bay"
+  }
+ },
+ {
+  "name": "Shaws Cove",
+  "lat": 33.54503,
+  "lng": -117.79867,
+  "city": "",
+  "state": "CA",
+  "tags": {
+   "natural": "bay"
+  }
+ },
+ {
+  "name": "South Bedford Island",
+  "lat": 48.31167,
+  "lng": -123.60333,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Race Rocks - Great Race",
+  "lat": 48.29928,
+  "lng": -123.53276,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1913"
+  }
+ },
+ {
+  "name": "Race Rocks - West and Central",
+  "lat": 48.30068,
+  "lng": -123.53912,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1912"
+  }
+ },
+ {
+  "name": "Barnard Castle",
+  "lat": 48.31211,
+  "lng": -123.54141,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Swordfish Island",
+  "lat": 48.31024,
+  "lng": -123.58258,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1916"
+  }
+ },
+ {
+  "name": "Saxe Point",
+  "lat": 48.42333,
+  "lng": -123.41833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1896"
+  }
+ },
+ {
+  "name": "S. F. Tolmie",
+  "lat": 48.4174,
+  "lng": -123.40222,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Johnstone Reef",
+  "lat": 48.47833,
+  "lng": -123.27167,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1817"
+  }
+ },
+ {
+  "name": "Ogden Point (The Breakwater)",
+  "lat": 48.41487,
+  "lng": -123.38411,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1895"
+  }
+ },
+ {
+  "name": "Spring Bay",
+  "lat": 48.45588,
+  "lng": -123.26876,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1897"
+  }
+ },
+ {
+  "name": "Telegraph Cove",
+  "lat": 48.46386,
+  "lng": -123.27027,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1904"
+  }
+ },
+ {
+  "name": "Ten Mile Point",
+  "lat": 48.45561,
+  "lng": -123.26601,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1898"
+  }
+ },
+ {
+  "name": "Discovery Island",
+  "lat": 48.42333,
+  "lng": -123.25167,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1900"
+  }
+ },
+ {
+  "name": "Fulford Reef",
+  "lat": 48.44563,
+  "lng": -123.24018,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1908"
+  }
+ },
+ {
+  "name": "Chain Islet",
+  "lat": 48.42167,
+  "lng": -123.26667,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1907"
+  }
+ },
+ {
+  "name": "Brinn Rock",
+  "lat": 48.42459,
+  "lng": -123.22255,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1906"
+  }
+ },
+ {
+  "name": "Virtue Rock",
+  "lat": 48.41785,
+  "lng": -123.25407,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1910"
+  }
+ },
+ {
+  "name": "Mouat Reef",
+  "lat": 48.40833,
+  "lng": -123.29833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1909"
+  }
+ },
+ {
+  "name": "McKenzie Bright",
+  "lat": 48.55833,
+  "lng": -123.505,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1920"
+  }
+ },
+ {
+  "name": "Willis Point",
+  "lat": 48.57833,
+  "lng": -123.48499,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1921"
+  }
+ },
+ {
+  "name": "Senanus Island",
+  "lat": 48.59193,
+  "lng": -123.48602,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1924"
+  }
+ },
+ {
+  "name": "Henderson Point",
+  "lat": 48.59789,
+  "lng": -123.48074,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1919"
+  }
+ },
+ {
+  "name": "Tozier Rock",
+  "lat": 48.61833,
+  "lng": -123.51333,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1925"
+  }
+ },
+ {
+  "name": "White Lady (Repulse Rock)",
+  "lat": 48.54602,
+  "lng": -123.53965,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1926"
+  }
+ },
+ {
+  "name": "Dyer Rocks",
+  "lat": 48.62333,
+  "lng": -123.48333,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1927"
+  }
+ },
+ {
+  "name": "Wain Rock",
+  "lat": 48.68833,
+  "lng": -123.48833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1929"
+  }
+ },
+ {
+  "name": "Arbutus Island",
+  "lat": 48.70667,
+  "lng": -123.435,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1931"
+  }
+ },
+ {
+  "name": "Patey Rock",
+  "lat": 48.7,
+  "lng": -123.52,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1928"
+  }
+ },
+ {
+  "name": "G.B. Church",
+  "lat": 48.67,
+  "lng": -123.28667,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Graham`s Wall",
+  "lat": 48.67,
+  "lng": -123.32167,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1933"
+  }
+ },
+ {
+  "name": "Reay Island",
+  "lat": 48.67667,
+  "lng": -123.32833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1944"
+  }
+ },
+ {
+  "name": "Joan Rock",
+  "lat": 48.69,
+  "lng": -123.31667,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1942"
+  }
+ },
+ {
+  "name": "Little Group Islands",
+  "lat": 48.67167,
+  "lng": -123.36667,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1943"
+  }
+ },
+ {
+  "name": "Forest Island",
+  "lat": 48.66,
+  "lng": -123.33333,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1940"
+  }
+ },
+ {
+  "name": "Cooper Reef",
+  "lat": 48.67092,
+  "lng": -123.27675,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1939"
+  }
+ },
+ {
+  "name": "Rubly Island",
+  "lat": 48.6653,
+  "lng": -123.31147,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1936"
+  }
+ },
+ {
+  "name": "Arachne Reef",
+  "lat": 48.68472,
+  "lng": -123.29368,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1937"
+  }
+ },
+ {
+  "name": "North Cod Reef",
+  "lat": 48.65761,
+  "lng": -123.3002,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1935"
+  }
+ },
+ {
+  "name": "South Cod Reef",
+  "lat": 48.65333,
+  "lng": -123.3,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1946"
+  }
+ },
+ {
+  "name": "Imrie Island",
+  "lat": 48.69452,
+  "lng": -123.33311,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1941"
+  }
+ },
+ {
+  "name": "Blake Island Reef",
+  "lat": 47.52958,
+  "lng": -122.49459,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef"
+  }
+ },
+ {
+  "name": "Kelvin Grove Dive Site",
+  "lat": 49.45,
+  "lng": -123.24025,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Whytecliff Park Dive Site",
+  "lat": 49.37171,
+  "lng": -123.29161,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Ansell Point Dive Site",
+  "lat": 49.39687,
+  "lng": -123.25204,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Seacrest Park",
+  "lat": 47.58892,
+  "lng": -122.37968,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "park",
+   "website": "https://www.seattle.gov/parks/allparks/seacrest-park"
+  }
+ },
+ {
+  "name": "Emma Hood Swim Center",
+  "lat": 37.76379,
+  "lng": -122.24545,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "swimming_pool"
+  }
+ },
+ {
+  "name": "Diving Area",
+  "lat": 36.52179,
+  "lng": -121.94054,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Blue Water Lake",
+  "lat": 37.19042,
+  "lng": -94.474,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1806"
+  }
+ },
+ {
+  "name": "Beaver Lake Dive Park",
+  "lat": 36.42995,
+  "lng": -93.85598,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "swimming_area"
+  }
+ },
+ {
+  "name": "Little Wissahickon (Wrack)",
+  "lat": 41.90362,
+  "lng": -81.94635,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1630"
+  }
+ },
+ {
+  "name": "Frank E. Vigor (Wrack)",
+  "lat": 41.95908,
+  "lng": -81.95403,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1629"
+  }
+ },
+ {
+  "name": "Willis (Wrack)",
+  "lat": 41.94111,
+  "lng": -82.16861,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1628"
+  }
+ },
+ {
+  "name": "M. I. Wilcox (Wreck)",
+  "lat": 41.9805,
+  "lng": -82.94083,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1624"
+  }
+ },
+ {
+  "name": "Specular (Wrack)",
+  "lat": 41.82288,
+  "lng": -82.53616,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1626"
+  }
+ },
+ {
+  "name": "George Worthington (Wrack)",
+  "lat": 41.945,
+  "lng": -82.855,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1625"
+  }
+ },
+ {
+  "name": "Tasmania (Wrack)",
+  "lat": 41.79166,
+  "lng": -82.50528,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1627"
+  }
+ },
+ {
+  "name": "Lycoming (Wrack)",
+  "lat": 42.2513,
+  "lng": -81.88973,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1631"
+  }
+ },
+ {
+  "name": "A. R. Colborn and Crane (Wrack)",
+  "lat": 42.98552,
+  "lng": -82.42277,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1622"
+  }
+ },
+ {
+  "name": "Monarch (Wreck)",
+  "lat": 42.9961,
+  "lng": -82.42253,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1621"
+  }
+ },
+ {
+  "name": "William H. Wolf (Wrack)",
+  "lat": 42.69122,
+  "lng": -82.49581,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1623"
+  }
+ },
+ {
+  "name": "Wexford (Wrack)",
+  "lat": 43.4005,
+  "lng": -81.88834,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1619"
+  }
+ },
+ {
+  "name": "Wilma (Wrack)",
+  "lat": 42.70283,
+  "lng": -80.03447,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1640"
+  }
+ },
+ {
+  "name": "17 Fathom Wreck (Wrack)",
+  "lat": 42.65171,
+  "lng": -80.05241,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1639"
+  }
+ },
+ {
+  "name": "Brown Brothers (Wrack)",
+  "lat": 42.62667,
+  "lng": -80.09833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1638"
+  }
+ },
+ {
+  "name": "Atlantic (Wrack)",
+  "lat": 42.51033,
+  "lng": -80.08476,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1635"
+  }
+ },
+ {
+  "name": "Trade Wind (Wrack)",
+  "lat": 42.42527,
+  "lng": -80.20094,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1634"
+  }
+ },
+ {
+  "name": "Nimrod (Wrack)",
+  "lat": 42.37667,
+  "lng": -81.005,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1633"
+  }
+ },
+ {
+  "name": "Merida (Wrack)",
+  "lat": 42.23258,
+  "lng": -81.34647,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1632"
+  }
+ },
+ {
+  "name": "Pascal P. Pratt (Wrack)",
+  "lat": 42.56137,
+  "lng": -80.09048,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1637"
+  }
+ },
+ {
+  "name": "Cecil J. (Wrack)",
+  "lat": 42.76308,
+  "lng": -80.22813,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1636"
+  }
+ },
+ {
+  "name": "Michigan (Wrack)",
+  "lat": 44.91611,
+  "lng": -80.20416,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "4m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1605"
+  }
+ },
+ {
+  "name": "Mapledawn (Wrack)",
+  "lat": 44.86747,
+  "lng": -80.24382,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "8m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1606"
+  }
+ },
+ {
+  "name": "Marquette (Wrack)",
+  "lat": 44.9113,
+  "lng": -80.15686,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "11m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1603"
+  }
+ },
+ {
+  "name": "Lottie Wolf (Wrack)",
+  "lat": 44.9172,
+  "lng": -80.16283,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1604"
+  }
+ },
+ {
+  "name": "Cedarville (Wrack)",
+  "lat": 45.78725,
+  "lng": -84.6708,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=660"
+  }
+ },
+ {
+  "name": "Edmund Fitzgerald",
+  "lat": 46.99887,
+  "lng": -85.10979,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Panther (Wrack)",
+  "lat": 46.64444,
+  "lng": -84.80805,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1599"
+  }
+ },
+ {
+  "name": "The Caves",
+  "lat": 45.24555,
+  "lng": -81.52344,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot"
+  }
+ },
+ {
+  "name": "Caroline Rose (Schooner)",
+  "lat": 45.24225,
+  "lng": -81.5762,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Niagara II (sandsucker)",
+  "lat": 45.25003,
+  "lng": -81.60257,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "depth": "25m"
+  }
+ },
+ {
+  "name": "James C. King (Wreck)",
+  "lat": 45.2678,
+  "lng": -81.715,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1614"
+  }
+ },
+ {
+  "name": "W. L. Wetmore (Wreck)",
+  "lat": 45.26557,
+  "lng": -81.70933,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1615"
+  }
+ },
+ {
+  "name": "The Tugs (Wreck)",
+  "lat": 45.25831,
+  "lng": -81.6614,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "City of Grand Rapids (steamer)",
+  "lat": 45.25488,
+  "lng": -81.68082,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Forest City (Wreck)",
+  "lat": 45.31515,
+  "lng": -81.55703,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "depth": "45m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1610"
+  }
+ },
+ {
+  "name": "Arabia (Wreck)",
+  "lat": 45.31188,
+  "lng": -81.67406,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "depth": "34m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1611"
+  }
+ },
+ {
+  "name": "Charles P. Minch (Wreck)",
+  "lat": 45.29425,
+  "lng": -81.71012,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1612"
+  }
+ },
+ {
+  "name": "Philo Scoville (Wreck)",
+  "lat": 45.26888,
+  "lng": -81.69721,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "divespot",
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1613"
+  }
+ },
+ {
+  "name": "North Wind (Wrack)",
+  "lat": 46.06019,
+  "lng": -82.20237,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1600"
+  }
+ },
+ {
+  "name": "Glenlyon",
+  "lat": 47.57178,
+  "lng": -88.44824,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://en.wikipedia.org/wiki/SS_Glenlyon"
+  }
+ },
+ {
+  "name": "Bow",
+  "lat": 46.99829,
+  "lng": -85.11048,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Overturned Stern",
+  "lat": 46.9996,
+  "lng": -85.10925,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Midship",
+  "lat": 46.99884,
+  "lng": -85.10979,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "USNS General Hoyt S. Vandenberg",
+  "lat": 24.45,
+  "lng": -81.7333,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2904"
+  }
+ },
+ {
+  "name": "Spiegel Grove",
+  "lat": 25.06667,
+  "lng": -80.31084,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=658"
+  }
+ },
+ {
+  "name": "USS Oriskany",
+  "lat": 30.04389,
+  "lng": -87.00694,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1586"
+  }
+ },
+ {
+  "name": "USS Massachusetts",
+  "lat": 30.29567,
+  "lng": -87.31203,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Catherine",
+  "lat": 30.31811,
+  "lng": -87.28313,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2021"
+  }
+ },
+ {
+  "name": "Three Coal Barges",
+  "lat": 30.2915,
+  "lng": -87.20483,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2024"
+  }
+ },
+ {
+  "name": "Monsanto Boxes",
+  "lat": 30.19953,
+  "lng": -87.24588,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2026"
+  }
+ },
+ {
+  "name": "San Pablo",
+  "lat": 30.18842,
+  "lng": -87.21825,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2025"
+  }
+ },
+ {
+  "name": "Sylvia",
+  "lat": 30.18342,
+  "lng": -87.22863,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2028"
+  }
+ },
+ {
+  "name": "P. C. Barge",
+  "lat": 30.18373,
+  "lng": -87.23543,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2027"
+  }
+ },
+ {
+  "name": "Fort Pickens Jetties",
+  "lat": 30.33096,
+  "lng": -87.29336,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2020"
+  }
+ },
+ {
+  "name": "Soule Barge-Gulf Power Towers",
+  "lat": 30.17827,
+  "lng": -87.24388,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2031"
+  }
+ },
+ {
+  "name": "Tessie",
+  "lat": 30.19395,
+  "lng": -87.24087,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2030"
+  }
+ },
+ {
+  "name": "Deliverance",
+  "lat": 30.18175,
+  "lng": -87.24363,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=2029"
+  }
+ },
+ {
+  "name": "S.S. Inchulva / Delray Wreck (Wrack)",
+  "lat": 26.45363,
+  "lng": -80.05634,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1983"
+  }
+ },
+ {
+  "name": "Paposse (Wrack)",
+  "lat": 34.1445,
+  "lng": -76.652,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=659"
+  }
+ },
+ {
+  "name": "Bedfordshire (Wrack)",
+  "lat": 34.31202,
+  "lng": -76.45025,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1306"
+  }
+ },
+ {
+  "name": "U-576 (Wrack)",
+  "lat": 34.51,
+  "lng": -75.22,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1301"
+  }
+ },
+ {
+  "name": "U-85 (Wrack)",
+  "lat": 35.55,
+  "lng": -75.13,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1302"
+  }
+ },
+ {
+  "name": "U-352 (Wrack)",
+  "lat": 34.22767,
+  "lng": -76.56597,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1303"
+  }
+ },
+ {
+  "name": "Indra (Wrack)",
+  "lat": 34.56167,
+  "lng": -76.85167,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1304"
+  }
+ },
+ {
+  "name": "Aeolus (Wrack)",
+  "lat": 34.27805,
+  "lng": -76.64417,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1305"
+  }
+ },
+ {
+  "name": "Ginnie Spring",
+  "lat": 29.83621,
+  "lng": -82.70028,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Ichetucknee Spring",
+  "lat": 29.98416,
+  "lng": -82.76182,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Weeki Wachee Spring",
+  "lat": 28.51727,
+  "lng": -82.57323,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Vortex Spring",
+  "lat": 30.77067,
+  "lng": -85.94838,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring",
+   "website": "https://vortexspring.com/diving"
+  }
+ },
+ {
+  "name": "Jackson Blue Spring",
+  "lat": 30.79045,
+  "lng": -85.14011,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring",
+   "website": "https://www.facebook.com/people/Jackson-Blue-Springs/100094801714951/"
+  }
+ },
+ {
+  "name": "Troy Spring",
+  "lat": 30.00603,
+  "lng": -82.9975,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Alexander Springs",
+  "lat": 29.0813,
+  "lng": -81.57588,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Madison Blue Spring",
+  "lat": 30.48044,
+  "lng": -83.24436,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Rainbow Spring",
+  "lat": 29.10248,
+  "lng": -82.43747,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Rainbow Spring North",
+  "lat": 29.1027,
+  "lng": -82.43788,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Volusia Blue Spring",
+  "lat": 28.94748,
+  "lng": -81.33959,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Morrison Spring",
+  "lat": 30.65788,
+  "lng": -85.90394,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring",
+   "website": "https://www.co.walton.fl.us/523/Morrison-Springs"
+  }
+ },
+ {
+  "name": "Devil's Den",
+  "lat": 29.40749,
+  "lng": -82.47643,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "cave_entrance",
+   "website": "https://devilsden.com/"
+  }
+ },
+ {
+  "name": "Dive Abaco",
+  "lat": 26.54674,
+  "lng": -77.05159,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "www.diveabaco.com"
+  }
+ },
+ {
+  "name": "Sebastian Inlet",
+  "lat": 27.85576,
+  "lng": -80.4535,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "bay"
+  }
+ },
+ {
+  "name": "Cudjoe Gardens Marina And Dive Center",
+  "lat": 24.65803,
+  "lng": -81.50563,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "marina"
+  }
+ },
+ {
+  "name": "Juniper Springs",
+  "lat": 29.1837,
+  "lng": -81.71241,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Triumph Reef",
+  "lat": 25.47413,
+  "lng": -80.10806,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Lofthus",
+  "lat": 26.56278,
+  "lng": -80.03833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "SS Copenhagen Shipwreck",
+  "lat": 26.20593,
+  "lng": -80.08387,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "John D MacArthur Beach State Park",
+  "lat": 26.82396,
+  "lng": -80.04262,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "sea",
+   "leisure": "park",
+   "website": "https://www.floridastateparks.org/parks-and-trails/john-d-macarthur-beach-state-park"
+  }
+ },
+ {
+  "name": "Eagle's Nest",
+  "lat": 28.55492,
+  "lng": -82.60914,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Madison Quarry",
+  "lat": 34.67551,
+  "lng": -86.72993,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Catfish Hotel Sink",
+  "lat": 29.48867,
+  "lng": -82.97597,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Phil Foster Park Snorkel Reef",
+  "lat": 26.78258,
+  "lng": -80.04217,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "sea",
+   "leisure": "park",
+   "website": "http://www.pbcgov.com/parks/locations/philfoster.htm#philfostersnorkeling"
+  }
+ },
+ {
+  "name": "Madison Quarry",
+  "lat": 34.67551,
+  "lng": -86.73018,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water",
+   "leisure": "swimming_area"
+  }
+ },
+ {
+  "name": "Blue Water Park",
+  "lat": 33.29526,
+  "lng": -86.81742,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Dive Land Park",
+  "lat": 33.9228,
+  "lng": -85.90593,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Blue Grotto Spring",
+  "lat": 29.38795,
+  "lng": -82.48659,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "spring"
+  }
+ },
+ {
+  "name": "Anglin’s Pier Reef",
+  "lat": 26.187,
+  "lng": -80.09329,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef",
+   "website": "https://www.discoverlbts.com/diving-snorkeling/"
+  }
+ },
+ {
+  "name": "Molasses Reef",
+  "lat": 25.02049,
+  "lng": -80.37292,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "reef"
+  }
+ },
+ {
+  "name": "Saint Andrew's Bay",
+  "lat": 30.18594,
+  "lng": -85.72476,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "bay"
+  }
+ },
+ {
+  "name": "Dry Tortugas National Park",
+  "lat": 24.64659,
+  "lng": -82.86662,
+  "city": "",
+  "state": "",
+  "tags": {
+   "leisure": "nature_reserve",
+   "website": "https://www.nps.gov/drto/"
+  }
+ },
+ {
+  "name": "Raleigh (Wrack)",
+  "lat": 42.86543,
+  "lng": -79.15424,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1643"
+  }
+ },
+ {
+  "name": "C. B. Benson (Wreck)",
+  "lat": 42.77103,
+  "lng": -79.24348,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1642"
+  }
+ },
+ {
+  "name": "Carlingford (Wrack)",
+  "lat": 42.65572,
+  "lng": -79.47655,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1641"
+  }
+ },
+ {
+  "name": "Sligo (Wreck)",
+  "lat": 43.615,
+  "lng": -79.45147,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1644"
+  }
+ },
+ {
+  "name": "Wawinet (Wrack)",
+  "lat": 44.82146,
+  "lng": -79.86826,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1602"
+  }
+ },
+ {
+  "name": "USS Cyclops (Wrack)",
+  "lat": 37.435,
+  "lng": -74.70193,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1580"
+  }
+ },
+ {
+  "name": "Wolfe Islander II (Wrack)",
+  "lat": 44.22573,
+  "lng": -76.41738,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1653"
+  }
+ },
+ {
+  "name": "Munson (Wrack)",
+  "lat": 44.20888,
+  "lng": -76.60764,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1652"
+  }
+ },
+ {
+  "name": "Comet (Wrack)",
+  "lat": 44.1388,
+  "lng": -76.58452,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1651"
+  }
+ },
+ {
+  "name": "George A. Marsh (Wrack)",
+  "lat": 44.12684,
+  "lng": -76.6028,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1650"
+  }
+ },
+ {
+  "name": "Frontenac (Wrack)",
+  "lat": 44.01871,
+  "lng": -76.60201,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1649"
+  }
+ },
+ {
+  "name": "City of Sheboygan (Wrack)",
+  "lat": 44.07597,
+  "lng": -76.73447,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1648"
+  }
+ },
+ {
+  "name": "Katie Eccles (Wreck)",
+  "lat": 44.00967,
+  "lng": -76.74216,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "30m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1647"
+  }
+ },
+ {
+  "name": "Annie Falconer (Wreck)",
+  "lat": 43.96433,
+  "lng": -76.80167,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "22m",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1646"
+  }
+ },
+ {
+  "name": "Olive Branch (Wrack)",
+  "lat": 43.93167,
+  "lng": -76.73667,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1645"
+  }
+ },
+ {
+  "name": "Robert Gaskin (Wrack)",
+  "lat": 44.5893,
+  "lng": -75.67709,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1658"
+  }
+ },
+ {
+  "name": "Rothesay (Shipwreck)",
+  "lat": 44.69967,
+  "lng": -75.52717,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1659"
+  }
+ },
+ {
+  "name": "Eastcliffe Hall (Wrack)",
+  "lat": 44.92472,
+  "lng": -75.10111,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1660"
+  }
+ },
+ {
+  "name": "Lock 21 Dive Site",
+  "lat": 44.9975,
+  "lng": -74.89931,
+  "city": "",
+  "state": "",
+  "tags": {
+   "website": "https://www.waymarking.com/waymarks/WM83Y_LOCK_21_St_Lawrence_river"
+  }
+ },
+ {
+  "name": "Lillie Parsons (Wrack)",
+  "lat": 44.55618,
+  "lng": -75.71878,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1657"
+  }
+ },
+ {
+  "name": "Henry C. Daryaw (Wrack)",
+  "lat": 44.5261,
+  "lng": -75.76258,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1656"
+  }
+ },
+ {
+  "name": "Keystorm (Wreck)",
+  "lat": 44.42975,
+  "lng": -75.82317,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1655"
+  }
+ },
+ {
+  "name": "Water Witch",
+  "lat": 44.23333,
+  "lng": -73.33467,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/lake-schooner-water-witch/"
+  }
+ },
+ {
+  "name": "Phoenix",
+  "lat": 44.54951,
+  "lng": -73.33478,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/steamboat-phoenix/"
+  }
+ },
+ {
+  "name": "Burlington Bay Horse Ferry",
+  "lat": 44.48499,
+  "lng": -73.24301,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "15.24",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/horse-ferry/"
+  }
+ },
+ {
+  "name": "Champlain II",
+  "lat": 44.206,
+  "lng": -73.37633,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/steamboat-champlain-ii/"
+  }
+ },
+ {
+  "name": "O.J. Walker",
+  "lat": 44.47867,
+  "lng": -73.24067,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "depth": "19.812",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/sailing-canal-boat-o-j-walker/"
+  }
+ },
+ {
+  "name": "General Butler",
+  "lat": 44.4705,
+  "lng": -73.22833,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/sailing-canal-boat-general-butler/"
+  }
+ },
+ {
+  "name": "Sloop Island Canal Boat",
+  "lat": 44.3127,
+  "lng": -73.30818,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.lcmm.org/archaeology/vermont-underwater-historic-preserves/sloop-island-canal-boat-wreck-z/"
+  }
+ },
+ {
+  "name": "U-869 (Wrack)",
+  "lat": 39.5637,
+  "lng": -73.0344,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=632"
+  }
+ },
+ {
+  "name": "Waome (Wrack)",
+  "lat": 45.06917,
+  "lng": -79.53194,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "http://www.dive-links.com/tauchplatz.php?id=1601"
+  }
+ },
+ {
+  "name": "U-1105",
+  "lat": 38.13521,
+  "lng": -76.55552,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://mht.maryland.gov/archeology_U1105.shtml"
+  }
+ },
+ {
+  "name": "The Conestoga",
+  "lat": 44.7795,
+  "lng": -75.39331,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck"
+  }
+ },
+ {
+  "name": "Lock 27",
+  "lat": 44.77753,
+  "lng": -75.39956,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "archaeological_site"
+  }
+ },
+ {
+  "name": "Wreck Wee Hawk",
+  "lat": 44.77694,
+  "lng": -75.40022,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "wreck",
+   "website": "https://www.projectaware.org/debris-data/lock-28wee-hawk-wreck"
+  }
+ },
+ {
+  "name": "Kahnawake Quarry",
+  "lat": 45.40283,
+  "lng": -73.68504,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Dutch Springs",
+  "lat": 40.68387,
+  "lng": -75.35522,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "water"
+  }
+ },
+ {
+  "name": "Lock 23",
+  "lat": 44.8953,
+  "lng": -75.17511,
+  "city": "",
+  "state": "",
+  "tags": {
+   "historic": "archaeological_site",
+   "website": "https://morrisburgdivesites.com/tag/lock-23-morrisburg/"
+  }
+ },
+ {
+  "name": "Ocean Beach",
+  "lat": 41.30726,
+  "lng": -72.09919,
+  "city": "",
+  "state": "",
+  "tags": {
+   "natural": "beach",
+   "website": "https://www.ocean-beach-park.com"
+  }
+ },
+ {
+  "name": "Edge of the World",
+  "lat": 20.63082,
+  "lng": -156.49858,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Enenue",
+  "lat": 20.63314,
+  "lng": -156.49527,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Flying Sea Cliffs",
+  "lat": 20.63047,
+  "lng": -156.4942,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Middle Reef",
+  "lat": 20.63385,
+  "lng": -156.49692,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Reef's End",
+  "lat": 20.63482,
+  "lng": -156.49779,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Shark Condos",
+  "lat": 20.63412,
+  "lng": -156.49506,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "Tako Flats",
+  "lat": 20.6325,
+  "lng": -156.49804,
+  "city": "",
+  "state": "",
+  "tags": {}
+ },
+ {
+  "name": "The Back Side",
+  "lat": 20.63,
+  "lng": -156.49599,
+  "city": "",
+  "state": "",
+  "tags": {}
+ }
+]

@@ -44,6 +44,12 @@ based on trail mileage for hiking). Give a start time and that window is scored 
 Nearer places win ties.
 
 - Golf and hiking: rain chance, feels-like temperature and wind.
+- Hiking near slot canyons: any trailhead within 10 miles of a known slot canyon, or
+  named for one, carries a flash flood warning. It cannot score above Poor unless the
+  forecast shows 24 dry hours leading up to the hike.
+- Hike length: where a trail named like the trailhead is on file, the outing is that
+  trail out and back at 2 mph. Otherwise the app looks for the best three hours and
+  says no length is on file.
 - Golf courses are labelled Public, Private, Semi-private, Municipal or Resort, and
   the recommendations always include at least three you can book without a membership,
   reaching past the distance limit if they have to. Semi-private means a private club
@@ -66,10 +72,18 @@ The thresholds are rules of thumb. Check conditions yourself before you go.
 - Tide times are read off the marine model's hourly sea level, so treat them as
   approximate and use a tide table for anything that matters.
 - Forecasts run about two weeks out for weather and about a week for waves.
-- Golf courses and trailheads cover all 50 states and DC. Dive sites cover 48 states;
-  the source has no pages for Ohio or Virginia.
-- Trailheads from OpenStreetMap have no mileage or difficulty, so they get a default
-  three-hour outing. The original New England hikes keep their details.
+- Golf courses and trailheads cover all 50 states and DC. Dive sites cover every
+  state, though Ohio and Virginia are thin: a few quarries entered by hand plus wrecks
+  from OpenStreetMap, because the main source has no pages for them.
+- Trail lengths come from the USGS National Digital Trails layer, which has a trail
+  at about 60% of trailheads and a clearly matching one at about a third. Lengths are
+  one way and take no account of climbing. The original New England hikes keep their
+  own mileage and difficulty.
+- The slot canyon list is OpenStreetMap features named "slot canyon" plus about 30
+  well-known canyons entered by hand. It will miss obscure ones, and the forecast is
+  for the trailhead, not for the drainage upstream.
+- Surf breaks are still the 14 hand-entered New England spots. OpenStreetMap has too
+  few US surf spots to use, and the good national lists are proprietary.
 - Course types come from a directory that only says public or private. Semi-private,
   municipal and resort are worked out from the name and OpenStreetMap tags.
 - The shore-facing direction is estimated from elevation data on a ring around each
@@ -77,7 +91,7 @@ The thresholds are rules of thumb. Check conditions yourself before you go.
   water, and it can be off on a jagged coast. Those sites get an asterisk and fall
   back to plain wind speed.
 - Boat dives from the original scrape are located only to the nearest harbor.
-- Surf breaks in `data/surf_spots.json` were entered by hand with approximate coordinates.
+- Surf break coordinates in `data/surf_spots.json` are approximate.
 - Pickleball is parked. Its scraper and data are still in the repository.
 - If a forecast lookup fails, the nearest places are still listed with an asterisk
   in place of a score.
@@ -89,8 +103,11 @@ None of the scrapers need a key. The ones that matter now are
 ```bash
 python osm_places.py
 python golf_types.py
+python trail_lengths.py
 python diving_zentacle.py
 python diving_osm.py
+python osm_extras.py
+python fix_original_dives.py
 python coast_bearings.py
 python build_site_data.py
 ```
@@ -103,6 +120,14 @@ python build_site_data.py
 - `diving_zentacle.py` collects dive sites for every state from Zentacle's public
   location pages, and `diving_osm.py` adds sites tagged for diving in OpenStreetMap.
   Only names, coordinates, access and depth are kept, with a link back to the source.
+- `trail_lengths.py` asks the USGS National Digital Trails layer which trails leave
+  from each trailhead and how long they are.
+- `osm_extras.py` collects dive sites tagged in OpenStreetMap nationwide and features
+  named "slot canyon" in the Southwest.
+- `fix_original_dives.py` re-checks where the original New England dive sites are.
+  Positions looked up by hand go in `data/dive_fixes_manual.json`, extra dive sites in
+  `data/dive_sites_manual.json` and extra slot canyons in
+  `data/slot_canyons_manual.json`, each with its source.
 - `coast_bearings.py` works out which way each dive site and surf break faces, from
   the free Terrain Tiles elevation data on AWS. Results are cached in
   `data/sea_bearings.json`.
