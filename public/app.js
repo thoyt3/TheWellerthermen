@@ -36,6 +36,7 @@
   const FORECAST_DAYS = 15;
   const SHOWN_AT_FIRST = 5;
   const MAX_SUGGESTIONS = 3000;
+  const RAIN_SHOWN_FROM = 15; // percent chance below which an hour shows no rain
   const NIGHT_DIVE_RULE = 'Only for divers with Advanced Open Water or a night diving certification.';
   const NIGHT_ACCESS_RULE = 'Many parks, beaches and parking lots close at dusk. Check with the park, town or harbormaster about night access and hours before you go.';
   const MIN_OPEN_GOLF = 3; // golf recommendations always include this many public or municipal courses
@@ -648,6 +649,27 @@
 
   // ---------- rendering ----------
 
+  // Rain over each hour of the strip: the blue column rises with the chance of
+  // rain, and one to three drops show how hard it is expected to come down.
+  function rainRow(result, first, last) {
+    const shown = result.hours.slice(first, last + 1);
+    if (!shown.some((h) => h.rainChance >= RAIN_SHOWN_FROM)) return null;
+    const row = el('div', { class: 'rain' });
+    shown.forEach((h, k) => {
+      const column = el('div', { class: 'rain-col' });
+      if (h.rainChance >= RAIN_SHOWN_FROM) {
+        const amount = imperial() ? `${(h.rain / 25.4).toFixed(2)} in` : `${h.rain.toFixed(1)} mm`;
+        column.title = `${fmtHour(first + k)}: ${Math.round(h.rainChance)}% chance of rain, ${amount}`;
+        const fill = el('div', { class: 'rain-fill', style: `height:${Math.round(h.rainChance)}%;opacity:${(0.35 + h.rainChance / 155).toFixed(2)}` });
+        const drops = h.rain >= 2.5 ? 3 : h.rain >= 0.5 ? 2 : h.rain > 0 || h.rainChance >= 50 ? 1 : 0;
+        for (let d = 0; d < drops; d++) fill.append(el('i', { class: 'drop' }));
+        column.append(fill);
+      }
+      row.append(column);
+    });
+    return row;
+  }
+
   function hourStrip(result) {
     const first = 5;
     const last = result.night ? 23 : 21;
@@ -667,7 +689,8 @@
       el('span', { text: fmtHour((first + last) / 2) }),
       el('span', { text: fmtHour(last) })
     );
-    return [strip, labels];
+    const rain = rainRow(result, first, last);
+    return rain ? [rain, strip, labels] : [strip, labels];
   }
 
   // Reasons a score is less complete than usual. Any of these puts an asterisk on it.

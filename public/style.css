@@ -181,6 +181,29 @@ h2.section { font-size: 1rem; margin: 18px 0 8px; color: var(--muted); text-tran
 .desc { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; white-space: pre-line; }
 .desc.clamped { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
+.rain { display: flex; gap: 2px; height: 26px; margin: 8px 0 -6px; align-items: flex-end; }
+.rain-col { flex: 1; height: 100%; display: flex; align-items: flex-end; }
+.rain-fill {
+  width: 100%;
+  min-height: 9px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(to top, #2f7dff, #8fc0ff);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2px;
+  overflow: hidden;
+}
+.drop {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  flex: none;
+}
 .strip { display: flex; gap: 2px; margin: 8px 0 2px; }
 .strip .cell { flex: 1; height: 16px; border-radius: 2px; background: #2a2a2a; }
 .strip .cell.best { outline: 2px solid #fff; outline-offset: -1px; }
