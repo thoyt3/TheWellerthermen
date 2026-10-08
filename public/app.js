@@ -102,6 +102,76 @@
   function setStatus(message, isError = false) {
     statusDiv.textContent = message;
     statusDiv.className = isError ? 'error' : '';
+    // while a search runs, the loading card shows the step instead
+    if (!$('loading').hidden && !isError) $('loading-step').textContent = message;
+  }
+
+  // ---------- loading card: proof of life while a search runs ----------
+
+  const SLOGANS = {
+    any: [
+      'Consulting the beaver...',
+      'Asking the sky nicely...',
+      'Counting raindrops so you do not have to...',
+      'Licking a finger and holding it to the wind...',
+      'Arguing with the weatherman...',
+    ],
+    golf: [
+      'Checking whether the wind owes you a stroke...',
+      'Raking the bunkers...',
+      'Looking for fairways without puddles...',
+      'Replacing divots...',
+      'Finding a tee time the rain forgot...',
+    ],
+    hiking: [
+      'Lacing up the boots...',
+      'Checking the trail for mud...',
+      'Looking for blue sky between the trees...',
+      'Topping off the water bottles...',
+      'Asking the summit how windy it is up there...',
+    ],
+    scuba_diving: [
+      'Checking the viz...',
+      'Defogging the mask...',
+      'Asking the lobsters about the surge...',
+      'Working out which way the wind is pushing the silt...',
+      'Holding a safety stop...',
+    ],
+    surfing: [
+      'Waxing the board...',
+      'Watching the horizon for sets...',
+      'Asking the swell to hurry up...',
+      'Checking whether the wind is behaving...',
+    ],
+  };
+  const SLOGAN_SECONDS = 2.4;
+  const SLOW_AFTER_SECONDS = 8;
+  let loadingTimer = null;
+
+  function startLoading(activity) {
+    const lines = [...(SLOGANS[activity] || []), ...SLOGANS.any].sort(() => Math.random() - 0.5);
+    let shown = 0;
+    const started = Date.now();
+    const next = () => {
+      $('loading-slogan').textContent = lines[shown++ % lines.length];
+      if ((Date.now() - started) / 1000 > SLOW_AFTER_SECONDS) {
+        $('loading-step').textContent = 'Still working. The first search of the day has more to download.';
+      }
+    };
+    stopLoading();
+    $('loading-step').textContent = '';
+    $('loading').hidden = false;
+    statusDiv.hidden = true; // the card shows the step while it is up
+    resultsDiv.classList.add('stale');
+    next();
+    loadingTimer = setInterval(next, SLOGAN_SECONDS * 1000);
+  }
+
+  function stopLoading() {
+    clearInterval(loadingTimer);
+    $('loading').hidden = true;
+    statusDiv.hidden = false;
+    resultsDiv.classList.remove('stale');
   }
 
   function loadPrefs() {
@@ -1225,12 +1295,14 @@
       event.preventDefault();
       submitButton.disabled = true;
       savePrefs();
+      startLoading(activitySelect.value);
       try {
         await runQuery();
       } catch (error) {
         console.error(error);
         setStatus(error.message || 'Something went wrong. Please try again.', true);
       } finally {
+        stopLoading();
         submitButton.disabled = false;
       }
     });
