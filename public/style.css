@@ -125,6 +125,7 @@ button:disabled { opacity: 0.5; cursor: wait; }
 
 .summary h2 { margin: 0 0 4px; font-size: 1.1rem; }
 .summary p { margin: 0; color: var(--muted); }
+.summary p.warning { margin-top: 8px; color: #ffcc66; font-weight: 600; }
 
 h2.section { font-size: 1rem; margin: 18px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 

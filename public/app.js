@@ -36,6 +36,7 @@
   const FORECAST_DAYS = 15;
   const SHOWN_AT_FIRST = 5;
   const MAX_SUGGESTIONS = 3000;
+  const NIGHT_DIVE_RULE = 'Only for divers with Advanced Open Water or a night diving certification.';
   const MIN_OPEN_GOLF = 3; // golf recommendations always include this many public or municipal courses
 
   // A course anyone can book. Unlabeled courses may be public too, but we cannot promise it.
@@ -435,7 +436,8 @@
     const firstHour = placeNow.toISOString().slice(0, 10) === query.date ? placeNow.getUTCHours() : 0;
 
     const daylight = hours.map((_, i) => i >= Math.ceil(sunrise) && i + 1 <= Math.floor(sunset));
-    const usable = hours.map((_, i) => scores[i] !== null && i >= firstHour && daylight[i]);
+    // query.night opens up the hours after dark, for a night dive
+    const usable = hours.map((_, i) => scores[i] !== null && i >= firstHour && (query.night || daylight[i]));
 
     const wanted = outingHours(activity, place);
     let best = null;
@@ -470,6 +472,7 @@
       sunrise,
       sunset,
       hasMarine: Boolean(usableMarine),
+      night: Boolean(query.night),
       tides: usableMarine ? tideExtremes(hours) : [],
       best,
       requested,
@@ -578,7 +581,7 @@
         tips.push(`Wind is off the land or along this shore (it faces ${compass(place.seaBearing)}), which is good for visibility.`);
       }
       if (chosen.start < result.sunrise || end > result.sunset) {
-        tips.push(`Part of this dive is in the dark (${moonPhase(query.date)}). Carry at least two lights.`);
+        tips.push(`This is a night dive (${moonPhase(query.date)}). ${NIGHT_DIVE_RULE} Carry at least two lights.`);
       }
     } else if (query.activity === 'surfing') {
       if (stats.swell !== null) {
@@ -645,7 +648,7 @@
 
   function hourStrip(result) {
     const first = 5;
-    const last = 21;
+    const last = result.night ? 23 : 21;
     const strip = el('div', { class: 'strip' });
     for (let i = first; i <= last; i++) {
       const score = result.scores[i];
@@ -741,7 +744,7 @@
     const { stats, tips } = advice(result, query);
     const notes = caveats(result, query);
 
-    const windowLabel = result.requested ? 'Your time' : 'Best window';
+    const windowLabel = result.requested ? 'Your time' : result.night ? 'Best night window' : 'Best window';
     const card = el('article', { class: 'card' },
       el('div', { class: 'card-head' },
         el('div', { class: 'rank', text: String(number) }),
@@ -774,6 +777,20 @@
     return card;
   }
 
+  // A button that reruns the search for the day after the one selected.
+  function tomorrowButton(text) {
+    return el('button', {
+      type: 'button', class: 'linklike', text,
+      onclick: () => {
+        const next = new Date(`${dateSelect.value}T12:00`);
+        next.setDate(next.getDate() + 1);
+        dateSelect.value = localDateStr(next);
+        timeSelect.value = '';
+        form.requestSubmit();
+      },
+    });
+  }
+
   function renderSummary(top, query, origin) {
     if (!top.chosen) {
       return el('div', { class: 'summary' },
@@ -799,10 +816,17 @@
       `sunset ${fmtClock(top.sunset)}`,
     ];
     if (query.activity === 'scuba_diving') details.push(moonPhase(query.date));
-    return el('div', { class: 'summary' },
+    const summary = el('div', { class: 'summary' },
       el('h2', { text: `${ACTIVITIES[query.activity].label} near ${origin.label}, ${dateText}` }),
       el('p', { text: `${verdicts[scoreLabel(top.chosen.score)]} At ${top.place.name}: ${details.join(', ')}.` })
     );
+    if (query.night) {
+      summary.append(
+        el('p', { class: 'warning', text: `No daylight is left today, so these are night dives. ${NIGHT_DIVE_RULE}` }),
+        tomorrowButton('See tomorrow in daylight instead')
+      );
+    }
+    return summary;
   }
 
   function renderResults(results, query, origin) {
@@ -978,14 +1002,27 @@
       return;
     }
 
-    const results = places
+    const score = () => places
       .map((place, i) => evaluate(place, weather[i], marine ? marine[i] : null, query))
       .filter((result) => result.chosen)
       .sort((a, b) => b.rank - a.rank);
 
+    let results = score();
+    const isToday = query.date === localDateStr(new Date());
+    if (!results.length && isToday && activity === 'scuba_diving') {
+      // the sun is down, but diving does not stop: score the night instead
+      query.night = true;
+      results = score();
+    }
+
     if (!results.length) {
       resultsDiv.replaceChildren();
       markersLayer.clearLayers();
+      if (isToday && dateSelect.value < dateSelect.max) {
+        setStatus('There is no daylight left today. ');
+        statusDiv.append(tomorrowButton('Search tomorrow instead'));
+        return;
+      }
       const why = activity === 'surfing' ? 'There is no wave forecast for that date yet.' : 'There is no daylight left on that date.';
       throw new Error(`${why} Try another day.`);
     }
