@@ -1,4 +1,4 @@
-# TheWealltherMen
+# The Wellerthermen
 
 [Watch the original presentation video here](https://youtu.be/P6FjIJv17YA)
 
@@ -31,7 +31,10 @@ rather than opened from disk, so for that run
 python -m http.server 8000 --directory public
 ```
 
-and visit http://localhost:8000. Any static host works too, GitHub Pages included.
+and visit http://localhost:8000.
+
+The site is also published with GitHub Pages at https://thoyt3.github.io/TheWellerthermen/.
+A workflow in `.github/workflows/pages.yml` republishes `public/` on every push to `main`.
 
 ## How the scoring works
 
