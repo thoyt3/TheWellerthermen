@@ -66,9 +66,8 @@ The thresholds are rules of thumb. Check conditions yourself before you go.
 - Tide times are read off the marine model's hourly sea level, so treat them as
   approximate and use a tide table for anything that matters.
 - Forecasts run about two weeks out for weather and about a week for waves.
-- Dive sites cover 48 states. Golf courses and trailheads come state by state from
-  OpenStreetMap, and both that scrape and the course-type lookup were still partway
-  through the country when this was written. Rerun them to fill in the rest.
+- Golf courses and trailheads cover all 50 states and DC. Dive sites cover 48 states;
+  the source has no pages for Ohio or Virginia.
 - Trailheads from OpenStreetMap have no mileage or difficulty, so they get a default
   three-hour outing. The original New England hikes keep their details.
 - Course types come from a directory that only says public or private. Semi-private,
