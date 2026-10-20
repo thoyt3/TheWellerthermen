@@ -115,6 +115,11 @@ button.cell-score:hover { filter: brightness(1.15); }
 #layout.week { grid-template-columns: 1fr; }
 #layout.week #map { position: static; height: 380px; order: 1; }
 
+.actions { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 12px; }
+.actions button.primary { margin-top: 0; }
+button.secondary { font-size: 1rem; padding: 9px 16px; }
+button.share { font-size: 0.9rem; }
+
 #loading {
   display: flex;
   align-items: center;

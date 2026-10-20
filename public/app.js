@@ -210,6 +210,7 @@
   const fmtTemp = (f) => (imperial() ? `${Math.round(f)}°F` : `${Math.round(((f - 32) * 5) / 9)}°C`);
   const fmtWind = (mph) => (imperial() ? `${Math.round(mph)} mph` : `${Math.round(mph * 1.609)} km/h`);
   const fmtHeight = (ft) => (imperial() ? `${ft.toFixed(1)} ft` : `${(ft * 0.3048).toFixed(1)} m`);
+  const fmtClimb = (ft) => (imperial() ? `${(Math.round(ft / 10) * 10).toLocaleString()} ft` : `${(Math.round(ft * 0.3048 / 5) * 5).toLocaleString()} m`);
   const fmtDistance = (mi) => (imperial() ? `${mi.toFixed(1)} mi` : `${(mi * 1.609).toFixed(1)} km`);
 
   function fmtHour(h) {
@@ -336,6 +337,30 @@
     }
   }
 
+  // US AQI by hour, from the Open-Meteo air quality forecast (about five days out).
+  // Only golf and hiking use it. A failure just leaves the score without it.
+  async function fetchAirQuality(places, start, end = start) {
+    try {
+      const data = await getJSON(batchUrl('https://air-quality-api.open-meteo.com/v1/air-quality', places, end, {
+        hourly: 'us_aqi',
+        start_date: start,
+      }));
+      return Array.isArray(data) ? data : [data];
+    } catch (error) {
+      console.warn('No air quality forecast:', error);
+      return null;
+    }
+  }
+
+  // Lays one day of air quality onto that day's weather, so buildHours can read it.
+  function withAir(weather, air, date) {
+    if (!weather || !air) return weather;
+    const day = oneDay(air, date);
+    return day ? { ...weather, aqi: day.hourly.us_aqi } : weather;
+  }
+
+  const AIR_ACTIVITIES = new Set(['golf', 'hiking']);
+
   // High and low tides for one NOAA station and day, in the station's local time.
   async function fetchTides(station, date) {
     const day = date.replaceAll('-', '');
@@ -443,6 +468,7 @@
     const offset = b ? b.time.length : 0;
     return w.time.map((_, i) => ({
       dry24: !wet.slice(Math.max(0, offset + i - 24), offset + i + 1).some(Boolean),
+      aqi: weather.aqi ? weather.aqi[i] ?? null : null,
       temp: w.temperature_2m[i],
       feels: w.apparent_temperature[i],
       rainChance: w.precipitation_probability[i] ?? 0,
@@ -526,6 +552,12 @@
         }
       }
     }
+    // smoke and smog: hard breathing on a walk or a round is not a good day out
+    if (AIR_ACTIVITIES.has(activity) && h.aqi !== null && h.aqi !== undefined && h.aqi > 100) {
+      score -= (h.aqi - 100) * 0.4;
+      if (h.aqi > 200) score = Math.min(score, 10);
+      else if (h.aqi > 150) score = Math.min(score, 30);
+    }
     return clamp(Math.round(score), 0, 100);
   }
 
@@ -537,8 +569,9 @@
 
   function outingHours(activity, place) {
     // 2 mph with stops: `miles` is a whole hike, `oneWayMiles` a trail walked out and back
+    // plus an hour for every 2,000 ft of climbing (Naismith's rule)
     const hikeMiles = place.miles || (place.oneWayMiles ? place.oneWayMiles * 2 : 0);
-    if (activity === 'hiking' && hikeMiles) return clamp(Math.round(hikeMiles / 2) + 1, 2, 8);
+    if (activity === 'hiking' && hikeMiles) return clamp(Math.round(hikeMiles / 2 + (place.climbFt || 0) / 2000) + 1, 2, 10);
     return ACTIVITIES[activity].hours;
   }
 
@@ -634,6 +667,7 @@
     const pick = (key) => known(slice.map((h) => h[key]));
     return {
       slice,
+      aqi: pick('aqi').length ? Math.max(...pick('aqi')) : null,
       temp: mean(pick('temp')),
       feels: mean(pick('feels')),
       wind: Math.max(...pick('wind')),
@@ -656,7 +690,22 @@
       `wind ${stats.windDir} ${fmtWind(stats.wind)}${stats.gust - stats.wind >= 8 ? `, gusts ${fmtWind(stats.gust)}` : ''}`,
       `${Math.round(stats.rainChance)}% chance of rain`,
     ];
+    if (stats.aqi !== null && stats.aqi > 50) parts.push(`air quality ${aqiLabel(stats.aqi)} (AQI ${Math.round(stats.aqi)})`);
     return `${parts.join(', ')}.`;
+  }
+
+  function aqiLabel(aqi) {
+    if (aqi <= 50) return 'good';
+    if (aqi <= 100) return 'moderate';
+    if (aqi <= 150) return 'unhealthy for sensitive groups';
+    if (aqi <= 200) return 'unhealthy';
+    return 'very unhealthy';
+  }
+
+  function airTip(stats) {
+    if (stats.aqi === null || stats.aqi <= 100) return '';
+    if (stats.aqi > 150) return `Unhealthy air (US AQI ${Math.round(stats.aqi)}), often wildfire smoke. Hard exercise outdoors is not recommended today.`;
+    return `Air quality is unhealthy for sensitive groups (US AQI ${Math.round(stats.aqi)}), often smoke or smog. Take it easy if you have asthma or a heart condition.`;
   }
 
   function clothingTip(stats) {
@@ -703,7 +752,8 @@
       if (place.miles) {
         tips.push(`Allow about ${duration} hours. Start by ${latest} to finish an hour before sunset.`);
       } else if (place.oneWayMiles) {
-        tips.push(`${place.trails[0][0]} is ${fmtDistance(place.oneWayMiles)} one way, about ${duration} hours out and back. Start by ${latest} to finish an hour before sunset.`);
+        const climb = place.climbFt ? ` with about ${fmtClimb(place.climbFt)} of climbing out and back` : '';
+        tips.push(`${place.trails[0][0]} is ${fmtDistance(place.oneWayMiles)} one way${climb}, about ${duration} hours. Start by ${latest} to finish an hour before sunset.`);
       } else {
         tips.push(`No trail length on file for this trailhead. Be off the trail by ${fmtClock(result.sunset - 1)}, an hour before sunset.`);
       }
@@ -763,6 +813,10 @@
 
     if (query.activity !== 'scuba_diving' && query.activity !== 'surfing') {
       const tip = clothingTip(stats);
+      if (tip) tips.push(tip);
+    }
+    if (AIR_ACTIVITIES.has(query.activity)) {
+      const tip = airTip(stats);
       if (tip) tips.push(tip);
     }
     return { stats, tips };
@@ -873,6 +927,7 @@
     if (place.difficulty) facts.push(place.difficulty);
     if (place.miles) facts.push(`${fmtDistance(place.miles)} hike`);
     if (place.oneWayMiles) facts.push(`${fmtDistance(place.oneWayMiles)} one way`);
+    if (place.climbFt) facts.push(`${fmtClimb(place.climbFt)} climb`);
     if (place.slot) facts.push('slot canyon country');
     return [[place.city, place.state].filter(Boolean).join(', '), ...facts].filter(Boolean).join(' · ');
   }
@@ -1030,6 +1085,9 @@
       el('h2', { text: `${ACTIVITIES[query.activity].label} near ${origin.label}, ${dateText}` }),
       el('p', { text: `${verdicts[scoreLabel(top.chosen.score)]} At ${top.place.name}: ${details.join(', ')}.` })
     );
+    summary.append(el('div', { class: 'actions' },
+      cameFromWeek ? el('button', { type: 'button', class: 'secondary', text: 'Back to the week', onclick: () => $('week-button').click() }) : null,
+      shareButton('day')));
     if (query.night) {
       summary.append(
         el('p', { class: 'warning', text: `No daylight is left today, so these are night dives. ${NIGHT_DIVE_RULE} ${NIGHT_ACCESS_RULE}` }),
@@ -1109,6 +1167,8 @@
 
   async function resolveOrigin() {
     const typed = placeInput.value.trim();
+    const coords = typed.match(COORDS);
+    if (coords) return { lat: parseFloat(coords[1]), lng: parseFloat(coords[2]), label: 'the shared spot' };
     if (typed && typed !== MY_LOCATION) {
       const found = await geocode(typed);
       if (!found) throw new Error(`Could not find "${typed}". Try a town and state.`);
@@ -1199,7 +1259,7 @@
     };
     const maxMiles = (parseFloat(distanceInput.value) || 30) / (imperial() ? 1 : 1.609);
 
-    setStatus('Finding your starting point...');
+    setStatus(navigator.onLine ? 'Finding your starting point...' : 'You are offline, so this uses forecasts saved on this device.');
     const origin = await resolveOrigin();
 
     const places = await choosePlaces(activity, origin, maxMiles);
@@ -1214,6 +1274,8 @@
       }),
       needsMarine ? fetchMarine(places, query.date) : null,
     ]);
+    const air = AIR_ACTIVITIES.has(activity) && !weather.failure ? await fetchAirQuality(places, query.date) : null;
+    if (air) weather.forEach((w, i) => { weather[i] = withAir(w, air[i], query.date); });
     if (needsMarine) query.tides = await fetchAllTides(places, query.date);
     query.marineFailed = needsMarine && !marine;
     if (weather.failure) query.failure = weather.failure;
@@ -1261,6 +1323,74 @@
     setStatus(`Scored ${results.length} ${results.length === 1 ? 'place' : 'places'}, best first. Hover the colored bar for each hour.${starred ? ' * marks a score with a piece missing.' : ''}`);
   }
 
+  // ---------- share links ----------
+
+  const COORDS = /^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/;
+
+  // The search as URL parameters. With withLocation, a "Locate me" search carries the
+  // rough position (about half a mile) so a shared link opens the same results.
+  function searchParams(view, withLocation = false) {
+    const params = new URLSearchParams({ a: activitySelect.value });
+    const typed = placeInput.value.trim();
+    if (typed && typed !== MY_LOCATION) params.set('near', typed);
+    else if (withLocation && geoOrigin) params.set('near', `${geoOrigin.lat.toFixed(2)},${geoOrigin.lng.toFixed(2)}`);
+    if (view === 'week') params.set('view', 'week');
+    else if (dateSelect.value !== localDateStr(new Date())) params.set('d', dateSelect.value);
+    if (view !== 'week' && timeSelect.value) params.set('t', timeSelect.value);
+    params.set('r', distanceInput.value);
+    if (!imperial()) params.set('u', 'metric');
+    if (specificInput.value.trim()) params.set('only', specificInput.value.trim());
+    return params;
+  }
+
+  // Keeps the address bar in step with the search, without the user's position.
+  function rememberSearch(view) {
+    try {
+      history.replaceState(null, '', `${location.pathname}?${searchParams(view)}`);
+    } catch {
+      // some embedded browsers refuse; the link is a convenience
+    }
+  }
+
+  function shareButton(view) {
+    return el('button', {
+      type: 'button', class: 'linklike share', text: 'Share these results',
+      onclick: async (event) => {
+        const usesLocation = placeInput.value.trim() === MY_LOCATION || !placeInput.value.trim();
+        const url = `${location.origin}${location.pathname}?${searchParams(view, true)}`;
+        const note = usesLocation ? ' It includes your rough location.' : '';
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: document.title, url });
+            return;
+          }
+          await navigator.clipboard.writeText(url);
+          event.target.textContent = `Link copied.${note}`;
+        } catch {
+          event.target.textContent = url; // last resort: show it to copy by hand
+        }
+      },
+    });
+  }
+
+  // Fills the form from a shared link and runs it. Returns true when it did.
+  function openSharedSearch() {
+    const params = new URLSearchParams(location.search);
+    if (!params.get('a') || !ACTIVITIES[params.get('a')]) return false;
+    activitySelect.value = params.get('a');
+    syncActivity();
+    if (params.get('near')) placeInput.value = params.get('near');
+    if (params.get('d') && params.get('d') >= dateSelect.min && params.get('d') <= dateSelect.max) dateSelect.value = params.get('d');
+    if (params.get('t')) timeSelect.value = params.get('t');
+    if (params.get('u') === 'metric') unitsSelect.value = 'metric';
+    $('distance-unit').textContent = imperial() ? 'mi' : 'km';
+    if (params.get('r')) distanceInput.value = params.get('r');
+    if (params.get('only')) specificInput.value = params.get('only');
+    if (params.get('view') === 'week') $('week-button').click();
+    else form.requestSubmit();
+    return true;
+  }
+
   // ---------- best day this week ----------
 
   const WEEK_DAYS = 7;
@@ -1283,11 +1413,12 @@
       fetchWeatherRange(places, addDays(today, -1), last),
       needsMarine ? fetchMarine(places, today, last) : null,
     ]);
+    const air = AIR_ACTIVITIES.has(activity) ? await fetchAirQuality(places, today, last) : null;
 
     // every place, every day: its best window
     const rows = places.map((place, i) => {
       const cells = days.map((date) => {
-        const w = oneDay(weather[i], date);
+        const w = withAir(oneDay(weather[i], date), air && air[i], date);
         if (!w) return null;
         const m = marine && marine[i] ? oneDay(marine[i], date) : null;
         const result = evaluate(place, w, m, { activity, date, hour: null });
@@ -1316,7 +1447,12 @@
     setStatus(`Scored ${rows.length} ${rows.length === 1 ? 'place' : 'places'} over ${WEEK_DAYS} days. Tap a day to see it in full.`);
   }
 
+  // Set when a day is opened from the week grid, so that day can offer a way back.
+  let cameFromWeek = false;
+  let dateBeforeWeek = null; // the date the search was on before the week grid took over
+
   function showDay(date) {
+    cameFromWeek = true;
     dateSelect.value = date;
     timeSelect.value = '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1347,7 +1483,13 @@
       el('p', { text: pick
         ? `${pick.place.name}, ${fmtHour(pick.chosen.start)} to ${fmtHour(pick.chosen.start + pick.chosen.length)}, ${scoreLabel(pick.chosen.score).toLowerCase()} (${pick.chosen.score}).`
         : 'Nothing scores well this week.' }),
-      el('button', { type: 'button', class: 'primary', text: `See ${dayName(days[bestDay], 'long')} in full`, onclick: () => showDay(days[bestDay]) })
+      el('div', { class: 'actions' },
+        el('button', { type: 'button', class: 'primary', text: `See ${dayName(days[bestDay], 'long')} in full`, onclick: () => showDay(days[bestDay]) }),
+        el('button', {
+          type: 'button', class: 'secondary', text: 'Back to search results',
+          onclick: () => { cameFromWeek = false; if (dateBeforeWeek) dateSelect.value = dateBeforeWeek; form.requestSubmit(); },
+        }),
+        shareButton('week'))
     ));
 
     const table = el('table', { class: 'week' });
@@ -1478,11 +1620,13 @@
 
     $('week-button').addEventListener('click', async () => {
       if (!form.reportValidity()) return;
+      if (!cameFromWeek) dateBeforeWeek = dateSelect.value;
       submitButton.disabled = $('week-button').disabled = true;
       savePrefs();
       startLoading(activitySelect.value);
       try {
         await runWeek();
+        rememberSearch('week');
       } catch (error) {
         console.error(error);
         setStatus(error.message || 'Something went wrong. Please try again.', true);
@@ -1494,12 +1638,14 @@
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (event.submitter === submitButton) cameFromWeek = false;
       $('layout').classList.remove('week');
       submitButton.disabled = true;
       savePrefs();
       startLoading(activitySelect.value);
       try {
         await runQuery();
+        rememberSearch('day');
       } catch (error) {
         console.error(error);
         setStatus(error.message || 'Something went wrong. Please try again.', true);
@@ -1512,4 +1658,13 @@
   }
 
   init();
+  openSharedSearch();
+
+  // Lets the site install on a phone's home screen and work from its last forecasts
+  // when there is no signal. Needs https (or localhost), so not from a file.
+  // Skipped on an unstamped local copy, where it would keep serving stale files.
+  const released = window.WM_VERSION && window.WM_VERSION !== 'dev';
+  if (released && 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    navigator.serviceWorker.register('sw.js').catch((error) => console.warn('No offline support:', error));
+  }
 })();

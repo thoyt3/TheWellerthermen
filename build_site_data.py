@@ -13,6 +13,7 @@ Sources, all under data/:
   dive_sites_us_osm.json places tagged for diving in OpenStreetMap, nationwide (osm_extras.py)
   dive_sites_manual.json dive sites entered by hand, each with its source
   trail_lengths.json     trails at each trailhead and their lengths (trail_lengths.py)
+  trail_climbs.json      climbing on each matched trail (trail_climbs.py)
   slot_canyons_*.json    slot canyons, for the flash flood rule (osm_extras.py and a hand list)
   sea_bearings.json      which way each shore site faces (coast_bearings.py)
   noaa_tide_stations.json NOAA tide prediction stations (tide_stations.py)
@@ -322,6 +323,7 @@ def build_hiking():
     for item in original("hiking"):
         places.add(item, check=False)
     lengths = load("trail_lengths.json") or {}
+    climbs = load("trail_climbs.json") or {}  # climbing out and back (trail_climbs.py)
     for trailhead in load("trailheads.json"):
         if not norm(trailhead["name"]) or trailhead["name"].lower() in NOT_A_NAME:
             continue
@@ -333,6 +335,9 @@ def build_hiking():
             best = trails[0]
             if best["match"] >= NAME_MATCH and best["miles"] <= DAY_HIKE_MILES:
                 item["oneWayMiles"] = best["miles"]
+                climb = climbs.get(f"{trailhead['lat']},{trailhead['lng']}")
+                if climb:
+                    item["climbFt"] = climb["climbFt"]
         places.add(item)
     slots = slot_canyon_index()
     for item in places.items:

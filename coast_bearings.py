@@ -31,13 +31,14 @@ SEA_LEVEL_M = 0.5
 LAKE_BAND_M = 0.3  # a lake surface is flat: points this close to the lowest sample
 LAKE_MIN_SHARE = 0.2  # ...and there must be this many of them to call it a lake
 
+TILE_CACHE_MAX = 200  # decoded tiles kept in memory; a script walking long trails can raise it
 session = requests.Session()
 tiles = {}
 
 
 def tile(x, y):
     if (x, y) not in tiles:
-        if len(tiles) > 200:
+        if len(tiles) > TILE_CACHE_MAX:
             tiles.clear()
         response = session.get(TILE_URL.format(z=ZOOM, x=x, y=y), timeout=60)
         response.raise_for_status()

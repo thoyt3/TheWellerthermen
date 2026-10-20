@@ -18,6 +18,7 @@ The app is a static site in `public/`. It needs no API keys, no account and no i
 | The written recommendation | Scoring rules in `public/app.js` | OpenAI (paid key) |
 | Place lookup | OpenStreetMap Nominatim, with Open-Meteo geocoding as a fallback | unchanged |
 | Locations | OpenStreetMap, Zentacle and GolfLink public pages | New England only |
+| Air quality | [Open-Meteo air quality API](https://open-meteo.com/en/docs/air-quality-api) | none |
 | Moon phase | Computed in the browser | OpenWeatherMap |
 
 Open-Meteo is free for non-commercial use. Responses are cached in memory for the
@@ -70,6 +71,16 @@ Nearer places win ties.
 them as a grid, with the day where the top few places score highest picked out. Tap a
 day to see it in full.
 
+- Air quality: golf and hiking lose points above a US AQI of 100 (smoke or smog), and
+  cannot score above Poor over 150. The forecast runs about five days out.
+- Hike times use 2 mph plus an hour for every 2,000 ft of climbing, where the climb
+  is known.
+
+Every search is kept in the page address, and "Share these results" sends a link that
+opens the same search. A "Locate me" search shares your position rounded to about half
+a mile, and the app says so. On a phone the site can be added to the home screen, and
+it keeps the last forecasts it fetched, so a recent search still works with no signal.
+
 The thresholds are rules of thumb. Check conditions yourself before you go.
 
 ## Known limits
@@ -83,8 +94,9 @@ The thresholds are rules of thumb. Check conditions yourself before you go.
   from OpenStreetMap, because the main source has no pages for them.
 - Trail lengths come from the USGS National Digital Trails layer, which has a trail
   at about 60% of trailheads and a clearly matching one at about a third. Lengths are
-  one way and take no account of climbing. The original New England hikes keep their
-  own mileage and difficulty.
+  one way. Climbing is measured only on trails that clearly match their trailhead, and
+  the elevation data is coarse (about 30 m), so treat it as a rough figure. The original
+  New England hikes keep their own mileage and difficulty.
 - The slot canyon list is OpenStreetMap features named "slot canyon" plus about 30
   well-known canyons entered by hand. It will miss obscure ones, and the forecast is
   for the trailhead, not for the drainage upstream.
@@ -110,6 +122,7 @@ None of the scrapers need a key. The ones that matter now are
 python osm_places.py
 python golf_types.py
 python trail_lengths.py
+python trail_climbs.py
 python diving_zentacle.py
 python diving_osm.py
 python osm_extras.py
@@ -129,6 +142,8 @@ python build_site_data.py
   Only names, coordinates, access and depth are kept, with a link back to the source.
 - `trail_lengths.py` asks the USGS National Digital Trails layer which trails leave
   from each trailhead and how long they are.
+- `trail_climbs.py` fetches the shape of each matched trail from the same layer and
+  adds up the climbing from the AWS elevation tiles, ignoring wiggles under 5 m.
 - `osm_extras.py` collects dive sites tagged in OpenStreetMap nationwide and features
   named "slot canyon" in the Southwest.
 - `fix_original_dives.py` re-checks where the original New England dive sites are.
