@@ -13,7 +13,8 @@ The app is a static site in `public/`. It needs no API keys, no account and no i
 | Need | Source | Replaces |
 | --- | --- | --- |
 | Hourly weather, sunrise and sunset | [Open-Meteo forecast API](https://open-meteo.com/) | OpenWeatherMap One Call 3.0 (paid key) |
-| Waves, swell, water temperature, tides | [Open-Meteo marine API](https://open-meteo.com/en/docs/marine-weather-api) | StormGlass (paid key) |
+| Waves, swell, water temperature | [Open-Meteo marine API](https://open-meteo.com/en/docs/marine-weather-api) | StormGlass (paid key) |
+| High and low tides | [NOAA tide predictions](https://tidesandcurrents.noaa.gov/) from the nearest station | StormGlass (paid key) |
 | The written recommendation | Scoring rules in `public/app.js` | OpenAI (paid key) |
 | Place lookup | OpenStreetMap Nominatim, with Open-Meteo geocoding as a fallback | unchanged |
 | Locations | OpenStreetMap, Zentacle and GolfLink public pages | New England only |
@@ -65,12 +66,17 @@ Nearer places win ties.
 - Surfing: swell height and period, then wind.
 - Thunderstorms score zero for everything.
 
+"Best day this week" scores the same places for each of the next seven days and shows
+them as a grid, with the day where the top few places score highest picked out. Tap a
+day to see it in full.
+
 The thresholds are rules of thumb. Check conditions yourself before you go.
 
 ## Known limits
 
-- Tide times are read off the marine model's hourly sea level, so treat them as
-  approximate and use a tide table for anything that matters.
+- Tides come from the nearest NOAA prediction station within 20 miles of a salt-water
+  site. Sites without one (or when NOAA does not answer) fall back to an estimate from
+  the marine model's hourly sea level, marked "approximate". Freshwater sites get none.
 - Forecasts run about two weeks out for weather and about a week for waves.
 - Golf courses and trailheads cover all 50 states and DC. Dive sites cover every
   state, though Ohio and Virginia are thin: a few quarries entered by hand plus wrecks
@@ -109,6 +115,7 @@ python diving_osm.py
 python osm_extras.py
 python fix_original_dives.py
 python coast_bearings.py
+python tide_stations.py
 python build_site_data.py
 ```
 
@@ -131,6 +138,8 @@ python build_site_data.py
 - `coast_bearings.py` works out which way each dive site and surf break faces, from
   the free Terrain Tiles elevation data on AWS. Results are cached in
   `data/sea_bearings.json`.
+- `tide_stations.py` saves NOAA's list of tide prediction stations, so the build can
+  give each salt-water site its nearest one.
 - `build_site_data.py` merges everything into one script per activity in
   `public/data/`, which the page loads on demand.
 

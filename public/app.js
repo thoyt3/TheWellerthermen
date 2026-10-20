@@ -282,50 +282,81 @@
     return `${base}?${params}`;
   }
 
-  // withDayBefore also fetches the previous day, which the slot canyon rule needs to
-  // see 24 hours back. That day is split off into `before` so the rest of the code
-  // still sees exactly one day.
-  async function fetchWeather(places, date, withDayBefore = false) {
-    const extra = {
+  const addDays = (dateStr, n) => {
+    const d = new Date(`${dateStr}T12:00`);
+    d.setDate(d.getDate() + n);
+    return localDateStr(d);
+  };
+
+  // One day out of a multi-day Open-Meteo response. The day before, when it was
+  // fetched, is kept as `before` so the slot canyon rule can look 24 hours back.
+  function oneDay(response, date) {
+    const from = response.hourly.time.findIndex((t) => t.startsWith(date));
+    if (from < 0) return null;
+    const cut = (group, start, stop) => Object.fromEntries(Object.entries(group).map(([k, v]) => [k, v.slice(start, stop)]));
+    const day = { ...response, hourly: cut(response.hourly, from, from + 24) };
+    if (response.daily) {
+      const index = response.daily.time.indexOf(date);
+      day.daily = cut(response.daily, index, index + 1);
+    }
+    if (from >= 24) day.before = cut(response.hourly, from - 24, from);
+    return day;
+  }
+
+  async function fetchWeatherRange(places, start, end) {
+    const data = await getJSON(batchUrl('https://api.open-meteo.com/v1/forecast', places, end, {
       hourly: 'temperature_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m',
       daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max,sunrise,sunset',
       temperature_unit: 'fahrenheit',
       wind_speed_unit: 'mph',
-    };
-    if (withDayBefore) {
-      const previous = new Date(`${date}T12:00`);
-      previous.setDate(previous.getDate() - 1);
-      extra.start_date = localDateStr(previous);
-    }
-    const data = await getJSON(batchUrl('https://api.open-meteo.com/v1/forecast', places, date, extra));
-    const list = Array.isArray(data) ? data : [data];
-    if (!withDayBefore) return list;
-    return list.map((one) => {
-      const split = one.hourly.time.findIndex((t) => t.startsWith(date));
-      if (split <= 0) return one;
-      const cut = (group, from, to) => Object.fromEntries(Object.entries(group).map(([k, v]) => [k, v.slice(from, to)]));
-      return {
-        ...one,
-        before: cut(one.hourly, 0, split),
-        hourly: cut(one.hourly, split),
-        daily: cut(one.daily, one.daily.time.indexOf(date)),
-      };
-    });
+      start_date: start,
+    }));
+    return Array.isArray(data) ? data : [data];
+  }
+
+  // withDayBefore also fetches the previous day, for the slot canyon rule.
+  async function fetchWeather(places, date, withDayBefore = false) {
+    const list = await fetchWeatherRange(places, withDayBefore ? addDays(date, -1) : date, date);
+    return list.map((one) => oneDay(one, date) || one);
   }
 
   // Waves, water temperature and sea level (tide) from the Open-Meteo marine model.
   // Returns null when there is no marine forecast, so callers degrade gracefully.
-  async function fetchMarine(places, date) {
+  async function fetchMarine(places, date, end = date) {
     try {
-      const data = await getJSON(batchUrl('https://marine-api.open-meteo.com/v1/marine', places, date, {
+      const data = await getJSON(batchUrl('https://marine-api.open-meteo.com/v1/marine', places, end, {
         hourly: 'wave_height,wave_period,swell_wave_height,swell_wave_period,sea_surface_temperature,sea_level_height_msl',
         cell_selection: 'sea',
+        start_date: date,
       }));
       return Array.isArray(data) ? data : [data];
     } catch (error) {
       console.warn('No marine forecast:', error);
       return null;
     }
+  }
+
+  // High and low tides for one NOAA station and day, in the station's local time.
+  async function fetchTides(station, date) {
+    const day = date.replaceAll('-', '');
+    const data = await getJSON('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?' + new URLSearchParams({
+      product: 'predictions', datum: 'MLLW', station, begin_date: day, end_date: day,
+      time_zone: 'lst_ldt', interval: 'hilo', units: 'english', format: 'json', application: 'TheWellerthermen',
+    }));
+    if (!data.predictions) throw new Error(data.error?.message || 'no tide predictions');
+    return data.predictions.map((p) => ({
+      type: p.type === 'H' ? 'High' : 'Low',
+      time: clockToHours(p.t.replace(' ', 'T')),
+      feet: parseFloat(p.v),
+    }));
+  }
+
+  // Tides for every station the places use. A station that fails just falls back
+  // to the marine model's estimate for its sites.
+  async function fetchAllTides(places, date) {
+    const stations = [...new Set(places.filter((p) => p.tide).map((p) => p.tide[0]))];
+    const pairs = await Promise.all(stations.map((id) => fetchTides(id, date).then((t) => [id, t], () => [id, null])));
+    return new Map(pairs.filter(([, tides]) => tides));
   }
 
   async function geocode(query) {
@@ -573,6 +604,7 @@
     }
 
     const chosen = requested || best;
+    const noaa = place.tide && query.tides ? query.tides.get(place.tide[0]) : null;
     return {
       place,
       hours,
@@ -583,7 +615,8 @@
       sunset,
       hasMarine: Boolean(usableMarine),
       night: Boolean(query.night),
-      tides: usableMarine ? tideExtremes(hours) : [],
+      tides: noaa || (usableMarine ? tideExtremes(hours) : []),
+      tideSource: noaa ? `NOAA, ${place.tide[1]}` : 'approximate',
       best,
       requested,
       requestNote,
@@ -641,6 +674,10 @@
     return 'a drysuit';
   }
 
+  const tideList = (tides) => tides
+    .map((t) => `${t.type.toLowerCase()} ${fmtClock(t.time)}${t.feet !== undefined ? ` (${fmtHeight(t.feet)})` : ''}`)
+    .join(', ');
+
   function advice(result, query) {
     const { place, chosen } = result;
     const stats = windowStats(result);
@@ -688,9 +725,9 @@
         if (stats.waterTemp !== null) {
           tips.push(`Surface water about ${fmtTemp(stats.waterTemp)}. Wear at least ${thermalProtection(stats.waterTemp)}.`);
         }
-        if (result.tides.length) {
-          tips.push(`Tides (approximate): ${result.tides.map((t) => `${t.type.toLowerCase()} ${fmtClock(t.time)}`).join(', ')}. Visibility is usually best around high slack.`);
-        }
+      }
+      if (result.tides.length) {
+        tips.push(`Tides (${result.tideSource}): ${tideList(result.tides)}. Visibility is usually best around high slack.`);
       }
       const onshore = onshoreWind(place, result.hours, chosen.start + chosen.length - 1, chosen.length + 5);
       if (onshore === null) {
@@ -716,7 +753,7 @@
         tips.push(`Water about ${fmtTemp(stats.waterTemp)}${stats.waterTemp < 55 ? '. Hood, gloves and boots' : stats.waterTemp < 65 ? '. Full suit' : ''}.`);
       }
       if (result.tides.length) {
-        tips.push(`Tides (approximate): ${result.tides.map((t) => `${t.type.toLowerCase()} ${fmtClock(t.time)}`).join(', ')}.`);
+        tips.push(`Tides (${result.tideSource}): ${tideList(result.tides)}.`);
       }
       const onshore = onshoreWind(place, result.hours, chosen.start + chosen.length - 1, chosen.length);
       if (onshore !== null && stats.wind >= 6) {
@@ -1096,18 +1133,10 @@
     );
   }
 
-  async function runQuery() {
-    const activity = activitySelect.value;
-    const query = {
-      activity,
-      date: dateSelect.value,
-      hour: timeSelect.value ? parseInt(timeSelect.value.slice(0, 2), 10) : null,
-    };
-    const maxMiles = (parseFloat(distanceInput.value) || 30) / (imperial() ? 1 : 1.609);
-
-    setStatus('Finding your starting point...');
-    const origin = await resolveOrigin();
-
+  // The places worth forecasting: the nearest in range, shore and boat dives kept
+  // apart, enough bookable golf courses, or the one place asked for by name. Returns
+  // null after explaining, when there is nothing in range.
+  async function choosePlaces(activity, origin, maxMiles) {
     const all = (await loadPlaces(activity))
       .map((p) => ({ ...p, distance: milesBetween(origin.lat, origin.lng, p.lat, p.lng) }))
       .sort((a, b) => a.distance - b.distance);
@@ -1154,9 +1183,27 @@
             onclick: () => { distanceInput.value = reach; form.requestSubmit(); },
           })
         );
-        return;
+        return null;
       }
     }
+    return places;
+
+  }
+
+  async function runQuery() {
+    const activity = activitySelect.value;
+    const query = {
+      activity,
+      date: dateSelect.value,
+      hour: timeSelect.value ? parseInt(timeSelect.value.slice(0, 2), 10) : null,
+    };
+    const maxMiles = (parseFloat(distanceInput.value) || 30) / (imperial() ? 1 : 1.609);
+
+    setStatus('Finding your starting point...');
+    const origin = await resolveOrigin();
+
+    const places = await choosePlaces(activity, origin, maxMiles);
+    if (!places) return;
 
     setStatus(`Checking the forecast at ${places.length} ${places.length === 1 ? 'place' : 'places'}...`);
     const needsMarine = Boolean(ACTIVITIES[activity].marine);
@@ -1167,6 +1214,7 @@
       }),
       needsMarine ? fetchMarine(places, query.date) : null,
     ]);
+    if (needsMarine) query.tides = await fetchAllTides(places, query.date);
     query.marineFailed = needsMarine && !marine;
     if (weather.failure) query.failure = weather.failure;
     // surf scores are nothing without waves
@@ -1211,6 +1259,143 @@
     renderResults(results, query, origin);
     const starred = results.some((result) => caveats(result, query).length);
     setStatus(`Scored ${results.length} ${results.length === 1 ? 'place' : 'places'}, best first. Hover the colored bar for each hour.${starred ? ' * marks a score with a piece missing.' : ''}`);
+  }
+
+  // ---------- best day this week ----------
+
+  const WEEK_DAYS = 7;
+  const WEEK_ROWS = 8;
+
+  async function runWeek() {
+    const activity = activitySelect.value;
+    const maxMiles = (parseFloat(distanceInput.value) || 30) / (imperial() ? 1 : 1.609);
+    setStatus('Finding your starting point...');
+    const origin = await resolveOrigin();
+    const places = await choosePlaces(activity, origin, maxMiles);
+    if (!places) return;
+
+    const today = localDateStr(new Date());
+    const days = Array.from({ length: WEEK_DAYS }, (_, k) => addDays(today, k));
+    const last = days[days.length - 1];
+    setStatus(`Checking ${WEEK_DAYS} days of forecast at ${places.length} ${places.length === 1 ? 'place' : 'places'}...`);
+    const needsMarine = Boolean(ACTIVITIES[activity].marine);
+    const [weather, marine] = await Promise.all([
+      fetchWeatherRange(places, addDays(today, -1), last),
+      needsMarine ? fetchMarine(places, today, last) : null,
+    ]);
+
+    // every place, every day: its best window
+    const rows = places.map((place, i) => {
+      const cells = days.map((date) => {
+        const w = oneDay(weather[i], date);
+        if (!w) return null;
+        const m = marine && marine[i] ? oneDay(marine[i], date) : null;
+        const result = evaluate(place, w, m, { activity, date, hour: null });
+        return result.chosen ? result : null;
+      });
+      const scored = cells.filter(Boolean);
+      const top = scored.length ? Math.max(...scored.map((c) => c.rank)) : -Infinity;
+      return { place, cells, top };
+    }).filter((row) => row.top > -Infinity).sort((a, b) => b.top - a.top);
+
+    if (!rows.length) throw new Error('No forecast windows came back for this week. Try a wider distance.');
+
+    let shown;
+    if (activity === 'scuba_diving') {
+      shown = [...rows.filter((r) => r.place.diveType !== 'boat').slice(0, 5), ...rows.filter((r) => r.place.diveType === 'boat').slice(0, 3)];
+    } else {
+      shown = rows.slice(0, WEEK_ROWS);
+      if (activity === 'golf') {
+        const extra = rows.slice(WEEK_ROWS).filter((r) => isOpenCourse(r.place));
+        while (shown.filter((r) => isOpenCourse(r.place)).length < MIN_OPEN_GOLF && extra.length) shown.push(extra.shift());
+      }
+    }
+    renderWeek(shown, days, activity, origin);
+    map.invalidateSize();
+    map.fitBounds(markersLayer.getBounds(), { padding: [40, 40], maxZoom: 13 });
+    setStatus(`Scored ${rows.length} ${rows.length === 1 ? 'place' : 'places'} over ${WEEK_DAYS} days. Tap a day to see it in full.`);
+  }
+
+  function showDay(date) {
+    dateSelect.value = date;
+    timeSelect.value = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    form.requestSubmit();
+  }
+
+  function renderWeek(rows, days, activity, origin) {
+    resultsDiv.replaceChildren();
+    $('layout').classList.add('week'); // the table needs the full width; the map goes below
+    markersLayer.clearLayers();
+    L.circleMarker([origin.lat, origin.lng], { radius: 7, color: '#fff', fillColor: '#4da3ff', fillOpacity: 1, weight: 2 })
+      .bindPopup(origin.label)
+      .addTo(markersLayer);
+
+    const dayName = (date, style = 'short') => new Date(`${date}T12:00`).toLocaleDateString(undefined, { weekday: style });
+    const dayLabel = (date) => new Date(`${date}T12:00`).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+
+    // The best day is the one where the top few places score highest together, so
+    // one lucky course does not outvote a day that is good everywhere. Ties go to
+    // the earlier day.
+    const dayCells = days.map((_, k) => rows.map((r) => r.cells[k]).filter(Boolean).sort((a, b) => b.chosen.score - a.chosen.score));
+    const dayStrength = dayCells.map((cells) => (cells.length ? mean(cells.slice(0, 3).map((c) => c.chosen.score)) : -1));
+    const bestDay = dayStrength.indexOf(Math.max(...dayStrength));
+    const pick = dayCells[bestDay][0];
+
+    resultsDiv.append(el('div', { class: 'summary' },
+      el('h2', { text: `Best day for ${ACTIVITIES[activity].label.toLowerCase()} near ${origin.label}: ${dayName(days[bestDay], 'long')}` }),
+      el('p', { text: pick
+        ? `${pick.place.name}, ${fmtHour(pick.chosen.start)} to ${fmtHour(pick.chosen.start + pick.chosen.length)}, ${scoreLabel(pick.chosen.score).toLowerCase()} (${pick.chosen.score}).`
+        : 'Nothing scores well this week.' }),
+      el('button', { type: 'button', class: 'primary', text: `See ${dayName(days[bestDay], 'long')} in full`, onclick: () => showDay(days[bestDay]) })
+    ));
+
+    const table = el('table', { class: 'week' });
+    const head = el('tr', {}, el('th', { text: '' }));
+    days.forEach((date, k) => {
+      head.append(el('th', { class: k === bestDay ? 'best-day' : '' },
+        el('button', { type: 'button', class: 'day', title: `See ${dayName(date, 'long')} in full`, onclick: () => showDay(date) },
+          el('strong', { text: k === 0 ? 'Today' : dayName(date) }), el('br'), document.createTextNode(dayLabel(date)))));
+    });
+    table.append(el('thead', {}, head));
+    const body = el('tbody');
+    let previousType = null;
+    rows.forEach((row, n) => {
+      if (activity === 'scuba_diving' && row.place.diveType !== previousType) {
+        previousType = row.place.diveType;
+        body.append(el('tr', { class: 'group' }, el('td', { colspan: String(days.length + 1), text: previousType === 'boat' ? 'Boat dives' : 'Shore dives' })));
+      }
+      const facts = [fmtDistance(row.place.distance), row.place.access].filter(Boolean).join(' · ');
+      const tr = el('tr', {}, el('th', { class: 'place' },
+        el('span', { class: 'rank', text: String(n + 1) }),
+        el('span', {}, el('strong', { text: row.place.name }), el('br'), el('small', { text: facts }))));
+      row.cells.forEach((cell, k) => {
+        const td = el('td', { class: k === bestDay ? 'best-day' : '' });
+        if (cell) {
+          td.append(el('button', {
+            type: 'button', class: 'cell-score', style: `background:${scoreColor(cell.chosen.score)}`,
+            title: `${dayName(days[k], 'long')}: ${scoreLabel(cell.chosen.score)}, best ${fmtHour(cell.chosen.start)} to ${fmtHour(cell.chosen.start + cell.chosen.length)}`,
+            text: String(cell.chosen.score),
+            onclick: () => showDay(days[k]),
+          }));
+        } else {
+          td.append(el('span', { class: 'no-score', title: 'No forecast for this day', text: '–' }));
+        }
+        tr.append(td);
+      });
+      body.append(tr);
+
+      const best = row.cells.filter(Boolean).reduce((a, b) => (b.rank > a.rank ? b : a));
+      const icon = L.divIcon({ className: '', html: `<div class="pin" style="background:${scoreColor(best.chosen.score)}">${n + 1}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
+      L.marker([row.place.lat, row.place.lng], { icon })
+        .bindPopup(el('div', {}, el('strong', { text: row.place.name }), el('br'),
+          document.createTextNode(`Best: ${dayName(days[row.cells.indexOf(best)], 'long')} (${best.chosen.score})`)))
+        .addTo(markersLayer);
+    });
+    table.append(body);
+    resultsDiv.append(el('div', { class: 'week-wrap' }, table));
+    resultsDiv.append(renderLegend());
+    map.fitBounds(markersLayer.getBounds(), { padding: [40, 40], maxZoom: 13 });
   }
 
   // ---------- wiring ----------
@@ -1291,8 +1476,25 @@
       }
     });
 
+    $('week-button').addEventListener('click', async () => {
+      if (!form.reportValidity()) return;
+      submitButton.disabled = $('week-button').disabled = true;
+      savePrefs();
+      startLoading(activitySelect.value);
+      try {
+        await runWeek();
+      } catch (error) {
+        console.error(error);
+        setStatus(error.message || 'Something went wrong. Please try again.', true);
+      } finally {
+        stopLoading();
+        submitButton.disabled = $('week-button').disabled = false;
+      }
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      $('layout').classList.remove('week');
       submitButton.disabled = true;
       savePrefs();
       startLoading(activitySelect.value);

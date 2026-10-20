@@ -15,6 +15,7 @@ Sources, all under data/:
   trail_lengths.json     trails at each trailhead and their lengths (trail_lengths.py)
   slot_canyons_*.json    slot canyons, for the flash flood rule (osm_extras.py and a hand list)
   sea_bearings.json      which way each shore site faces (coast_bearings.py)
+  noaa_tide_stations.json NOAA tide prediction stations (tide_stations.py)
   dive_fixes.json        corrected positions for the original dive sites (fix_original_dives.py)
 """
 import json
@@ -28,6 +29,7 @@ ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 OUT = ROOT / "public" / "data"
 ACTIVITIES = ("golf", "hiking", "scuba_diving", "surfing")  # pickleball is parked for now
+TIDE_STATION_MILES = 20  # farther than this and a station's tides are not this site's
 DUPLICATE_MILES = 0.3  # a new place this close to one we already have is the same place
 SAME_NAME_MILES = 3  # sources pin the same named place in slightly different spots
 STATE_NAMES = (
@@ -376,6 +378,21 @@ def main():
         bearing = (bearings.get(f"{item['lat']},{item['lng']}") or {}).get("seaBearing")
         if bearing is not None and item.get("diveType") != "boat":
             item["seaBearing"] = bearing
+
+    # nearest NOAA tide station, for salt-water sites only (see tide_stations.py)
+    stations = load("noaa_tide_stations.json")
+    grid = defaultdict(list)
+    for station in stations:
+        grid[(round(station["lat"]), round(station["lng"]))].append(station)
+    for item in built["scuba_diving"] + built["surfing"]:
+        if not (bearings.get(f"{item['lat']},{item['lng']}") or {}).get("sea"):
+            continue
+        cx, cy = round(item["lat"]), round(item["lng"])
+        near = [(miles(item, s), s) for dx in (-1, 0, 1) for dy in (-1, 0, 1) for s in grid.get((cx + dx, cy + dy), ())]
+        if near:
+            distance, station = min(near, key=lambda pair: pair[0])
+            if distance <= TIDE_STATION_MILES:
+                item["tide"] = [station["id"], station["name"]]
 
     OUT.mkdir(parents=True, exist_ok=True)
     for activity in ACTIVITIES:

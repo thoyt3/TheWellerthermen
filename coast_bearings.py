@@ -8,7 +8,8 @@ water (offshore) or nearly all land get no bearing.
 Elevation comes from the public Terrain Tiles dataset on AWS (Mapzen terrarium
 tiles): no key and no rate limit, so this scales to thousands of sites.
 
-Results are cached in data/sea_bearings.json, keyed by "lat,lng".
+Results are cached in data/sea_bearings.json, keyed by "lat,lng". Each entry also
+says whether the site is on salt water ("sea"), which decides whether it gets tides.
 """
 import io
 import json
@@ -112,11 +113,14 @@ def main():
     print(f"{len(todo)} sites to look up, {len(cache)} cached", flush=True)
     for n, site in enumerate(todo, 1):
         try:
-            bearing, fraction = summarize([elevation(lat, lng) for lat, lng in ring(*site)])
+            elevations = [elevation(lat, lng) for lat, lng in ring(*site)]
+            bearing, fraction = summarize(elevations)
         except (requests.RequestException, OSError) as error:
             print(f"  {site}: skipped ({error})", flush=True)
             continue
-        cache[f"{site[0]},{site[1]}"] = {"seaBearing": bearing, "water": fraction}
+        # "sea": some of the ring is at sea level, so the site is on salt water and has tides
+        cache[f"{site[0]},{site[1]}"] = {"seaBearing": bearing, "water": fraction,
+                                         "sea": min(elevations) <= SEA_LEVEL_M}
         if n % 100 == 0:
             print(f"  {n} done", flush=True)
             CACHE.write_text(json.dumps(cache, indent=0, sort_keys=True), encoding="utf-8")
